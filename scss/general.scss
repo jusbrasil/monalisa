@@ -1,0 +1,24 @@
+/**
+ * Main file that imports all partials.
+ */
+
+
+
+// Dependencies
+@import "scss/dependencies/colors";
+@import "scss/dependencies/variables";
+@import "scss/dependencies/mixins";
+@import "scss/dependencies/web-fonts";
+
+
+// Base
+@import "scss/base/reset";
+@import "scss/base/normalize";
+@import "scss/base/base";
+@import "scss/base/typography";
+@import "scss/base/placeholders";
+@import "scss/base/structure";
+
+
+// Components
+//@import "scss/components/buttons";

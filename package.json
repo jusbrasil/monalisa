@@ -1,11 +1,15 @@
 {
-  "name": "unicorn",
-  "version": "0.0.1",
-  "description": "Unicorn: Mythical user experience designer with an advanced and adaptive skill range. Outstanding skills in graphic design, rapid prototyping, front-end development, user testing, technical specifications, marketing and branding. It does not have an opinion, it has a process, and will harmonise with any environment.",
-  "homepage": "http://unicorn.jusbrasil.com.br",
+  "name": "jusbrasil-bootstrap",
+  "version": "0.1.0",
+  "title": "JusBrasil Bootstrap",
+  "homepage": "http://jusbrasil.com.br/bootstrap",
   "devDependencies": {
+    "css-condense": "0.0.6",
     "grunt": "^0.4.5",
-    "grunt-contrib-sass": "^0.7.3",
-    "grunt-contrib-uglify": "^0.4.0"
+    "grunt-browser-sync": "^1.5.3",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-css-metrics": "^0.1.2",
+    "grunt-cssc": "^0.2.6"
   }
 }

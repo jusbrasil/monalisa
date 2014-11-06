@@ -13,6 +13,8 @@ _site
 *.swp
 *.zip
 *.vi
+*.scssc
+*.map
 *~
 
 # OS or Editor folders
@@ -31,3 +33,4 @@ nbproject
 # Folders to ignore
 node_modules
 bower_components
+.sass-cache

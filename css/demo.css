@@ -1,0 +1,256 @@
+/**
+ * The JusBrasil uses a limited set of colors defined bellow. Any color used in
+ * the site should be by variable, never with hex, RGB or RGBA.
+ *
+ * The 87, 54, 26 and 12 suffixes is the opacity of the color.
+ */
+/**
+ * Global variables of the project. Works like a config file.
+ */
+/**
+ * This file gathers general rules. Works like a reset, but setting the default
+ * behavior of the site.
+ */
+.header {
+  width: 100%;
+  background-color: #7cb342;
+  text-align: center;
+  padding: 10vh 0;
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .header {
+    background-color: #0091ea;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 959px) {
+  .header {
+    background-color: #ff5722;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .header {
+    background-color: #ffb300;
+  }
+}
+
+.header-title {
+  font-size: 10vh;
+  color: #fff;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 30px 0;
+}
+
+.colors--dark {
+  background-color: #000;
+}
+
+.colorPallet {
+  width: 300px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.colorPallet-color {
+  height: 50px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+.colorPallet-color:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
+  transition: all .2s ease-in-out;
+}
+
+.colorPallet-color--dark {
+  color: #fff;
+}
+
+.colorPallet-color--white {
+  background-color: #fff;
+}
+
+.colorPallet-color--white12 {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.colorPallet-color--white26 {
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+.colorPallet-color--white54 {
+  background-color: rgba(255, 255, 255, 0.54);
+}
+
+.colorPallet-color--white87 {
+  background-color: rgba(255, 255, 255, 0.87);
+}
+
+.colorPallet-color--black {
+  background-color: #000;
+}
+
+.colorPallet-color--black12 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.colorPallet-color--black26 {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.colorPallet-color--black54 {
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+.colorPallet-color--black87 {
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.colorPallet-color--blue {
+  background-color: #0091ea;
+}
+
+.colorPallet-color--blue12 {
+  background-color: rgba(0, 145, 234, 0.12);
+}
+
+.colorPallet-color--blue26 {
+  background-color: rgba(0, 145, 234, 0.26);
+}
+
+.colorPallet-color--blue54 {
+  background-color: rgba(0, 145, 234, 0.54);
+}
+
+.colorPallet-color--blue87 {
+  background-color: rgba(0, 145, 234, 0.87);
+}
+
+.colorPallet-color--green {
+  background-color: #7cb342;
+}
+
+.colorPallet-color--green12 {
+  background-color: rgba(124, 179, 66, 0.12);
+}
+
+.colorPallet-color--green26 {
+  background-color: rgba(124, 179, 66, 0.26);
+}
+
+.colorPallet-color--green54 {
+  background-color: rgba(124, 179, 66, 0.54);
+}
+
+.colorPallet-color--green87 {
+  background-color: rgba(124, 179, 66, 0.87);
+}
+
+.colorPallet-color--yellow {
+  background-color: #ffb300;
+}
+
+.colorPallet-color--yellow12 {
+  background-color: rgba(255, 179, 0, 0.12);
+}
+
+.colorPallet-color--yellow26 {
+  background-color: rgba(255, 179, 0, 0.26);
+}
+
+.colorPallet-color--yellow54 {
+  background-color: rgba(255, 179, 0, 0.54);
+}
+
+.colorPallet-color--yellow87 {
+  background-color: rgba(255, 179, 0, 0.87);
+}
+
+.colorPallet-color--orange {
+  background-color: #fb8c00;
+}
+
+.colorPallet-color--orange12 {
+  background-color: rgba(251, 140, 0, 0.12);
+}
+
+.colorPallet-color--orange26 {
+  background-color: rgba(251, 140, 0, 0.26);
+}
+
+.colorPallet-color--orange54 {
+  background-color: rgba(251, 140, 0, 0.54);
+}
+
+.colorPallet-color--orange87 {
+  background-color: rgba(251, 140, 0, 0.87);
+}
+
+.colorPallet-color--red {
+  background-color: #ff5722;
+}
+
+.colorPallet-color--red12 {
+  background-color: rgba(255, 87, 34, 0.12);
+}
+
+.colorPallet-color--red26 {
+  background-color: rgba(255, 87, 34, 0.26);
+}
+
+.colorPallet-color--red54 {
+  background-color: rgba(255, 87, 34, 0.54);
+}
+
+.colorPallet-color--red87 {
+  background-color: rgba(255, 87, 34, 0.87);
+}
+
+.colorPallet-color--bluegray50 {
+  background-color: #eceff1;
+}
+
+.colorPallet-color--bluegray100 {
+  background-color: #cfd8dc;
+}
+
+.colorPallet-color--bluegray200 {
+  background-color: #b0bec5;
+}
+
+.colorPallet-color--bluegray300 {
+  background-color: #90a4ae;
+}
+
+.colorPallet-color--bluegray400 {
+  background-color: #78909c;
+}
+
+.colorPallet-color--bluegray500 {
+  background-color: #607d8b;
+}
+
+.colorPallet-color--bluegray600 {
+  background-color: #546e7a;
+}
+
+.colorPallet-color--bluegray700 {
+  background-color: #455a64;
+}
+
+.colorPallet-color--bluegray800 {
+  background-color: #37474f;
+}
+
+.colorPallet-color--bluegray900 {
+  background-color: #263238;
+}
+
+/*# sourceMappingURL=demo.css.map */

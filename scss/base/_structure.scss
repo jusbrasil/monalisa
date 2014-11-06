@@ -1,0 +1,13 @@
+/**
+ * General rules about site structure, like wrappers and grids.
+ */
+
+
+.container {
+  width: 100%;
+  @include respond-to(wide-screens) {
+    width: $break-large;
+    margin: 0 auto;
+    padding: 0 15px 0 5px;
+  }
+}

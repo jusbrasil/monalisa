@@ -1,0 +1,123 @@
+/**
+ * The JusBrasil uses a limited set of colors defined bellow. Any color used in
+ * the site should be by variable, never with hex, RGB or RGBA.
+ *
+ * The 87, 54, 26 and 12 suffixes is the opacity of the color.
+ */
+
+
+$black:       #000;
+$black87:     rgba($black,.87);
+$black54:     rgba($black,.54);
+$black26:     rgba($black,.26);
+$black12:     rgba($black,.12);
+
+$white:       #fff;
+$white87:     rgba($white,.87);
+$white54:     rgba($white,.54);
+$white26:     rgba($white,.26);
+$white12:     rgba($white,.12);
+
+$blue:        #0091ea;
+$blue87:      rgba($blue,.87);
+$blue54:      rgba($blue,.54);
+$blue26:      rgba($blue,.26);
+$blue12:      rgba($blue,.12);
+
+$green:       #7cb342;
+$green87:     rgba($green,.87);
+$green54:     rgba($green,.54);
+$green26:     rgba($green,.26);
+$green12:     rgba($green,.12);
+
+$yellow:      #ffb300;
+$yellow87:    rgba($yellow,.87);
+$yellow54:    rgba($yellow,.54);
+$yellow26:    rgba($yellow,.26);
+$yellow12:    rgba($yellow,.12);
+
+$orange:      #fb8c00;
+$orange87:    rgba($orange,.87);
+$orange54:    rgba($orange,.54);
+$orange26:    rgba($orange,.26);
+$orange12:    rgba($orange,.12);
+
+$red:         #ff5722;
+$red87:       rgba($red,.87);
+$red54:       rgba($red,.54);
+$red26:       rgba($red,.26);
+$red12:       rgba($red,.12);
+
+$bluegray50:  #eceff1;
+$bluegray100: #cfd8dc;
+$bluegray200: #b0bec5;
+$bluegray300: #90a4ae;
+$bluegray400: #78909c;
+$bluegray500: #607d8b;
+$bluegray600: #546e7a;
+$bluegray700: #455a64;
+$bluegray800: #37474f;
+$bluegray900: #263238;
+
+
+$color-map: (
+  "white": $white,
+  "white12": $white12,
+  "white26": $white26,
+  "white54": $white54,
+  "white87": $white87,
+
+  "black": $black,
+  "black12": $black12,
+  "black26": $black26,
+  "black54": $black54,
+  "black87": $black87,
+
+  "blue": $blue,
+  "blue12": $blue12,
+  "blue26": $blue26,
+  "blue54": $blue54,
+  "blue87": $blue87,
+
+  "green": $green,
+  "green12": $green12,
+  "green26": $green26,
+  "green54": $green54,
+  "green87": $green87,
+
+  "yellow": $yellow,
+  "yellow12": $yellow12,
+  "yellow26": $yellow26,
+  "yellow54": $yellow54,
+  "yellow87": $yellow87,
+
+  "orange": $orange,
+  "orange12": $orange12,
+  "orange26": $orange26,
+  "orange54": $orange54,
+  "orange87": $orange87,
+
+  "red": $red,
+  "red12": $red12,
+  "red26": $red26,
+  "red54": $red54,
+  "red87": $red87,
+
+  "bluegray50": $bluegray50,
+  "bluegray100": $bluegray100,
+  "bluegray200": $bluegray200,
+  "bluegray300": $bluegray300,
+  "bluegray400": $bluegray400,
+  "bluegray500": $bluegray500,
+  "bluegray600": $bluegray600,
+  "bluegray700": $bluegray700,
+  "bluegray800": $bluegray800,
+  "bluegray900": $bluegray900,
+);
+
+
+
+
+
+
+

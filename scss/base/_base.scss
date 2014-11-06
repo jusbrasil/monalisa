@@ -1,0 +1,28 @@
+/**
+ * This file gathers general rules. Works like a reset, but setting the default
+ * behavior of the site.
+ */
+
+
+/**
+ * Setting the default `box-sizing` to `border-box`, using the technique to preserve
+ * the parent box-sizing.
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+
+}
