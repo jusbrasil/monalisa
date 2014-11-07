@@ -283,13 +283,20 @@
   margin: 0 23px 15px;
   font-size: 1.5rem;
   white-space: nowrap;
+  color: rgba(0, 0, 0, 0.54);
 }
 .icons-set-icon .fa {
+  color: #000;
   width: 32px;
   font-size: 1.8rem;
   display: inline-block;
   text-align: right;
   margin-right: 10px;
+}
+
+.icons-textMuted {
+  font-size: 1.1rem;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=demo.css.map */

@@ -127,8 +127,10 @@
       margin: 0 23px 15px;
       font-size: 1.5rem;
       white-space: nowrap;
+      color: $black54;
 
       .fa {
+        color: $black;
         width: 32px;
         font-size: 1.8rem;
         display: inline-block;
@@ -136,3 +138,8 @@
         margin-right: 10px;
       }
     }
+
+  .icons-textMuted {
+    font-size: 1.1rem;
+    font-style: italic;
+  }
