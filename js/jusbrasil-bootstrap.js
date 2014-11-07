@@ -6,7 +6,6 @@ window.onload = function(){
   }
 
   var pallets = document.getElementsByClassName('colorPallet-color');
-
   for (var i = 0; i < pallets.length; i++)
     pallets[i].onclick = changeBackground;
 

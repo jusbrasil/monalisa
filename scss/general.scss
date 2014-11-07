@@ -4,14 +4,46 @@
 
 
 
-// Dependencies
+
+
+/*——————————————————*\
+  #Dependencies
+\*——————————————————*/
+
 @import "scss/dependencies/colors";
 @import "scss/dependencies/variables";
 @import "scss/dependencies/mixins";
 @import "scss/dependencies/web-fonts";
 
 
-// Base
+
+
+
+/*——————————————————*\
+  #Font-awesome 4.2.0
+\*——————————————————*/
+
+@import "scss/font-awesome/variables";
+@import "scss/font-awesome/mixins";
+@import "scss/font-awesome/path";
+@import "scss/font-awesome/core";
+@import "scss/font-awesome/larger";
+@import "scss/font-awesome/fixed-width";
+@import "scss/font-awesome/list";
+@import "scss/font-awesome/bordered-pulled";
+@import "scss/font-awesome/spinning";
+@import "scss/font-awesome/rotated-flipped";
+@import "scss/font-awesome/stacked";
+@import "scss/font-awesome/icons";
+
+
+
+
+
+/*——————————————————*\
+  #Base
+\*——————————————————*/
+
 @import "scss/base/reset";
 @import "scss/base/normalize";
 @import "scss/base/base";
@@ -20,5 +52,11 @@
 @import "scss/base/structure";
 
 
-// Components
-//@import "scss/components/buttons";
+
+
+
+/*——————————————————*\
+  #Components
+\*——————————————————*/
+
+@import "scss/components/buttons";

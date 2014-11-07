@@ -4,6 +4,9 @@
 @import "scss/dependencies/mixins";
 @import "scss/dependencies/web-fonts";
 
+/*——————————————————*\
+  #STRUCTURE
+\*——————————————————*/
 
 .header {
   width: 100%;
@@ -26,6 +29,7 @@
     color: $white;
   }
 
+
 .divider {
   height: 1px;
   width: 100%;
@@ -34,37 +38,101 @@
 }
 
 
-.colors--dark {
-  background-color: $black;
-}
 
-.colorPallet {
-  width: 300px;
-  margin: 5px;
-  display: inline-block;
-}
 
-  .colorPallet-color {
-    height: 50px;
-    width: 100%;
-    display: block;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
 
-    &:hover {
-      transform: scale(1.04);
-      box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
-      transition: all .2s ease-in-out;
+/*——————————————————*\
+  #SPECIFICS
+\*——————————————————*/
+
+.demoPage {}
+
+  .demoPage-title {
+    color: $blue;
+  }
+
+
+
+
+
+/*——————————————————*\
+  #COLORS
+\*——————————————————*/
+
+.colors {}
+
+  .colorPallet {
+    width: 300px;
+    margin: 5px;
+    display: inline-block;
+  }
+
+    .colorPallet-color {
+      height: 50px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.04);
+        box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
+        transition: all .2s ease-in-out;
+      }
     }
-  }
 
-  .colorPallet-color--dark {
-    color: $white;
-  }
-
-  @each $name, $color in $color-map {
-    .colorPallet-color--#{$name} {
-      background-color: $color;
+    .colorPallet-color--dark {
+      color: $white;
     }
+
+    @each $name, $color in $color-map {
+      .colorPallet-color--#{$name} {
+        background-color: $color;
+      }
+    }
+
+
+
+
+
+/*——————————————————*\
+  #BUTTONS
+\*——————————————————*/
+
+.buttons {}
+
+  .buttons-group {
+    margin-bottom: 30px;
   }
+
+
+
+
+
+/*——————————————————*\
+  #ICONS
+\*——————————————————*/
+
+.icons {}
+
+
+  .icons-set {
+    margin: 10px -23px 20px;
+  }
+
+    .icons-set-icon {
+      width: 20%;
+      display: inline-block;
+      margin: 0 23px 15px;
+      font-size: 1.5rem;
+      white-space: nowrap;
+
+      .fa {
+        width: 32px;
+        font-size: 1.8rem;
+        display: inline-block;
+        text-align: right;
+        margin-right: 10px;
+      }
+    }

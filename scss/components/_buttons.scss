@@ -1,0 +1,118 @@
+/**
+ * Buttons
+ */
+
+
+/*——————————————————*\
+  #BUTTON
+\*——————————————————*/
+
+/**
+ * The default button is the big (mobile first) and gray.
+ */
+
+.button {
+  @extend %sexy-box;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+
+  // Default size: button--big
+  $height: 48px;
+  height: $height;
+  line-height: $height;
+  font-size: 16px;
+  padding: 0 20px;
+
+  // Default color: button--gray
+  background: $bluegray600;
+}
+
+  .button--blue {
+    background: $blue;
+  }
+
+  .button--green {
+    background: $green;
+  }
+
+  .button--yellow {
+    background: $yellow;
+  }
+
+  .button--orange {
+    background: $orange;
+  }
+
+  .button--red {
+    background: $red;
+  }
+
+  .button--medium {
+    $height: 40px;
+    height: $height;
+    line-height: $height;
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  .button--small {
+    $height: 32px;
+    height: $height;
+    line-height: $height;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+
+  .button--caps {
+    $height: 24px;
+    height: $height;
+    line-height: $height;
+    font-size: 10px;
+    padding: 0 8px;
+    text-transform: uppercase;
+  }
+
+
+
+
+
+/*——————————————————*\
+  #FLATBUTTON
+\*——————————————————*/
+
+.flatButton {
+  display: inline-block;
+  cursor: pointer;
+
+  $height: 40px;
+  height: $height;
+  line-height: $height;
+  font-size: 14px;
+  padding: 0 16px;
+  text-transform: uppercase;
+
+  // Default color: flatButton--gray
+  color: $bluegray600;
+}
+
+  .flatButton--blue {
+    color: $blue;
+  }
+
+  .flatButton--green {
+    color: $green;
+  }
+
+  .flatButton--yellow {
+    color: $yellow;
+  }
+
+  .flatButton--orange {
+    color: $orange;
+  }
+
+  .flatButton--red {
+    color: $red;
+  }
+

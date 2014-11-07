@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * The JusBrasil uses a limited set of colors defined bellow. Any color used in
  * the site should be by variable, never with hex, RGB or RGBA.
@@ -11,6 +12,9 @@
  * This file gathers general rules. Works like a reset, but setting the default
  * behavior of the site.
  */
+/*——————————————————*\
+  #STRUCTURE
+\*——————————————————*/
 .header {
   width: 100%;
   background-color: #7cb342;
@@ -45,10 +49,16 @@
   margin: 30px 0;
 }
 
-.colors--dark {
-  background-color: #000;
+/*——————————————————*\
+  #SPECIFICS
+\*——————————————————*/
+.demoPage-title {
+  color: #0091ea;
 }
 
+/*——————————————————*\
+  #COLORS
+\*——————————————————*/
 .colorPallet {
   width: 300px;
   margin: 5px;
@@ -251,6 +261,35 @@
 
 .colorPallet-color--bluegray900 {
   background-color: #263238;
+}
+
+/*——————————————————*\
+  #BUTTONS
+\*——————————————————*/
+.buttons-group {
+  margin-bottom: 30px;
+}
+
+/*——————————————————*\
+  #ICONS
+\*——————————————————*/
+.icons-set {
+  margin: 10px -23px 20px;
+}
+
+.icons-set-icon {
+  width: 20%;
+  display: inline-block;
+  margin: 0 23px 15px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+.icons-set-icon .fa {
+  width: 32px;
+  font-size: 1.8rem;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=demo.css.map */
