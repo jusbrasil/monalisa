@@ -5,6 +5,10 @@
 %button {
   display: inline-block;
   cursor: pointer;
+  &:active {
+    transform: translateX(1px) translateY(1px);
+    box-shadow: none;
+  }
 }
 
 %button--big {
@@ -13,9 +17,8 @@
   line-height: $height;
   font-size: 16px;
   padding: 0 20px;
-  &.fa:before {
-    margin-right: 8px;
-  }
+
+  &.fa:before { margin-right: 8px; }
 }
 
 %button--medium {
@@ -24,9 +27,8 @@
   line-height: $height;
   font-size: 14px;
   padding: 0 16px;
-  &.fa:before {
-    margin-right: 6px;
-  }
+
+  &.fa:before { margin-right: 6px; }
 }
 
 %button--small {
@@ -35,9 +37,8 @@
   line-height: $height;
   font-size: 12px;
   padding: 0 12px;
-  &.fa:before {
-    margin-right: 4px;
-  }
+
+  &.fa:before { margin-right: 4px; }
 }
 
 %button--caps {
@@ -47,9 +48,8 @@
   font-size: 10px;
   padding: 0 8px;
   text-transform: uppercase;
-  &.fa:before {
-    margin-right: 2px;
-  }
+
+  &.fa:before { margin-right: 2px; }
 }
 
 
@@ -73,35 +73,32 @@
 
   .button--blue {
     background: $blue;
+    &:hover { background: darken($blue, 5%); }
   }
 
   .button--green {
     background: $green;
+    &:hover { background: darken($green, 5%); }
   }
 
   .button--yellow {
     background: $yellow;
+    &:hover { background: darken($yellow, 5%); }
   }
 
   .button--orange {
     background: $orange;
+    &:hover { background: darken($orange, 5%); }
   }
 
   .button--red {
     background: $red;
+    &:hover { background: darken($red, 5%); }
   }
 
-  .button--medium {
-    @extend %button--medium;
-  }
-
-  .button--small {
-    @extend %button--small;
-  }
-
-  .button--caps {
-    @extend %button--caps;
-  }
+  .button--medium { @extend %button--medium; }
+  .button--small { @extend %button--small; }
+  .button--caps { @extend %button--caps; }
 
 
 
@@ -127,24 +124,18 @@
   .outlineButton--dark {
     color: $black54;
     border-color: $black54;
+    &:hover { color: $black87; }
   }
 
   .outlineButton--light {
     color: $white54;
     border-color: $white54;
+    &:hover { color: $white87; }
   }
 
-  .outlineButton--medium {
-    @extend %button--medium;
-  }
-
-  .outlineButton--small {
-    @extend %button--small;
-  }
-
-  .outlineButton--caps {
-    @extend %button--caps;
-  }
+  .outlineButton--medium { @extend %button--medium; }
+  .outlineButton--small { @extend %button--small; }
+  .outlineButton--caps { @extend %button--caps; }
 
 
 
@@ -169,21 +160,26 @@
 
   .flatButton--blue {
     color: $blue;
+    &:hover { color: darken($blue, 5%); }
   }
 
   .flatButton--green {
     color: $green;
+    &:hover { color: darken($green, 5%); }
   }
 
   .flatButton--yellow {
     color: $yellow;
+    &:hover { color: darken($yellow, 5%); }
   }
 
   .flatButton--orange {
     color: $orange;
+    &:hover { color: darken($orange, 5%); }
   }
 
   .flatButton--red {
     color: $red;
+    &:hover { color: darken($red, 5%); }
   }
 

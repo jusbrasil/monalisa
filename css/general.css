@@ -2844,6 +2844,10 @@ html {
   display: inline-block;
   cursor: pointer;
 }
+.button:active, .outlineButton:active, .flatButton:active {
+  transform: translateX(1px) translateY(1px);
+  box-shadow: none;
+}
 
 .button, .outlineButton {
   height: 48px;
@@ -2904,21 +2908,36 @@ html {
 .button--blue {
   background: #0091ea;
 }
+.button--blue:hover {
+  background: #0081d1;
+}
 
 .button--green {
   background: #7cb342;
+}
+.button--green:hover {
+  background: #6fa03b;
 }
 
 .button--yellow {
   background: #ffb300;
 }
+.button--yellow:hover {
+  background: #e6a100;
+}
 
 .button--orange {
   background: #fb8c00;
 }
+.button--orange:hover {
+  background: #e27e00;
+}
 
 .button--red {
   background: #ff5722;
+}
+.button--red:hover {
+  background: #ff4408;
 }
 
 /*——————————————————*\
@@ -2937,10 +2956,16 @@ html {
   color: rgba(0, 0, 0, 0.54);
   border-color: rgba(0, 0, 0, 0.54);
 }
+.outlineButton--dark:hover {
+  color: rgba(0, 0, 0, 0.87);
+}
 
 .outlineButton--light {
   color: rgba(255, 255, 255, 0.54);
   border-color: rgba(255, 255, 255, 0.54);
+}
+.outlineButton--light:hover {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /*——————————————————*\
@@ -2960,21 +2985,36 @@ html {
 .flatButton--blue {
   color: #0091ea;
 }
+.flatButton--blue:hover {
+  color: #0081d1;
+}
 
 .flatButton--green {
   color: #7cb342;
+}
+.flatButton--green:hover {
+  color: #6fa03b;
 }
 
 .flatButton--yellow {
   color: #ffb300;
 }
+.flatButton--yellow:hover {
+  color: #e6a100;
+}
 
 .flatButton--orange {
   color: #fb8c00;
 }
+.flatButton--orange:hover {
+  color: #e27e00;
+}
 
 .flatButton--red {
   color: #ff5722;
+}
+.flatButton--red:hover {
+  color: #ff4408;
 }
 
 /*# sourceMappingURL=general.css.map */
