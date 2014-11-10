@@ -30,7 +30,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa {
+.fa:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -2851,12 +2851,18 @@ html {
   font-size: 16px;
   padding: 0 20px;
 }
+.fa.button:before, .fa.outlineButton:before {
+  margin-right: 8px;
+}
 
 .button--medium, .outlineButton--medium, .flatButton {
   height: 40px;
   line-height: 40px;
   font-size: 14px;
   padding: 0 16px;
+}
+.fa.button--medium:before, .fa.outlineButton--medium:before, .fa.flatButton:before {
+  margin-right: 6px;
 }
 
 .button--small, .outlineButton--small {
@@ -2865,6 +2871,9 @@ html {
   font-size: 12px;
   padding: 0 12px;
 }
+.fa.button--small:before, .fa.outlineButton--small:before {
+  margin-right: 4px;
+}
 
 .button--caps, .outlineButton--caps {
   height: 24px;
@@ -2872,6 +2881,9 @@ html {
   font-size: 10px;
   padding: 0 8px;
   text-transform: uppercase;
+}
+.fa.button--caps:before, .fa.outlineButton--caps:before {
+  margin-right: 2px;
 }
 
 /*——————————————————*\
