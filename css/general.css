@@ -2812,8 +2812,11 @@ html {
 /**
  *
  */
-.button {
+.button, .outlineButton {
   border-radius: 2px;
+}
+
+.button {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -2837,21 +2840,53 @@ html {
 /**
  * Buttons
  */
-/*——————————————————*\
-  #BUTTON
-\*——————————————————*/
-/**
- * The default button is the big (mobile first) and gray.
- */
-.button {
-  color: #fff;
+.button, .outlineButton, .flatButton {
   display: inline-block;
   cursor: pointer;
+}
+
+.button, .outlineButton {
   height: 48px;
   line-height: 48px;
   font-size: 16px;
   padding: 0 20px;
+}
+
+.button--medium, .outlineButton--medium, .flatButton {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+.button--small, .outlineButton--small {
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+.button--caps, .outlineButton--caps {
+  height: 24px;
+  line-height: 24px;
+  font-size: 10px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+
+/*——————————————————*\
+  #BUTTON
+\*——————————————————*/
+/**
+ * 1 - Extends the default size: button--big.
+ * 2 - Sets default background color to gray and text color to white.
+ */
+.button {
+  /* 1 */
   background: #546e7a;
+  /* 2 */
+  color: #fff;
+  /* 2 */
 }
 
 .button--blue {
@@ -2874,40 +2909,40 @@ html {
   background: #ff5722;
 }
 
-.button--medium {
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
-  padding: 0 16px;
+/*——————————————————*\
+  #OUTLINE BUTTON
+\*——————————————————*/
+/**
+ * 1 - Extends the default size: button--big.
+ */
+.outlineButton {
+  /* 1 */
+  background: transparent;
+  border: 1px solid;
 }
 
-.button--small {
-  height: 32px;
-  line-height: 32px;
-  font-size: 12px;
-  padding: 0 12px;
+.outlineButton--dark {
+  color: rgba(0, 0, 0, 0.54);
+  border-color: rgba(0, 0, 0, 0.54);
 }
 
-.button--caps {
-  height: 24px;
-  line-height: 24px;
-  font-size: 10px;
-  padding: 0 8px;
-  text-transform: uppercase;
+.outlineButton--light {
+  color: rgba(255, 255, 255, 0.54);
+  border-color: rgba(255, 255, 255, 0.54);
 }
 
 /*——————————————————*\
-  #FLATBUTTON
+  #FLAT BUTTON
 \*——————————————————*/
+/**
+ * 1 - Extends the default size: button--medium.
+ * 2 - Sets default background color to gray and text color to white.
+ */
 .flatButton {
-  display: inline-block;
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
-  padding: 0 16px;
+  /* 1 */
   text-transform: uppercase;
   color: #546e7a;
+  /* 2 */
 }
 
 .flatButton--blue {

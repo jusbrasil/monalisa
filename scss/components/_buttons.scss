@@ -2,30 +2,61 @@
  * Buttons
  */
 
+%button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+%button--big {
+  $height: 48px;
+  height: $height;
+  line-height: $height;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+%button--medium {
+  $height: 40px;
+  height: $height;
+  line-height: $height;
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+%button--small {
+  $height: 32px;
+  height: $height;
+  line-height: $height;
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+%button--caps {
+  $height: 24px;
+  height: $height;
+  line-height: $height;
+  font-size: 10px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+
 
 /*——————————————————*\
   #BUTTON
 \*——————————————————*/
 
 /**
- * The default button is the big (mobile first) and gray.
+ * 1 - Extends the default size: button--big.
+ * 2 - Sets default background color to gray and text color to white.
  */
 
 .button {
-  @extend %sexy-box;
-  color: #fff;
-  display: inline-block;
-  cursor: pointer;
+  @extend %sexyBox;
+  @extend %button;
+  @extend %button--big; /* 1 */
 
-  // Default size: button--big
-  $height: 48px;
-  height: $height;
-  line-height: $height;
-  font-size: 16px;
-  padding: 0 20px;
-
-  // Default color: button--gray
-  background: $bluegray600;
+  background: $bluegray600; /* 2 */
+  color: #fff; /* 2 */
 }
 
   .button--blue {
@@ -49,28 +80,15 @@
   }
 
   .button--medium {
-    $height: 40px;
-    height: $height;
-    line-height: $height;
-    font-size: 14px;
-    padding: 0 16px;
+    @extend %button--medium;
   }
 
   .button--small {
-    $height: 32px;
-    height: $height;
-    line-height: $height;
-    font-size: 12px;
-    padding: 0 12px;
+    @extend %button--small;
   }
 
   .button--caps {
-    $height: 24px;
-    height: $height;
-    line-height: $height;
-    font-size: 10px;
-    padding: 0 8px;
-    text-transform: uppercase;
+    @extend %button--caps;
   }
 
 
@@ -78,22 +96,63 @@
 
 
 /*——————————————————*\
-  #FLATBUTTON
+  #OUTLINE BUTTON
 \*——————————————————*/
 
+/**
+ * 1 - Extends the default size: button--big.
+ */
+
+.outlineButton {
+  @extend %roundedBox;
+  @extend %button;
+  @extend %button--big; /* 1 */
+
+  background: transparent;
+  border: 1px solid;
+}
+
+  .outlineButton--dark {
+    color: $black54;
+    border-color: $black54;
+  }
+
+  .outlineButton--light {
+    color: $white54;
+    border-color: $white54;
+  }
+
+  .outlineButton--medium {
+    @extend %button--medium;
+  }
+
+  .outlineButton--small {
+    @extend %button--small;
+  }
+
+  .outlineButton--caps {
+    @extend %button--caps;
+  }
+
+
+
+
+
+/*——————————————————*\
+  #FLAT BUTTON
+\*——————————————————*/
+
+/**
+ * 1 - Extends the default size: button--medium.
+ * 2 - Sets default background color to gray and text color to white.
+ */
+
 .flatButton {
-  display: inline-block;
-  cursor: pointer;
+  @extend %button;
+  @extend %button--medium; /* 1 */
 
-  $height: 40px;
-  height: $height;
-  line-height: $height;
-  font-size: 14px;
-  padding: 0 16px;
   text-transform: uppercase;
-
-  // Default color: flatButton--gray
-  color: $bluegray600;
+  color: $bluegray600; /* 2 */
 }
 
   .flatButton--blue {

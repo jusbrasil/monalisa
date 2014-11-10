@@ -52,6 +52,10 @@
 /*——————————————————*\
   #SPECIFICS
 \*——————————————————*/
+.demoPage {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
 .demoPage-title {
   color: #0091ea;
 }
@@ -266,8 +270,18 @@
 /*——————————————————*\
   #BUTTONS
 \*——————————————————*/
+/**
+ * 1 - Clear float
+ */
 .buttons-group {
   margin-bottom: 30px;
+  overflow: hidden;
+  /* 1 */
+}
+
+.button, .outlineButton, .flatButton {
+  float: left;
+  margin: 5px;
 }
 
 /*——————————————————*\

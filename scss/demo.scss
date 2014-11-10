@@ -45,7 +45,9 @@
   #SPECIFICS
 \*——————————————————*/
 
-.demoPage {}
+.demoPage {
+  background-color: $black12;
+}
 
   .demoPage-title {
     color: $blue;
@@ -100,11 +102,20 @@
   #BUTTONS
 \*——————————————————*/
 
+/**
+ * 1 - Clear float
+ */
+
 .buttons {}
 
   .buttons-group {
     margin-bottom: 30px;
+    overflow: hidden; /* 1 */
   }
+    .button, .outlineButton, .flatButton {
+      float: left;
+      margin: 5px;
+    }
 
 
 
