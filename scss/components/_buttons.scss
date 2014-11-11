@@ -5,11 +5,8 @@
 %button {
   display: inline-block;
   cursor: pointer;
-  &:active {
-    transform: translateX(1px) translateY(1px);
-    box-shadow: none;
-  }
 }
+
 
 %button--big {
   $height: 48px;
@@ -52,6 +49,14 @@
   &.fa:before { margin-right: 2px; }
 }
 
+%button--disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+
+
+
 
 /*——————————————————*\
   #BUTTON
@@ -67,33 +72,55 @@
   @extend %button;
   @extend %button--big; /* 1 */
 
-  background: $bluegray600; /* 2 */
   color: #fff; /* 2 */
+  background: $bluegray600; /* 2 */
+
+  &:hover:not(.button--disabled):not([disabled]) { background: darken($bluegray600, 5%); }
+  &:active:not(.button--disabled):not([disabled]) { background: darken($bluegray600, 10%); }
+
+  &[disabled], &.button--disabled {
+    @extend %button--disabled;
+  }
 }
 
   .button--blue {
     background: $blue;
-    &:hover { background: darken($blue, 5%); }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover { background: darken($blue, 5%); }
+      &:active { background: darken($blue, 10%); }
+    }
   }
 
   .button--green {
     background: $green;
-    &:hover { background: darken($green, 5%); }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover { background: darken($green, 5%); }
+      &:active { background: darken($green, 10%); }
+    }
   }
 
   .button--yellow {
     background: $yellow;
-    &:hover { background: darken($yellow, 5%); }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover { background: darken($yellow, 5%); }
+      &:active { background: darken($yellow, 10%); }
+    }
   }
 
   .button--orange {
     background: $orange;
-    &:hover { background: darken($orange, 5%); }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover { background: darken($orange, 5%); }
+      &:active { background: darken($orange, 10%); }
+    }
   }
 
   .button--red {
     background: $red;
-    &:hover { background: darken($red, 5%); }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover { background: darken($red, 5%); }
+      &:active { background: darken($red, 10%); }
+    }
   }
 
   .button--medium { @extend %button--medium; }
@@ -119,18 +146,40 @@
 
   background: transparent;
   border: 1px solid;
+
+  &[disabled], &.outlineButton--disabled {
+    @extend %button--disabled;
+  }
 }
 
   .outlineButton--dark {
     color: $black54;
     border-color: $black54;
-    &:hover { color: $black87; }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover {
+        color: $black87;
+        border-color: $black;
+      }
+      &:active {
+        color: $black87;
+        border-color: $black;
+      }
+    }
   }
 
   .outlineButton--light {
     color: $white54;
     border-color: $white54;
-    &:hover { color: $white87; }
+    &:not(.button--disabled):not([disabled]) {
+      &:hover {
+        color: $white87;
+        border-color: $white;
+      }
+      &:active {
+        color: $white87;
+        border-color: $white;
+      }
+    }
   }
 
   .outlineButton--medium { @extend %button--medium; }
@@ -156,6 +205,10 @@
 
   text-transform: uppercase;
   color: $bluegray600; /* 2 */
+
+  &[disabled], &.flatButton--disabled {
+    @extend %button--disabled;
+  }
 }
 
   .flatButton--blue {

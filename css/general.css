@@ -40,54 +40,54 @@
 }
 
 /* makes the font 33% larger relative to the icon container */
-.fa--lg {
+.fa--lg:before {
   font-size: 1.33333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
 
-.fa--2x {
+.fa--2x:before {
   font-size: 2em;
 }
 
-.fa--3x {
+.fa--3x:before {
   font-size: 3em;
 }
 
-.fa--4x {
+.fa--4x:before {
   font-size: 4em;
 }
 
-.fa--5x {
+.fa--5x:before {
   font-size: 5em;
 }
 
-.fa--fw {
+.fa--fw:before {
   width: 1.28571em;
   text-align: center;
 }
 
-.fa--ul {
+.fa--ul:before {
   padding-left: 0;
   margin-left: 2.14286em;
   list-style-type: none;
 }
-.fa--ul > li {
+.fa--ul:before > li {
   position: relative;
 }
 
-.fa--li {
+.fa--li:before {
   position: absolute;
   left: -2.14286em;
   width: 2.14286em;
   top: 0.14286em;
   text-align: center;
 }
-.fa--li.fa--lg {
+.fa--li:before.fa--lg:before {
   left: -1.85714em;
 }
 
-.fa--border {
+.fa--border:before {
   padding: .2em .25em .15em;
   border: solid 0.08em #eee;
   border-radius: .1em;
@@ -102,7 +102,7 @@
   &.pull-right { margin-left: .3em; }
 }
 */
-.fa--spin {
+.fa--spin:before {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
@@ -127,50 +127,45 @@
     transform: rotate(359deg);
   }
 }
-.fa--rotate90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+.fa--rotate90:before {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.fa--rotate180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+.fa--rotate180:before {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.fa--rotate270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+.fa--rotate270:before {
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
-.fa--flipHorizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+.fa--flipHorizontal:before {
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
-.fa--flipVertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+.fa--flipVertical:before {
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
-:root .fa--rotate90,
-:root .fa--rotate180,
-:root .fa--rotate270,
-:root .fa--flipHorizontal,
-:root .fa--flipVertical {
+:root .fa--rotate90:before,
+:root .fa--rotate180:before,
+:root .fa--rotate270:before,
+:root .fa--flipHorizontal:before,
+:root .fa--flipVertical:before {
   filter: none;
 }
 
-.fa--stack {
+.fa--stack:before {
   position: relative;
   display: inline-block;
   width: 2em;
@@ -179,23 +174,20 @@
   vertical-align: middle;
 }
 
-.fa--stack1x, .fa--stack2x {
+.fa--stack1x:before,
+.fa--stack2x:before {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
 }
 
-.fa--stack1x {
+.fa--stack1x:before {
   line-height: inherit;
 }
 
-.fa--stack2x {
+.fa--stack2x:before {
   font-size: 2em;
-}
-
-.fa--inverse {
-  color: #fff;
 }
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
@@ -2186,6 +2178,34 @@
   content: "";
 }
 
+.fa--white:before {
+  color: #fff;
+}
+
+.fa--black:before {
+  color: #000;
+}
+
+.fa--blue:before {
+  color: #0091ea;
+}
+
+.fa--green:before {
+  color: #7cb342;
+}
+
+.fa--yellow:before {
+  color: #ffb300;
+}
+
+.fa--orange:before {
+  color: #fb8c00;
+}
+
+.fa--red:before {
+  color: #ff5722;
+}
+
 /*——————————————————*\
   #Base
 \*——————————————————*/
@@ -2844,10 +2864,6 @@ html {
   display: inline-block;
   cursor: pointer;
 }
-.button:active, .outlineButton:active, .flatButton:active {
-  transform: translateX(1px) translateY(1px);
-  box-shadow: none;
-}
 
 .button, .outlineButton {
   height: 48px;
@@ -2890,6 +2906,11 @@ html {
   margin-right: 2px;
 }
 
+.button[disabled], .button.button--disabled, .outlineButton[disabled], .outlineButton.outlineButton--disabled, .flatButton[disabled], .flatButton.flatButton--disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 /*——————————————————*\
   #BUTTON
 \*——————————————————*/
@@ -2899,45 +2920,66 @@ html {
  */
 .button {
   /* 1 */
-  background: #546e7a;
-  /* 2 */
   color: #fff;
   /* 2 */
+  background: #546e7a;
+  /* 2 */
+}
+.button:hover:not(.button--disabled):not([disabled]) {
+  background: #4a606b;
+}
+.button:active:not(.button--disabled):not([disabled]) {
+  background: #3f535c;
 }
 
 .button--blue {
   background: #0091ea;
 }
-.button--blue:hover {
+.button--blue:not(.button--disabled):not([disabled]):hover {
   background: #0081d1;
+}
+.button--blue:not(.button--disabled):not([disabled]):active {
+  background: #0071b7;
 }
 
 .button--green {
   background: #7cb342;
 }
-.button--green:hover {
+.button--green:not(.button--disabled):not([disabled]):hover {
   background: #6fa03b;
+}
+.button--green:not(.button--disabled):not([disabled]):active {
+  background: #628e34;
 }
 
 .button--yellow {
   background: #ffb300;
 }
-.button--yellow:hover {
+.button--yellow:not(.button--disabled):not([disabled]):hover {
   background: #e6a100;
+}
+.button--yellow:not(.button--disabled):not([disabled]):active {
+  background: #cc8f00;
 }
 
 .button--orange {
   background: #fb8c00;
 }
-.button--orange:hover {
+.button--orange:not(.button--disabled):not([disabled]):hover {
   background: #e27e00;
+}
+.button--orange:not(.button--disabled):not([disabled]):active {
+  background: #c87000;
 }
 
 .button--red {
   background: #ff5722;
 }
-.button--red:hover {
+.button--red:not(.button--disabled):not([disabled]):hover {
   background: #ff4408;
+}
+.button--red:not(.button--disabled):not([disabled]):active {
+  background: #ee3900;
 }
 
 /*——————————————————*\
@@ -2956,16 +2998,26 @@ html {
   color: rgba(0, 0, 0, 0.54);
   border-color: rgba(0, 0, 0, 0.54);
 }
-.outlineButton--dark:hover {
+.outlineButton--dark:not(.button--disabled):not([disabled]):hover {
   color: rgba(0, 0, 0, 0.87);
+  border-color: #000;
+}
+.outlineButton--dark:not(.button--disabled):not([disabled]):active {
+  color: rgba(0, 0, 0, 0.87);
+  border-color: #000;
 }
 
 .outlineButton--light {
   color: rgba(255, 255, 255, 0.54);
   border-color: rgba(255, 255, 255, 0.54);
 }
-.outlineButton--light:hover {
+.outlineButton--light:not(.button--disabled):not([disabled]):hover {
   color: rgba(255, 255, 255, 0.87);
+  border-color: #fff;
+}
+.outlineButton--light:not(.button--disabled):not([disabled]):active {
+  color: rgba(255, 255, 255, 0.87);
+  border-color: #fff;
 }
 
 /*——————————————————*\

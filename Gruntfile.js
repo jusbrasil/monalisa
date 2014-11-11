@@ -46,7 +46,8 @@ module.exports = function(grunt) {
     ,cssmetrics: {
       dev: {
         src: [
-          'css/general.css'
+          'css/general.css',
+          'css/general.min.css'
         ]
       }
     }
