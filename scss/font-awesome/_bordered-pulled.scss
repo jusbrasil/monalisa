@@ -1,7 +1,7 @@
 // Bordered & Pulled
 // -------------------------
 
-.#{$fa-css-prefix}--border {
+.#{$fa-css-prefix}--border:before {
   padding: .2em .25em .15em;
   border: solid .08em $fa-border-color;
   border-radius: .1em;

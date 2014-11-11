@@ -1,7 +1,7 @@
 // Stacked Icons
 // -------------------------
 
-.#{$fa-css-prefix}--stack {
+.#{$fa-css-prefix}--stack:before {
   position: relative;
   display: inline-block;
   width: 2em;
@@ -9,12 +9,15 @@
   line-height: 2em;
   vertical-align: middle;
 }
-.#{$fa-css-prefix}--stack1x, .#{$fa-css-prefix}--stack2x {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center;
+.#{$fa-css-prefix}--stack1x,
+.#{$fa-css-prefix}--stack2x {
+  &:before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
-.#{$fa-css-prefix}--stack1x { line-height: inherit; }
-.#{$fa-css-prefix}--stack2x { font-size: 2em; }
-.#{$fa-css-prefix}--inverse { color: $fa-inverse; }
+.#{$fa-css-prefix}--stack1x:before { line-height: inherit; }
+.#{$fa-css-prefix}--stack2x:before { font-size: 2em; }
+//.#{$fa-css-prefix}--inverse:before { color: $fa-inverse; }
