@@ -11,6 +11,15 @@
  *
  * The 87, 54, 26 and 12 suffixes is the opacity of the color.
  */
+/*——————————————————*\
+  #PRIMARY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #OPACITY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #SOLID COLORS
+\*——————————————————*/
 /**
  * Global variables of the project. Works like a config file.
  */
@@ -2203,7 +2212,7 @@
 }
 
 .fa--red:before {
-  color: #ff5722;
+  color: #F83C00;
 }
 
 /*——————————————————*\
@@ -2922,14 +2931,14 @@ html {
   /* 1 */
   color: #fff;
   /* 2 */
-  background: #546e7a;
+  background: #808080;
   /* 2 */
 }
 .button:hover:not(.button--disabled):not([disabled]) {
-  background: #4a606b;
+  background: #737373;
 }
 .button:active:not(.button--disabled):not([disabled]) {
-  background: #3f535c;
+  background: #676767;
 }
 
 .button--blue {
@@ -2973,13 +2982,13 @@ html {
 }
 
 .button--red {
-  background: #ff5722;
+  background: #F83C00;
 }
 .button--red:not(.button--disabled):not([disabled]):hover {
-  background: #ff4408;
+  background: #df3600;
 }
 .button--red:not(.button--disabled):not([disabled]):active {
-  background: #ee3900;
+  background: #c53000;
 }
 
 /*——————————————————*\
@@ -3030,7 +3039,7 @@ html {
 .flatButton {
   /* 1 */
   text-transform: uppercase;
-  color: #546e7a;
+  color: #808080;
   /* 2 */
 }
 
@@ -3063,10 +3072,10 @@ html {
 }
 
 .flatButton--red {
-  color: #ff5722;
+  color: #F83C00;
 }
 .flatButton--red:hover {
-  color: #ff4408;
+  color: #df3600;
 }
 
 /*# sourceMappingURL=general.css.map */

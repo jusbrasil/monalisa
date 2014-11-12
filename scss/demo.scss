@@ -46,7 +46,7 @@
 \*——————————————————*/
 
 .demoPage {
-  background-color: $black12;
+  background-color: $white;
 }
 
   .demoPage-title {
@@ -64,21 +64,20 @@
 .colors {}
 
   .colorPallet {
-    width: 300px;
+    width: 100%;
     margin: 5px;
-    display: inline-block;
+    overflow: hidden;
   }
 
     .colorPallet-color {
-      height: 50px;
-      width: 100%;
-      display: block;
+      width: 10%;
+      height: 80px;
       text-align: center;
       line-height: 50px;
       cursor: pointer;
-
+      float: left;
       &:hover {
-        transform: scale(1.04);
+        transform: scale(1.05);
         box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
         transition: all .2s ease-in-out;
       }
@@ -87,6 +86,82 @@
     .colorPallet-color--dark {
       color: $white;
     }
+
+    $color-map: (
+      "white": $white,
+      "black": $black,
+      "blue": $blue,
+      "green": $green,
+      "yellow": $yellow,
+      "orange": $orange,
+      "red": $red,
+
+      "blue50": $blue50,
+      "blue100": $blue100,
+      "blue200": $blue200,
+      "blue300": $blue300,
+      "blue400": $blue400,
+      "blue500": $blue500,
+      "blue600": $blue600,
+      "blue700": $blue700,
+      "blue800": $blue800,
+      "blue900": $blue900,
+
+      "green50": $green50,
+      "green100": $green100,
+      "green200": $green200,
+      "green300": $green300,
+      "green400": $green400,
+      "green500": $green500,
+      "green600": $green600,
+      "green700": $green700,
+      "green800": $green800,
+      "green900": $green900,
+
+      "yellow50": $yellow50,
+      "yellow100": $yellow100,
+      "yellow200": $yellow200,
+      "yellow300": $yellow300,
+      "yellow400": $yellow400,
+      "yellow500": $yellow500,
+      "yellow600": $yellow600,
+      "yellow700": $yellow700,
+      "yellow800": $yellow800,
+      "yellow900": $yellow900,
+
+      "orange50": $orange50,
+      "orange100": $orange100,
+      "orange200": $orange200,
+      "orange300": $orange300,
+      "orange400": $orange400,
+      "orange500": $orange500,
+      "orange600": $orange600,
+      "orange700": $orange700,
+      "orange800": $orange800,
+      "orange900": $orange900,
+
+      "red50": $red50,
+      "red100": $red100,
+      "red200": $red200,
+      "red300": $red300,
+      "red400": $red400,
+      "red500": $red500,
+      "red600": $red600,
+      "red700": $red700,
+      "red800": $red800,
+      "red900": $red900,
+
+      "black50": $black50,
+      "black100": $black100,
+      "black200": $black200,
+      "black300": $black300,
+      "black400": $black400,
+      "black500": $black500,
+      "black600": $black600,
+      "black700": $black700,
+      "black800": $black800,
+      "black900": $black900,
+    );
 
     @each $name, $color in $color-map {
       .colorPallet-color--#{$name} {

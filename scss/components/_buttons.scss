@@ -73,10 +73,10 @@
   @extend %button--big; /* 1 */
 
   color: #fff; /* 2 */
-  background: $bluegray600; /* 2 */
+  background: $gray; /* 2 */
 
-  &:hover:not(.button--disabled):not([disabled]) { background: darken($bluegray600, 5%); }
-  &:active:not(.button--disabled):not([disabled]) { background: darken($bluegray600, 10%); }
+  &:hover:not(.button--disabled):not([disabled]) { background: darken($gray, 5%); }
+  &:active:not(.button--disabled):not([disabled]) { background: darken($gray, 10%); }
 
   &[disabled], &.button--disabled {
     @extend %button--disabled;
@@ -204,7 +204,7 @@
   @extend %button--medium; /* 1 */
 
   text-transform: uppercase;
-  color: $bluegray600; /* 2 */
+  color: $gray; /* 2 */
 
   &[disabled], &.flatButton--disabled {
     @extend %button--disabled;

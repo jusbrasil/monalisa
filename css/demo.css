@@ -5,6 +5,15 @@
  *
  * The 87, 54, 26 and 12 suffixes is the opacity of the color.
  */
+/*——————————————————*\
+  #PRIMARY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #OPACITY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #SOLID COLORS
+\*——————————————————*/
 /**
  * Global variables of the project. Works like a config file.
  */
@@ -28,7 +37,7 @@
 }
 @media only screen and (min-width: 769px) and (max-width: 959px) {
   .header {
-    background-color: #ff5722;
+    background-color: #F83C00;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -53,7 +62,7 @@
   #SPECIFICS
 \*——————————————————*/
 .demoPage {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: #fff;
 }
 
 .demoPage-title {
@@ -64,21 +73,21 @@
   #COLORS
 \*——————————————————*/
 .colorPallet {
-  width: 300px;
+  width: 100%;
   margin: 5px;
-  display: inline-block;
+  overflow: hidden;
 }
 
 .colorPallet-color {
-  height: 50px;
-  width: 100%;
-  display: block;
+  width: 10%;
+  height: 80px;
   text-align: center;
   line-height: 50px;
   cursor: pointer;
+  float: left;
 }
 .colorPallet-color:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
   transition: all .2s ease-in-out;
 }
@@ -91,180 +100,268 @@
   background-color: #fff;
 }
 
-.colorPallet-color--white12 {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-.colorPallet-color--white26 {
-  background-color: rgba(255, 255, 255, 0.26);
-}
-
-.colorPallet-color--white54 {
-  background-color: rgba(255, 255, 255, 0.54);
-}
-
-.colorPallet-color--white87 {
-  background-color: rgba(255, 255, 255, 0.87);
-}
-
 .colorPallet-color--black {
   background-color: #000;
-}
-
-.colorPallet-color--black12 {
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.colorPallet-color--black26 {
-  background-color: rgba(0, 0, 0, 0.26);
-}
-
-.colorPallet-color--black54 {
-  background-color: rgba(0, 0, 0, 0.54);
-}
-
-.colorPallet-color--black87 {
-  background-color: rgba(0, 0, 0, 0.87);
 }
 
 .colorPallet-color--blue {
   background-color: #0091ea;
 }
 
-.colorPallet-color--blue12 {
-  background-color: rgba(0, 145, 234, 0.12);
-}
-
-.colorPallet-color--blue26 {
-  background-color: rgba(0, 145, 234, 0.26);
-}
-
-.colorPallet-color--blue54 {
-  background-color: rgba(0, 145, 234, 0.54);
-}
-
-.colorPallet-color--blue87 {
-  background-color: rgba(0, 145, 234, 0.87);
-}
-
 .colorPallet-color--green {
   background-color: #7cb342;
-}
-
-.colorPallet-color--green12 {
-  background-color: rgba(124, 179, 66, 0.12);
-}
-
-.colorPallet-color--green26 {
-  background-color: rgba(124, 179, 66, 0.26);
-}
-
-.colorPallet-color--green54 {
-  background-color: rgba(124, 179, 66, 0.54);
-}
-
-.colorPallet-color--green87 {
-  background-color: rgba(124, 179, 66, 0.87);
 }
 
 .colorPallet-color--yellow {
   background-color: #ffb300;
 }
 
-.colorPallet-color--yellow12 {
-  background-color: rgba(255, 179, 0, 0.12);
-}
-
-.colorPallet-color--yellow26 {
-  background-color: rgba(255, 179, 0, 0.26);
-}
-
-.colorPallet-color--yellow54 {
-  background-color: rgba(255, 179, 0, 0.54);
-}
-
-.colorPallet-color--yellow87 {
-  background-color: rgba(255, 179, 0, 0.87);
-}
-
 .colorPallet-color--orange {
   background-color: #fb8c00;
 }
 
-.colorPallet-color--orange12 {
-  background-color: rgba(251, 140, 0, 0.12);
-}
-
-.colorPallet-color--orange26 {
-  background-color: rgba(251, 140, 0, 0.26);
-}
-
-.colorPallet-color--orange54 {
-  background-color: rgba(251, 140, 0, 0.54);
-}
-
-.colorPallet-color--orange87 {
-  background-color: rgba(251, 140, 0, 0.87);
-}
-
 .colorPallet-color--red {
-  background-color: #ff5722;
+  background-color: #F83C00;
 }
 
-.colorPallet-color--red12 {
-  background-color: rgba(255, 87, 34, 0.12);
+.colorPallet-color--blue50 {
+  background-color: #d0edff;
 }
 
-.colorPallet-color--red26 {
-  background-color: rgba(255, 87, 34, 0.26);
+.colorPallet-color--blue100 {
+  background-color: #b7e4ff;
 }
 
-.colorPallet-color--red54 {
-  background-color: rgba(255, 87, 34, 0.54);
+.colorPallet-color--blue200 {
+  background-color: #84d0ff;
 }
 
-.colorPallet-color--red87 {
-  background-color: rgba(255, 87, 34, 0.87);
+.colorPallet-color--blue300 {
+  background-color: #51bdff;
 }
 
-.colorPallet-color--bluegray50 {
-  background-color: #eceff1;
+.colorPallet-color--blue400 {
+  background-color: #1ea9ff;
 }
 
-.colorPallet-color--bluegray100 {
-  background-color: #cfd8dc;
+.colorPallet-color--blue500 {
+  background-color: #0091ea;
 }
 
-.colorPallet-color--bluegray200 {
-  background-color: #b0bec5;
+.colorPallet-color--blue600 {
+  background-color: #0071b7;
 }
 
-.colorPallet-color--bluegray300 {
-  background-color: #90a4ae;
+.colorPallet-color--blue700 {
+  background-color: #005284;
 }
 
-.colorPallet-color--bluegray400 {
-  background-color: #78909c;
+.colorPallet-color--blue800 {
+  background-color: #003251;
 }
 
-.colorPallet-color--bluegray500 {
-  background-color: #607d8b;
+.colorPallet-color--blue900 {
+  background-color: #00131e;
 }
 
-.colorPallet-color--bluegray600 {
-  background-color: #546e7a;
+.colorPallet-color--green50 {
+  background-color: #edf5e5;
 }
 
-.colorPallet-color--bluegray700 {
-  background-color: #455a64;
+.colorPallet-color--green100 {
+  background-color: #e1efd2;
 }
 
-.colorPallet-color--bluegray800 {
-  background-color: #37474f;
+.colorPallet-color--green200 {
+  background-color: #c8e1ad;
 }
 
-.colorPallet-color--bluegray900 {
-  background-color: #263238;
+.colorPallet-color--green300 {
+  background-color: #aed388;
+}
+
+.colorPallet-color--green400 {
+  background-color: #95c563;
+}
+
+.colorPallet-color--green500 {
+  background-color: #7cb342;
+}
+
+.colorPallet-color--green600 {
+  background-color: #628e34;
+}
+
+.colorPallet-color--green700 {
+  background-color: #486827;
+}
+
+.colorPallet-color--green800 {
+  background-color: #2f4319;
+}
+
+.colorPallet-color--green900 {
+  background-color: #151e0b;
+}
+
+.colorPallet-color--yellow50 {
+  background-color: #fff7e5;
+}
+
+.colorPallet-color--yellow100 {
+  background-color: #fff0cc;
+}
+
+.colorPallet-color--yellow200 {
+  background-color: #ffe199;
+}
+
+.colorPallet-color--yellow300 {
+  background-color: #ffd166;
+}
+
+.colorPallet-color--yellow400 {
+  background-color: #ffc233;
+}
+
+.colorPallet-color--yellow500 {
+  background-color: #ffb300;
+}
+
+.colorPallet-color--yellow600 {
+  background-color: #cc8f00;
+}
+
+.colorPallet-color--yellow700 {
+  background-color: #996b00;
+}
+
+.colorPallet-color--yellow800 {
+  background-color: #664800;
+}
+
+.colorPallet-color--yellow900 {
+  background-color: #332400;
+}
+
+.colorPallet-color--orange50 {
+  background-color: #fff2e2;
+}
+
+.colorPallet-color--orange100 {
+  background-color: #ffe7c8;
+}
+
+.colorPallet-color--orange200 {
+  background-color: #ffd095;
+}
+
+.colorPallet-color--orange300 {
+  background-color: #ffba62;
+}
+
+.colorPallet-color--orange400 {
+  background-color: #ffa32f;
+}
+
+.colorPallet-color--orange500 {
+  background-color: #fb8c00;
+}
+
+.colorPallet-color--orange600 {
+  background-color: #c87000;
+}
+
+.colorPallet-color--orange700 {
+  background-color: #955300;
+}
+
+.colorPallet-color--orange800 {
+  background-color: #623700;
+}
+
+.colorPallet-color--orange900 {
+  background-color: #2f1a00;
+}
+
+.colorPallet-color--red50 {
+  background-color: #ffe6df;
+}
+
+.colorPallet-color--red100 {
+  background-color: #ffd3c5;
+}
+
+.colorPallet-color--red200 {
+  background-color: #ffac92;
+}
+
+.colorPallet-color--red300 {
+  background-color: #ff865f;
+}
+
+.colorPallet-color--red400 {
+  background-color: #ff5f2c;
+}
+
+.colorPallet-color--red500 {
+  background-color: #F83C00;
+}
+
+.colorPallet-color--red600 {
+  background-color: #c53000;
+}
+
+.colorPallet-color--red700 {
+  background-color: #922300;
+}
+
+.colorPallet-color--red800 {
+  background-color: #5f1700;
+}
+
+.colorPallet-color--red900 {
+  background-color: #2c0b00;
+}
+
+.colorPallet-color--black50 {
+  background-color: #f2f2f2;
+}
+
+.colorPallet-color--black100 {
+  background-color: #e6e6e6;
+}
+
+.colorPallet-color--black200 {
+  background-color: #cccccc;
+}
+
+.colorPallet-color--black300 {
+  background-color: #b3b3b3;
+}
+
+.colorPallet-color--black400 {
+  background-color: #999999;
+}
+
+.colorPallet-color--black500 {
+  background-color: gray;
+}
+
+.colorPallet-color--black600 {
+  background-color: #666666;
+}
+
+.colorPallet-color--black700 {
+  background-color: #4d4d4d;
+}
+
+.colorPallet-color--black800 {
+  background-color: #333333;
+}
+
+.colorPallet-color--black900 {
+  background-color: #1a1a1a;
 }
 
 /*——————————————————*\
