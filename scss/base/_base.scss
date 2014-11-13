@@ -19,10 +19,29 @@ html {
   box-sizing: inherit;
 }
 
-html {
-  font-size: 62.5%;
+/**
+ * Define the default placeholder.
+ * Ps: Can't group selectors, because if a browser doesn't recognize the
+ * selector invalidates the entire statement.
+ */
+
+@mixin placeholder {
+  color: $black26;
+  font-weight: light;
 }
 
-ul {
+::-webkit-input-placeholder {
+   @include placeholder;
+}
 
+:-moz-placeholder {
+   @include placeholder;
+}
+
+::-moz-placeholder {
+   @include placeholder;
+}
+
+:-ms-input-placeholder {
+   @include placeholder;
 }
