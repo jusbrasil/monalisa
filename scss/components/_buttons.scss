@@ -54,6 +54,15 @@
   cursor: not-allowed;
 }
 
+@-webkit-keyframes ellipsis {
+  0% {
+    width: 0;
+    margin-right: 1em;
+  }
+  100% {
+    width: 1em;
+  }
+}
 
 
 
@@ -126,6 +135,68 @@
   .button--medium { @extend %button--medium; }
   .button--small { @extend %button--small; }
   .button--caps { @extend %button--caps; }
+
+
+
+
+
+/*——————————————————*\
+  #ACTION BUTTON
+\*——————————————————*/
+
+.actionButton {
+  @extend .button;
+
+  &:before { content: attr(data-label); }
+
+  &[disabled], &.actionButton--disabled {
+    @extend %button--disabled;
+  }
+  .fa {
+    float: left;
+    margin-right: 8px;
+  }
+}
+
+  .actionButton--blue     { @extend .button--blue; }
+  .actionButton--green    { @extend .button--green; }
+  .actionButton--yellow   { @extend .button--yellow; }
+  .actionButton--orange   { @extend .button--orange; }
+  .actionButton--red      { @extend .button--red; }
+
+  .actionButton--medium {
+    @extend %button--medium;
+    .fa { margin-right: 6px; }
+  }
+
+  .actionButton--small {
+    @extend %button--small;
+    .fa { margin-right: 4px; }
+  }
+
+  .actionButton--caps {
+    @extend %button--caps;
+    .fa { margin-right: 2px; }
+  }
+
+  .actionButton--loading {
+    @extend %button--disabled;
+
+    &:after {
+      content: "\2026";
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-animation:  ellipsis 1s infinite;
+              animation:  ellipsis 1s infinite;
+    }
+    &:before { content: attr(data-loading); }
+  }
+
+  .actionButton--done {
+    &:after { content: "!"; }
+    &:before { content: attr(data-done); }
+  }
 
 
 
@@ -235,4 +306,3 @@
     color: $red;
     &:hover { color: darken($red, 5%); }
   }
-

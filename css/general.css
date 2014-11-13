@@ -2841,11 +2841,11 @@ html {
 /**
  *
  */
-.button, .outlineButton {
+.button, .actionButton, .outlineButton {
   border-radius: 2px;
 }
 
-.button {
+.button, .actionButton {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -2869,57 +2869,66 @@ html {
 /**
  * Buttons
  */
-.button, .outlineButton, .flatButton {
+.button, .actionButton, .outlineButton, .flatButton {
   display: inline-block;
   cursor: pointer;
 }
 
-.button, .outlineButton {
+.button, .actionButton, .outlineButton {
   height: 48px;
   line-height: 48px;
   font-size: 16px;
   padding: 0 20px;
 }
-.fa.button:before, .fa.outlineButton:before {
+.fa.button:before, .fa.actionButton:before, .fa.outlineButton:before {
   margin-right: 8px;
 }
 
-.button--medium, .outlineButton--medium, .flatButton {
+.button--medium, .actionButton--medium, .outlineButton--medium, .flatButton {
   height: 40px;
   line-height: 40px;
   font-size: 14px;
   padding: 0 16px;
 }
-.fa.button--medium:before, .fa.outlineButton--medium:before, .fa.flatButton:before {
+.fa.button--medium:before, .fa.actionButton--medium:before, .fa.outlineButton--medium:before, .fa.flatButton:before {
   margin-right: 6px;
 }
 
-.button--small, .outlineButton--small {
+.button--small, .actionButton--small, .outlineButton--small {
   height: 32px;
   line-height: 32px;
   font-size: 12px;
   padding: 0 12px;
 }
-.fa.button--small:before, .fa.outlineButton--small:before {
+.fa.button--small:before, .fa.actionButton--small:before, .fa.outlineButton--small:before {
   margin-right: 4px;
 }
 
-.button--caps, .outlineButton--caps {
+.button--caps, .actionButton--caps, .outlineButton--caps {
   height: 24px;
   line-height: 24px;
   font-size: 10px;
   padding: 0 8px;
   text-transform: uppercase;
 }
-.fa.button--caps:before, .fa.outlineButton--caps:before {
+.fa.button--caps:before, .fa.actionButton--caps:before, .fa.outlineButton--caps:before {
   margin-right: 2px;
 }
 
-.button[disabled], .button.button--disabled, .outlineButton[disabled], .outlineButton.outlineButton--disabled, .flatButton[disabled], .flatButton.flatButton--disabled {
+.button[disabled], [disabled].actionButton, .button.button--disabled, .button--disabled.actionButton, .actionButton.actionButton--disabled, .actionButton--loading, .outlineButton[disabled], .outlineButton.outlineButton--disabled, .flatButton[disabled], .flatButton.flatButton--disabled {
   opacity: .5;
   cursor: not-allowed;
 }
 
+@-webkit-keyframes ellipsis {
+  0% {
+    width: 0;
+    margin-right: 1em;
+  }
+  100% {
+    width: 1em;
+  }
+}
 /*——————————————————*\
   #BUTTON
 \*——————————————————*/
@@ -2927,68 +2936,110 @@ html {
  * 1 - Extends the default size: button--big.
  * 2 - Sets default background color to gray and text color to white.
  */
-.button {
+.button, .actionButton {
   /* 1 */
   color: #fff;
   /* 2 */
   background: #808080;
   /* 2 */
 }
-.button:hover:not(.button--disabled):not([disabled]) {
+.button:hover:not(.button--disabled):not([disabled]), .actionButton:hover:not(.button--disabled):not([disabled]) {
   background: #737373;
 }
-.button:active:not(.button--disabled):not([disabled]) {
+.button:active:not(.button--disabled):not([disabled]), .actionButton:active:not(.button--disabled):not([disabled]) {
   background: #676767;
 }
 
-.button--blue {
+.button--blue, .actionButton--blue {
   background: #0091ea;
 }
-.button--blue:not(.button--disabled):not([disabled]):hover {
+.button--blue:not(.button--disabled):not([disabled]):hover, .actionButton--blue:not(.button--disabled):not([disabled]):hover {
   background: #0081d1;
 }
-.button--blue:not(.button--disabled):not([disabled]):active {
+.button--blue:not(.button--disabled):not([disabled]):active, .actionButton--blue:not(.button--disabled):not([disabled]):active {
   background: #0071b7;
 }
 
-.button--green {
+.button--green, .actionButton--green {
   background: #7cb342;
 }
-.button--green:not(.button--disabled):not([disabled]):hover {
+.button--green:not(.button--disabled):not([disabled]):hover, .actionButton--green:not(.button--disabled):not([disabled]):hover {
   background: #6fa03b;
 }
-.button--green:not(.button--disabled):not([disabled]):active {
+.button--green:not(.button--disabled):not([disabled]):active, .actionButton--green:not(.button--disabled):not([disabled]):active {
   background: #628e34;
 }
 
-.button--yellow {
+.button--yellow, .actionButton--yellow {
   background: #ffb300;
 }
-.button--yellow:not(.button--disabled):not([disabled]):hover {
+.button--yellow:not(.button--disabled):not([disabled]):hover, .actionButton--yellow:not(.button--disabled):not([disabled]):hover {
   background: #e6a100;
 }
-.button--yellow:not(.button--disabled):not([disabled]):active {
+.button--yellow:not(.button--disabled):not([disabled]):active, .actionButton--yellow:not(.button--disabled):not([disabled]):active {
   background: #cc8f00;
 }
 
-.button--orange {
+.button--orange, .actionButton--orange {
   background: #fb8c00;
 }
-.button--orange:not(.button--disabled):not([disabled]):hover {
+.button--orange:not(.button--disabled):not([disabled]):hover, .actionButton--orange:not(.button--disabled):not([disabled]):hover {
   background: #e27e00;
 }
-.button--orange:not(.button--disabled):not([disabled]):active {
+.button--orange:not(.button--disabled):not([disabled]):active, .actionButton--orange:not(.button--disabled):not([disabled]):active {
   background: #c87000;
 }
 
-.button--red {
+.button--red, .actionButton--red {
   background: #F83C00;
 }
-.button--red:not(.button--disabled):not([disabled]):hover {
+.button--red:not(.button--disabled):not([disabled]):hover, .actionButton--red:not(.button--disabled):not([disabled]):hover {
   background: #df3600;
 }
-.button--red:not(.button--disabled):not([disabled]):active {
+.button--red:not(.button--disabled):not([disabled]):active, .actionButton--red:not(.button--disabled):not([disabled]):active {
   background: #c53000;
+}
+
+/*——————————————————*\
+  #ACTION BUTTON
+\*——————————————————*/
+.actionButton:before {
+  content: attr(data-label);
+}
+.actionButton .fa {
+  float: left;
+  margin-right: 8px;
+}
+
+.actionButton--medium .fa {
+  margin-right: 6px;
+}
+
+.actionButton--small .fa {
+  margin-right: 4px;
+}
+
+.actionButton--caps .fa {
+  margin-right: 2px;
+}
+
+.actionButton--loading:after {
+  content: "\2026";
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis 1s infinite;
+  animation: ellipsis 1s infinite;
+}
+.actionButton--loading:before {
+  content: attr(data-loading);
+}
+
+.actionButton--done:after {
+  content: "!";
+}
+.actionButton--done:before {
+  content: attr(data-done);
 }
 
 /*——————————————————*\
