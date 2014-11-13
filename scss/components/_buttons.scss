@@ -76,7 +76,11 @@
  * 2 - Sets default background color to gray and text color to white.
  */
 
-.button {
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   @extend %sexyBox;
   @extend %button;
   @extend %button--big; /* 1 */
