@@ -1,0 +1,43 @@
+/*——————————————————*\
+  #BUTTON
+\*——————————————————*/
+
+/**
+ * 1 - Adjusts the vertical center.
+ */
+
+.label {
+  @extend %roundedBox;
+  display: inline-block;
+  color: $white;
+
+  $height: 24px;
+  height: $height;
+  line-height: $height + 1; /* 1 */
+  font-size: 15px;
+  padding: 0 8px;
+
+  background: $gray;
+}
+
+  .label--medium {
+    $height: 20px;
+    height: $height;
+    line-height: $height + 1; /* 1 */
+    font-size: 13px;
+    padding: 0 6px;
+  }
+
+  .label--small {
+    $height: 16px;
+    height: $height;
+    line-height: $height + 1; /* 1 */
+    font-size: 11px;
+    padding: 0 4px;
+  }
+
+  .label--blue { background: $blue; }
+  .label--green { background: $green; }
+  .label--yellow { background: $yellow; }
+  .label--orange { background: $orange; }
+  .label--red { background: $red; }

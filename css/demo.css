@@ -375,8 +375,23 @@
   overflow: hidden;
   /* 1 */
 }
+.buttons-group .button, .buttons-group .outlineButton, .buttons-group .flatButton {
+  float: left;
+  margin: 3px;
+}
 
-.button, .outlineButton, .flatButton {
+/*——————————————————*\
+  #LABELS
+\*——————————————————*/
+/**
+ * 1 - Clear float
+ */
+.labels-group {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /* 1 */
+}
+.labels-group .label {
   float: left;
   margin: 3px;
 }

@@ -2841,7 +2841,7 @@ html {
 /**
  *
  */
-.button, .actionButton, .outlineButton {
+.button, .actionButton, .outlineButton, .label {
   border-radius: 2px;
 }
 
@@ -3127,6 +3127,59 @@ html {
 }
 .flatButton--red:hover {
   color: #df3600;
+}
+
+/*——————————————————*\
+  #BUTTON
+\*——————————————————*/
+/**
+ * 1 - Adjusts the vertical center.
+ */
+.label {
+  display: inline-block;
+  color: #fff;
+  height: 24px;
+  line-height: 25px;
+  /* 1 */
+  font-size: 15px;
+  padding: 0 8px;
+  background: #808080;
+}
+
+.label--medium {
+  height: 20px;
+  line-height: 21px;
+  /* 1 */
+  font-size: 13px;
+  padding: 0 6px;
+}
+
+.label--small {
+  height: 16px;
+  line-height: 17px;
+  /* 1 */
+  font-size: 11px;
+  padding: 0 4px;
+}
+
+.label--blue {
+  background: #0091ea;
+}
+
+.label--green {
+  background: #7cb342;
+}
+
+.label--yellow {
+  background: #ffb300;
+}
+
+.label--orange {
+  background: #fb8c00;
+}
+
+.label--red {
+  background: #F83C00;
 }
 
 /*# sourceMappingURL=general.css.map */
