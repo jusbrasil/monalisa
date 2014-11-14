@@ -45,3 +45,8 @@ html {
 :-ms-input-placeholder {
    @include placeholder;
 }
+
+[disabled] {
+  cursor: not-allowed;
+  opacity: .6;
+}
