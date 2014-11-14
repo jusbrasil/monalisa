@@ -85,7 +85,7 @@ input[type="submit"] {
   @extend %button;
   @extend %button--big; /* 1 */
 
-  color: #fff; /* 2 */
+  color: $white; /* 2 */
   background: $gray; /* 2 */
 
   &:hover:not(.button--disabled):not([disabled]) { background: darken($gray, 5%); }

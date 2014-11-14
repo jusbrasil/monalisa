@@ -39,7 +39,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before {
+.fa:before, .input--error .input-validation, .input--success .input-validation {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -541,7 +541,7 @@
   content: "";
 }
 
-.fa--checkCircle:before {
+.fa--checkCircle:before, .input--success .input-validation:before {
   content: "";
 }
 
@@ -610,7 +610,7 @@
   content: "";
 }
 
-.fa--exclamationCircle:before {
+.fa--exclamationCircle:before, .input--error .input-validation:before {
   content: "";
 }
 
@@ -2195,11 +2195,15 @@
   color: #000;
 }
 
+.fa--gray:before {
+  color: #808080;
+}
+
 .fa--blue:before {
   color: #0091ea;
 }
 
-.fa--green:before {
+.fa--green:before, .input--success .input-validation:before {
   color: #7cb342;
 }
 
@@ -2211,7 +2215,7 @@
   color: #fb8c00;
 }
 
-.fa--red:before {
+.fa--red:before, .input--error .input-validation:before {
   color: #F83C00;
 }
 
@@ -2222,19 +2226,87 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -2244,8 +2316,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -2253,16 +2334,18 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
-
 blockquote:before, blockquote:after,
-q:before, q:after {
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -2270,6 +2353,12 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input,
+textarea {
+  border: 0;
+  outline: none;
 }
 
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -2550,12 +2639,12 @@ input[type="submit"] {
 
 /**
  * Re-set default cursor for disabled elements.
- */
+
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
-
+ */
 /**
  * Remove inner padding and border in Firefox 4+.
  */
@@ -2693,8 +2782,34 @@ html {
   box-sizing: inherit;
 }
 
-html {
-  font-size: 62.5%;
+/**
+ * Define the default placeholder.
+ * Ps: Can't group selectors, because if a browser doesn't recognize the
+ * selector invalidates the entire statement.
+ */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: light;
+}
+
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: light;
+}
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: light;
+}
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: light;
+}
+
+[disabled] {
+  cursor: not-allowed;
+  opacity: .6;
 }
 
 /* latin */
@@ -2841,11 +2956,19 @@ html {
 /**
  *
  */
-.button, .actionButton, .outlineButton, .label {
+.button, .actionButton,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"], .outlineButton, .label, input[type="text"] {
   border-radius: 2px;
 }
 
-.button, .actionButton {
+.button, .actionButton,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -2869,18 +2992,30 @@ html {
 /**
  * Buttons
  */
-.button, .actionButton, .outlineButton, .flatButton {
+.button, .actionButton,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"], .outlineButton, .flatButton {
   display: inline-block;
   cursor: pointer;
 }
 
-.button, .actionButton, .outlineButton {
+.button, .actionButton,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"], .outlineButton {
   height: 48px;
   line-height: 48px;
   font-size: 16px;
   padding: 0 20px;
 }
-.fa.button:before, .fa.actionButton:before, .fa.outlineButton:before {
+.fa.button:before, .fa.actionButton:before,
+button.fa:before,
+input.fa[type="button"]:before,
+input.fa[type="reset"]:before,
+input.fa[type="submit"]:before, .fa.outlineButton:before {
   margin-right: 8px;
 }
 
@@ -2915,7 +3050,15 @@ html {
   margin-right: 2px;
 }
 
-.button[disabled], [disabled].actionButton, .button.button--disabled, .button--disabled.actionButton, .actionButton.actionButton--disabled, .actionButton--loading, .outlineButton[disabled], .outlineButton.outlineButton--disabled, .flatButton[disabled], .flatButton.flatButton--disabled {
+.button[disabled], [disabled].actionButton, .button.button--disabled, .button--disabled.actionButton,
+button[disabled],
+button.button--disabled,
+input[type="button"][disabled],
+input[type="button"].button--disabled,
+input[type="reset"][disabled],
+input[type="reset"].button--disabled,
+input[type="submit"][disabled],
+input[type="submit"].button--disabled, .actionButton.actionButton--disabled, .actionButton--loading, .outlineButton[disabled], .outlineButton.outlineButton--disabled, .flatButton[disabled], .flatButton.flatButton--disabled {
   opacity: .5;
   cursor: not-allowed;
 }
@@ -2936,17 +3079,29 @@ html {
  * 1 - Extends the default size: button--big.
  * 2 - Sets default background color to gray and text color to white.
  */
-.button, .actionButton {
+.button, .actionButton,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   /* 1 */
   color: #fff;
   /* 2 */
   background: #808080;
   /* 2 */
 }
-.button:hover:not(.button--disabled):not([disabled]), .actionButton:hover:not(.button--disabled):not([disabled]) {
+.button:hover:not(.button--disabled):not([disabled]), .actionButton:hover:not(.button--disabled):not([disabled]),
+button:hover:not(.button--disabled):not([disabled]),
+input[type="button"]:hover:not(.button--disabled):not([disabled]),
+input[type="reset"]:hover:not(.button--disabled):not([disabled]),
+input[type="submit"]:hover:not(.button--disabled):not([disabled]) {
   background: #737373;
 }
-.button:active:not(.button--disabled):not([disabled]), .actionButton:active:not(.button--disabled):not([disabled]) {
+.button:active:not(.button--disabled):not([disabled]), .actionButton:active:not(.button--disabled):not([disabled]),
+button:active:not(.button--disabled):not([disabled]),
+input[type="button"]:active:not(.button--disabled):not([disabled]),
+input[type="reset"]:active:not(.button--disabled):not([disabled]),
+input[type="submit"]:active:not(.button--disabled):not([disabled]) {
   background: #676767;
 }
 
@@ -3180,6 +3335,65 @@ html {
 
 .label--red {
   background: #F83C00;
+}
+
+/*——————————————————*\
+  #INPUTS
+\*——————————————————*/
+.input .fa, .input .input-validation, .input--small .fa, .input--small .input-validation {
+  width: 32px;
+  right: 16px;
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+input[type="text"] {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.87);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px -1px rgba(0, 0, 0, 0.26);
+  height: 48px;
+  font-size: 16px;
+  padding: 0 16px;
+}
+input[type="text"]:focus {
+  border-color: rgba(0, 145, 234, 0.54);
+  box-shadow: inset 0 1px 3px -1px rgba(0, 145, 234, 0.87);
+}
+input[type="text"][disabled] {
+  background: #f2f2f2;
+}
+
+.input {
+  display: inline-block;
+  position: relative;
+}
+.input .fa, .input .input-validation {
+  font-size: 18px;
+}
+
+.input--small input[type="text"] {
+  height: 32px;
+  font-size: 13px;
+  padding: 0 8px;
+}
+.input--small .fa, .input--small .input-validation {
+  font-size: 12px;
+}
+
+.input--error input[type="text"] {
+  border-color: rgba(248, 60, 0, 0.54);
+  box-shadow: inset 0 1px 3px -1px rgba(248, 60, 0, 0.87);
+}
+
+.input--success input[type="text"] {
+  border-color: rgba(124, 179, 66, 0.54);
+  box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
 }
 
 /*# sourceMappingURL=general.css.map */

@@ -254,3 +254,28 @@
     font-size: 1.1rem;
     font-style: italic;
   }
+
+
+
+
+
+/*——————————————————*\
+  #INPUTS
+\*——————————————————*/
+
+
+.inputs {
+  input {
+    width: 400px;
+  }
+}
+
+  .inputs-group {
+    margin-bottom: 30px;
+    overflow: hidden; /* 1 */
+
+    .input {
+      float: left;
+      margin: 3px;
+    }
+  }

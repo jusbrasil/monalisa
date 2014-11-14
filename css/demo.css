@@ -425,4 +425,21 @@
   font-style: italic;
 }
 
+/*——————————————————*\
+  #INPUTS
+\*——————————————————*/
+.inputs input {
+  width: 400px;
+}
+
+.inputs-group {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /* 1 */
+}
+.inputs-group .input {
+  float: left;
+  margin: 3px;
+}
+
 /*# sourceMappingURL=demo.css.map */
