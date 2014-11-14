@@ -24,6 +24,16 @@ $break-large: 960px;
 }
 
 
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+
 @function pt-to-rem($pt) {
   @return ($pt * 0.133) * 1rem;
 }
+
