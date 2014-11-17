@@ -37,3 +37,6 @@ $break-large: 960px;
   @return ($pt * 0.133) * 1rem;
 }
 
+@mixin input-box-shadow($color) {
+  box-shadow: inset 0 1px 3px -1px $color;
+}

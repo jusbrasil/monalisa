@@ -19,6 +19,7 @@ html {
   box-sizing: inherit;
 }
 
+
 /**
  * Define the default placeholder.
  * Ps: Can't group selectors, because if a browser doesn't recognize the
@@ -29,24 +30,16 @@ html {
   color: $black26;
   font-weight: light;
 }
+::-webkit-input-placeholder { @include placeholder; }
+:-moz-placeholder { @include placeholder; }
+::-moz-placeholder { @include placeholder; }
+:-ms-input-placeholder { @include placeholder; }
 
-::-webkit-input-placeholder {
-   @include placeholder;
-}
-
-:-moz-placeholder {
-   @include placeholder;
-}
-
-::-moz-placeholder {
-   @include placeholder;
-}
-
-:-ms-input-placeholder {
-   @include placeholder;
-}
 
 [disabled] {
   cursor: not-allowed;
   opacity: .6;
+  &:hover {
+    background: auto !important;
+  }
 }

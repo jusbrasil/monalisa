@@ -1,12 +1,11 @@
 /**
- * Buttons
+ *
  */
 
-%button {
-  display: inline-block;
-  cursor: pointer;
-}
 
+/*——————————————————*\
+  #BUTTON PLACEHOLDERS
+\*——————————————————*/
 
 %button--big {
   $height: 48px;
@@ -15,7 +14,10 @@
   font-size: 16px;
   padding: 0 20px;
 
-  &.fa:before { margin-right: 8px; }
+  .fa {
+    float: left;
+    margin-right: 8px;
+  }
 }
 
 %button--medium {
@@ -25,7 +27,7 @@
   font-size: 14px;
   padding: 0 16px;
 
-  &.fa:before { margin-right: 6px; }
+  .fa { margin-right: 6px; }
 }
 
 %button--small {
@@ -35,7 +37,7 @@
   font-size: 12px;
   padding: 0 12px;
 
-  &.fa:before { margin-right: 4px; }
+  .fa { margin-right: 4px; }
 }
 
 %button--caps {
@@ -46,23 +48,9 @@
   padding: 0 8px;
   text-transform: uppercase;
 
-  &.fa:before { margin-right: 2px; }
+  .fa { margin-right: 4px; }
 }
 
-%button--disabled {
-  opacity: .5;
-  cursor: not-allowed;
-}
-
-@-webkit-keyframes ellipsis {
-  0% {
-    width: 0;
-    margin-right: 1em;
-  }
-  100% {
-    width: 1em;
-  }
-}
 
 
 
@@ -72,135 +60,60 @@
 \*——————————————————*/
 
 /**
- * 1 - Extends the default size: button--big.
- * 2 - Sets default background color to gray and text color to white.
+ * 1 - Defines the default background color and overwrites the hover/active
+ *     style when disabled.
+ * 2 - Extends the default size: button--big.
+ * 3 - Necessary when used in block elements.
+ * 4 - Defines the default button color to gray.
  */
 
-.button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+@mixin button-background($defaultColor, $hoverColor, $activeColor) {
+  &:hover { background: $hoverColor; }
+  &:active { background: $activeColor; }
+  &, &[disabled] { background: $defaultColor; } /* 1 */
+}
+
+.button {
   @extend %sexyBox;
-  @extend %button;
-  @extend %button--big; /* 1 */
-
-  color: $white; /* 2 */
-  background: $gray; /* 2 */
-
-  &:hover:not(.button--disabled):not([disabled]) { background: darken($gray, 5%); }
-  &:active:not(.button--disabled):not([disabled]) { background: darken($gray, 10%); }
-
-  &[disabled], &.button--disabled {
-    @extend %button--disabled;
-  }
+  @extend %button--big; /* 2 */
+  display: inline-block; /* 3 */
+  color: $white;
+  @include button-background($black500, $black600, $black700); /* 4 */
 }
 
-  .button--blue {
-    background: $blue;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover { background: darken($blue, 5%); }
-      &:active { background: darken($blue, 10%); }
-    }
-  }
+/* Colors modifiers */
+.button--blue   { @include button-background($blue500,    $blue600,   $blue700); }
+.button--green  { @include button-background($green500,   $green600,  $green700); }
+.button--yellow { @include button-background($yellow500,  $yellow600, $yellow700); }
+.button--orange { @include button-background($orange500,  $orange600, $orange700); }
+.button--red    { @include button-background($red500,     $red600,    $red700); }
 
-  .button--green {
-    background: $green;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover { background: darken($green, 5%); }
-      &:active { background: darken($green, 10%); }
-    }
-  }
+/* Size and style modifiers */
+.button--medium { @extend %button--medium; }
+.button--small  { @extend %button--small; }
+.button--caps   { @extend %button--caps; }
 
-  .button--yellow {
-    background: $yellow;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover { background: darken($yellow, 5%); }
-      &:active { background: darken($yellow, 10%); }
-    }
-  }
-
-  .button--orange {
-    background: $orange;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover { background: darken($orange, 5%); }
-      &:active { background: darken($orange, 10%); }
-    }
-  }
-
-  .button--red {
-    background: $red;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover { background: darken($red, 5%); }
-      &:active { background: darken($red, 10%); }
-    }
-  }
-
-  .button--medium { @extend %button--medium; }
-  .button--small { @extend %button--small; }
-  .button--caps { @extend %button--caps; }
-
-
-
-
-
-/*——————————————————*\
-  #ACTION BUTTON
-\*——————————————————*/
-
-.actionButton {
-  @extend .button;
-
-  &:before { content: attr(data-label); }
-
-  &[disabled], &.actionButton--disabled {
-    @extend %button--disabled;
-  }
-  .fa {
-    float: left;
-    margin-right: 8px;
-  }
+/* Action modifiers */
+.button--action {
+  &:before { content: attr(label); }
 }
 
-  .actionButton--blue     { @extend .button--blue; }
-  .actionButton--green    { @extend .button--green; }
-  .actionButton--yellow   { @extend .button--yellow; }
-  .actionButton--orange   { @extend .button--orange; }
-  .actionButton--red      { @extend .button--red; }
-
-  .actionButton--medium {
-    @extend %button--medium;
-    .fa { margin-right: 6px; }
+.button--loading {
+  &:after {
+    content: "\2026";
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation:  ellipsis 1s infinite;
+            animation:  ellipsis 1s infinite;
   }
+  &:before { content: attr(label-loading); }
+}
 
-  .actionButton--small {
-    @extend %button--small;
-    .fa { margin-right: 4px; }
-  }
-
-  .actionButton--caps {
-    @extend %button--caps;
-    .fa { margin-right: 2px; }
-  }
-
-  .actionButton--loading {
-    @extend %button--disabled;
-
-    &:after {
-      content: "\2026";
-      overflow: hidden;
-      display: inline-block;
-      vertical-align: bottom;
-      -webkit-animation:  ellipsis 1s infinite;
-              animation:  ellipsis 1s infinite;
-    }
-    &:before { content: attr(data-loading); }
-  }
-
-  .actionButton--done {
-    &:after { content: "!"; }
-    &:before { content: attr(data-done); }
-  }
+.button--done {
+  &:after { content: "!"; }
+  &:before { content: attr(label-done); }
+}
 
 
 
@@ -210,56 +123,26 @@ input[type="submit"] {
   #OUTLINE BUTTON
 \*——————————————————*/
 
-/**
- * 1 - Extends the default size: button--big.
- */
-
-.outlineButton {
-  @extend %roundedBox;
-  @extend %button;
-  @extend %button--big; /* 1 */
-
-  background: transparent;
-  border: 1px solid;
-
-  &[disabled], &.outlineButton--disabled {
-    @extend %button--disabled;
+@mixin outline-button($color, $hoverColor) {
+  border: 1px solid $color;
+  color: $color;
+  &:hover {
+    &:not([disabled]) {
+      color: $hoverColor;
+      border-color: currentColor;
+    }
   }
 }
 
-  .outlineButton--dark {
-    color: $black54;
-    border-color: $black54;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover {
-        color: $black87;
-        border-color: $black;
-      }
-      &:active {
-        color: $black87;
-        border-color: $black;
-      }
-    }
-  }
+.outlineButton {
+  @extend %roundedBox;
+  @extend %button--big;
+  @include outline-button($black87, $black);
+}
 
-  .outlineButton--light {
-    color: $white54;
-    border-color: $white54;
-    &:not(.button--disabled):not([disabled]) {
-      &:hover {
-        color: $white87;
-        border-color: $white;
-      }
-      &:active {
-        color: $white87;
-        border-color: $white;
-      }
-    }
-  }
-
-  .outlineButton--medium { @extend %button--medium; }
-  .outlineButton--small { @extend %button--small; }
-  .outlineButton--caps { @extend %button--caps; }
+.outlineButton--light {
+  @include outline-button($white87, $white);
+}
 
 
 
@@ -270,43 +153,25 @@ input[type="submit"] {
 \*——————————————————*/
 
 /**
- * 1 - Extends the default size: button--medium.
- * 2 - Sets default background color to gray and text color to white.
+ * 1 - Defines the default background color and overwrites the hover/active
+ *     style when disabled.
+ * 2 - Extends the default size: button--medium.
  */
 
-.flatButton {
-  @extend %button;
-  @extend %button--medium; /* 1 */
-
-  text-transform: uppercase;
-  color: $gray; /* 2 */
-
-  &[disabled], &.flatButton--disabled {
-    @extend %button--disabled;
-  }
+ @mixin flatButton-color($defaultColor, $hoverColor, $activeColor) {
+  &:hover { color: $hoverColor; }
+  &:active { color: $activeColor; }
+  &, &[disabled] { color: $defaultColor; } /* 1 */
 }
 
-  .flatButton--blue {
-    color: $blue;
-    &:hover { color: darken($blue, 5%); }
-  }
+.flatButton {
+  @extend %button--medium; /* 2 */
+  @include flatButton-color($black500, $black600, $black700);
+  text-transform: uppercase;
+}
 
-  .flatButton--green {
-    color: $green;
-    &:hover { color: darken($green, 5%); }
-  }
-
-  .flatButton--yellow {
-    color: $yellow;
-    &:hover { color: darken($yellow, 5%); }
-  }
-
-  .flatButton--orange {
-    color: $orange;
-    &:hover { color: darken($orange, 5%); }
-  }
-
-  .flatButton--red {
-    color: $red;
-    &:hover { color: darken($red, 5%); }
-  }
+.flatButton--blue { @include flatButton-color($blue500, $blue600, $blue700); }
+.flatButton--green { @include flatButton-color($green500, $green600, $green700); }
+.flatButton--yellow { @include flatButton-color($yellow500, $yellow600, $yellow700); }
+.flatButton--orange { @include flatButton-color($orange500, $orange600, $orange700); }
+.flatButton--red { @include flatButton-color($red500, $red600, $red700); }

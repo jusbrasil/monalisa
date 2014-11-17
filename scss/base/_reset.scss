@@ -1,7 +1,8 @@
 /**
- * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * This file is based in Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 html,
 body,
 div,
@@ -82,7 +83,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -130,7 +132,20 @@ table {
 }
 
 input,
-textarea {
+textarea,
+button {
   border: 0;
   outline: none;
+}
+
+/**
+ * Clear default button styles
+ */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background: transparent;
+  &:focus { outline: none; }
 }

@@ -46,7 +46,7 @@
 \*——————————————————*/
 
 .demoPage {
-  background-color: $white;
+  background-color: $black50;
 }
 
   .demoPage-title {
@@ -187,10 +187,14 @@
     margin-bottom: 30px;
     overflow: hidden; /* 1 */
 
-    .button, .outlineButton, .flatButton {
+    button {
       float: left;
       margin: 3px;
     }
+  }
+
+  .buttons-group--dark {
+    background: $black87;
   }
 
 

@@ -62,7 +62,7 @@
   #SPECIFICS
 \*——————————————————*/
 .demoPage {
-  background-color: #fff;
+  background-color: #f2f2f2;
 }
 
 .demoPage-title {
@@ -375,9 +375,13 @@
   overflow: hidden;
   /* 1 */
 }
-.buttons-group .button, .buttons-group .outlineButton, .buttons-group .flatButton {
+.buttons-group button {
   float: left;
   margin: 3px;
+}
+
+.buttons-group--dark {
+  background: rgba(0, 0, 0, 0.87);
 }
 
 /*——————————————————*\
