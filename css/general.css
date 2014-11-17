@@ -2986,7 +2986,7 @@ html {
 /**
  *
  */
-.button, .outlineButton, .label, input[type="text"] {
+.button, .outlineButton, .label {
   border-radius: 2px;
 }
 
@@ -3343,6 +3343,12 @@ html {
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
+/**
+ * 1 - Shows 4 items and the fifth item cut in half.
+ * 2 - Puts the element just before starting to round the borders.
+ * 3 - The line-height must be equal to the height of the element least its
+ *     upper and lower fills.
+ */
 .input .fa, .input .input-validation, .input--small .fa, .input--small .input-validation {
   width: 32px;
   right: 16px;
@@ -3355,6 +3361,7 @@ html {
 }
 
 input[type="text"] {
+  border-radius: 2px;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
   background: #fff;
@@ -3397,6 +3404,42 @@ input[type="text"][disabled] {
 .input--success input[type="text"] {
   border-color: rgba(124, 179, 66, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
+}
+
+.input-suggestions {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0 2px 2px 0;
+  width: 100%;
+  max-height: 216px;
+  /* 1 */
+  top: calc(100% - 2px);
+  /* 2 */
+  position: absolute;
+  overflow-y: scroll;
+}
+.input--small .input-suggestions {
+  max-height: 144px;
+  /* 1 */
+}
+
+.input-suggestions-item {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 16px;
+  height: 48px;
+  line-height: 32px;
+  /* 3 */
+  padding: 8px 16px;
+}
+.input-suggestions-item b, .input-suggestions-item strong {
+  color: #0091ea;
+}
+.input--small .input-suggestions-item {
+  font-size: 13px;
+  height: 32px;
+  line-height: 16px;
+  /* 3 */
+  padding: 8px;
 }
 
 /*# sourceMappingURL=general.css.map */

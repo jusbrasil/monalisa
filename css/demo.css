@@ -438,8 +438,12 @@
 
 .inputs-group {
   margin-bottom: 30px;
-  overflow: hidden;
-  /* 1 */
+}
+.inputs-group:after {
+  /* Clearfix */
+  content: "";
+  display: table;
+  clear: both;
 }
 .inputs-group .input {
   float: left;

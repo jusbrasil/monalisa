@@ -276,7 +276,11 @@
 
   .inputs-group {
     margin-bottom: 30px;
-    overflow: hidden; /* 1 */
+    &:after { /* Clearfix */
+      content: "";
+      display: table;
+      clear: both;
+    }
 
     .input {
       float: left;

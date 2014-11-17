@@ -2,6 +2,15 @@
   #INPUTS
 \*——————————————————*/
 
+/**
+ * 1 - Shows 4 items and the fifth item cut in half.
+ * 2 - Puts the element just before starting to round the borders.
+ * 3 - The line-height must be equal to the height of the element least its
+ *     upper and lower fills.
+ */
+
+$input-suggestion-item-default-height: $grid * 6;
+$input-suggestion-item-small-height: $grid * 4;
 
 %input-icon-position {
   width: 32px;
@@ -11,16 +20,16 @@
 }
 
 input[type="text"] {
-  @extend %roundedBox;
+  border-radius: $border-radius;
   display: inline-block;
   color: $black87;
   background: $white;
   border: 1px solid $black12;
   @include input-box-shadow($black26);
 
-  height: 48px;
+  height: $grid * 6;
   font-size: 16px;
-  padding: 0 16px;
+  padding: 0 ($grid * 2);
 
   &:focus {
     border-color: $blue54;
@@ -44,9 +53,9 @@ input[type="text"] {
 
 .input--small {
   input[type="text"] {
-    height: 32px;
+    height: $grid * 4;
     font-size: 13px;
-    padding: 0 8px;
+    padding: 0 ($grid * 1);
   }
   .fa, .input-validation {
     $icon-size: 12px;
@@ -78,4 +87,41 @@ input[type="text"] {
     @include input-box-shadow($green87);
   }
 }
+
+  .input-suggestions {
+    background: $white;
+    border: 1px solid $black12;
+    border-radius: 0 $border-radius $border-radius 0;
+    width: 100%;
+    max-height: ($input-suggestion-item-default-height * 4) + ($input-suggestion-item-default-height / 2); /* 1 */
+    top: calc(100% - #{$border-radius}); /* 2 */
+    position: absolute;
+    overflow-y: scroll;
+
+    .input--small & {
+      max-height: ($input-suggestion-item-small-height * 4) + ($input-suggestion-item-small-height / 2); /* 1 */
+    }
+  }
+
+    .input-suggestions-item {
+      $paddingTopBottom: $grid * 1;
+      $paddingLeftRight: $grid * 2;
+
+      color: $black54;
+      b, strong { color: $blue; }
+
+      font-size: 16px;
+      height: $input-suggestion-item-default-height;
+      line-height: $input-suggestion-item-default-height - $paddingTopBottom * 2; /* 3 */
+      padding: $paddingTopBottom $paddingLeftRight;
+
+      .input--small & {
+        $padding: $grid * 1;
+
+        font-size: 13px;
+        height: $input-suggestion-item-small-height;
+        line-height: $input-suggestion-item-small-height - $padding * 2; /* 3 */
+        padding: $padding;
+      }
+    }
 
