@@ -3351,6 +3351,7 @@ html {
  * 3 - The line-height must be equal to the height of the element least its
  *     upper and lower fills.
  * 4 - Clearfix and avoids content overflow.
+ * 5 - Shows suggestions when input is in focus.
  */
 .input .fa, .select .fa, .input .input-validation, .select .input-validation, .input--small .fa, .input--small .input-validation {
   width: 32px;
@@ -3388,6 +3389,10 @@ input[type="text"][disabled] {
 }
 .input .fa, .select .fa, .input .input-validation, .select .input-validation {
   font-size: 18px;
+}
+.input input[type="text"]:focus ~ .input-suggestions, .select input[type="text"]:focus ~ .input-suggestions {
+  /* 5 */
+  display: block;
 }
 
 .input--small input[type="text"] {
@@ -3489,18 +3494,23 @@ input[type="text"][disabled] {
 /*——————————————————*\
   #SELECTS
 \*——————————————————*/
+/**
+ * 1 - The right padding is increased because the icon on the right.
+ */
 select {
   background: #fff;
   border: none;
   height: 48px;
   font-size: 1.6rem;
   padding: 0 40px 0 16px;
+  /* 1 */
   -webkit-appearance: none;
 }
 .select--small select {
   height: 32px;
   font-size: 1.3rem;
   padding: 0 24px 0 8px;
+  /* 1 */
 }
 
 .select:before {

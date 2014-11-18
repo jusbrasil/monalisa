@@ -8,15 +8,15 @@
  * 3 - The line-height must be equal to the height of the element least its
  *     upper and lower fills.
  * 4 - Clearfix and avoids content overflow.
+ * 5 - Shows suggestions when input is in focus.
  */
 
-$input-suggestions-item-defaultHeight:      $grid * 6;
-$input-suggestions-item-smallHeight:        $grid * 4;
+$input-suggestions-item-height:             $grid * 6;
+$input-suggestions-item-height--small:      $grid * 4;
 $input-suggestions-item-paddingTopBottom:   $grid * 1;
 $input-suggestions-item-paddingLeftRight:   $grid * 2;
-
 $input-suggestions-item-image-size:         $grid * 4;
-$input-suggestions-item-image-smallSize:    $grid * 3;
+$input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
 
 %input-icon-position {
@@ -55,6 +55,9 @@ input[type="text"] {
   .fa, .input-validation {
     font-size: $icon-size;
     @extend %input-icon-position;
+  }
+  input[type="text"]:focus ~ .input-suggestions { /* 5 */
+    display: block;
   }
 }
 
@@ -101,14 +104,14 @@ input[type="text"] {
     border: 1px solid $black12;
     border-radius: 0 $border-radius $border-radius 0;
     width: 100%;
-    max-height: ($input-suggestions-item-defaultHeight * 4) + ($input-suggestions-item-defaultHeight / 2); /* 1 */
+    max-height: ($input-suggestions-item-height * 4) + ($input-suggestions-item-height / 2); /* 1 */
     top: calc(100% - #{$border-radius}); /* 2 */
     position: absolute;
     overflow-y: scroll;
     z-index: $z-index-dropdown;
 
     .input--small & {
-      max-height: ($input-suggestions-item-smallHeight * 4) + ($input-suggestions-item-smallHeight / 2); /* 1 */
+      max-height: ($input-suggestions-item-height--small * 4) + ($input-suggestions-item-height--small / 2); /* 1 */
     }
   }
 
@@ -117,8 +120,8 @@ input[type="text"] {
       b, strong { color: $blue; }
 
       font-size: 1.6rem;
-      height: $input-suggestions-item-defaultHeight;
-      line-height: $input-suggestions-item-defaultHeight - $input-suggestions-item-paddingTopBottom * 2; /* 3 */
+      height: $input-suggestions-item-height;
+      line-height: $input-suggestions-item-height - $input-suggestions-item-paddingTopBottom * 2; /* 3 */
       padding: $input-suggestions-item-paddingTopBottom $input-suggestions-item-paddingLeftRight;
 
       overflow: hidden; /* 4 */
@@ -126,8 +129,8 @@ input[type="text"] {
       .input--small & {
         $padding: $grid * 1;
         font-size: 1.3rem;
-        height: $input-suggestions-item-smallHeight;
-        line-height: $input-suggestions-item-smallHeight - $padding * 2; /* 3 */
+        height: $input-suggestions-item-height--small;
+        line-height: $input-suggestions-item-height--small - $padding * 2; /* 3 */
         padding: $padding;
       }
     }
@@ -139,8 +142,8 @@ input[type="text"] {
         height: $input-suggestions-item-image-size;
         margin-right: $input-suggestions-item-image-marginRight;
         .input--small & {
-          height: $input-suggestions-item-image-smallSize;
-          width: $input-suggestions-item-image-smallSize;
+          height: $input-suggestions-item-image-size--small;
+          width: $input-suggestions-item-image-size--small;
         }
       }
 
@@ -148,14 +151,14 @@ input[type="text"] {
         float: left;
         width: calc(100% - #{$input-suggestions-item-image-size + $input-suggestions-item-image-marginRight});
         .input--small & {
-          width: calc(100% - #{$input-suggestions-item-image-smallSize + $input-suggestions-item-image-marginRight});
+          width: calc(100% - #{$input-suggestions-item-image-size--small + $input-suggestions-item-image-marginRight});
         }
       }
 
         .input-suggestions-item-title {
           line-height: $input-suggestions-item-image-size / 2;
           .input--small & {
-            line-height: $input-suggestions-item-image-smallSize / 2;
+            line-height: $input-suggestions-item-image-size--small / 2;
           }
         }
 
@@ -165,7 +168,7 @@ input[type="text"] {
           line-height: $input-suggestions-item-image-size / 2;
           .input--small & {
             font-size: 1.1rem;
-            line-height: $input-suggestions-item-image-smallSize / 2;
+            line-height: $input-suggestions-item-image-size--small / 2;
           }
         }
 
@@ -177,22 +180,27 @@ input[type="text"] {
   #SELECTS
 \*——————————————————*/
 
+/**
+ * 1 - The right padding is increased because the icon on the right.
+ */
+
 $select-height: $grid * 6;
 $select-height--small: $grid * 4;
 $select-paddingLeftRight: $grid * 2;
 $select-paddingLeftRight--small: $grid * 1;
+
 select {
   @extend %sexyBox;
   background: $white;
   border: none;
   height: $select-height;
   font-size: 1.6rem;
-  padding: 0 ($select-paddingLeftRight + $grid * 3) 0 $select-paddingLeftRight;
+  padding: 0 ($select-paddingLeftRight + $grid * 3) 0 $select-paddingLeftRight; /* 1 */
   -webkit-appearance: none;
   .select--small & {
     height: $select-height--small;
     font-size: 1.3rem;
-    padding: 0 ($select-paddingLeftRight--small + $grid * 2) 0 $select-paddingLeftRight--small;
+    padding: 0 ($select-paddingLeftRight--small + $grid * 2) 0 $select-paddingLeftRight--small; /* 1 */
   }
 }
 
