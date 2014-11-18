@@ -3432,6 +3432,9 @@ input[type="text"][disabled] {
   max-height: 144px;
   /* 1 */
 }
+.input-suggestions:hover {
+  display: inline-block;
+}
 
 .input-suggestions-item {
   color: rgba(0, 0, 0, 0.54);

@@ -113,6 +113,10 @@ input[type="text"] {
     .input--small & {
       max-height: ($input-suggestions-item-height--small * 4) + ($input-suggestions-item-height--small / 2); /* 1 */
     }
+
+    &:hover {
+      display: inline-block;
+    }
   }
 
     .input-suggestions-item {
