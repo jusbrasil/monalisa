@@ -432,7 +432,7 @@
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
-.inputs input {
+.inputs input, .inputs select {
   width: 400px;
 }
 
@@ -445,11 +445,11 @@
   display: table;
   clear: both;
 }
-.inputs-group .input {
+.inputs-group .input, .inputs-group .select {
   float: left;
   margin: 3px;
 }
-.inputs-group .input:hover .input-suggestions {
+.inputs-group .input:hover .input-suggestions, .inputs-group .select:hover .input-suggestions {
   display: block;
 }
 

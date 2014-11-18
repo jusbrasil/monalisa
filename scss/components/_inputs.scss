@@ -113,7 +113,6 @@ input[type="text"] {
   }
 
     .input-suggestions-item {
-
       color: $black54;
       b, strong { color: $blue; }
 
@@ -126,7 +125,6 @@ input[type="text"] {
 
       .input--small & {
         $padding: $grid * 1;
-
         font-size: 1.3rem;
         height: $input-suggestions-item-smallHeight;
         line-height: $input-suggestions-item-smallHeight - $padding * 2; /* 3 */
@@ -171,3 +169,51 @@ input[type="text"] {
           }
         }
 
+
+
+
+
+/*——————————————————*\
+  #SELECTS
+\*——————————————————*/
+
+$select-height: $grid * 6;
+$select-height--small: $grid * 4;
+$select-paddingLeftRight: $grid * 2;
+$select-paddingLeftRight--small: $grid * 1;
+select {
+  @extend %sexyBox;
+  background: $white;
+  border: none;
+  height: $select-height;
+  font-size: 1.6rem;
+  padding: 0 ($select-paddingLeftRight + $grid * 3) 0 $select-paddingLeftRight;
+  -webkit-appearance: none;
+  .select--small & {
+    height: $select-height--small;
+    font-size: 1.3rem;
+    padding: 0 ($select-paddingLeftRight--small + $grid * 2) 0 $select-paddingLeftRight--small;
+  }
+}
+
+.select {
+  @extend .input;
+  @extend %font-awesome;
+  @extend .#{$fa-css-prefix}--caretDown;
+  @extend .#{$fa-css-prefix}--gray;
+  &:before {
+    position: absolute;
+    font-size: 1.8rem;
+    line-height: $select-height;
+    right: $select-paddingLeftRight;
+  }
+}
+
+.select--small {
+  &:before {
+    position: absolute;
+    font-size: 1.2rem;
+    line-height: $select-height--small;
+    right: $select-paddingLeftRight--small;
+  }
+}

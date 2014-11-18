@@ -269,7 +269,7 @@
 
 
 .inputs {
-  input {
+  input, select {
     width: 400px;
   }
 }
@@ -282,7 +282,7 @@
       clear: both;
     }
 
-    .input {
+    .input, .select {
       float: left;
       margin: 3px;
       &:hover {

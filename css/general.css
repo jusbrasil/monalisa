@@ -48,7 +48,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .input--error .input-validation, .input--success .input-validation {
+.fa:before, .input--error .input-validation, .input--success .input-validation, .select {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -989,7 +989,7 @@
   content: "";
 }
 
-.fa--caretDown:before {
+.fa--caretDown:before, .select:before {
   content: "";
 }
 
@@ -2204,7 +2204,7 @@
   color: #000;
 }
 
-.fa--gray:before {
+.fa--gray:before, .select:before {
   color: #808080;
 }
 
@@ -2376,12 +2376,14 @@ button {
  * Clear default button styles
  */
 button,
+select,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background: transparent;
 }
 button:focus,
+select:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
@@ -2986,11 +2988,11 @@ html {
 /**
  *
  */
-.button, .outlineButton, .label {
+.button, select, .outlineButton, .label {
   border-radius: 2px;
 }
 
-.button {
+.button, select {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -3350,7 +3352,7 @@ html {
  *     upper and lower fills.
  * 4 - Clearfix and avoids content overflow.
  */
-.input .fa, .input .input-validation, .input--small .fa, .input--small .input-validation {
+.input .fa, .select .fa, .input .input-validation, .select .input-validation, .input--small .fa, .input--small .input-validation {
   width: 32px;
   right: 16px;
   text-align: right;
@@ -3380,11 +3382,11 @@ input[type="text"][disabled] {
   background: #f2f2f2;
 }
 
-.input {
+.input, .select {
   display: inline-block;
   position: relative;
 }
-.input .fa, .input .input-validation {
+.input .fa, .select .fa, .input .input-validation, .select .input-validation {
   font-size: 18px;
 }
 
@@ -3482,6 +3484,37 @@ input[type="text"][disabled] {
 .input--small .input-suggestions-item-description {
   font-size: 1.1rem;
   line-height: 12px;
+}
+
+/*——————————————————*\
+  #SELECTS
+\*——————————————————*/
+select {
+  background: #fff;
+  border: none;
+  height: 48px;
+  font-size: 1.6rem;
+  padding: 0 40px 0 16px;
+  -webkit-appearance: none;
+}
+.select--small select {
+  height: 32px;
+  font-size: 1.3rem;
+  padding: 0 24px 0 8px;
+}
+
+.select:before {
+  position: absolute;
+  font-size: 1.8rem;
+  line-height: 48px;
+  right: 16px;
+}
+
+.select--small:before {
+  position: absolute;
+  font-size: 1.2rem;
+  line-height: 32px;
+  right: 8px;
 }
 
 /*# sourceMappingURL=general.css.map */
