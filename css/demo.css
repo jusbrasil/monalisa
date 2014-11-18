@@ -449,5 +449,8 @@
   float: left;
   margin: 3px;
 }
+.inputs-group .input:hover .input-suggestions {
+  display: block;
+}
 
 /*# sourceMappingURL=demo.css.map */

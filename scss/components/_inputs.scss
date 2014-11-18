@@ -7,14 +7,21 @@
  * 2 - Puts the element just before starting to round the borders.
  * 3 - The line-height must be equal to the height of the element least its
  *     upper and lower fills.
+ * 4 - Clearfix and avoids content overflow.
  */
 
-$input-suggestion-item-default-height: $grid * 6;
-$input-suggestion-item-small-height: $grid * 4;
+$input-suggestions-item-defaultHeight:      $grid * 6;
+$input-suggestions-item-smallHeight:        $grid * 4;
+$input-suggestions-item-paddingTopBottom:   $grid * 1;
+$input-suggestions-item-paddingLeftRight:   $grid * 2;
+
+$input-suggestions-item-image-size:         $grid * 4;
+$input-suggestions-item-image-smallSize:    $grid * 3;
+$input-suggestions-item-image-marginRight:  $grid * 1;
 
 %input-icon-position {
-  width: 32px;
-  right: 16px;
+  width: $grid * 4;
+  right: $grid * 2;
   text-align: right;
   @include vertical-center;
 }
@@ -28,7 +35,7 @@ input[type="text"] {
   @include input-box-shadow($black26);
 
   height: $grid * 6;
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 0 ($grid * 2);
 
   &:focus {
@@ -54,7 +61,7 @@ input[type="text"] {
 .input--small {
   input[type="text"] {
     height: $grid * 4;
-    font-size: 13px;
+    font-size: 1.3rem;
     padding: 0 ($grid * 1);
   }
   .fa, .input-validation {
@@ -89,39 +96,78 @@ input[type="text"] {
 }
 
   .input-suggestions {
+    display: none;
     background: $white;
     border: 1px solid $black12;
     border-radius: 0 $border-radius $border-radius 0;
     width: 100%;
-    max-height: ($input-suggestion-item-default-height * 4) + ($input-suggestion-item-default-height / 2); /* 1 */
+    max-height: ($input-suggestions-item-defaultHeight * 4) + ($input-suggestions-item-defaultHeight / 2); /* 1 */
     top: calc(100% - #{$border-radius}); /* 2 */
     position: absolute;
     overflow-y: scroll;
+    z-index: $z-index-dropdown;
 
     .input--small & {
-      max-height: ($input-suggestion-item-small-height * 4) + ($input-suggestion-item-small-height / 2); /* 1 */
+      max-height: ($input-suggestions-item-smallHeight * 4) + ($input-suggestions-item-smallHeight / 2); /* 1 */
     }
   }
 
     .input-suggestions-item {
-      $paddingTopBottom: $grid * 1;
-      $paddingLeftRight: $grid * 2;
 
       color: $black54;
       b, strong { color: $blue; }
 
-      font-size: 16px;
-      height: $input-suggestion-item-default-height;
-      line-height: $input-suggestion-item-default-height - $paddingTopBottom * 2; /* 3 */
-      padding: $paddingTopBottom $paddingLeftRight;
+      font-size: 1.6rem;
+      height: $input-suggestions-item-defaultHeight;
+      line-height: $input-suggestions-item-defaultHeight - $input-suggestions-item-paddingTopBottom * 2; /* 3 */
+      padding: $input-suggestions-item-paddingTopBottom $input-suggestions-item-paddingLeftRight;
+
+      overflow: hidden; /* 4 */
 
       .input--small & {
         $padding: $grid * 1;
 
-        font-size: 13px;
-        height: $input-suggestion-item-small-height;
-        line-height: $input-suggestion-item-small-height - $padding * 2; /* 3 */
+        font-size: 1.3rem;
+        height: $input-suggestions-item-smallHeight;
+        line-height: $input-suggestions-item-smallHeight - $padding * 2; /* 3 */
         padding: $padding;
       }
     }
+
+      .input-suggestions-item-image {
+        float: left;
+        border-radius: $border-radius;
+        width: $input-suggestions-item-image-size;
+        height: $input-suggestions-item-image-size;
+        margin-right: $input-suggestions-item-image-marginRight;
+        .input--small & {
+          height: $input-suggestions-item-image-smallSize;
+          width: $input-suggestions-item-image-smallSize;
+        }
+      }
+
+      .input-suggestions-item-wrapper {
+        float: left;
+        width: calc(100% - #{$input-suggestions-item-image-size + $input-suggestions-item-image-marginRight});
+        .input--small & {
+          width: calc(100% - #{$input-suggestions-item-image-smallSize + $input-suggestions-item-image-marginRight});
+        }
+      }
+
+        .input-suggestions-item-title {
+          line-height: $input-suggestions-item-image-size / 2;
+          .input--small & {
+            line-height: $input-suggestions-item-image-smallSize / 2;
+          }
+        }
+
+        .input-suggestions-item-description {
+          color: $black26;
+          font-size: 1.2rem;
+          line-height: $input-suggestions-item-image-size / 2;
+          .input--small & {
+            font-size: 1.1rem;
+            line-height: $input-suggestions-item-image-smallSize / 2;
+          }
+        }
 

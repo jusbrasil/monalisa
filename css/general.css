@@ -3348,6 +3348,7 @@ html {
  * 2 - Puts the element just before starting to round the borders.
  * 3 - The line-height must be equal to the height of the element least its
  *     upper and lower fills.
+ * 4 - Clearfix and avoids content overflow.
  */
 .input .fa, .input .input-validation, .input--small .fa, .input--small .input-validation {
   width: 32px;
@@ -3368,7 +3369,7 @@ input[type="text"] {
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px 3px -1px rgba(0, 0, 0, 0.26);
   height: 48px;
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 0 16px;
 }
 input[type="text"]:focus {
@@ -3389,7 +3390,7 @@ input[type="text"][disabled] {
 
 .input--small input[type="text"] {
   height: 32px;
-  font-size: 13px;
+  font-size: 1.3rem;
   padding: 0 8px;
 }
 .input--small .fa, .input--small .input-validation {
@@ -3407,6 +3408,7 @@ input[type="text"][disabled] {
 }
 
 .input-suggestions {
+  display: none;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0 2px 2px 0;
@@ -3417,6 +3419,7 @@ input[type="text"][disabled] {
   /* 2 */
   position: absolute;
   overflow-y: scroll;
+  z-index: 1;
 }
 .input--small .input-suggestions {
   max-height: 144px;
@@ -3425,21 +3428,60 @@ input[type="text"][disabled] {
 
 .input-suggestions-item {
   color: rgba(0, 0, 0, 0.54);
-  font-size: 16px;
+  font-size: 1.6rem;
   height: 48px;
   line-height: 32px;
   /* 3 */
   padding: 8px 16px;
+  overflow: hidden;
+  /* 4 */
 }
 .input-suggestions-item b, .input-suggestions-item strong {
   color: #0091ea;
 }
 .input--small .input-suggestions-item {
-  font-size: 13px;
+  font-size: 1.3rem;
   height: 32px;
   line-height: 16px;
   /* 3 */
   padding: 8px;
+}
+
+.input-suggestions-item-image {
+  float: left;
+  border-radius: 2px;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.input--small .input-suggestions-item-image {
+  height: 24px;
+  width: 24px;
+}
+
+.input-suggestions-item-wrapper {
+  float: left;
+  width: calc(100% - 40px);
+}
+.input--small .input-suggestions-item-wrapper {
+  width: calc(100% - 32px);
+}
+
+.input-suggestions-item-title {
+  line-height: 16px;
+}
+.input--small .input-suggestions-item-title {
+  line-height: 12px;
+}
+
+.input-suggestions-item-description {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 1.2rem;
+  line-height: 16px;
+}
+.input--small .input-suggestions-item-description {
+  font-size: 1.1rem;
+  line-height: 12px;
 }
 
 /*# sourceMappingURL=general.css.map */

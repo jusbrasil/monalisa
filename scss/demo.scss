@@ -285,5 +285,10 @@
     .input {
       float: left;
       margin: 3px;
+      &:hover {
+        .input-suggestions {
+          display: block;
+        }
+      }
     }
   }
