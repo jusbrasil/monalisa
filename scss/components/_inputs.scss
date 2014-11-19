@@ -1,19 +1,106 @@
+/*----------------------------------------------------------------------------*\
 
-%field-validation--error {
-  @extend %font-awesome;
-  @extend .#{$fa-css-prefix}--exclamationCircle;
-  @extend .#{$fa-css-prefix}--red;
+  .field [.field--small] [(.field--error|.field--success)] (.select|.input)
+    [.field-validation]
+    (select|input)
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * 1 - The right padding is increased because the icon on the right.
+ * 2 - Hides the select caret down when the validation icons appears.
+ */
+
+$field-height:        $grid * 6;
+$field-height--small: $grid * 4;
+
+$field-horizontalPadding:         $grid * 2;
+$field-horizontalPadding--small:  $grid * 1;
+
+.field {
+  display: inline-block;
+  position: relative;
+  .fa, .field-validation {
+    font-size: 18px;
+    right: $field-horizontalPadding;
+    text-align: right;
+    @include vertical-center;
+  }
 }
 
-%field-validation--success {
-  @extend %font-awesome;
-  @extend .#{$fa-css-prefix}--checkCircle;
-  @extend .#{$fa-css-prefix}--green;
+  .field-validation {
+    @extend %font-awesome;
+  }
+
+.field--small {
+  input[type="text"] {
+    height: $field-height--small;
+    font-size: 1.3rem;
+    padding: 0 $field-horizontalPadding--small;
+  }
+  select {
+    height: $field-height--small;
+    font-size: 1.3rem;
+    padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
+  }
+  .fa, .field-validation {
+    font-size: 12px;
+    right: $grid * 1;
+  }
 }
 
-/*——————————————————*\
+
+.field--error {
+  .field-validation {
+    @extend .#{$fa-css-prefix}--exclamationCircle;
+    @extend .#{$fa-css-prefix}--red;
+  }
+  input[type="text"] {
+    border-color: $red54;
+    @include box-inner-shadow($red87);
+  }
+  select {
+    border: 1px solid $red54;
+    @include box-shadow-level-1($red);
+  }
+  &:before { display: none; } /* 2 */
+}
+
+.field--success {
+  .field-validation {
+    @extend .#{$fa-css-prefix}--checkCircle;
+    @extend .#{$fa-css-prefix}--green;
+  }
+  input[type="text"] {
+    border-color: $green54;
+    @include box-inner-shadow($green87);
+  }
+  select {
+    border: 1px solid $green54;
+    @include box-shadow-level-1($green);
+  }
+  &:before { display: none; } /* 2 */
+}
+
+
+/*----------------------------------------------------------------------------*\
   #INPUTS
-\*——————————————————*/
+
+  .input .field [.field--small] [(.field--error|.field--success)]
+    [.fa]
+    [.field-validation]
+    input
+      [ .input-suggestions
+          .input-suggestions-item
+            [ .input-suggestions-item-image
+              .input-suggestions-item-wrapper
+                .input-suggestions-item-title
+                .input-suggestions-item-description
+            ]
+      ]
+
+\*----------------------------------------------------------------------------*/
+
 
 /**
  * 1 - Shows 4 items and the fifth item cut in half.
@@ -25,20 +112,14 @@
  * 6 - Fix the blur before the click event, keeping the suggestions while hover.
  */
 
-$input-suggestions-item-height:             $grid * 6;
-$input-suggestions-item-height--small:      $grid * 4;
+$input-suggestions-item-height:             $field-height;
+$input-suggestions-item-height--small:      $field-height--small;
+
 $input-suggestions-item-paddingTopBottom:   $grid * 1;
 $input-suggestions-item-paddingLeftRight:   $grid * 2;
 $input-suggestions-item-image-size:         $grid * 4;
 $input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
-
-%input-icon-position {
-  width: $grid * 4;
-  right: $grid * 2;
-  text-align: right;
-  @include vertical-center;
-}
 
 input[type="text"] {
   border-radius: $border-radius;
@@ -55,50 +136,14 @@ input[type="text"] {
   &:focus {
     border-color: $blue54;
     @include box-inner-shadow($blue87);
+
+    & ~ .input-suggestions { /* 5 */
+      display: block;
+    }
   }
 
   &[disabled] {
     background: $black50;
-  }
-}
-
-.input {
-  display: inline-block;
-  position: relative;
-  .fa, .input-validation {
-    font-size: 18px;
-    @extend %input-icon-position;
-  }
-  input[type="text"]:focus ~ .input-suggestions { /* 5 */
-    display: block;
-  }
-}
-
-.input--small {
-  input[type="text"] {
-    height: $grid * 4;
-    font-size: 1.3rem;
-    padding: 0 ($grid * 1);
-  }
-  .fa, .input-validation {
-    font-size: 12px;
-    right: $grid * 1;
-  }
-}
-
-.input--error {
-  .input-validation { @extend %field-validation--error; }
-  input[type="text"] {
-    border-color: $red54;
-    @include box-inner-shadow($red87);
-  }
-}
-
-.input--success {
-  .input-validation { @extend %field-validation--success; }
-  input[type="text"] {
-    border-color: $green54;
-    @include box-inner-shadow($green87);
   }
 }
 
@@ -182,78 +227,45 @@ input[type="text"] {
 
 
 
-/*——————————————————*\
+/*----------------------------------------------------------------------------*\
   #SELECTS
-\*——————————————————*/
+
+  .select .field [.field--small] [(.field--error|.field--success)]
+    [.field-validation]
+    select
+
+\*----------------------------------------------------------------------------*/
 
 /**
  * 1 - The right padding is increased because the icon on the right.
+ * 2 - Select caret down
  */
-
-$select-height: $grid * 6;
-$select-height--small: $grid * 4;
-$select-paddingLeftRight: $grid * 2;
-$select-paddingLeftRight--small: $grid * 1;
 
 select {
   @extend %sexyBox;
   background: $white;
   border: none;
-  height: $select-height;
+  height: $field-height;
   font-size: 1.6rem;
-  padding: 0 ($select-paddingLeftRight + $grid * 3) 0 $select-paddingLeftRight; /* 1 */
+  padding: 0 ($field-horizontalPadding + $grid * 3) 0 $field-horizontalPadding; /* 1 */
   -webkit-appearance: none;
-  .select--small & {
-    height: $select-height--small;
-    font-size: 1.3rem;
-    padding: 0 ($select-paddingLeftRight--small + $grid * 2) 0 $select-paddingLeftRight--small; /* 1 */
-  }
 }
 
 .select {
-  @extend .input;
   @extend %font-awesome;
   @extend .#{$fa-css-prefix}--caretDown;
   @extend .#{$fa-css-prefix}--gray;
-  &:before {
+  &:before { /* 2 */
     position: absolute;
     font-size: 1.8rem;
-    line-height: $select-height;
-    right: $select-paddingLeftRight;
+    line-height: $field-height;
+    right: $field-horizontalPadding;
   }
-  .fa, .select-validation {
-    font-size: 18px;
-    @extend %input-icon-position;
+  &.field--small {
+    &:before { /* 2 */
+      font-size: 1.2rem;
+      line-height: $field-height--small;
+      right: $field-horizontalPadding--small;
+    }
   }
-}
-
-.select--small {
-  &:before {
-    position: absolute;
-    font-size: 1.2rem;
-    line-height: $select-height--small;
-    right: $select-paddingLeftRight--small;
-  }
-  .fa, .select-validation {
-    font-size: 12px;
-    right: $grid * 1;
-  }
-}
-
-.select--error {
-  .select-validation { @extend %field-validation--error; }
-  select {
-    border: 1px solid $red54;
-    @include box-shadow-level-1($red);
-  }
-  &:before { display: none; }
-}
-
-.select--success {
-  .select-validation { @extend %field-validation--success; }
-  select {
-    border: 1px solid $green54;
-    @include box-shadow-level-1($green);
-  }
-  &:before { display: none; }
 }

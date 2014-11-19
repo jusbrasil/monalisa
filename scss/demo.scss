@@ -231,7 +231,6 @@
 
 .icons {}
 
-
   .icons-set {
     margin: 10px -23px 20px;
   }
@@ -272,6 +271,11 @@
   input, select {
     width: 400px;
   }
+  .field--small {
+    input, select {
+      width: 250px;
+    }
+  }
 }
 
   .inputs-group {
@@ -282,7 +286,7 @@
       clear: both;
     }
 
-    .input, .select {
+    .field {
       float: left;
       margin: 3px;
     }

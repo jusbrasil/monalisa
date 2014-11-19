@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     ,watch: { // Watchs file modifications
       css: {
         files: '**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass', 'cssmetrics']
       }
     }
 
@@ -46,7 +46,6 @@ module.exports = function(grunt) {
     ,cssmetrics: {
       dev: {
         src: [
-          'css/general.css',
           'css/general.min.css'
         ]
       }

@@ -435,6 +435,9 @@
 .inputs input, .inputs select {
   width: 400px;
 }
+.inputs .field--small input, .inputs .field--small select {
+  width: 250px;
+}
 
 .inputs-group {
   margin-bottom: 30px;
@@ -445,7 +448,7 @@
   display: table;
   clear: both;
 }
-.inputs-group .input, .inputs-group .select {
+.inputs-group .field {
   float: left;
   margin: 3px;
 }

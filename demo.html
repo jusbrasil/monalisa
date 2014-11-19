@@ -1138,58 +1138,58 @@
       <h1 class="demoPage-title typography-headline">Inputs</h1>
 
       <div class="inputs-group">
-        <div class="input">
+        <div class="field">
           <input type="text" placeholder="Placeholder">
         </div>
-        <div class="input input--small">
+        <div class="field field--small">
           <input type="text" placeholder="Placeholder">
         </div>
       </div>
 
       <div class="inputs-group">
-        <div class="input">
+        <div class="field">
           <i class="fa fa--heart fa--gray"></i>
           <input type="text" placeholder="Placeholder">
         </div>
-        <div class="input input--small">
+        <div class="field field--small">
           <i class="fa fa--heart fa--gray"></i>
           <input type="text" placeholder="Placeholder">
         </div>
       </div>
 
       <div class="inputs-group">
-        <div class="input input--error">
-          <i class="input-validation" tooltip="This field is required"></i>
+        <div class="field field--error">
+          <i class="field-validation" tooltip="This field is required"></i>
           <input type="text" placeholder="Placeholder">
         </div>
-        <div class="input input--small input--error">
-          <i class="input-validation" tooltip="This field is required"></i>
-          <input type="text" placeholder="Placeholder">
-        </div>
-      </div>
-
-      <div class="inputs-group">
-        <div class="input input--success">
-          <i class="input-validation" tooltip="All right"></i>
-          <input type="text" placeholder="Placeholder">
-        </div>
-        <div class="input input--small input--success">
-          <i class="input-validation" tooltip="All right"></i>
+        <div class="field field--small field--error">
+          <i class="field-validation" tooltip="This field is required"></i>
           <input type="text" placeholder="Placeholder">
         </div>
       </div>
 
       <div class="inputs-group">
-        <div class="input">
+        <div class="field field--success">
+          <i class="field-validation" tooltip="All right"></i>
+          <input type="text" placeholder="Placeholder">
+        </div>
+        <div class="field field--small field--success">
+          <i class="field-validation" tooltip="All right"></i>
+          <input type="text" placeholder="Placeholder">
+        </div>
+      </div>
+
+      <div class="inputs-group">
+        <div class="field">
           <input type="text" placeholder="Placeholder" disabled>
         </div>
-        <div class="input input--small">
+        <div class="field field--small">
           <input type="text" placeholder="Placeholder" disabled>
         </div>
       </div>
 
       <div class="inputs-group">
-        <div class="input">
+        <div class="field">
           <input type="text" placeholder="Autocomplete">
           <ul class="input-suggestions">
             <li class="input-suggestions-item"><b>Opt</b>ion one</li>
@@ -1199,7 +1199,7 @@
             <li class="input-suggestions-item"><b>Opt</b>ive</li>
           </ul>
         </div>
-        <div class="input input--small">
+        <div class="field field--small">
           <input type="text" placeholder="Autocomplete">
           <ul class="input-suggestions">
             <li class="input-suggestions-item"><b>Opt</b>ion one</li>
@@ -1212,7 +1212,7 @@
       </div>
 
       <div class="inputs-group">
-        <div class="input">
+        <div class="field">
           <input type="text" placeholder="Full autocomplete">
           <ul class="input-suggestions">
             <li class="input-suggestions-item">
@@ -1253,8 +1253,8 @@
           </ul>
         </div>
 
-        <div class="input input--small">
-          <input type="text" placeholder="Full autocomplete ">
+        <div class="field field--small">
+          <input type="text" placeholder="Full autocomplete">
           <ul class="input-suggestions">
             <li class="input-suggestions-item">
               <img src="http://lorempixel.com/64/64?a=1" alt="" class="input-suggestions-item-image">
@@ -1296,7 +1296,7 @@
       </div>
 
       <div class="inputs-group">
-        <div class="select">
+        <div class="[ field ][ select ]">
           <select name="" id="">
             <option value="">Option 1</option>
             <option value="">Option 2</option>
@@ -1305,30 +1305,7 @@
             <option value="">Option 5</option>
           </select>
         </div>
-        <div class="select select--small">
-          <select name="" id="">
-            <option value="">Option 1</option>
-            <option value="">Option 2</option>
-            <option value="">Option 3</option>
-            <option value="">Option 4</option>
-            <option value="">Option 5</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="inputs-group">
-        <div class="select select--error">
-          <i class="select-validation" tooltip="All right"></i>
-          <select name="" id="">
-            <option value="">Option 1</option>
-            <option value="">Option 2</option>
-            <option value="">Option 3</option>
-            <option value="">Option 4</option>
-            <option value="">Option 5</option>
-          </select>
-        </div>
-        <div class="select select--small  select--error">
-          <i class="select-validation" tooltip="All right"></i>
+        <div class="[ field field--small ][ select ]">
           <select name="" id="">
             <option value="">Option 1</option>
             <option value="">Option 2</option>
@@ -1340,8 +1317,8 @@
       </div>
 
       <div class="inputs-group">
-        <div class="select select--success">
-          <i class="select-validation" tooltip="All right"></i>
+        <div class="[ field field--error ][ select ]">
+          <i class="field-validation" tooltip="All right"></i>
           <select name="" id="">
             <option value="">Option 1</option>
             <option value="">Option 2</option>
@@ -1350,8 +1327,8 @@
             <option value="">Option 5</option>
           </select>
         </div>
-        <div class="select select--small  select--success">
-          <i class="select-validation" tooltip="All right"></i>
+        <div class="[ field field--small field--error ][ select ]">
+          <i class="field-validation" tooltip="All right"></i>
           <select name="" id="">
             <option value="">Option 1</option>
             <option value="">Option 2</option>
@@ -1363,7 +1340,30 @@
       </div>
 
       <div class="inputs-group">
-        <div class="select">
+        <div class="[ field field--success ][ select ]">
+          <i class="field-validation" tooltip="All right"></i>
+          <select name="" id="">
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+            <option value="">Option 4</option>
+            <option value="">Option 5</option>
+          </select>
+        </div>
+        <div class="[ field field--small field--success ][ select ]">
+          <i class="field-validation" tooltip="All right"></i>
+          <select name="" id="">
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+            <option value="">Option 4</option>
+            <option value="">Option 5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputs-group">
+        <div class="[ field ][ select ]">
           <select name="" id="" disabled>
             <option value="">Option 1</option>
             <option value="">Option 2</option>
@@ -1372,7 +1372,7 @@
             <option value="">Option 5</option>
           </select>
         </div>
-        <div class="select select--small">
+        <div class="[ field field--small ][ select ]">
           <select name="" id="" disabled>
             <option value="">Option 1</option>
             <option value="">Option 2</option>
