@@ -1,3 +1,16 @@
+
+%field-validation--error {
+  @extend %font-awesome;
+  @extend .#{$fa-css-prefix}--exclamationCircle;
+  @extend .#{$fa-css-prefix}--red;
+}
+
+%field-validation--success {
+  @extend %font-awesome;
+  @extend .#{$fa-css-prefix}--checkCircle;
+  @extend .#{$fa-css-prefix}--green;
+}
+
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
@@ -9,6 +22,7 @@
  *     upper and lower fills.
  * 4 - Clearfix and avoids content overflow.
  * 5 - Shows suggestions when input is in focus.
+ * 6 - Fix the blur before the click event, keeping the suggestions while hover.
  */
 
 $input-suggestions-item-height:             $grid * 6;
@@ -32,7 +46,7 @@ input[type="text"] {
   color: $black87;
   background: $white;
   border: 1px solid $black12;
-  @include input-box-shadow($black26);
+  @include box-inner-shadow($black26);
 
   height: $grid * 6;
   font-size: 1.6rem;
@@ -40,7 +54,7 @@ input[type="text"] {
 
   &:focus {
     border-color: $blue54;
-    @include input-box-shadow($blue87);
+    @include box-inner-shadow($blue87);
   }
 
   &[disabled] {
@@ -51,9 +65,8 @@ input[type="text"] {
 .input {
   display: inline-block;
   position: relative;
-  $icon-size: 18px;
   .fa, .input-validation {
-    font-size: $icon-size;
+    font-size: 18px;
     @extend %input-icon-position;
   }
   input[type="text"]:focus ~ .input-suggestions { /* 5 */
@@ -68,33 +81,24 @@ input[type="text"] {
     padding: 0 ($grid * 1);
   }
   .fa, .input-validation {
-    $icon-size: 12px;
-    font-size: $icon-size;
-    @extend %input-icon-position;
+    font-size: 12px;
+    right: $grid * 1;
   }
 }
 
 .input--error {
-  .input-validation {
-    @extend %font-awesome;
-    @extend .#{$fa-css-prefix}--exclamationCircle;
-    @extend .#{$fa-css-prefix}--red;
-  }
+  .input-validation { @extend %field-validation--error; }
   input[type="text"] {
     border-color: $red54;
-    @include input-box-shadow($red87);
+    @include box-inner-shadow($red87);
   }
 }
 
 .input--success {
-  .input-validation {
-    @extend %font-awesome;
-    @extend .#{$fa-css-prefix}--checkCircle;
-    @extend .#{$fa-css-prefix}--green;
-  }
+  .input-validation { @extend %field-validation--success; }
   input[type="text"] {
     border-color: $green54;
-    @include input-box-shadow($green87);
+    @include box-inner-shadow($green87);
   }
 }
 
@@ -110,12 +114,10 @@ input[type="text"] {
     overflow-y: scroll;
     z-index: $z-index-dropdown;
 
+    &:hover { display: inline-block; } /* 6 */
+
     .input--small & {
       max-height: ($input-suggestions-item-height--small * 4) + ($input-suggestions-item-height--small / 2); /* 1 */
-    }
-
-    &:hover {
-      display: inline-block;
     }
   }
 
@@ -219,6 +221,10 @@ select {
     line-height: $select-height;
     right: $select-paddingLeftRight;
   }
+  .fa, .select-validation {
+    font-size: 18px;
+    @extend %input-icon-position;
+  }
 }
 
 .select--small {
@@ -228,4 +234,26 @@ select {
     line-height: $select-height--small;
     right: $select-paddingLeftRight--small;
   }
+  .fa, .select-validation {
+    font-size: 12px;
+    right: $grid * 1;
+  }
+}
+
+.select--error {
+  .select-validation { @extend %field-validation--error; }
+  select {
+    border: 1px solid $red54;
+    @include box-shadow-level-1($red);
+  }
+  &:before { display: none; }
+}
+
+.select--success {
+  .select-validation { @extend %field-validation--success; }
+  select {
+    border: 1px solid $green54;
+    @include box-shadow-level-1($green);
+  }
+  &:before { display: none; }
 }

@@ -48,7 +48,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .input--error .input-validation, .input--success .input-validation, .select {
+.fa:before, .input--error .input-validation, .select--error .select-validation, .input--success .input-validation, .select--success .select-validation, .select {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -550,7 +550,7 @@
   content: "";
 }
 
-.fa--checkCircle:before, .input--success .input-validation:before {
+.fa--checkCircle:before, .input--success .input-validation:before, .select--success .select-validation:before {
   content: "";
 }
 
@@ -619,7 +619,7 @@
   content: "";
 }
 
-.fa--exclamationCircle:before, .input--error .input-validation:before {
+.fa--exclamationCircle:before, .input--error .input-validation:before, .select--error .select-validation:before {
   content: "";
 }
 
@@ -2212,7 +2212,7 @@
   color: #0091ea;
 }
 
-.fa--green:before, .input--success .input-validation:before {
+.fa--green:before, .input--success .input-validation:before, .select--success .select-validation:before {
   color: #7cb342;
 }
 
@@ -2224,7 +2224,7 @@
   color: #fb8c00;
 }
 
-.fa--red:before, .input--error .input-validation:before {
+.fa--red:before, .input--error .input-validation:before, .select--error .select-validation:before {
   color: #F83C00;
 }
 
@@ -3352,8 +3352,9 @@ html {
  *     upper and lower fills.
  * 4 - Clearfix and avoids content overflow.
  * 5 - Shows suggestions when input is in focus.
+ * 6 - Fix the blur before the click event, keeping the suggestions while hover.
  */
-.input .fa, .select .fa, .input .input-validation, .select .input-validation, .input--small .fa, .input--small .input-validation {
+.input .fa, .select .fa, .input .input-validation, .select .input-validation, .select .select-validation {
   width: 32px;
   right: 16px;
   text-align: right;
@@ -3402,6 +3403,7 @@ input[type="text"][disabled] {
 }
 .input--small .fa, .input--small .input-validation {
   font-size: 12px;
+  right: 8px;
 }
 
 .input--error input[type="text"] {
@@ -3427,13 +3429,14 @@ input[type="text"][disabled] {
   position: absolute;
   overflow-y: scroll;
   z-index: 1;
+  /* 6 */
+}
+.input-suggestions:hover {
+  display: inline-block;
 }
 .input--small .input-suggestions {
   max-height: 144px;
   /* 1 */
-}
-.input-suggestions:hover {
-  display: inline-block;
 }
 
 .input-suggestions-item {
@@ -3522,12 +3525,35 @@ select {
   line-height: 48px;
   right: 16px;
 }
+.select .fa, .select .select-validation {
+  font-size: 18px;
+}
 
 .select--small:before {
   position: absolute;
   font-size: 1.2rem;
   line-height: 32px;
   right: 8px;
+}
+.select--small .fa, .select--small .select-validation {
+  font-size: 12px;
+  right: 8px;
+}
+
+.select--error select {
+  border: 1px solid rgba(248, 60, 0, 0.54);
+  box-shadow: 0 1px 2px 0 rgba(248, 60, 0, 0.24), 0 2px 2px 0 rgba(248, 60, 0, 0.12);
+}
+.select--error:before {
+  display: none;
+}
+
+.select--success select {
+  border: 1px solid rgba(124, 179, 66, 0.54);
+  box-shadow: 0 1px 2px 0 rgba(124, 179, 66, 0.24), 0 2px 2px 0 rgba(124, 179, 66, 0.12);
+}
+.select--success:before {
+  display: none;
 }
 
 /*# sourceMappingURL=general.css.map */
