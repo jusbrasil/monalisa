@@ -3345,6 +3345,7 @@ html {
 /*----------------------------------------------------------------------------*\
 
   .field [.field--small] [(.field--error|.field--success)] (.select|.input)
+    [.fa]
     [.field-validation]
     (select|input)
 
@@ -3439,6 +3440,8 @@ html {
  * 4 - Clearfix and avoids content overflow.
  * 5 - Shows suggestions when input is in focus.
  * 6 - Fix the blur before the click event, keeping the suggestions while hover.
+ * 7 - The `input-suggestions-item-title` and
+ *     `input-suggestions-item-description` has the half of image height.
  */
 input[type="text"] {
   border-radius: 2px;
@@ -3481,7 +3484,7 @@ input[type="text"][disabled] {
 .input-suggestions:hover {
   display: inline-block;
 }
-.input--small .input-suggestions {
+.field--small .input-suggestions {
   max-height: 144px;
   /* 1 */
 }
@@ -3499,7 +3502,7 @@ input[type="text"][disabled] {
 .input-suggestions-item b, .input-suggestions-item strong {
   color: #0091ea;
 }
-.input--small .input-suggestions-item {
+.field--small .input-suggestions-item {
   font-size: 1.3rem;
   height: 32px;
   line-height: 16px;
@@ -3514,7 +3517,7 @@ input[type="text"][disabled] {
   height: 32px;
   margin-right: 8px;
 }
-.input--small .input-suggestions-item-image {
+.field--small .input-suggestions-item-image {
   height: 24px;
   width: 24px;
 }
@@ -3523,25 +3526,29 @@ input[type="text"][disabled] {
   float: left;
   width: calc(100% - 40px);
 }
-.input--small .input-suggestions-item-wrapper {
+.field--small .input-suggestions-item-wrapper {
   width: calc(100% - 32px);
 }
 
 .input-suggestions-item-title {
   line-height: 16px;
+  /* 7 */
 }
-.input--small .input-suggestions-item-title {
+.field--small .input-suggestions-item-title {
   line-height: 12px;
+  /* 7 */
 }
 
 .input-suggestions-item-description {
   color: rgba(0, 0, 0, 0.26);
   font-size: 1.2rem;
   line-height: 16px;
+  /* 7 */
 }
-.input--small .input-suggestions-item-description {
+.field--small .input-suggestions-item-description {
   font-size: 1.1rem;
   line-height: 12px;
+  /* 7 */
 }
 
 /*----------------------------------------------------------------------------*\
@@ -3553,10 +3560,13 @@ input[type="text"][disabled] {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - The right padding is increased because the icon on the right.
- * 2 - Select caret down
+ * 1 - The right padding is increased because the caret down icon on the right.
+ * 2 - Defines the position and styles of the caret down icon.
+ * 3 - Need to add the caret down icon.
+ * 4 - Defines the caret down icon.
  */
 select {
+  /* 1 */
   background: #fff;
   border: none;
   height: 48px;
@@ -3566,6 +3576,11 @@ select {
   -webkit-appearance: none;
 }
 
+.select {
+  /* 3 */
+  /* 4 */
+  /* 4 */
+}
 .select:before {
   /* 2 */
   position: absolute;

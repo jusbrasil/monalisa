@@ -1,6 +1,7 @@
 /*----------------------------------------------------------------------------*\
 
   .field [.field--small] [(.field--error|.field--success)] (.select|.input)
+    [.fa]
     [.field-validation]
     (select|input)
 
@@ -45,7 +46,7 @@ $field-horizontalPadding--small:  $grid * 1;
   }
   .fa, .field-validation {
     font-size: 12px;
-    right: $grid * 1;
+    right: $field-horizontalPadding--small;
   }
 }
 
@@ -61,7 +62,7 @@ $field-horizontalPadding--small:  $grid * 1;
   }
   select {
     border: 1px solid $red54;
-    @include box-shadow-level-1($red);
+    @include box-shadow-level-1($red87);
   }
   &:before { display: none; } /* 2 */
 }
@@ -77,7 +78,7 @@ $field-horizontalPadding--small:  $grid * 1;
   }
   select {
     border: 1px solid $green54;
-    @include box-shadow-level-1($green);
+    @include box-shadow-level-1($green87);
   }
   &:before { display: none; } /* 2 */
 }
@@ -110,13 +111,11 @@ $field-horizontalPadding--small:  $grid * 1;
  * 4 - Clearfix and avoids content overflow.
  * 5 - Shows suggestions when input is in focus.
  * 6 - Fix the blur before the click event, keeping the suggestions while hover.
+ * 7 - The `input-suggestions-item-title` and
+ *     `input-suggestions-item-description` has the half of image height.
  */
 
-$input-suggestions-item-height:             $field-height;
-$input-suggestions-item-height--small:      $field-height--small;
-
 $input-suggestions-item-paddingTopBottom:   $grid * 1;
-$input-suggestions-item-paddingLeftRight:   $grid * 2;
 $input-suggestions-item-image-size:         $grid * 4;
 $input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
@@ -129,9 +128,9 @@ input[type="text"] {
   border: 1px solid $black12;
   @include box-inner-shadow($black26);
 
-  height: $grid * 6;
+  height: $field-height;
   font-size: 1.6rem;
-  padding: 0 ($grid * 2);
+  padding: 0 $field-horizontalPadding;
 
   &:focus {
     border-color: $blue54;
@@ -153,7 +152,7 @@ input[type="text"] {
     border: 1px solid $black12;
     border-radius: 0 $border-radius $border-radius 0;
     width: 100%;
-    max-height: ($input-suggestions-item-height * 4) + ($input-suggestions-item-height / 2); /* 1 */
+    max-height: ($field-height * 4) + ($field-height / 2); /* 1 */
     top: calc(100% - #{$border-radius}); /* 2 */
     position: absolute;
     overflow-y: scroll;
@@ -161,8 +160,8 @@ input[type="text"] {
 
     &:hover { display: inline-block; } /* 6 */
 
-    .input--small & {
-      max-height: ($input-suggestions-item-height--small * 4) + ($input-suggestions-item-height--small / 2); /* 1 */
+    .field--small & {
+      max-height: ($field-height--small * 4) + ($field-height--small / 2); /* 1 */
     }
   }
 
@@ -171,17 +170,17 @@ input[type="text"] {
       b, strong { color: $blue; }
 
       font-size: 1.6rem;
-      height: $input-suggestions-item-height;
-      line-height: $input-suggestions-item-height - $input-suggestions-item-paddingTopBottom * 2; /* 3 */
-      padding: $input-suggestions-item-paddingTopBottom $input-suggestions-item-paddingLeftRight;
+      height: $field-height;
+      line-height: $field-height - $input-suggestions-item-paddingTopBottom * 2; /* 3 */
+      padding: $input-suggestions-item-paddingTopBottom $field-horizontalPadding;
 
       overflow: hidden; /* 4 */
 
-      .input--small & {
+      .field--small & {
         $padding: $grid * 1;
         font-size: 1.3rem;
-        height: $input-suggestions-item-height--small;
-        line-height: $input-suggestions-item-height--small - $padding * 2; /* 3 */
+        height: $field-height--small;
+        line-height: $field-height--small - $padding * 2; /* 3 */
         padding: $padding;
       }
     }
@@ -192,7 +191,7 @@ input[type="text"] {
         width: $input-suggestions-item-image-size;
         height: $input-suggestions-item-image-size;
         margin-right: $input-suggestions-item-image-marginRight;
-        .input--small & {
+        .field--small & {
           height: $input-suggestions-item-image-size--small;
           width: $input-suggestions-item-image-size--small;
         }
@@ -201,25 +200,25 @@ input[type="text"] {
       .input-suggestions-item-wrapper {
         float: left;
         width: calc(100% - #{$input-suggestions-item-image-size + $input-suggestions-item-image-marginRight});
-        .input--small & {
+        .field--small & {
           width: calc(100% - #{$input-suggestions-item-image-size--small + $input-suggestions-item-image-marginRight});
         }
       }
 
         .input-suggestions-item-title {
-          line-height: $input-suggestions-item-image-size / 2;
-          .input--small & {
-            line-height: $input-suggestions-item-image-size--small / 2;
+          line-height: $input-suggestions-item-image-size / 2; /* 7 */
+          .field--small & {
+            line-height: $input-suggestions-item-image-size--small / 2; /* 7 */
           }
         }
 
         .input-suggestions-item-description {
           color: $black26;
           font-size: 1.2rem;
-          line-height: $input-suggestions-item-image-size / 2;
-          .input--small & {
+          line-height: $input-suggestions-item-image-size / 2; /* 7 */
+          .field--small & {
             font-size: 1.1rem;
-            line-height: $input-suggestions-item-image-size--small / 2;
+            line-height: $input-suggestions-item-image-size--small / 2; /* 7 */
           }
         }
 
@@ -237,24 +236,27 @@ input[type="text"] {
 \*----------------------------------------------------------------------------*/
 
 /**
- * 1 - The right padding is increased because the icon on the right.
- * 2 - Select caret down
+ * 1 - The right padding is increased because the caret down icon on the right.
+ * 2 - Defines the position and styles of the caret down icon.
+ * 3 - Need to add the caret down icon.
+ * 4 - Defines the caret down icon.
  */
 
 select {
+  $paddingRight: $field-horizontalPadding + $grid * 3; /* 1 */
   @extend %sexyBox;
   background: $white;
   border: none;
   height: $field-height;
   font-size: 1.6rem;
-  padding: 0 ($field-horizontalPadding + $grid * 3) 0 $field-horizontalPadding; /* 1 */
+  padding: 0 $paddingRight 0 $field-horizontalPadding; /* 1 */
   -webkit-appearance: none;
 }
 
 .select {
-  @extend %font-awesome;
-  @extend .#{$fa-css-prefix}--caretDown;
-  @extend .#{$fa-css-prefix}--gray;
+  @extend %font-awesome; /* 3 */
+  @extend .#{$fa-css-prefix}--caretDown; /* 4 */
+  @extend .#{$fa-css-prefix}--gray; /* 4 */
   &:before { /* 2 */
     position: absolute;
     font-size: 1.8rem;
