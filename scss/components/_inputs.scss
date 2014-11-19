@@ -10,6 +10,7 @@
 /**
  * 1 - The right padding is increased because the icon on the right.
  * 2 - Hides the select caret down when the validation icons appears.
+ * 2 - Hides the input icon (`.fa`) when the validation icons appears.
  */
 
 $field-height:        $grid * 6;
@@ -50,6 +51,12 @@ $field-horizontalPadding--small:  $grid * 1;
   }
 }
 
+.field--error, .field--success {
+  &:before { display: none; } /* 2 */
+  .fa {
+    display: none; /* 3 */
+  }
+}
 
 .field--error {
   .field-validation {
@@ -64,7 +71,6 @@ $field-horizontalPadding--small:  $grid * 1;
     border: 1px solid $red54;
     @include box-shadow-level-1($red87);
   }
-  &:before { display: none; } /* 2 */
 }
 
 .field--success {
@@ -80,7 +86,6 @@ $field-horizontalPadding--small:  $grid * 1;
     border: 1px solid $green54;
     @include box-shadow-level-1($green87);
   }
-  &:before { display: none; } /* 2 */
 }
 
 

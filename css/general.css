@@ -3353,6 +3353,7 @@ html {
 /**
  * 1 - The right padding is increased because the icon on the right.
  * 2 - Hides the select caret down when the validation icons appears.
+ * 2 - Hides the input icon (`.fa`) when the validation icons appears.
  */
 .field {
   display: inline-block;
@@ -3385,9 +3386,17 @@ html {
   right: 8px;
 }
 
-.field--error {
+.field--error, .field--success {
   /* 2 */
 }
+.field--error:before, .field--success:before {
+  display: none;
+}
+.field--error .fa, .field--success .fa {
+  display: none;
+  /* 3 */
+}
+
 .field--error input[type="text"] {
   border-color: rgba(248, 60, 0, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(248, 60, 0, 0.87);
@@ -3396,13 +3405,7 @@ html {
   border: 1px solid rgba(248, 60, 0, 0.54);
   box-shadow: 0 1px 2px 0 rgba(248, 60, 0, 0.24), 0 2px 2px 0 rgba(248, 60, 0, 0.12);
 }
-.field--error:before {
-  display: none;
-}
 
-.field--success {
-  /* 2 */
-}
 .field--success input[type="text"] {
   border-color: rgba(124, 179, 66, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
@@ -3410,9 +3413,6 @@ html {
 .field--success select {
   border: 1px solid rgba(124, 179, 66, 0.54);
   box-shadow: 0 1px 2px 0 rgba(124, 179, 66, 0.24), 0 2px 2px 0 rgba(124, 179, 66, 0.12);
-}
-.field--success:before {
-  display: none;
 }
 
 /*----------------------------------------------------------------------------*\
