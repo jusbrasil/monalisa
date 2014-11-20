@@ -1,4 +1,5 @@
 /*----------------------------------------------------------------------------*\
+  #FIELD
 
   .field [.field--small] [(.field--error|.field--success)] (.select|.input)
     [.fa]
@@ -46,7 +47,7 @@ $field-horizontalPadding--small:  $grid * 1;
     padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
   }
   .fa, .field-validation {
-    font-size: 12px;
+    font-size: 1.2rem;
     right: $field-horizontalPadding--small;
   }
 }
@@ -90,7 +91,7 @@ $field-horizontalPadding--small:  $grid * 1;
 
 
 /*----------------------------------------------------------------------------*\
-  #INPUTS
+  #INPUT
 
   .input .field [.field--small] [(.field--error|.field--success)]
     [.fa]
@@ -232,7 +233,7 @@ input[type="text"] {
 
 
 /*----------------------------------------------------------------------------*\
-  #SELECTS
+  #SELECT
 
   .select .field [.field--small] [(.field--error|.field--success)]
     [.field-validation]

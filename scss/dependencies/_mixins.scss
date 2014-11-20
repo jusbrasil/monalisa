@@ -32,6 +32,13 @@ $break-large: 960px;
           transform: translateY(-50%);
 }
 
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
 
 @function pt-to-rem($pt) {
   @return ($pt * 0.133) * 1rem;

@@ -1,0 +1,37 @@
+/*----------------------------------------------------------------------------*\
+  #TOOLTIP
+
+  attr(tooltip)
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * 1 - The right padding is increased because the icon on the right.
+ * 2 - Hides the select caret down when the validation icons appears.
+ * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ */
+
+[tooltip] {
+  z-index: $z-index-tooltip;
+  position: relative;
+  &:after {
+    background-color: $black87;
+    border-radius: $border-radius;
+    color: $white;
+    content: attr(tooltip);
+    display: none;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    max-width: 250px;
+    min-width: 150px;
+    padding: $grid * 1;
+    text-align: center;
+    top: 100%;
+    @include horizontal-center
+  }
+  &:hover {
+    &:after {
+      display: inline-block;
+    }
+  }
+}

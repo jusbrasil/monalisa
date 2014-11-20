@@ -3343,6 +3343,7 @@ html {
 }
 
 /*----------------------------------------------------------------------------*\
+  #FIELD
 
   .field [.field--small] [(.field--error|.field--success)] (.select|.input)
     [.fa]
@@ -3382,7 +3383,7 @@ html {
   /* 1 */
 }
 .field--small .fa, .field--small .field-validation {
-  font-size: 12px;
+  font-size: 1.2rem;
   right: 8px;
 }
 
@@ -3416,7 +3417,7 @@ html {
 }
 
 /*----------------------------------------------------------------------------*\
-  #INPUTS
+  #INPUT
 
   .input .field [.field--small] [(.field--error|.field--success)]
     [.fa]
@@ -3478,7 +3479,7 @@ input[type="text"][disabled] {
   /* 2 */
   position: absolute;
   overflow-y: scroll;
-  z-index: 1;
+  z-index: 2;
   /* 6 */
 }
 .input-suggestions:hover {
@@ -3552,7 +3553,7 @@ input[type="text"][disabled] {
 }
 
 /*----------------------------------------------------------------------------*\
-  #SELECTS
+  #SELECT
 
   .select .field [.field--small] [(.field--error|.field--success)]
     [.field-validation]
@@ -3593,6 +3594,44 @@ select {
   font-size: 1.2rem;
   line-height: 32px;
   right: 8px;
+}
+
+/*----------------------------------------------------------------------------*\
+  #TOOLTIP
+
+  attr(tooltip)
+
+\*----------------------------------------------------------------------------*/
+/**
+ * 1 - The right padding is increased because the icon on the right.
+ * 2 - Hides the select caret down when the validation icons appears.
+ * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ */
+[tooltip] {
+  z-index: 1;
+  position: relative;
+}
+[tooltip]:after {
+  background-color: rgba(0, 0, 0, 0.87);
+  border-radius: 2px;
+  color: #fff;
+  content: attr(tooltip);
+  display: none;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  max-width: 250px;
+  min-width: 150px;
+  padding: 8px;
+  text-align: center;
+  top: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+[tooltip]:hover:after {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=general.css.map */
