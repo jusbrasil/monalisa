@@ -1,17 +1,17 @@
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field [.field--small] [(.field--error|.field--success)] [.select]
-    [.fa]
-    [.field-validation]
-    (select|input)
+  .field (.field--small) (.field--error|.field--success) (.select)
+    (.#{$fa-css-prefix})
+    (.field-validation)
+    select|input[type="text"]
 
 \*----------------------------------------------------------------------------*/
 
 /**
  * 1 - The right padding is increased because the icon on the right.
  * 2 - Hides the select caret down when the validation icons appears.
- * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ * 2 - Hides the input icon (`.#{$fa-css-prefix}`) when the validation icons appears.
  */
 
 $field-height:        $grid * 6;
@@ -23,7 +23,7 @@ $field-horizontalPadding--small:  $grid * 1;
 .field {
   display: inline-block;
   position: relative;
-  .fa, .field-validation {
+  .#{$fa-css-prefix}, .field-validation {
     font-size: 18px;
     right: $field-horizontalPadding;
     text-align: right;
@@ -46,7 +46,7 @@ $field-horizontalPadding--small:  $grid * 1;
     font-size: 1.3rem;
     padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
   }
-  .fa, .field-validation {
+  .#{$fa-css-prefix}, .field-validation {
     font-size: 1.2rem;
     right: $field-horizontalPadding--small;
   }
@@ -54,7 +54,7 @@ $field-horizontalPadding--small:  $grid * 1;
 
 .field--error, .field--success {
   &:before { display: none; } /* 2 */
-  .fa {
+  .#{$fa-css-prefix} {
     display: none; /* 3 */
   }
 }
@@ -93,18 +93,18 @@ $field-horizontalPadding--small:  $grid * 1;
 /*----------------------------------------------------------------------------*\
   #INPUT
 
-  .field [.field--small] [(.field--error|.field--success)]
-    [.fa]
-    [.field-validation]
-    input
-      [ .input-suggestions
-          .input-suggestions-item
-            [ .input-suggestions-item-image
+  .field (.field--small) (.field--error|.field--success)
+    (.#{$fa-css-prefix})
+    (.field-validation)
+    input[type="text"]
+      ( .input-suggestions
+        .input-suggestions-item
+            ( .input-suggestions-item-image
               .input-suggestions-item-wrapper
                 .input-suggestions-item-title
                 .input-suggestions-item-description
-            ]
-      ]
+            )
+      )
 
 \*----------------------------------------------------------------------------*/
 
@@ -235,8 +235,8 @@ input[type="text"] {
 /*----------------------------------------------------------------------------*\
   #SELECT
 
-  .select .field [.field--small] [(.field--error|.field--success)]
-    [.field-validation]
+  .select .field (.field--small) (.field--error|.field--success)
+    (.field-validation)
     select
 
 \*----------------------------------------------------------------------------*/
@@ -277,3 +277,126 @@ select {
     }
   }
 }
+
+
+/*----------------------------------------------------------------------------*\
+  #SWITCHS
+
+  label.switch
+    (input[text="checkbox"]|input[text="radio"])
+    span.switch-label
+
+\*----------------------------------------------------------------------------*/
+
+$switch-size: $grid * 2;
+
+.switch { /* 1 */
+  position: relative;
+  cursor: pointer;
+  font-size: 1.4em;
+
+  input[type="checkbox"], input[type="radio"] {
+    /* 2 */
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+
+    &:checked ~ .switch-label { /* */
+      &:before { opacity: 1; }
+      &:after { background: $blue; }
+    }
+
+    &[disabled] ~ .switch-label { /* */
+      @extend [disabled]; /* */
+    }
+  }
+
+  input[type="checkbox"] ~ .switch-label {
+    @extend .#{$fa-css-prefix}--check;
+    &:after {
+      border-radius: $border-radius;
+    }
+  }
+
+  input[type="radio"] ~ .switch-label {
+    @extend .#{$fa-css-prefix}--circle;
+    &:after {
+      border-radius: 50%;
+    }
+    &:before {
+      font-size: 50%;
+    }
+  }
+}
+
+
+  .switch-label {
+    @extend %font-awesome;
+
+    padding-left: $switch-size + $grid;
+    line-height: $switch-size;
+
+    &:after, &:before {
+      position: absolute;
+      left: 0;
+      width: $switch-size;
+      height: $switch-size;
+      line-height: $switch-size;
+    }
+
+    &:before { // CHECK OU CIRCLE
+      color: $white;
+      opacity: 0;
+      text-align: center;
+      z-index: 2;
+    }
+
+    &:after { // BOX
+      content: '';
+      background: $white;
+      border: 1px solid $gray26;
+      z-index: 1;
+    }
+  }
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+  #CHECKBOX
+
+  label.checkbox
+    input[text="checkbox"]
+    span.checkbox-label
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * 1 - Forcing to use `label` element.
+ * 2 - Solution to hidden elements readable by screen reader:
+ *     http://a11yproject.com/posts/how-to-hide-content/
+ */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+  #RADIO
+
+  label.checkbox
+    input[text="checkbox"]
+    span.checkbox-label
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * 1 - Forcing to use `label` element.
+ * 2 - Solution to hidden elements readable by screen reader:
+ *     http://a11yproject.com/posts/how-to-hide-content/
+ */

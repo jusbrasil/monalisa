@@ -48,7 +48,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .field-validation, .select {
+.fa:before, .field-validation, .select, .switch-label {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -258,7 +258,7 @@
   content: "";
 }
 
-.fa--check:before {
+.fa--check:before, .switch input[type="checkbox"] ~ .switch-label:before {
   content: "";
 }
 
@@ -1214,7 +1214,7 @@
   content: "";
 }
 
-.fa--circle:before {
+.fa--circle:before, .switch input[type="radio"] ~ .switch-label:before {
   content: "";
 }
 
@@ -2836,12 +2836,9 @@ html {
   font-weight: light;
 }
 
-[disabled] {
+[disabled], .switch input[type="checkbox"][disabled] ~ .switch-label, .switch input[type="radio"][disabled] ~ .switch-label {
   cursor: not-allowed;
   opacity: .6;
-}
-[disabled]:hover {
-  background: auto !important;
 }
 
 /* latin */
@@ -3085,7 +3082,7 @@ html {
 .button:active {
   background: #4d4d4d;
 }
-.button, .button[disabled] {
+.button, .button[disabled], .switch input[type="checkbox"][disabled] ~ .button.switch-label, .switch input[type="radio"][disabled] ~ .button.switch-label {
   background: gray;
 }
 
@@ -3099,7 +3096,7 @@ html {
 .button--blue:active {
   background: #005284;
 }
-.button--blue, .button--blue[disabled] {
+.button--blue, .button--blue[disabled], .switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, .switch input[type="radio"][disabled] ~ .button--blue.switch-label {
   background: #0091ea;
 }
 
@@ -3112,7 +3109,7 @@ html {
 .button--green:active {
   background: #486827;
 }
-.button--green, .button--green[disabled] {
+.button--green, .button--green[disabled], .switch input[type="checkbox"][disabled] ~ .button--green.switch-label, .switch input[type="radio"][disabled] ~ .button--green.switch-label {
   background: #7cb342;
 }
 
@@ -3125,7 +3122,7 @@ html {
 .button--yellow:active {
   background: #996b00;
 }
-.button--yellow, .button--yellow[disabled] {
+.button--yellow, .button--yellow[disabled], .switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, .switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
   background: #ffb300;
 }
 
@@ -3138,7 +3135,7 @@ html {
 .button--orange:active {
   background: #955300;
 }
-.button--orange, .button--orange[disabled] {
+.button--orange, .button--orange[disabled], .switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, .switch input[type="radio"][disabled] ~ .button--orange.switch-label {
   background: #fb8c00;
 }
 
@@ -3151,7 +3148,7 @@ html {
 .button--red:active {
   background: #922300;
 }
-.button--red, .button--red[disabled] {
+.button--red, .button--red[disabled], .switch input[type="checkbox"][disabled] ~ .button--red.switch-label, .switch input[type="radio"][disabled] ~ .button--red.switch-label {
   background: #F83C00;
 }
 
@@ -3187,7 +3184,7 @@ html {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]) {
+.outlineButton:hover:not([disabled]):not(.switch input[type="checkbox"][disabled] ~ .switch-label):not(.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #000;
   border-color: currentColor;
 }
@@ -3196,7 +3193,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]) {
+.outlineButton--light:hover:not([disabled]):not(.switch input[type="checkbox"][disabled] ~ .switch-label):not(.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #fff;
   border-color: currentColor;
 }
@@ -3220,7 +3217,7 @@ html {
 .flatButton:active {
   color: #4d4d4d;
 }
-.flatButton, .flatButton[disabled] {
+.flatButton, .flatButton[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton.switch-label, .switch input[type="radio"][disabled] ~ .flatButton.switch-label {
   color: gray;
 }
 
@@ -3233,7 +3230,7 @@ html {
 .flatButton--blue:active {
   color: #005284;
 }
-.flatButton--blue, .flatButton--blue[disabled] {
+.flatButton--blue, .flatButton--blue[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--blue.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--blue.switch-label {
   color: #0091ea;
 }
 
@@ -3246,7 +3243,7 @@ html {
 .flatButton--green:active {
   color: #486827;
 }
-.flatButton--green, .flatButton--green[disabled] {
+.flatButton--green, .flatButton--green[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--green.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--green.switch-label {
   color: #7cb342;
 }
 
@@ -3259,7 +3256,7 @@ html {
 .flatButton--yellow:active {
   color: #996b00;
 }
-.flatButton--yellow, .flatButton--yellow[disabled] {
+.flatButton--yellow, .flatButton--yellow[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--yellow.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--yellow.switch-label {
   color: #ffb300;
 }
 
@@ -3272,7 +3269,7 @@ html {
 .flatButton--orange:active {
   color: #955300;
 }
-.flatButton--orange, .flatButton--orange[disabled] {
+.flatButton--orange, .flatButton--orange[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--orange.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--orange.switch-label {
   color: #fb8c00;
 }
 
@@ -3285,7 +3282,7 @@ html {
 .flatButton--red:active {
   color: #922300;
 }
-.flatButton--red, .flatButton--red[disabled] {
+.flatButton--red, .flatButton--red[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   color: #F83C00;
 }
 
@@ -3345,10 +3342,10 @@ html {
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field [.field--small] [(.field--error|.field--success)] (.select|.input)
-    [.fa]
-    [.field-validation]
-    (select|input)
+  .field (.field--small) (.field--error|.field--success) (.select)
+    (.fa)
+    (.field-validation)
+    select|input[type="text"]
 
 \*----------------------------------------------------------------------------*/
 /**
@@ -3419,18 +3416,18 @@ html {
 /*----------------------------------------------------------------------------*\
   #INPUT
 
-  .input .field [.field--small] [(.field--error|.field--success)]
-    [.fa]
-    [.field-validation]
-    input
-      [ .input-suggestions
-          .input-suggestions-item
-            [ .input-suggestions-item-image
+  .field (.field--small) (.field--error|.field--success)
+    (.fa)
+    (.field-validation)
+    input[type="text"]
+      ( .input-suggestions
+        .input-suggestions-item
+            ( .input-suggestions-item-image
               .input-suggestions-item-wrapper
                 .input-suggestions-item-title
                 .input-suggestions-item-description
-            ]
-      ]
+            )
+      )
 
 \*----------------------------------------------------------------------------*/
 /**
@@ -3463,7 +3460,7 @@ input[type="text"]:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
-input[type="text"][disabled] {
+input[type="text"][disabled], .switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label, .switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
   background: #f2f2f2;
 }
 
@@ -3471,7 +3468,7 @@ input[type="text"][disabled] {
   display: none;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 0 2px 2px;
   width: 100%;
   max-height: 216px;
   /* 1 */
@@ -3555,8 +3552,8 @@ input[type="text"][disabled] {
 /*----------------------------------------------------------------------------*\
   #SELECT
 
-  .select .field [.field--small] [(.field--error|.field--success)]
-    [.field-validation]
+  .select .field (.field--small) (.field--error|.field--success)
+    (.field-validation)
     select
 
 \*----------------------------------------------------------------------------*/
@@ -3597,9 +3594,106 @@ select {
 }
 
 /*----------------------------------------------------------------------------*\
+  #SWITCHS
+
+  label.switch
+    (input[text="checkbox"]|input[text="radio"])
+    span.switch-label
+
+\*----------------------------------------------------------------------------*/
+.switch {
+  /* 1 */
+  position: relative;
+  cursor: pointer;
+  font-size: 1.4em;
+}
+.switch input[type="checkbox"], .switch input[type="radio"] {
+  /* 2 */
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+.switch input[type="checkbox"]:checked ~ .switch-label, .switch input[type="radio"]:checked ~ .switch-label {
+  /* */
+}
+.switch input[type="checkbox"]:checked ~ .switch-label:before, .switch input[type="radio"]:checked ~ .switch-label:before {
+  opacity: 1;
+}
+.switch input[type="checkbox"]:checked ~ .switch-label:after, .switch input[type="radio"]:checked ~ .switch-label:after {
+  background: #0091ea;
+}
+.switch input[type="checkbox"][disabled] ~ .switch-label, .switch input[type="radio"][disabled] ~ input[type="checkbox"].switch-label ~ .switch-label, .switch input[type="radio"][disabled] ~ .switch-label, .switch input[type="checkbox"][disabled] ~ input[type="radio"].switch-label ~ .switch-label {
+  /* */
+  /* */
+}
+.switch input[type="checkbox"] ~ .switch-label:after {
+  border-radius: 2px;
+}
+.switch input[type="radio"] ~ .switch-label:after {
+  border-radius: 50%;
+}
+.switch input[type="radio"] ~ .switch-label:before {
+  font-size: 50%;
+}
+
+.switch-label {
+  padding-left: 24px;
+  line-height: 16px;
+}
+.switch-label:after, .switch-label:before {
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+.switch-label:before {
+  color: #fff;
+  opacity: 0;
+  text-align: center;
+  z-index: 2;
+}
+.switch-label:after {
+  content: '';
+  background: #fff;
+  border: 1px solid rgba(128, 128, 128, 0.26);
+  z-index: 1;
+}
+
+/*----------------------------------------------------------------------------*\
+  #CHECKBOX
+
+  label.checkbox
+    input[text="checkbox"]
+    span.checkbox-label
+
+\*----------------------------------------------------------------------------*/
+/**
+ * 1 - Forcing to use `label` element.
+ * 2 - Solution to hidden elements readable by screen reader:
+ *     http://a11yproject.com/posts/how-to-hide-content/
+ */
+/*----------------------------------------------------------------------------*\
+  #RADIO
+
+  label.checkbox
+    input[text="checkbox"]
+    span.checkbox-label
+
+\*----------------------------------------------------------------------------*/
+/**
+ * 1 - Forcing to use `label` element.
+ * 2 - Solution to hidden elements readable by screen reader:
+ *     http://a11yproject.com/posts/how-to-hide-content/
+ */
+/*----------------------------------------------------------------------------*\
   #TOOLTIP
 
-  attr(tooltip)
+  *[tooltip="*"]
 
 \*----------------------------------------------------------------------------*/
 /**

@@ -432,10 +432,10 @@
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
-.inputs input, .inputs select {
+.inputs input[type="text"], .inputs select {
   width: 400px;
 }
-.inputs .field--small input, .inputs .field--small select {
+.inputs .field--small input[type="text"], .inputs .field--small select {
   width: 250px;
 }
 

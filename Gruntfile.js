@@ -5,14 +5,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json')
 
     ,sass: { // SASS compiler
-      prod: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          'css/general.min.css': 'scss/general.scss'
-        }
-      },
+      // prod: {
+      //   options: {
+      //     style: 'compressed'
+      //   },
+      //   files: {
+      //     'css/general.min.css': 'scss/general.scss'
+      //   }
+      // },
       dev: {
         options: {
           style: 'expanded'
@@ -27,7 +27,10 @@ module.exports = function(grunt) {
     ,watch: { // Watchs file modifications
       css: {
         files: '**/*.scss',
-        tasks: ['sass', 'cssmetrics']
+        tasks: [
+          'sass',
+          // 'cssmetrics'
+        ]
       }
     }
 

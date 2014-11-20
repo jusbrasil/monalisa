@@ -268,11 +268,11 @@
 
 
 .inputs {
-  input, select {
+  input[type="text"], select {
     width: 400px;
   }
   .field--small {
-    input, select {
+    input[type="text"], select {
       width: 250px;
     }
   }

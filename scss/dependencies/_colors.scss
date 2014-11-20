@@ -12,7 +12,6 @@
 
 $white:   #fff;
 $black:   #000;
-
 $gray:    #808080;
 $blue:    #0091ea;
 $green:   #7cb342;
@@ -28,15 +27,20 @@ $red:     #F83C00;
   #OPACITY COLORS
 \*——————————————————*/
 
+$white87: rgba($white,.87);
+$white54: rgba($white,.54);
+$white26: rgba($white,.26);
+$white12: rgba($white,.12);
+
 $black87: rgba($black,.87);
 $black54: rgba($black,.54);
 $black26: rgba($black,.26);
 $black12: rgba($black,.12);
 
-$white87: rgba($white,.87);
-$white54: rgba($white,.54);
-$white26: rgba($white,.26);
-$white12: rgba($white,.12);
+$gray87: rgba($gray,.87);
+$gray54: rgba($gray,.54);
+$gray26: rgba($gray,.26);
+$gray12: rgba($gray,.12);
 
 $blue87: rgba($blue,.87);
 $blue54: rgba($blue,.54);
