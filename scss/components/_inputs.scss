@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field [.field--small] [(.field--error|.field--success)] (.select|.input)
+  .field [.field--small] [(.field--error|.field--success)] [.select]
     [.fa]
     [.field-validation]
     (select|input)
@@ -93,7 +93,7 @@ $field-horizontalPadding--small:  $grid * 1;
 /*----------------------------------------------------------------------------*\
   #INPUT
 
-  .input .field [.field--small] [(.field--error|.field--success)]
+  .field [.field--small] [(.field--error|.field--success)]
     [.fa]
     [.field-validation]
     input
@@ -156,7 +156,7 @@ input[type="text"] {
     display: none;
     background: $white;
     border: 1px solid $black12;
-    border-radius: 0 $border-radius $border-radius 0;
+    border-radius: 0 0 $border-radius $border-radius;
     width: 100%;
     max-height: ($field-height * 4) + ($field-height / 2); /* 1 */
     top: calc(100% - #{$border-radius}); /* 2 */
