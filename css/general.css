@@ -3568,6 +3568,7 @@ input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ in
  * 4 - Defines the caret down icon.
  */
 select {
+  cursor: pointer;
   /* 1 */
   background: #fff;
   border: none;
