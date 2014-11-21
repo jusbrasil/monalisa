@@ -27,6 +27,10 @@
  * This file gathers general rules. Works like a reset, but setting the default
  * behavior of the site.
  */
+/**
+ * Solution to hidden elements readable by screen reader:
+ * http://a11yproject.com/posts/how-to-hide-content/
+ */
 @-webkit-keyframes ellipsis {
   0% {
     width: 0;
@@ -258,7 +262,7 @@
   content: "";
 }
 
-.fa--check:before, .switch input[type="checkbox"] ~ .switch-label:before {
+.fa--check:before, label.switch input[type="checkbox"] ~ .switch-label:before {
   content: "";
 }
 
@@ -1214,7 +1218,7 @@
   content: "";
 }
 
-.fa--circle:before, .switch input[type="radio"] ~ .switch-label:before {
+.fa--circle:before, label.switch input[type="radio"] ~ .switch-label:before {
   content: "";
 }
 
@@ -2836,7 +2840,7 @@ html {
   font-weight: light;
 }
 
-[disabled], .switch input[type="checkbox"][disabled] ~ .switch-label, .switch input[type="radio"][disabled] ~ .switch-label {
+[disabled], label.switch input[type="checkbox"][disabled] ~ .switch-label, label.switch input[type="radio"][disabled] ~ .switch-label {
   cursor: not-allowed;
   opacity: .6;
 }
@@ -3082,7 +3086,7 @@ html {
 .button:active {
   background: #4d4d4d;
 }
-.button, .button[disabled], .switch input[type="checkbox"][disabled] ~ .button.switch-label, .switch input[type="radio"][disabled] ~ .button.switch-label {
+.button, .button[disabled], label.switch input[type="checkbox"][disabled] ~ .button.switch-label, label.switch input[type="radio"][disabled] ~ .button.switch-label {
   background: gray;
 }
 
@@ -3096,7 +3100,7 @@ html {
 .button--blue:active {
   background: #005284;
 }
-.button--blue, .button--blue[disabled], .switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, .switch input[type="radio"][disabled] ~ .button--blue.switch-label {
+.button--blue, .button--blue[disabled], label.switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, label.switch input[type="radio"][disabled] ~ .button--blue.switch-label {
   background: #0091ea;
 }
 
@@ -3109,7 +3113,7 @@ html {
 .button--green:active {
   background: #486827;
 }
-.button--green, .button--green[disabled], .switch input[type="checkbox"][disabled] ~ .button--green.switch-label, .switch input[type="radio"][disabled] ~ .button--green.switch-label {
+.button--green, .button--green[disabled], label.switch input[type="checkbox"][disabled] ~ .button--green.switch-label, label.switch input[type="radio"][disabled] ~ .button--green.switch-label {
   background: #7cb342;
 }
 
@@ -3122,7 +3126,7 @@ html {
 .button--yellow:active {
   background: #996b00;
 }
-.button--yellow, .button--yellow[disabled], .switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, .switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
+.button--yellow, .button--yellow[disabled], label.switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
   background: #ffb300;
 }
 
@@ -3135,7 +3139,7 @@ html {
 .button--orange:active {
   background: #955300;
 }
-.button--orange, .button--orange[disabled], .switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, .switch input[type="radio"][disabled] ~ .button--orange.switch-label {
+.button--orange, .button--orange[disabled], label.switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, label.switch input[type="radio"][disabled] ~ .button--orange.switch-label {
   background: #fb8c00;
 }
 
@@ -3148,7 +3152,7 @@ html {
 .button--red:active {
   background: #922300;
 }
-.button--red, .button--red[disabled], .switch input[type="checkbox"][disabled] ~ .button--red.switch-label, .switch input[type="radio"][disabled] ~ .button--red.switch-label {
+.button--red, .button--red[disabled], label.switch input[type="checkbox"][disabled] ~ .button--red.switch-label, label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   background: #F83C00;
 }
 
@@ -3184,7 +3188,7 @@ html {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]):not(.switch input[type="checkbox"][disabled] ~ .switch-label):not(.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #000;
   border-color: currentColor;
 }
@@ -3193,7 +3197,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]):not(.switch input[type="checkbox"][disabled] ~ .switch-label):not(.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #fff;
   border-color: currentColor;
 }
@@ -3217,7 +3221,7 @@ html {
 .flatButton:active {
   color: #4d4d4d;
 }
-.flatButton, .flatButton[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton.switch-label, .switch input[type="radio"][disabled] ~ .flatButton.switch-label {
+.flatButton, .flatButton[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton.switch-label {
   color: gray;
 }
 
@@ -3230,7 +3234,7 @@ html {
 .flatButton--blue:active {
   color: #005284;
 }
-.flatButton--blue, .flatButton--blue[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--blue.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--blue.switch-label {
+.flatButton--blue, .flatButton--blue[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--blue.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--blue.switch-label {
   color: #0091ea;
 }
 
@@ -3243,7 +3247,7 @@ html {
 .flatButton--green:active {
   color: #486827;
 }
-.flatButton--green, .flatButton--green[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--green.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--green.switch-label {
+.flatButton--green, .flatButton--green[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--green.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--green.switch-label {
   color: #7cb342;
 }
 
@@ -3256,7 +3260,7 @@ html {
 .flatButton--yellow:active {
   color: #996b00;
 }
-.flatButton--yellow, .flatButton--yellow[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--yellow.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--yellow.switch-label {
+.flatButton--yellow, .flatButton--yellow[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--yellow.switch-label {
   color: #ffb300;
 }
 
@@ -3269,7 +3273,7 @@ html {
 .flatButton--orange:active {
   color: #955300;
 }
-.flatButton--orange, .flatButton--orange[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--orange.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--orange.switch-label {
+.flatButton--orange, .flatButton--orange[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--orange.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--orange.switch-label {
   color: #fb8c00;
 }
 
@@ -3282,7 +3286,7 @@ html {
 .flatButton--red:active {
   color: #922300;
 }
-.flatButton--red, .flatButton--red[disabled], .switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label, .switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
+.flatButton--red, .flatButton--red[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   color: #F83C00;
 }
 
@@ -3460,7 +3464,7 @@ input[type="text"]:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
-input[type="text"][disabled], .switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label, .switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
+input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label, label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
   background: #f2f2f2;
 }
 
@@ -3594,21 +3598,49 @@ select {
 }
 
 /*----------------------------------------------------------------------------*\
-  #SWITCHS
+  #SWITCHES
 
   label.switch
     (input[text="checkbox"]|input[text="radio"])
     span.switch-label
 
 \*----------------------------------------------------------------------------*/
-.switch {
+/**
+ * The checkbox and radio are wrapped by `label` element, that allows to change
+ * the element state by clicking anywhere inside its wrapper.
+ *
+ * To change the style of checkbox/radio, is necessary to create a fake
+ * component with the `:after` and `:before` of `.switch-label` element and hide
+ * the original checkbox/radio.
+ *
+ * [ ] or ( ) = box (.switch-label:after)
+ * ✓  or  ●  = marker (.switch-label:before)
+ *
+ * By default, the font-awesome icons are applied to `:before` pseudo element,
+ * but the fake component needs that the font icons stays hover the...
+ *
+ *
+ *  1 - Force to use the label element.
+ *  2 - Hides the original checkbox/radio.
+ *  3 - Set CSS rules to `.switch-label` when the checkbox/radio is checked.
+ *  4 - Shows the marker
+ *  5 - Changes the background color of
+ *  6 - Since [disable] attribute is from checkbox/radio and not from
+ *      switch-label, is necessary to replicate its behavior here.
+ *  7 - The ✓ marker of checkbox
+ *  8 - The border-radius [ ] box of checkbox
+ *  9 - The ● marker of radio
+ * 10 - The border-radius ( ) box of radio
+ * 11 - The box of fake component
+ * 12 - The market of fake component
+ */
+label.switch {
   /* 1 */
   position: relative;
   cursor: pointer;
   font-size: 1.4em;
 }
-.switch input[type="checkbox"], .switch input[type="radio"] {
-  /* 2 */
+label.switch input[type="checkbox"], label.switch input[type="radio"] {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -3616,28 +3648,36 @@ select {
   width: 1px;
   padding: 0;
   border: 0;
+  /* 2 */
+  /* 6 */
 }
-.switch input[type="checkbox"]:checked ~ .switch-label, .switch input[type="radio"]:checked ~ .switch-label {
-  /* */
+label.switch input[type="checkbox"]:checked ~ .switch-label, label.switch input[type="radio"]:checked ~ .switch-label {
+  /* 3 */
+  /* 4 */
+  /* 5 */
 }
-.switch input[type="checkbox"]:checked ~ .switch-label:before, .switch input[type="radio"]:checked ~ .switch-label:before {
+label.switch input[type="checkbox"]:checked ~ .switch-label:before, label.switch input[type="radio"]:checked ~ .switch-label:before {
   opacity: 1;
 }
-.switch input[type="checkbox"]:checked ~ .switch-label:after, .switch input[type="radio"]:checked ~ .switch-label:after {
+label.switch input[type="checkbox"]:checked ~ .switch-label:after, label.switch input[type="radio"]:checked ~ .switch-label:after {
   background: #0091ea;
 }
-.switch input[type="checkbox"][disabled] ~ .switch-label, .switch input[type="radio"][disabled] ~ input[type="checkbox"].switch-label ~ .switch-label, .switch input[type="radio"][disabled] ~ .switch-label, .switch input[type="checkbox"][disabled] ~ input[type="radio"].switch-label ~ .switch-label {
-  /* */
-  /* */
+label.switch input[type="checkbox"] ~ .switch-label {
+  /* 7 */
+  /* 8 */
 }
-.switch input[type="checkbox"] ~ .switch-label:after {
+label.switch input[type="checkbox"] ~ .switch-label:after {
   border-radius: 2px;
 }
-.switch input[type="radio"] ~ .switch-label:after {
-  border-radius: 50%;
+label.switch input[type="radio"] ~ .switch-label {
+  /* 9 */
+  /* 10 */
 }
-.switch input[type="radio"] ~ .switch-label:before {
+label.switch input[type="radio"] ~ .switch-label:before {
   font-size: 50%;
+}
+label.switch input[type="radio"] ~ .switch-label:after {
+  border-radius: 50%;
 }
 
 .switch-label {
@@ -3651,45 +3691,21 @@ select {
   height: 16px;
   line-height: 16px;
 }
-.switch-label:before {
-  color: #fff;
-  opacity: 0;
-  text-align: center;
-  z-index: 2;
-}
 .switch-label:after {
+  /* 11 */
   content: '';
   background: #fff;
   border: 1px solid rgba(128, 128, 128, 0.26);
   z-index: 1;
 }
+.switch-label:before {
+  /* 12 */
+  color: #fff;
+  opacity: 0;
+  text-align: center;
+  z-index: 2;
+}
 
-/*----------------------------------------------------------------------------*\
-  #CHECKBOX
-
-  label.checkbox
-    input[text="checkbox"]
-    span.checkbox-label
-
-\*----------------------------------------------------------------------------*/
-/**
- * 1 - Forcing to use `label` element.
- * 2 - Solution to hidden elements readable by screen reader:
- *     http://a11yproject.com/posts/how-to-hide-content/
- */
-/*----------------------------------------------------------------------------*\
-  #RADIO
-
-  label.checkbox
-    input[text="checkbox"]
-    span.checkbox-label
-
-\*----------------------------------------------------------------------------*/
-/**
- * 1 - Forcing to use `label` element.
- * 2 - Solution to hidden elements readable by screen reader:
- *     http://a11yproject.com/posts/how-to-hide-content/
- */
 /*----------------------------------------------------------------------------*\
   #TOOLTIP
 

@@ -1,0 +1,97 @@
+/*----------------------------------------------------------------------------*\
+  #SWITCHES
+
+  label.switch
+    (input[text="checkbox"]|input[text="radio"])
+    span.switch-label
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * The checkbox and radio are wrapped by `label` element, that allows to change
+ * the element state by clicking anywhere inside its wrapper.
+ *
+ * To change the style of checkbox/radio, is necessary to create a fake
+ * component with the `:after` and `:before` of `.switch-label` element and hide
+ * the original checkbox/radio.
+ *
+ * [ ] or ( ) = box (.switch-label:after)
+ * ✓  or  ●  = marker (.switch-label:before)
+ *
+ * By default, the font-awesome icons are applied to `:before` pseudo element,
+ * but the fake component needs that the font icons stays hover the...
+ *
+ *
+ *  1 - Force to use the label element.
+ *  2 - Hides the original checkbox/radio.
+ *  3 - Set CSS rules to `.switch-label` when the checkbox/radio is checked.
+ *  4 - Shows the marker
+ *  5 - Changes the background color of
+ *  6 - Since [disable] attribute is from checkbox/radio and not from
+ *      switch-label, is necessary to replicate its behavior here.
+ *  7 - The ✓ marker of checkbox
+ *  8 - The border-radius [ ] box of checkbox
+ *  9 - The ● marker of radio
+ * 10 - The border-radius ( ) box of radio
+ * 11 - The box of fake component
+ * 12 - The market of fake component
+ */
+
+$switch-size: $grid * 2;
+
+label.switch { /* 1 */
+  position: relative;
+  cursor: pointer;
+  font-size: 1.4em;
+
+  input[type="checkbox"], input[type="radio"] {
+    @include hidden-element; /* 2 */
+
+    &:checked ~ .switch-label { /* 3 */
+      &:before { opacity: 1; } /* 4 */
+      &:after { background: $blue; } /* 5 */
+    }
+
+    &[disabled] ~ .switch-label { @extend [disabled]; } /* 6 */
+  }
+
+  input[type="checkbox"] ~ .switch-label {
+    @extend .#{$fa-css-prefix}--check; /* 7 */
+    &:after { border-radius: $border-radius; } /* 8 */
+  }
+
+  input[type="radio"] ~ .switch-label {
+    @extend .#{$fa-css-prefix}--circle; /* 9 */
+    &:before { font-size: 50%; }
+    &:after { border-radius: 50%; } /* 10 */
+  }
+}
+
+  .switch-label {
+    @extend %font-awesome;
+
+    padding-left: $switch-size + $grid;
+    line-height: $switch-size;
+
+    &:after, &:before {
+      position: absolute;
+      left: 0;
+      width: $switch-size;
+      height: $switch-size;
+      line-height: $switch-size;
+    }
+
+    &:after { /* 11 */
+      content: '';
+      background: $white;
+      border: 1px solid $gray26;
+      z-index: 1;
+    }
+
+    &:before { /* 12 */
+      color: $white;
+      opacity: 0;
+      text-align: center;
+      z-index: 2;
+    }
+  }

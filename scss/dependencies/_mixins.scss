@@ -52,3 +52,18 @@ $break-large: 960px;
   box-shadow: 0 1px 2px 0 rgba($color,.24),
               0 2px 2px 0 rgba($color,.12);
 }
+
+/**
+ * Solution to hidden elements readable by screen reader:
+ * http://a11yproject.com/posts/how-to-hide-content/
+ */
+
+@mixin hidden-element {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}

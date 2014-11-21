@@ -21,6 +21,10 @@
  * This file gathers general rules. Works like a reset, but setting the default
  * behavior of the site.
  */
+/**
+ * Solution to hidden elements readable by screen reader:
+ * http://a11yproject.com/posts/how-to-hide-content/
+ */
 /*——————————————————*\
   #STRUCTURE
 \*——————————————————*/
