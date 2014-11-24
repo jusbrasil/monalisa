@@ -41,7 +41,7 @@
 }
 @media only screen and (min-width: 769px) and (max-width: 959px) {
   .header {
-    background-color: #F83C00;
+    background-color: #f83c00;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -125,7 +125,7 @@
 }
 
 .colorPallet-color--red {
-  background-color: #F83C00;
+  background-color: #f83c00;
 }
 
 .colorPallet-color--blue50 {
@@ -309,7 +309,7 @@
 }
 
 .colorPallet-color--red500 {
-  background-color: #F83C00;
+  background-color: #f83c00;
 }
 
 .colorPallet-color--red600 {

@@ -2229,7 +2229,7 @@
 }
 
 .fa--red:before, .field--error .field-validation:before {
-  color: #F83C00;
+  color: #f83c00;
 }
 
 /*——————————————————*\
@@ -2989,11 +2989,11 @@ html {
 /**
  *
  */
-.button, select, .outlineButton, .label {
+.button, .actionButton, select, .outlineButton, .label {
   border-radius: 2px;
 }
 
-.button, select {
+.button, .actionButton, select {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -3014,57 +3014,27 @@ html {
 /*——————————————————*\
   #Components
 \*——————————————————*/
-/**
- *
- */
 /*——————————————————*\
   #BUTTON PLACEHOLDERS
 \*——————————————————*/
-.button, .outlineButton {
+.button, .actionButton, .outlineButton {
   height: 48px;
   line-height: 48px;
   font-size: 16px;
   padding: 0 20px;
 }
-.button .fa, .outlineButton .fa {
+.button .fa, .actionButton .fa, .outlineButton .fa {
   float: left;
   margin-right: 8px;
 }
 
-.button--medium, .flatButton {
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
-  padding: 0 16px;
-}
-.button--medium .fa, .flatButton .fa {
-  margin-right: 6px;
-}
-
-.button--small {
-  height: 32px;
-  line-height: 32px;
-  font-size: 12px;
-  padding: 0 12px;
-}
-.button--small .fa {
-  margin-right: 4px;
-}
-
-.button--caps {
-  height: 24px;
-  line-height: 24px;
-  font-size: 10px;
-  padding: 0 8px;
-  text-transform: uppercase;
-}
-.button--caps .fa {
-  margin-right: 4px;
-}
-
-/*——————————————————*\
+/*----------------------------------------------------------------------------*\
   #BUTTON
-\*——————————————————*/
+
+  .button (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
+    (i.fa)
+
+\*----------------------------------------------------------------------------*/
 /**
  * 1 - Defines the default background color and overwrites the hover/active
  *     style when disabled.
@@ -3072,7 +3042,7 @@ html {
  * 3 - Necessary when used in block elements.
  * 4 - Defines the default button color to gray.
  */
-.button {
+.button, .actionButton {
   /* 2 */
   display: inline-block;
   /* 3 */
@@ -3080,110 +3050,158 @@ html {
   /* 1 */
   /* 4 */
 }
-.button:hover {
+.button:hover, .actionButton:hover {
   background: #666666;
 }
-.button:active {
+.button:active, .actionButton:active {
   background: #4d4d4d;
 }
-.button, .button[disabled], label.switch input[type="checkbox"][disabled] ~ .button.switch-label, label.switch input[type="radio"][disabled] ~ .button.switch-label {
+.button, .actionButton, .button[disabled], [disabled].actionButton, label.switch input[type="checkbox"][disabled] ~ .actionButton.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton.switch-label, label.switch input[type="checkbox"][disabled] ~ .button.switch-label, label.switch input[type="radio"][disabled] ~ .button.switch-label {
   background: gray;
 }
 
 /* Colors modifiers */
-.button--blue {
+.button--blue, .actionButton--blue {
   /* 1 */
 }
-.button--blue:hover {
+.button--blue:hover, .actionButton--blue:hover {
   background: #0071b7;
 }
-.button--blue:active {
+.button--blue:active, .actionButton--blue:active {
   background: #005284;
 }
-.button--blue, .button--blue[disabled], label.switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, label.switch input[type="radio"][disabled] ~ .button--blue.switch-label {
+.button--blue, .actionButton--blue, .button--blue[disabled], [disabled].actionButton--blue, label.switch input[type="checkbox"][disabled] ~ .actionButton--blue.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--blue.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, label.switch input[type="radio"][disabled] ~ .button--blue.switch-label {
   background: #0091ea;
 }
 
-.button--green {
+.button--green, .actionButton--green {
   /* 1 */
 }
-.button--green:hover {
+.button--green:hover, .actionButton--green:hover {
   background: #628e34;
 }
-.button--green:active {
+.button--green:active, .actionButton--green:active {
   background: #486827;
 }
-.button--green, .button--green[disabled], label.switch input[type="checkbox"][disabled] ~ .button--green.switch-label, label.switch input[type="radio"][disabled] ~ .button--green.switch-label {
+.button--green, .actionButton--green, .button--green[disabled], [disabled].actionButton--green, label.switch input[type="checkbox"][disabled] ~ .actionButton--green.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--green.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--green.switch-label, label.switch input[type="radio"][disabled] ~ .button--green.switch-label {
   background: #7cb342;
 }
 
-.button--yellow {
+.button--yellow, .actionButton--yellow {
   /* 1 */
 }
-.button--yellow:hover {
+.button--yellow:hover, .actionButton--yellow:hover {
   background: #cc8f00;
 }
-.button--yellow:active {
+.button--yellow:active, .actionButton--yellow:active {
   background: #996b00;
 }
-.button--yellow, .button--yellow[disabled], label.switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
+.button--yellow, .actionButton--yellow, .button--yellow[disabled], [disabled].actionButton--yellow, label.switch input[type="checkbox"][disabled] ~ .actionButton--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--yellow.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
   background: #ffb300;
 }
 
-.button--orange {
+.button--orange, .actionButton--orange {
   /* 1 */
 }
-.button--orange:hover {
+.button--orange:hover, .actionButton--orange:hover {
   background: #c87000;
 }
-.button--orange:active {
+.button--orange:active, .actionButton--orange:active {
   background: #955300;
 }
-.button--orange, .button--orange[disabled], label.switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, label.switch input[type="radio"][disabled] ~ .button--orange.switch-label {
+.button--orange, .actionButton--orange, .button--orange[disabled], [disabled].actionButton--orange, label.switch input[type="checkbox"][disabled] ~ .actionButton--orange.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--orange.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, label.switch input[type="radio"][disabled] ~ .button--orange.switch-label {
   background: #fb8c00;
 }
 
-.button--red {
+.button--red, .actionButton--red {
   /* 1 */
 }
-.button--red:hover {
+.button--red:hover, .actionButton--red:hover {
   background: #c53000;
 }
-.button--red:active {
+.button--red:active, .actionButton--red:active {
   background: #922300;
 }
-.button--red, .button--red[disabled], label.switch input[type="checkbox"][disabled] ~ .button--red.switch-label, label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
-  background: #F83C00;
+.button--red, .actionButton--red, .button--red[disabled], [disabled].actionButton--red, label.switch input[type="checkbox"][disabled] ~ .actionButton--red.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--red.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--red.switch-label, label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
+  background: #f83c00;
 }
 
 /* Size and style modifiers */
-/* Action modifiers */
-.button--action:before {
+.button--medium, .actionButton--medium, .flatButton {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  padding: 0 16px;
+}
+.button--medium .fa, .actionButton--medium .fa, .flatButton .fa {
+  margin-right: 6px;
+}
+
+.button--small, .actionButton--small {
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  padding: 0 12px;
+}
+.button--small .fa, .actionButton--small .fa {
+  margin-right: 4px;
+}
+
+.button--caps, .actionButton--caps {
+  height: 24px;
+  line-height: 24px;
+  font-size: 10px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+.button--caps .fa, .actionButton--caps .fa {
+  margin-right: 4px;
+}
+
+/*----------------------------------------------------------------------------*\
+  #ACTIONBUTTON
+
+  .actionButton (--loading|--done) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
+    (i.fa)
+
+\*----------------------------------------------------------------------------*/
+/**
+ * 1 - Ellipsis character
+ */
+.actionButton:before {
   content: attr(label);
 }
 
-.button--loading:after {
+/* Colors modifiers */
+/* Size and style modifiers */
+/* Action modifiers */
+.actionButton--loading:after {
   content: "\2026";
+  /* 1 */
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
   -webkit-animation: ellipsis 1s infinite;
   animation: ellipsis 1s infinite;
 }
-.button--loading:before {
+.actionButton--loading:before {
   content: attr(label-loading);
 }
 
-.button--done:after {
+.actionButton--done:after {
   content: "!";
 }
-.button--done:before {
+.actionButton--done:before {
   content: attr(label-done);
 }
 
-/*——————————————————*\
-  #OUTLINE BUTTON
-\*——————————————————*/
+/*----------------------------------------------------------------------------*\
+  #OUTLINEBUTTON
+
+  .outlineButton (--light)
+    (i.fa)
+
+\*----------------------------------------------------------------------------*/
 .outlineButton {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
@@ -3202,9 +3220,13 @@ html {
   border-color: currentColor;
 }
 
-/*——————————————————*\
-  #FLAT BUTTON
-\*——————————————————*/
+/*----------------------------------------------------------------------------*\
+  #FLATBUTTON
+
+  .flatButton (--blue|--green|--yellow|--orange|--red)
+    (i.fa)
+
+\*----------------------------------------------------------------------------*/
 /**
  * 1 - Defines the default background color and overwrites the hover/active
  *     style when disabled.
@@ -3287,7 +3309,7 @@ html {
   color: #922300;
 }
 .flatButton--red, .flatButton--red[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
-  color: #F83C00;
+  color: #f83c00;
 }
 
 /*——————————————————*\
@@ -3340,13 +3362,13 @@ html {
 }
 
 .label--red {
-  background: #F83C00;
+  background: #f83c00;
 }
 
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field (.field--small) (.field--error|.field--success) (.select)
+  .field (--small) (--error|--success) (.select)
     (.fa)
     (.field-validation)
     select|input[type="text"]
@@ -3420,7 +3442,7 @@ html {
 /*----------------------------------------------------------------------------*\
   #INPUT
 
-  .field (.field--small) (.field--error|.field--success)
+  .field (--small) (--error|--success)
     (.fa)
     (.field-validation)
     input[type="text"]
@@ -3556,7 +3578,7 @@ input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ in
 /*----------------------------------------------------------------------------*\
   #SELECT
 
-  .select .field (.field--small) (.field--error|.field--success)
+  .field (--small) (--error|--success) .select
     (.field-validation)
     select
 

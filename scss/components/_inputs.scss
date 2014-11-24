@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field (.field--small) (.field--error|.field--success) (.select)
+  .field (--small) (--error|--success) (.select)
     (.#{$fa-css-prefix})
     (.field-validation)
     select|input[type="text"]
@@ -93,8 +93,8 @@ $field-horizontalPadding--small:  $grid * 1;
 /*----------------------------------------------------------------------------*\
   #INPUT
 
-  .field (.field--small) (.field--error|.field--success)
-    (.#{$fa-css-prefix})
+  .field (--small) (--error|--success)
+    (.fa)
     (.field-validation)
     input[type="text"]
       ( .input-suggestions
@@ -235,7 +235,7 @@ input[type="text"] {
 /*----------------------------------------------------------------------------*\
   #SELECT
 
-  .select .field (.field--small) (.field--error|.field--success)
+  .field (--small) (--error|--success) .select
     (.field-validation)
     select
 
