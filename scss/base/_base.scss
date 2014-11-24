@@ -31,12 +31,12 @@ html {
   font-weight: light;
 }
 ::-webkit-input-placeholder { @include placeholder; }
-:-moz-placeholder { @include placeholder; }
-::-moz-placeholder { @include placeholder; }
-:-ms-input-placeholder { @include placeholder; }
+          :-moz-placeholder { @include placeholder; }
+         ::-moz-placeholder { @include placeholder; }
+     :-ms-input-placeholder { @include placeholder; }
 
 
 [disabled] {
   cursor: not-allowed;
-  opacity: .6;
+  opacity: .54;
 }

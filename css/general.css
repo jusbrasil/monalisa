@@ -2842,7 +2842,7 @@ html {
 
 [disabled], label.switch input[type="checkbox"][disabled] ~ .switch-label, label.switch input[type="radio"][disabled] ~ .switch-label {
   cursor: not-allowed;
-  opacity: .6;
+  opacity: .54;
 }
 
 /* latin */
