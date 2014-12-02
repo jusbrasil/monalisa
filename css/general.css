@@ -52,7 +52,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .field-validation, .select, .switch-label {
+.fa:before, .field-validation, .select, .switch-label, .alert-close {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -268,6 +268,7 @@
 
 .fa--remove:before,
 .fa--close:before,
+.alert-close:before,
 .fa--times:before {
   content: "";
 }
@@ -2989,11 +2990,11 @@ html {
 /**
  *
  */
-.button, .actionButton, select, .outlineButton, .label {
+.button, .actionButton, select, .alert, .outlineButton, .label {
   border-radius: 2px;
 }
 
-.button, .actionButton, select {
+.button, .actionButton, select, .alert {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -3765,6 +3766,31 @@ label.switch input[type="radio"] ~ .switch-label:after {
 }
 [tooltip]:hover:after {
   display: inline-block;
+}
+
+.alert {
+  background: #0091ea;
+  border-radius: 0 0 2px 2px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.87);
+  overflow: hidden;
+}
+
+.alert-message {
+  padding: 16px 8px 16px 16px;
+  font-size: 1.4rem;
+  float: left;
+  width: calc(100% - 48px);
+}
+
+.alert-close {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.54);
+  float: left;
 }
 
 /*# sourceMappingURL=general.css.map */

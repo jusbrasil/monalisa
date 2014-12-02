@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @function wf-str-replace($string, $find, $replace, $all: true) {
   $index: str-index($string, $find);
   @if $index {

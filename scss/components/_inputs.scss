@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*----------------------------------------------------------------------------*\
   #FIELD
 
@@ -120,6 +122,8 @@ $field-horizontalPadding--small:  $grid * 1;
  * 7 - The `input-suggestions-item-title` and
  *     `input-suggestions-item-description` has the half of image height.
  */
+
+@charset "UTF-8";
 
 $input-suggestions-item-paddingTopBottom:   $grid * 1;
 $input-suggestions-item-image-size:         $grid * 4;

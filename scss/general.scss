@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /**
  * Main file that imports all partials.
  */
@@ -66,3 +68,4 @@
 @import "scss/components/inputs";
 @import "scss/components/switches";
 @import "scss/components/tooltip";
+@import "scss/components/alerts";
