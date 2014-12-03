@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+$close-size: $grid*6;
+
+.alert {
+  @extend %sexyBox;
+  background: $blue;
+  border-radius: 0 0 $border-radius $border-radius;
+  display: table;
+  color: $white87;
+
+  @include generic-horizontal-center;
+  position: fixed;
+  top: 0;
+  z-index: $z-index-alert;
+
+  overflow: hidden;
+  .fa {
+    @extend .#{$fa-css-prefix}--infoCircle;
+    $icon-width: $grid*4;
+    float: left;
+    height: $grid*6;
+    width: $icon-width;
+    line-height: $grid*6;
+    padding-left: $grid*2;
+    font-size: 1.6rem;
+    & + .alert-message { /* 1 */
+      padding-left: $grid;
+      width: calc(100% - #{$close-size + $icon-width});
+    }
+  }
+}
+
+.alert--error {
+  background: $red;
+  i.fa {
+    @extend .#{$fa-css-prefix}--exclamationCircle;
+  }
+}
+
+.alert--warning {
+  background: $yellow;
+  i.fa {
+    @extend .#{$fa-css-prefix}--questionCircle;
+  }
+}
+
+.alert--success {
+  background: $green;
+  i.fa {
+    @extend .#{$fa-css-prefix}--checkCircle;
+  }
+}
+
+  .alert-message {
+    padding: $grid*2 $grid $grid*2 $grid*2;
+    font-size: 1.4rem;
+    float: left;
+    width: calc(100% - #{$close-size});
+    line-height: $grid*2;
+  }
+
+  .alert-close {
+    @extend %font-awesome;
+    @extend .#{$fa-css-prefix}--close;
+    width: $close-size;
+    height: $close-size;
+    line-height: $close-size;
+    text-align: center;
+    font-size: 1.6rem;
+    color: $white54;
+    float: left;
+    cursor: pointer;
+  }

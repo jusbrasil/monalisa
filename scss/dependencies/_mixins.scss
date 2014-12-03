@@ -25,6 +25,13 @@ $break-large: 960px;
   }
 }
 
+@mixin generic-horizontal-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 
 @mixin vertical-center {
   position: absolute;
@@ -36,10 +43,7 @@ $break-large: 960px;
 
 @mixin horizontal-center {
   position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  @include generic-horizontal-center;
 }
 
 @function pt-to-rem($pt) {

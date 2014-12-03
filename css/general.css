@@ -555,15 +555,15 @@
   content: "";
 }
 
-.fa--checkCircle:before, .field--success .field-validation:before {
+.fa--checkCircle:before, .field--success .field-validation:before, .alert--success i.fa:before {
   content: "";
 }
 
-.fa--questionCircle:before {
+.fa--questionCircle:before, .alert--warning i.fa:before {
   content: "";
 }
 
-.fa--infoCircle:before {
+.fa--infoCircle:before, .alert .fa:before {
   content: "";
 }
 
@@ -624,7 +624,7 @@
   content: "";
 }
 
-.fa--exclamationCircle:before, .field--error .field-validation:before {
+.fa--exclamationCircle:before, .field--error .field-validation:before, .alert--error i.fa:before {
   content: "";
 }
 
@@ -3771,9 +3771,41 @@ label.switch input[type="radio"] ~ .switch-label:after {
 .alert {
   background: #0091ea;
   border-radius: 0 0 2px 2px;
-  display: inline-block;
+  display: table;
   color: rgba(255, 255, 255, 0.87);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: fixed;
+  top: 0;
+  z-index: 3;
   overflow: hidden;
+}
+.alert .fa {
+  float: left;
+  height: 48px;
+  width: 32px;
+  line-height: 48px;
+  padding-left: 16px;
+  font-size: 1.6rem;
+}
+.alert .fa + .alert-message {
+  /* 1 */
+  padding-left: 8px;
+  width: calc(100% - 80px);
+}
+
+.alert--error {
+  background: #f83c00;
+}
+
+.alert--warning {
+  background: #ffb300;
+}
+
+.alert--success {
+  background: #7cb342;
 }
 
 .alert-message {
@@ -3781,6 +3813,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   font-size: 1.4rem;
   float: left;
   width: calc(100% - 48px);
+  line-height: 16px;
 }
 
 .alert-close {
@@ -3791,6 +3824,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.54);
   float: left;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=general.css.map */
