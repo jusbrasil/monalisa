@@ -298,8 +298,15 @@
   #ALERTS
 \*——————————————————*/
 
+/**
+ * 1 - Puts the alerts in the page flow.
+ */
+
 .alerts {
   .alert {
     margin-bottom: 10px;
+    position: relative; /* 1 */
+    left: 0; /* 1 */
+    transform: translateX(0); /* 1 */
   }
 }
