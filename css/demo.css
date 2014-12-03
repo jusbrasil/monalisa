@@ -465,7 +465,7 @@
  */
 .alerts .alert {
   margin-bottom: 10px;
-  position: relative;
+  position: initial;
   /* 1 */
   left: 0;
   /* 1 */
