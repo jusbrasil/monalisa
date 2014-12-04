@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*----------------------------------------------------------------------------*\
+  #MODAL
+
+  .modal
+    .modal-overlay
+    .modal-box
+      (.modal-box-footer)
+      (.modal-box-close)
+      .modal-box-content
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ * 1 -
+ */
+
+$modal-box-content-padding: $grid*2;
+$modal-close-size: $grid*6;
+
+.modal {
+  position: absolute;
+  z-index: $z-index-modal;
+  opacity: 0;
+  transition: all .3s linear;
+}
+
+.modal--on {
+  opacity: 1;
+}
+
+  .modal-overlay {
+    position: fixed;
+    background: $black54;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .modal-box {
+    @extend %sexyBox;
+
+    background: $white;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+
+    transition: all .5s linear;
+    .modal--on & {
+      top: 50%;
+    }
+  }
+
+    .modal-box-footer {
+      $footer-height: $grid*6;
+
+      padding: $grid/2;
+      height: $footer-height;
+      background: $white;
+      box-shadow: 0px 1px 7px 0px rgba(0,0,0,.3);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      button {
+        float: right;
+        &:first-child { float: left; }
+      }
+      & ~ .modal-box-content {
+        height: calc(100% - #{$footer-height});
+      }
+    }
+
+    .modal-box-close {
+      &:before {
+        content: "×";
+      }
+
+      width: $modal-close-size;
+      height: $modal-close-size;
+      line-height: $modal-close-size;
+      text-align: center;
+      font-size: 2.2rem;
+      color: $black54;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      & ~ .modal-box-content {
+        padding-right: $modal-close-size + $modal-box-content-padding;
+      }
+    }
+
+    .modal-box-content {
+      padding: $modal-box-content-padding;
+      font-size: 1.4rem;
+      line-height: 20px;
+      overflow-y: scroll;
+      height: 100%;
+    }
+

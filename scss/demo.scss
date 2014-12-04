@@ -310,3 +310,35 @@
     transform: translateX(0); /* 1 */
   }
 }
+
+/*——————————————————*\
+  #MODALS
+\*——————————————————*/
+
+/**
+ * 1 - Puts the alerts in the page flow.
+ */
+
+.modals {
+  .modal {
+    transform: scale(1);
+    opacity: 1;
+    margin-bottom: 10px;
+    position: initial; /* 1 */
+    left: 0; /* 1 */
+  }
+
+    .modal-overlay {
+      position: initial;
+    }
+
+    .modal-box {
+      width: 500px;
+      height: 250px;
+      top: 0;
+      left: 0;
+      position: initial;
+      transform: translateX(0) translateY(0); /* 1 */
+    }
+}
+

@@ -21,7 +21,7 @@
  *     rule, because the @extend changes the order of selector.
  */
 
-$close-size: $grid*6;
+$alert-close-size: $grid*6;
 
 .alert {
   @extend %sexyBox;
@@ -57,7 +57,7 @@ $close-size: $grid*6;
 
     & + .alert-message { /* 5 */
       padding-left: $grid;
-      width: calc(100% - #{$close-size + $icon-width});
+      width: calc(100% - #{$alert-close-size + $icon-width});
     }
   }
 }
@@ -93,19 +93,20 @@ $close-size: $grid*6;
     padding: $grid*2 $grid $grid*2 $grid*2;
     font-size: 1.4rem;
     float: left;
-    width: calc(100% - #{$close-size});
+    width: calc(100% - #{$alert-close-size});
     line-height: $grid*2;
   }
 
   .alert-close {
-    @extend %font-awesome;
-    @extend .#{$fa-css-prefix}--close;
+    &:before {
+      content: "×";
+    }
 
-    width: $close-size;
-    height: $close-size;
-    line-height: $close-size;
+    width: $alert-close-size;
+    height: $alert-close-size;
+    line-height: $alert-close-size;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     color: $white54;
     float: left;
     cursor: pointer;
