@@ -3781,38 +3781,35 @@ label.switch input[type="radio"] ~ .switch-label:after {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - Just the bottom corners are rounded.
- * 2 - Default background color.
- * 3 - Clear float trick.
- * 4 - Centers horizontally and hides vertically with 110% (10% is to hide the
+ * 1 - Centers horizontally and hides vertically with 110% (10% is to hide the
  *     shadow element).
+ * 2 - Just the bottom corners are rounded.
+ * 3 - Default background color.
+ * 4 - Clear float trick.
  * 5 - CSS rule to `.alert-message` when there `.fa` icon.
  * 6 - Using the `i` element in selector to increase the weight of `.alert .fa`
  *     rule, because the @extend changes the order of selector.
  */
 .alert {
-  border-radius: 0 0 2px 2px;
+  -webkit-transform: translate(-50%, -110%);
+  -ms-transform: translate(-50%, -110%);
+  transform: translate(-50%, -110%);
   /* 1 */
+  -webkit-transition: -webkit-transform 0.6s ease-out;
+  -moz-transition: -moz-transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
+  border-radius: 0 0 2px 2px;
+  /* 2 */
   display: table;
   color: rgba(255, 255, 255, 0.87);
   background: #0091ea;
-  /* 2 */
-  overflow: hidden;
   /* 3 */
+  overflow: hidden;
+  /* 4 */
   position: fixed;
   z-index: 3;
   top: 0;
   left: 50%;
-  /* 4 */
-  -webkit-transform: translateX(-50%) translateY(-110%);
-  /* 4 */
-  -ms-transform: translateX(-50%) translateY(-110%);
-  /* 4 */
-  transform: translateX(-50%) translateY(-110%);
-  /* 4 */
-  -webkit-transition: transform .6s ease-out;
-  -ms-transition: transform .6s ease-out;
-  transition: transform .6s ease-out;
 }
 .alert .fa {
   float: left;
@@ -3829,9 +3826,9 @@ label.switch input[type="radio"] ~ .switch-label:after {
 }
 
 .alert--on {
-  -webkit-transform: translateX(-50%) translateY(0);
-  -ms-transform: translateX(-50%) translateY(0);
-  transform: translateX(-50%) translateY(0);
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .alert--error {
@@ -3891,7 +3888,6 @@ label.switch input[type="radio"] ~ .switch-label:after {
  * This modal is a CSS only implementation, using URL #anchor and selected by
  * :target selector. The modal is activated by clicking in some link with your
  * anchor, and closed clicking in any other anchor (like #close).
-
  *
  * 1  - Modal overlay.
  * 2  - CSS rule to show the modal (when the id of `.modal` is an anchor).

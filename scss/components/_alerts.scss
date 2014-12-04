@@ -11,11 +11,11 @@
 \*----------------------------------------------------------------------------*/
 
 /**
- * 1 - Just the bottom corners are rounded.
- * 2 - Default background color.
- * 3 - Clear float trick.
- * 4 - Centers horizontally and hides vertically with 110% (10% is to hide the
+ * 1 - Centers horizontally and hides vertically with 110% (10% is to hide the
  *     shadow element).
+ * 2 - Just the bottom corners are rounded.
+ * 3 - Default background color.
+ * 4 - Clear float trick.
  * 5 - CSS rule to `.alert-message` when there `.fa` icon.
  * 6 - Using the `i` element in selector to increase the weight of `.alert .fa`
  *     rule, because the @extend changes the order of selector.
@@ -25,23 +25,18 @@ $alert-close-size: $grid*6;
 
 .alert {
   @extend %sexyBox;
-  border-radius: 0 0 $border-radius $border-radius; /* 1 */
+  @include transform(translate(-50%, -110%)); /* 1 */
+  @include transition-transform(.6s ease-out);
+
+  border-radius: 0 0 $border-radius $border-radius; /* 2 */
   display: table;
   color: $white87;
-  background: $blue; /* 2 */
-  overflow: hidden; /* 3 */
-
+  background: $blue; /* 3 */
+  overflow: hidden; /* 4 */
   position: fixed;
   z-index: $z-index-alert;
   top: 0;
-  left: 50%; /* 4 */
-  -webkit-transform: translateX(-50%) translateY(-110%); /* 4 */
-      -ms-transform: translateX(-50%) translateY(-110%); /* 4 */
-          transform: translateX(-50%) translateY(-110%); /* 4 */
-
-  -webkit-transition: transform .6s ease-out;
-      -ms-transition: transform .6s ease-out;
-          transition: transform .6s ease-out;
+  left: 50%;
 
   .fa {
     $icon-width: $grid*4;
@@ -63,9 +58,7 @@ $alert-close-size: $grid*6;
 }
 
 .alert--on {
-  -webkit-transform: translateX(-50%) translateY(0);
-      -ms-transform: translateX(-50%) translateY(0);
-          transform: translateX(-50%) translateY(0);
+  @include transform(translate(-50%, 0));
 }
 
 .alert--error {
