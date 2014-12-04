@@ -479,26 +479,19 @@
 /**
  * 1 - Puts the alerts in the page flow.
  */
-.modals .modal {
-  transform: scale(1);
-  opacity: 1;
-  margin-bottom: 10px;
-  position: initial;
-  /* 1 */
-  left: 0;
-  /* 1 */
-}
-.modals .modal-overlay {
+.modals .modal:before {
+  display: block;
   position: initial;
 }
 .modals .modal-box {
-  width: 500px;
-  height: 250px;
-  top: 0;
-  left: 0;
   position: initial;
-  transform: translateX(0) translateY(0);
-  /* 1 */
+  margin-left: 0;
+  top: 20%;
+  width: 400px;
+  height: 300px;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 
 /*# sourceMappingURL=demo.css.map */

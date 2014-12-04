@@ -2845,6 +2845,10 @@ html {
   opacity: .54;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* latin */
 @font-face {
   font-family: 'Roboto';
@@ -3877,7 +3881,6 @@ label.switch input[type="radio"] ~ .switch-label:after {
   #MODAL
 
   .modal
-    .modal-overlay
     .modal-box
       (.modal-box-footer)
       (.modal-box-close)
@@ -3887,39 +3890,44 @@ label.switch input[type="radio"] ~ .switch-label:after {
 /**
  * 1 -
  */
-.modal {
-  position: absolute;
-  z-index: 4;
-  opacity: 0;
-  transition: all .3s linear;
-}
-
-.modal--on {
-  opacity: 1;
-}
-
-.modal-overlay {
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
   position: fixed;
-  background: rgba(0, 0, 0, 0.54);
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-box {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  top: 20%;
 }
 
 .modal-box {
+  height: 100%;
+  max-width: 400px;
+  max-height: 300px;
   background: #fff;
   overflow: hidden;
   position: fixed;
-  top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  transition: all .5s linear;
-}
-.modal--on .modal-box {
-  top: 50%;
+  top: -100%;
+  z-index: 5;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
 }
 
 .modal-box-footer {
@@ -3931,10 +3939,10 @@ label.switch input[type="radio"] ~ .switch-label:after {
   bottom: 0;
   width: 100%;
 }
-.modal-box-footer button {
+.modal-box-footer button, .modal-box-footer a {
   float: right;
 }
-.modal-box-footer button:first-child {
+.modal-box-footer button:first-child, .modal-box-footer a:first-child {
   float: left;
 }
 .modal-box-footer ~ .modal-box-content {
