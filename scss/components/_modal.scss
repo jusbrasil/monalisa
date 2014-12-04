@@ -12,14 +12,32 @@
 \*----------------------------------------------------------------------------*/
 
 /**
- * 1 -
+ * This modal is a CSS only implementation, using URL #anchor and selected by
+ * :target selector. The modal is activated by clicking in some link with your
+ * anchor, and closed clicking in any other anchor (like #close).
+
+ *
+ * 1  - Modal overlay.
+ * 2  - CSS rule to show the modal (when the id of `.modal` is an anchor).
+ * 3  - Remove the Y translate, originally -100%.
+ * 4  - New position, originally -100%.
+ * 5  - The X (-50%) is to center horizontally (together 6 tip) and the Y (-100%)
+ *      is to hide the modal off the page.
+ * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
+ * 7  - Trick to center horizontally.
+ * 8  - The first button should be left-aligned.
+ * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
+ * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
  */
 
 $modal-box-content-padding: $grid*2;
-$modal-close-size: $grid*6;
+$modal-box-close-size:      $grid*6;
+$modal-box-min-width:       $grid*50;
+$modal-box-min-height:      $grid*38;
+$modal-box-footer-height:   $grid*6;
 
 .modal {
-  &:before{
+  &:before { /* 1 */
     content: "";
     display: none;
     background: rgba(0,0,0,.6);
@@ -27,50 +45,32 @@ $modal-close-size: $grid*6;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: $z-index-modal-overlay;
   }
-  &:target{
-    &:before{
-      display: block;
-    }
+  &:target { /* 2 */
+    &:before { display: block; }
     .modal-box {
-      -webkit-transform: translate(-50%, 0);
-          -ms-transform: translate(-50%, 0);
-              transform: translate(-50%, 0);
-      top: 20%;
+      @include transform(translate(-50%, 0)); /* 3 */
+      top: 20%; /* 4 */
     }
   }
 }
 
   .modal-box {
     @extend %sexyBox;
-
-    height: 100%;
-    max-width: 400px;
-    max-height: 300px;
-
+    @include transform(translate(-50%, -100%)); /* 5 */
+    @include transition-transform(0.3s ease-out);
+    height: 100%; /* 6 */
+    max-width: $modal-box-min-width;
+    max-height: $modal-box-min-height;
     background: $white;
     overflow: hidden;
     position: fixed;
-    left: 50%;
-    top: -100%;
+    left: 50%; /* 7 */
     z-index: $z-index-modal-box;
-
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-       -moz-transition: -moz-transform 0.3s ease-out;
-         -o-transition: -o-transform 0.3s ease-out;
-            transition: transform 0.3s ease-out;
-
-    -webkit-transform: translate(-50%, -100%);
-        -ms-transform: translate(-50%, -100%);
-            transform: translate(-50%, -100%);
-
-
   }
 
     .modal-box-footer {
-      $footer-height: $grid*6;
-
       padding: $grid/2;
-      height: $footer-height;
+      height: $modal-box-footer-height;
       background: $white;
       box-shadow: 0px 1px 7px 0px rgba(0,0,0,.3);
       position: absolute;
@@ -78,21 +78,18 @@ $modal-close-size: $grid*6;
       width: 100%;
       button, a {
         float: right;
-        &:first-child { float: left; }
+        &:first-child { float: left; } /* 8 */
       }
-      & ~ .modal-box-content {
-        height: calc(100% - #{$footer-height});
+      & ~ .modal-box-content { /* 9 */
+        height: calc(100% - #{$modal-box-footer-height});
       }
     }
 
     .modal-box-close {
-      &:before {
-        content: "×";
-      }
-
-      width: $modal-close-size;
-      height: $modal-close-size;
-      line-height: $modal-close-size;
+      &:before { content: "×"; }
+      width: $modal-box-close-size;
+      height: $modal-box-close-size;
+      line-height: $modal-box-close-size;
       text-align: center;
       font-size: 2.2rem;
       color: $black54;
@@ -100,9 +97,8 @@ $modal-close-size: $grid*6;
       position: absolute;
       top: 0;
       right: 0;
-
-      & ~ .modal-box-content {
-        padding-right: $modal-close-size + $modal-box-content-padding;
+      & ~ .modal-box-content { /* 10 */
+        padding-right: $modal-box-close-size + $modal-box-content-padding;
       }
     }
 
@@ -113,4 +109,3 @@ $modal-close-size: $grid*6;
       overflow-y: scroll;
       height: 100%;
     }
-

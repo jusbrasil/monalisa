@@ -3888,9 +3888,25 @@ label.switch input[type="radio"] ~ .switch-label:after {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 -
+ * This modal is a CSS only implementation, using URL #anchor and selected by
+ * :target selector. The modal is activated by clicking in some link with your
+ * anchor, and closed clicking in any other anchor (like #close).
+
+ *
+ * 1  - Modal overlay.
+ * 2  - CSS rule to show the modal (when the id of `.modal` is an anchor).
+ * 3  - Remove the Y translate, originally -100%.
+ * 4  - New position, originally -100%.
+ * 5  - The X (-50%) is to center horizontally (together 6 tip) and the Y (-100%)
+ *      is to hide the modal off the page.
+ * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
+ * 7  - Trick to center horizontally.
+ * 8  - The first button should be left-aligned.
+ * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
+ * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
  */
 .modal:before {
+  /* 1 */
   content: "";
   display: none;
   background: rgba(0, 0, 0, 0.6);
@@ -3901,6 +3917,9 @@ label.switch input[type="radio"] ~ .switch-label:after {
   bottom: 0;
   z-index: 4;
 }
+.modal:target {
+  /* 2 */
+}
 .modal:target:before {
   display: block;
 }
@@ -3908,26 +3927,29 @@ label.switch input[type="radio"] ~ .switch-label:after {
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
+  /* 3 */
   top: 20%;
+  /* 4 */
 }
 
 .modal-box {
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  /* 5 */
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
   height: 100%;
+  /* 6 */
   max-width: 400px;
-  max-height: 300px;
+  max-height: 304px;
   background: #fff;
   overflow: hidden;
   position: fixed;
   left: 50%;
-  top: -100%;
+  /* 7 */
   z-index: 5;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  -webkit-transform: translate(-50%, -100%);
-  -ms-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%);
 }
 
 .modal-box-footer {
@@ -3941,11 +3963,13 @@ label.switch input[type="radio"] ~ .switch-label:after {
 }
 .modal-box-footer button, .modal-box-footer a {
   float: right;
+  /* 8 */
 }
 .modal-box-footer button:first-child, .modal-box-footer a:first-child {
   float: left;
 }
 .modal-box-footer ~ .modal-box-content {
+  /* 9 */
   height: calc(100% - 48px);
 }
 
@@ -3965,6 +3989,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   content: "×";
 }
 .modal-box-close ~ .modal-box-content {
+  /* 10 */
   padding-right: 64px;
 }
 

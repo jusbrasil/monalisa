@@ -73,3 +73,16 @@ $break-large: 960px;
   padding: 0;
   border: 0;
 }
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
+}
+
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition:    -moz-transform $transition;
+          transition:         transform $transition;
+}
+

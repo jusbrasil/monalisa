@@ -315,12 +315,9 @@
   #MODALS
 \*——————————————————*/
 
-/**
- * 1 - Puts the alerts in the page flow.
- */
-
 .modals {
   .modal {
+    margin-bottom: 20px;
     &:before {
       display: block;
       position: initial;
