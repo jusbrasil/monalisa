@@ -53,6 +53,7 @@
 
   .demoPage-title {
     color: $blue;
+    margin: 50px 0 20px;
   }
 
 
@@ -335,4 +336,26 @@
               transform: translate(0, 0);
     }
 }
+
+/*——————————————————*\
+  #GRID
+\*——————————————————*/
+
+.grid {
+  .outline, .outline *{
+    outline: 1px solid #F6A1A1;
+  }
+
+  [class*='grid-col'] {
+    background-color: #FFDCDC;
+    & > p {
+      background-color: #FFC2C2;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      color: white;
+    }
+  }
+}
+
 

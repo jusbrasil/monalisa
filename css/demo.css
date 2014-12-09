@@ -22,6 +22,12 @@
  * behavior of the site.
  */
 /**
+ * handhelds: <-480
+ * small-screens: 481<->768
+ * medium-screens: 769<->960
+ * wide-screens: 960->
+ */
+/**
  * Solution to hidden elements readable by screen reader:
  * http://a11yproject.com/posts/how-to-hide-content/
  */
@@ -34,12 +40,12 @@
   text-align: center;
   padding: 10vh 0;
 }
-@media only screen and (min-width: 481px) and (max-width: 767px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
   .header {
     background-color: #0091ea;
   }
 }
-@media only screen and (min-width: 769px) and (max-width: 959px) {
+@media only screen and (min-width: 769px) and (max-width: 960px) {
   .header {
     background-color: #f83c00;
   }
@@ -71,6 +77,7 @@
 
 .demoPage-title {
   color: #0091ea;
+  margin: 50px 0 20px;
 }
 
 /*——————————————————*\
@@ -492,6 +499,23 @@
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
+}
+
+/*——————————————————*\
+  #GRID
+\*——————————————————*/
+.grid .outline, .grid .outline * {
+  outline: 1px solid #F6A1A1;
+}
+.grid [class*='grid-col'] {
+  background-color: #FFDCDC;
+}
+.grid [class*='grid-col'] > p {
+  background-color: #FFC2C2;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
 }
 
 /*# sourceMappingURL=demo.css.map */

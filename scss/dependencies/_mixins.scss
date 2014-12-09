@@ -6,19 +6,27 @@
  */
 
 
-$break-small: 480px;
-$break-medium: 768px;
 $break-large: 960px;
+$break-medium: 768px;
+$break-small: 480px;
 
+/**
+ * handhelds: <-480
+ * small-screens: 481<->768
+ * medium-screens: 769<->960
+ * wide-screens: 960->
+ */
+
+// wide-screens
 @mixin respond-to($media) {
   @if $media == handhelds {
     @media only screen and (max-width: $break-small) { @content; }
   }
   @else if $media == small-screens {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium) { @content; }
   }
   @else if $media == medium-screens {
-    @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+    @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large) { @content; }
   }
   @else if $media == wide-screens {
     @media only screen and (min-width: $break-large) { @content; }

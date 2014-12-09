@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*----------------------------------------------------------------------------*\
+  #GRID
+
+\*----------------------------------------------------------------------------*/
+
+$grid-max-width: 960px;
+$grid-columns: 16;
+$grid-col-prefix: 'grid-col';
+$grid-gutter: 2%;
+
+@mixin grid-col-builder($limit: $grid-columns) {
+  @for $i from 1 through $grid-columns {
+    .#{$grid-col-prefix}-#{$i} {
+      width: $i/$grid-columns*100%;
+    }
+  }
+}
+
+.grid-container{
+  width: 100%;
+  max-width: $grid-max-width;
+  margin: 0 auto;
+}
+
+.grid-row {
+  &:after,
+  &:before {
+    content:"";
+    display: table ;
+    clear:both;
+  }
+}
+
+[class*='#{$grid-col-prefix}'] {
+  float: left;
+  min-height: 1px;
+  padding: $grid-gutter;
+}
+
+@for $i from 1 through $grid-columns {
+  .#{$grid-col-prefix}-#{$i} {
+    width: $i/$grid-columns*100%;
+  }
+}

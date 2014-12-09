@@ -28,6 +28,12 @@
  * behavior of the site.
  */
 /**
+ * handhelds: <-480
+ * small-screens: 481<->768
+ * medium-screens: 769<->960
+ * wide-screens: 960->
+ */
+/**
  * Solution to hidden elements readable by screen reader:
  * http://a11yproject.com/posts/how-to-hide-content/
  */
@@ -2974,12 +2980,12 @@ html {
   font-weight: 400;
 }
 
-@media only screen and (min-width: 481px) and (max-width: 767px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
   .typography-display1 {
     font-size: 4.5rem;
   }
 }
-@media only screen and (min-width: 769px) and (max-width: 959px) {
+@media only screen and (min-width: 769px) and (max-width: 960px) {
   .typography-display1 {
     font-size: 5.6rem;
   }
@@ -3001,18 +3007,90 @@ html {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
-/**
- * General rules about site structure, like wrappers and grids.
- */
-.container {
+/*----------------------------------------------------------------------------*\
+  #GRID
+
+\*----------------------------------------------------------------------------*/
+.grid-container {
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
-@media only screen and (min-width: 960px) {
-  .container {
-    width: 960px;
-    margin: 0 auto;
-    padding: 0 15px 0 5px;
-  }
+
+.grid-row:after, .grid-row:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='grid-col'] {
+  float: left;
+  min-height: 1px;
+  padding: 2%;
+}
+
+.grid-col-1 {
+  width: 6.25%;
+}
+
+.grid-col-2 {
+  width: 12.5%;
+}
+
+.grid-col-3 {
+  width: 18.75%;
+}
+
+.grid-col-4 {
+  width: 25%;
+}
+
+.grid-col-5 {
+  width: 31.25%;
+}
+
+.grid-col-6 {
+  width: 37.5%;
+}
+
+.grid-col-7 {
+  width: 43.75%;
+}
+
+.grid-col-8 {
+  width: 50%;
+}
+
+.grid-col-9 {
+  width: 56.25%;
+}
+
+.grid-col-10 {
+  width: 62.5%;
+}
+
+.grid-col-11 {
+  width: 68.75%;
+}
+
+.grid-col-12 {
+  width: 75%;
+}
+
+.grid-col-13 {
+  width: 81.25%;
+}
+
+.grid-col-14 {
+  width: 87.5%;
+}
+
+.grid-col-15 {
+  width: 93.75%;
+}
+
+.grid-col-16 {
+  width: 100%;
 }
 
 /*——————————————————*\
@@ -4000,7 +4078,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
 /*----------------------------------------------------------------------------*\
   #DIALOG
 
-  .dialog (--show)
+  .dialog
     .dialog-content
 
 \*----------------------------------------------------------------------------*/
