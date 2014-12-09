@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*----------------------------------------------------------------------------*\
+  #DIALOG
+
+  .dialog
+    .dialog-content
+
+\*----------------------------------------------------------------------------*/
+
+/**
+ *
+ */
+
+$dialog-transition-time: .3s;
+
+.dialog {
+  @extend %sexyBox;
+  background: $white;
+
+  position: absolute;
+  overflow: hidden;
+  z-index: $z-index-dialog;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transform-origin: top left;
+  transition: all $dialog-transition-time linear;
+  &:target {
+    opacity: 1;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+  .dialog-content {
+    opacity: 0;
+    transition: opacity .3s linear $dialog-transition-time;
+    .dialog--show & {
+      opacity: 1;
+    }
+  }

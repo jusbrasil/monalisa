@@ -2993,11 +2993,11 @@ html {
 /**
  *
  */
-.button, .actionButton, select, .alert, .modal-box, .outlineButton, .label {
+.button, .actionButton, select, .alert, .modal-box, .dialog, .outlineButton, .label {
   border-radius: 2px;
 }
 
-.button, .actionButton, select, .alert, .modal-box {
+.button, .actionButton, select, .alert, .modal-box, .dialog {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -3995,6 +3995,41 @@ label.switch input[type="radio"] ~ .switch-label:after {
   line-height: 20px;
   overflow-y: scroll;
   height: 100%;
+}
+
+/*----------------------------------------------------------------------------*\
+  #DIALOG
+
+  .dialog (--show)
+    .dialog-content
+
+\*----------------------------------------------------------------------------*/
+/**
+ *
+ */
+.dialog {
+  background: #fff;
+  position: absolute;
+  overflow: hidden;
+  z-index: 3;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transform-origin: top left;
+  transition: all 0.3s linear;
+}
+.dialog:target {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+}
+
+.dialog-content {
+  opacity: 0;
+  transition: opacity 0.3s linear 0.3s;
+}
+.dialog--show .dialog-content {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=general.css.map */
