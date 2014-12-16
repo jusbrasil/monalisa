@@ -15,15 +15,6 @@
   background-color: $green;
   text-align: center;
   padding: 10vh 0;
-  @include respond-to(small-screens) {
-    background-color: $blue;
-  }
-  @include respond-to(medium-screens) {
-    background-color: $red;
-  }
-  @include respond-to(wide-screens) {
-    background-color: $yellow;
-  }
 }
 
   .header-title {
@@ -342,15 +333,14 @@
 \*——————————————————*/
 
 .grid {
-  .outline, .outline *{
-    outline: 1px solid #F6A1A1;
-  }
-
+  margin-top: 50px;
   [class*='grid-col'] {
-    background-color: #FFDCDC;
+    background-color: $blue50;
+    outline: 1px solid $blue300;
     & > p {
-      background-color: #FFC2C2;
-      padding: 0;
+      font-size: 1.5rem;
+      background-color: $blue200;
+      padding: 10px;
       margin: 0;
       text-align: center;
       color: white;

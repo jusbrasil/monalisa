@@ -22,10 +22,9 @@
  * behavior of the site.
  */
 /**
- * handhelds: <-480
- * small-screens: 481<->768
- * medium-screens: 769<->960
- * wide-screens: 960->
+ * small: <-480
+ * medium: 481<->768
+ * large: 769->
  */
 /**
  * Solution to hidden elements readable by screen reader:
@@ -39,21 +38,6 @@
   background-color: #7cb342;
   text-align: center;
   padding: 10vh 0;
-}
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .header {
-    background-color: #0091ea;
-  }
-}
-@media only screen and (min-width: 769px) and (max-width: 960px) {
-  .header {
-    background-color: #f83c00;
-  }
-}
-@media only screen and (min-width: 960px) {
-  .header {
-    background-color: #ffb300;
-  }
 }
 
 .header-title {
@@ -504,15 +488,17 @@
 /*——————————————————*\
   #GRID
 \*——————————————————*/
-.grid .outline, .grid .outline * {
-  outline: 1px solid #F6A1A1;
+.grid {
+  margin-top: 50px;
 }
 .grid [class*='grid-col'] {
-  background-color: #FFDCDC;
+  background-color: #d0edff;
+  outline: 1px solid #51bdff;
 }
 .grid [class*='grid-col'] > p {
-  background-color: #FFC2C2;
-  padding: 0;
+  font-size: 1.5rem;
+  background-color: #84d0ff;
+  padding: 10px;
   margin: 0;
   text-align: center;
   color: white;

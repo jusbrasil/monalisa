@@ -5,23 +5,24 @@
 
 \*----------------------------------------------------------------------------*/
 
-$grid-max-width: 960px;
-$grid-columns: 16;
-$grid-col-prefix: 'grid-col';
-$grid-gutter: 2%;
+$grid-max-width: $break-large;
+$grid-columns: 8;
+$grid-gutter: $grid;
 
-@mixin grid-col-builder($limit: $grid-columns) {
+@mixin grid-col-builder($type: false) {
   @for $i from 1 through $grid-columns {
-    .#{$grid-col-prefix}-#{$i} {
-      width: $i/$grid-columns*100%;
-    }
+    $selector: 'grid-col-';
+    @if $type { $selector: $selector + $type + '-' + $i; }
+    @else { $selector: $selector + $i; }
+    .#{$selector} { width: $i/$grid-columns*100%; }
   }
 }
 
 .grid-container{
   width: 100%;
   max-width: $grid-max-width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid-row {
@@ -33,14 +34,18 @@ $grid-gutter: 2%;
   }
 }
 
-[class*='#{$grid-col-prefix}'] {
+[class*='grid-col'] {
   float: left;
   min-height: 1px;
   padding: $grid-gutter;
 }
 
-@for $i from 1 through $grid-columns {
-  .#{$grid-col-prefix}-#{$i} {
-    width: $i/$grid-columns*100%;
-  }
+@include grid-col-builder;
+
+@include respond-to(medium) {
+  @include grid-col-builder('md');
+}
+
+@include respond-to(large) {
+  @include grid-col-builder('lg');
 }

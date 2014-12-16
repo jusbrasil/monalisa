@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
     ,browserSync: { // Browser Sync to live reload
       bsFiles: {
-        src : ['css/*.css', 'js/*.js', 'demo.html']
+        src : ['css/*.css', 'js/*.js', '*.html']
       },
       options: {
         watchTask: true,

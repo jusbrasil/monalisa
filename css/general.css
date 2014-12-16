@@ -28,10 +28,9 @@
  * behavior of the site.
  */
 /**
- * handhelds: <-480
- * small-screens: 481<->768
- * medium-screens: 769<->960
- * wide-screens: 960->
+ * small: <-480
+ * medium: 481<->768
+ * large: 769->
  */
 /**
  * Solution to hidden elements readable by screen reader:
@@ -2923,46 +2922,46 @@ html {
 }
 
 .typography-display1 {
-  font-size: 3.4rem;
+  font-size: 11.2rem;
   font-weight: 300;
 }
 
 .typography-display2 {
-  font-size: 5.6em;
+  font-size: 5.6rem;
   font-weight: 400;
 }
 
 .typography-display3 {
-  font-size: 4.5em;
+  font-size: 4.5rem;
   font-weight: 400;
   line-height: 6.384rem;
 }
 
 .typography-display4 {
-  font-size: 3.4em;
+  font-size: 3.4rem;
   font-weight: 400;
   line-height: 5.32rem;
 }
 
 .typography-headline {
-  font-size: 2.4em;
+  font-size: 2.4rem;
   font-weight: 400;
   line-height: 4.256rem;
 }
 
 .typography-title {
-  font-size: 2.0em;
+  font-size: 2.0rem;
   font-weight: 400;
 }
 
 .typography-subhead {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 3.724rem;
 }
 
 .typography-body-bold, .typography-button, .typography-body {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 2.926rem;
 }
@@ -2976,24 +2975,8 @@ html {
 }
 
 .typography-caption {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 400;
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .typography-display1 {
-    font-size: 4.5rem;
-  }
-}
-@media only screen and (min-width: 769px) and (max-width: 960px) {
-  .typography-display1 {
-    font-size: 5.6rem;
-  }
-}
-@media only screen and (min-width: 960px) {
-  .typography-display1 {
-    font-size: 11.2rem;
-  }
 }
 
 /**
@@ -3014,7 +2997,8 @@ html {
 .grid-container {
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid-row:after, .grid-row:before {
@@ -3026,73 +3010,107 @@ html {
 [class*='grid-col'] {
   float: left;
   min-height: 1px;
-  padding: 2%;
+  padding: 8px;
 }
 
 .grid-col-1 {
-  width: 6.25%;
-}
-
-.grid-col-2 {
   width: 12.5%;
 }
 
-.grid-col-3 {
-  width: 18.75%;
-}
-
-.grid-col-4 {
+.grid-col-2 {
   width: 25%;
 }
 
-.grid-col-5 {
-  width: 31.25%;
-}
-
-.grid-col-6 {
+.grid-col-3 {
   width: 37.5%;
 }
 
-.grid-col-7 {
-  width: 43.75%;
-}
-
-.grid-col-8 {
+.grid-col-4 {
   width: 50%;
 }
 
-.grid-col-9 {
-  width: 56.25%;
-}
-
-.grid-col-10 {
+.grid-col-5 {
   width: 62.5%;
 }
 
-.grid-col-11 {
-  width: 68.75%;
-}
-
-.grid-col-12 {
+.grid-col-6 {
   width: 75%;
 }
 
-.grid-col-13 {
-  width: 81.25%;
-}
-
-.grid-col-14 {
+.grid-col-7 {
   width: 87.5%;
 }
 
-.grid-col-15 {
-  width: 93.75%;
-}
-
-.grid-col-16 {
+.grid-col-8 {
   width: 100%;
 }
 
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .grid-col-md-1 {
+    width: 12.5%;
+  }
+
+  .grid-col-md-2 {
+    width: 25%;
+  }
+
+  .grid-col-md-3 {
+    width: 37.5%;
+  }
+
+  .grid-col-md-4 {
+    width: 50%;
+  }
+
+  .grid-col-md-5 {
+    width: 62.5%;
+  }
+
+  .grid-col-md-6 {
+    width: 75%;
+  }
+
+  .grid-col-md-7 {
+    width: 87.5%;
+  }
+
+  .grid-col-md-8 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid-col-lg-1 {
+    width: 12.5%;
+  }
+
+  .grid-col-lg-2 {
+    width: 25%;
+  }
+
+  .grid-col-lg-3 {
+    width: 37.5%;
+  }
+
+  .grid-col-lg-4 {
+    width: 50%;
+  }
+
+  .grid-col-lg-5 {
+    width: 62.5%;
+  }
+
+  .grid-col-lg-6 {
+    width: 75%;
+  }
+
+  .grid-col-lg-7 {
+    width: 87.5%;
+  }
+
+  .grid-col-lg-8 {
+    width: 100%;
+  }
+}
 /*——————————————————*\
   #Components
 \*——————————————————*/
