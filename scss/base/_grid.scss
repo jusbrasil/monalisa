@@ -5,34 +5,74 @@
 
 \*----------------------------------------------------------------------------*/
 
+/**
+ * The grid system is based on rows and columns, like a table ;)
+ *
+ * The column name follows the pattern `grid-col(-md|-lg)-n`, where `md` and
+ * `lg` are optional and indicate the column behavior for medium or large
+ * screens, respectively. The `n` indicates the number of parts of the whole
+ * that columns must complete. That is, in the grid system based on columns 12,
+ * the `grid-col-md-6` class defines that the column will have a width of 50% (6
+ * parts of 12) in medium screens.
+ */
+
+
 $grid-max-width: $break-large;
 $grid-columns: 12;
 $grid-gutter: $grid;
 
+
+/**
+ * This mixin builds the grid column classes according to the type and number of
+ * columns.
+ *
+ * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` where
+ *     `n` is a range from 1 through `$grid-columns`.
+ * 2 - Sets the width relative to the part of whole.
+ */
+
 @mixin grid-col-builder($type: false) {
   @for $i from 1 through $grid-columns {
-    $selector: 'grid-col-';
-    @if $type { $selector: $selector + $type + '-' + $i; }
-    @else { $selector: $selector + $i; }
-    .#{$selector} { width: $i/$grid-columns*100%; }
+    .#{'grid-col-' + if($type, $type + '-', '') + $i} { /* 1 */
+      width: $i / $grid-columns * 100%; /* 2 */
+    }
   }
 }
 
-.grid-container{
+
+/**
+ * A content wrapper. The purpose of the container is to set the width of the
+ * entire grid.
+ */
+
+.grid-container {
   width: 100%;
   max-width: $grid-max-width;
   margin-left: auto;
   margin-right: auto;
 }
 
+
+/**
+ * The purpose of the row element is to keep the columns inside it from
+ * overflowing onto other rows. To achieve this, we use the clearfix hack to
+ * make sure everything inside the row stays inside the row.
+ */
+
 .grid-row {
   &:after,
   &:before {
-    content:"";
-    display: table ;
-    clear:both;
+    content: "";
+    display: table;
+    clear: both;
   }
 }
+
+
+/**
+ * The columns is the main feature of the grid system. The column position is
+ * defined using float method.
+ */
 
 [class*='grid-col'] {
   float: left;
