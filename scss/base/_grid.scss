@@ -6,7 +6,7 @@
 \*----------------------------------------------------------------------------*/
 
 $grid-max-width: $break-large;
-$grid-columns: 8;
+$grid-columns: 12;
 $grid-gutter: $grid;
 
 @mixin grid-col-builder($type: false) {
