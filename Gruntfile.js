@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       //     style: 'compressed'
       //   },
       //   files: {
-      //     'css/general.min.css': 'scss/general.scss'
+      //     'dist/css/general.min.css': 'scss/general.scss'
       //   }
       // },
       dev: {
@@ -18,8 +18,8 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'css/general.css': 'scss/general.scss',
-          'css/demo.css': 'scss/demo.scss'
+          'dist/css/general.css': 'scss/general.scss',
+          'dist/css/demo.css': 'scss/demo.scss'
         }
       }
     }
@@ -36,12 +36,12 @@ module.exports = function(grunt) {
 
     ,browserSync: { // Browser Sync to live reload
       bsFiles: {
-        src : ['css/*.css', 'js/*.js', '*.html']
+        src : ['dist/css/*.css', 'dist/js/*.js', '*.html']
       },
       options: {
         watchTask: true,
         server: {
-          baseDir: "./"
+          baseDir: "./docs"
         }
       }
     }
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     ,cssmetrics: {
       dev: {
         src: [
-          'css/general.min.css'
+          'dist/css/general.min.css'
         ]
       }
     }
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
           consolidateMediaQueries: true
         },
         files: {
-          'css/general.min.css': 'css/general.min.css'
+          'dist/css/general.min.css': 'dist/css/general.min.css'
         }
       }
     }
