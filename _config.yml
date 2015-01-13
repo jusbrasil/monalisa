@@ -1,0 +1,9 @@
+markdown:     kramdown
+highlighter:  rouge
+
+# Serving
+detach:       false
+port:         4444
+host:         0.0.0.0
+source:       docs
+destination:  _gh_pages

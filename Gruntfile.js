@@ -1,3 +1,6 @@
+var spawn = require('child_process').spawn,
+    fs = require('fs');
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -29,6 +32,7 @@ module.exports = function(grunt) {
         files: '**/*.scss',
         tasks: [
           'sass',
+          'copy:dist'
           // 'cssmetrics'
         ]
       }
@@ -70,15 +74,43 @@ module.exports = function(grunt) {
       }
     }
 
+    ,copy: {
+      dist: {
+        src: 'dist/**',
+        dest: 'docs/'
+      }
+    }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-css-metrics');
   grunt.loadNpmTasks('grunt-cssc');
 
   grunt.registerTask('default', ['cssmetrics', 'browserSync', 'watch']);
+  grunt.registerTask('server', ['copy:dist', 'jekyll', 'watch']);
+  grunt.registerTask('jekyll', function(){
+    var done = this.async(),
+        outStream = fs.createWriteStream('monalisa_server.log'),
+        errStream = fs.createWriteStream('monalisa_server.err'),
+        jekyll = spawn('jekyll', ['serve', '--watch', '--detach']);
+    jekyll.stdout.on('data', function(data) { outStream.write(data); });
+    jekyll.stdout.on('end', function(data) { outStream.end(); });
+    jekyll.stderr.on('data', function(data) { errStream.write(data); });
+    jekyll.stderr.on('end', function(data) { errStream.end(); });
+    jekyll.on('exit', function(code) {
+      if (code != 0) {
+        grunt.log.error('Failed to start jekyll: ' + code);
+
+      } else {
+        grunt.log.oklns('Jekyll started');
+      }
+      done( code == 0 );
+    });
+  });
 
 
 };
