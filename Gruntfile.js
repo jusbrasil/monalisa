@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         files: '**/*.scss',
         tasks: [
           'sass',
-          'copy:dist'
-          // 'cssmetrics'
+          'copy:dist',
+          'jekyll:restart'
         ]
       }
     }
@@ -92,6 +92,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['cssmetrics', 'browserSync', 'watch']);
   grunt.registerTask('server', ['copy:dist', 'jekyll', 'watch']);
+
   grunt.registerTask('jekyll', function(){
     var done = this.async(),
         outStream = fs.createWriteStream('monalisa_server.log'),
@@ -104,13 +105,29 @@ module.exports = function(grunt) {
     jekyll.on('exit', function(code) {
       if (code != 0) {
         grunt.log.error('Failed to start jekyll: ' + code);
-
       } else {
         grunt.log.oklns('Jekyll started');
       }
       done( code == 0 );
     });
   });
-
+  grunt.registerTask('jekyll:stop', function(){
+    var done = this.async(),
+        err = false,
+        process = spawn('pkill', ['-9', '-f', 'jekyll']);
+    process.stderr.on('data', function(data) {
+      err = true;
+      grunt.log.errorlns(data);
+    });
+    process.on('exit', function(code) {
+      if (code != 0 && err) {
+        grunt.log.error('Failed to stop jekyll: ' + code);
+      } else {
+        grunt.log.oklns('Jekyll stopped');
+      }
+      done( code == 0 || !err );
+    });
+  });
+  grunt.registerTask('jekyll:restart', ['jekyll:stop', 'jekyll']);
 
 };
