@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         ]
       },
       jekyll_html: {
-        files: 'docs/*.html',
+        files: 'docs/**/*.html',
         tasks: [
           'jekyll:restart'
         ]
