@@ -35,7 +35,13 @@ module.exports = function(grunt) {
           'copy:dist',
           'jekyll:restart'
         ]
-      }
+      },
+      jekyll_html: {
+        files: 'docs/*.html',
+        tasks: [
+          'jekyll:restart'
+        ]
+      },
     }
 
     ,browserSync: { // Browser Sync to live reload
@@ -97,7 +103,9 @@ module.exports = function(grunt) {
     var done = this.async(),
         outStream = fs.createWriteStream('monalisa_server.log'),
         errStream = fs.createWriteStream('monalisa_server.err'),
-        jekyll = spawn('jekyll', ['serve', '--watch', '--detach']);
+        // should run with '--watch' but there's a known bug in jekyll using
+        // --detach with --watch; http://stackoverflow.com/q/22898039/1197796
+        jekyll = spawn('jekyll', ['serve', '--detach']);
     jekyll.stdout.on('data', function(data) { outStream.write(data); });
     jekyll.stdout.on('end', function(data) { outStream.end(); });
     jekyll.stderr.on('data', function(data) { errStream.write(data); });
