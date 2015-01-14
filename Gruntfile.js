@@ -7,23 +7,22 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
 
-    ,sass: { // SASS compiler
-      // prod: {
-      //   options: {
-      //     style: 'compressed'
-      //   },
-      //   files: {
-      //     'dist/css/general.min.css': 'scss/general.scss'
-      //   }
-      // },
-      dev: {
+    ,sass: {
+      base: {
+        options: { style: 'expanded' },
+        files: { 'dist/css/general.css': 'scss/general.scss' },
+      }
+      ,gh_app: {
         options: {
           style: 'expanded'
         },
-        files: {
-          'dist/css/general.css': 'scss/general.scss',
-          'dist/css/demo.css': 'scss/demo.scss'
-        }
+        files: [{
+          expand: true,
+          cwd:'scss/app/',
+          src: ['*.scss'],
+          dest: 'docs/dist/css/app/',
+          ext: '.css'
+        }]
       }
     }
 
@@ -97,7 +96,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-cssc');
 
   grunt.registerTask('default', ['cssmetrics', 'browserSync', 'watch']);
-  grunt.registerTask('server', ['copy:dist', 'jekyll', 'watch']);
+  grunt.registerTask('build', ['sass', 'cssmetrics', 'copy:dist']);
+  grunt.registerTask('server', ['build', 'jekyll', 'watch']);
 
   grunt.registerTask('jekyll', function(){
     var done = this.async(),
