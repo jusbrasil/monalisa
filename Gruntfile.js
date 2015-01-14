@@ -125,20 +125,17 @@ module.exports = function(grunt) {
     });
   });
   grunt.registerTask('jekyll:stop', function(){
-    var done = this.async(),
-        err = false,
-        process = spawn('pkill', ['-9', '-f', 'jekyll']);
-    process.stderr.on('data', function(data) {
-      err = true;
-      grunt.log.errorlns(data);
-    });
-    process.on('exit', function(code) {
-      if (code != 0 && err) {
+    var gruntTask = this,
+        done = this.async(),
+        pkill = spawn('pkill', ['-9', '-f', 'jekyll']);
+    pkill.stderr.on('data', function(data) { grunt.log.errorlns(data); });
+    pkill.on('exit', function(code) {
+      if (code != 0 && gruntTask.errorCount) {
         grunt.log.error('Failed to stop jekyll: ' + code);
       } else {
         grunt.log.oklns('Jekyll stopped');
       }
-      done( code == 0 || !err );
+      done( code == 0 || !gruntTask.errorCount );
     });
   });
   grunt.registerTask('jekyll:restart', ['jekyll:stop', 'jekyll']);
