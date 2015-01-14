@@ -115,6 +115,11 @@ module.exports = function(grunt) {
         grunt.log.error('Failed to start jekyll: ' + code);
       } else {
         grunt.log.oklns('Jekyll started');
+        // on ctrl+c -> kill server
+        process.on('SIGINT', function(){
+          grunt.task.run('jekyll:stop');
+          process.exit();
+        });
       }
       done( code == 0 );
     });
