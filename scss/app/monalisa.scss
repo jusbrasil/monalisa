@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// Dependencies
+@import "scss/dependencies/colors";
+@import "scss/dependencies/variables";
+@import "scss/dependencies/mixins";
+@import "scss/dependencies/web-fonts";
+
+/*——————————————————*\
+  #HEADER
+\*——————————————————*/
+
+html, body {
+  height: 100%;
+}
+
+.monalisaHeader {
+  background: url('../../resources/monalisa.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  color: $white87;
+  max-height: 450px;
+  height: 100%;
+
+  .grid-container {
+    height: 100%;
+    display: table;
+  }
+}
+
+  .monalisaHeader-valign {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .monalisaHeader-title,
+  .monalisaHeader-subtitle {
+    text-shadow: rgba(0,0,0, 0.6) 2px 2px 4px;
+  }
+  .monalisaHeader-title {
+    margin-left: -.85rem;
+  }
+  .monalisaHeader-subtitle {
+    font-weight: 100;
+  }
+
+  .monalisaHeader-download {
+    margin: 3rem 2rem 1rem 0;
+  }
+
+  .monalisaHeader-size {
+    color: $gray87;
+  }

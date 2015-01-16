@@ -1,3 +1,82 @@
+@charset "UTF-8";
+/**
+ * The JusBrasil uses a limited set of colors defined bellow. Any color used in
+ * the site should be by variable, never with hex, RGB or RGBA.
+ *
+ * The 87, 54, 26 and 12 suffixes is the opacity of the color.
+ */
+/*——————————————————*\
+  #PRIMARY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #OPACITY COLORS
+\*——————————————————*/
+/*——————————————————*\
+  #SOLID COLORS
+\*——————————————————*/
+/**
+ * Global variables of the project. Works like a config file.
+ */
+/**
+ * This file gathers general rules. Works like a reset, but setting the default
+ * behavior of the site.
+ */
+/**
+ * small: <-480
+ * medium: 481<->768
+ * large: 769->
+ */
+/**
+ * Solution to hidden elements readable by screen reader:
+ * http://a11yproject.com/posts/how-to-hide-content/
+ */
+/*——————————————————*\
+  #HEADER
+\*——————————————————*/
+html, body {
+  height: 100%;
+}
 
+.monalisaHeader {
+  background: url("../../resources/monalisa.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.87);
+  max-height: 450px;
+  height: 100%;
+}
+.monalisaHeader .grid-container {
+  height: 100%;
+  display: table;
+}
+
+.monalisaHeader-valign {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.monalisaHeader-title,
+.monalisaHeader-subtitle {
+  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+}
+
+.monalisaHeader-title {
+  margin-left: -.85rem;
+}
+
+.monalisaHeader-subtitle {
+  font-weight: 100;
+}
+
+.monalisaHeader-download {
+  margin: 3rem 2rem 1rem 0;
+}
+
+.monalisaHeader-size {
+  color: rgba(128, 128, 128, 0.87);
+}
 
 /*# sourceMappingURL=monalisa.css.map */
