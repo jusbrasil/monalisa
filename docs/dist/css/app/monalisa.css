@@ -101,10 +101,11 @@ html, body {
 
 .monalisaFeatures {
   text-align: center;
+  padding: 10em 0;
 }
 
 .monalisaFeatures-quote {
-  margin: 8em 0;
+  margin-bottom: 8em;
 }
 
 .monalisaFeatures-quote-author {
