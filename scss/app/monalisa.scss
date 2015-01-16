@@ -74,3 +74,28 @@ html, body {
   .monalisaNav-ghbtns {
     text-align: right;
   }
+
+.monalisaFeatures {
+  text-align: center;
+}
+  .monalisaFeatures-quote {
+    margin: 8em 0;
+  }
+    .monalisaFeatures-quote-author {
+      margin-top: -0.5em;
+      color: $gray87;
+      font-weight: 100;
+    }
+
+  .monalisaFeatures-item-img {
+    width: 70%;
+    min-width: 190px;
+  }
+  .monalisaFeatures-item-title {
+    margin: 0.9em 0 0.7em
+  }
+  .monalisaFeatures-item-desc {
+    color: $gray87;
+    line-height: 2rem;
+    font-weight: 100;
+  }
