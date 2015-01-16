@@ -54,3 +54,23 @@ html, body {
   .monalisaHeader-size {
     color: $gray87;
   }
+
+.monalisaNav {
+  background: $black87;
+  padding: 0.8em 0;
+  color: $white87;
+  padding: 0 2rem;
+  display: table;
+  width: 100%;
+  height: 5rem;
+}
+
+  .monalisaNav-menu,
+  .monalisaNav-ghbtns {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .monalisaNav-ghbtns {
+    text-align: right;
+  }
