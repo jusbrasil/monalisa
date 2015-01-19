@@ -5,7 +5,7 @@
 \*——————————————————*/
 
 %button--big {
-  $height: 48px;
+  $height: $grid*6;
   height: $height;
   line-height: $height;
   font-size: 16px;
@@ -13,7 +13,7 @@
 
   .fa {
     float: left;
-    margin-right: 8px;
+    margin-right: $grid;
   }
 }
 
@@ -60,31 +60,31 @@
 
 /* Size and style modifiers */
 .button--medium {
-  $height: 40px;
+  $height: $grid*5;
   height: $height;
   line-height: $height;
   font-size: 14px;
-  padding: 0 16px;
+  padding: 0 $grid*2;
   .fa { margin-right: 6px; }
 }
 
 .button--small  {
-  $height: 32px;
+  $height: $grid*4;
   height: $height;
   line-height: $height;
   font-size: 12px;
-  padding: 0 12px;
-  .fa { margin-right: 4px; }
+  padding: 0 $grid+$grid/2;
+  .fa { margin-right: $grid/2; }
 }
 
 .button--caps   {
-  $height: 24px;
+  $height: $grid*3;
   height: $height;
   line-height: $height;
   font-size: 10px;
-  padding: 0 8px;
+  padding: 0 $grid;
   text-transform: uppercase;
-  .fa { margin-right: 4px; }
+  .fa { margin-right: $grid/2; }
 }
 
 

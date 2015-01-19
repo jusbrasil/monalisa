@@ -13,7 +13,7 @@
   display: inline-block;
   color: $white;
 
-  $height: 24px;
+  $height: $grid*3;
   height: $height;
   line-height: $height + 1; /* 1 */
   font-size: 15px;
@@ -23,7 +23,7 @@
 }
 
   .label--medium {
-    $height: 20px;
+    $height: $grid*2+$grid/2;
     height: $height;
     line-height: $height + 1; /* 1 */
     font-size: 13px;
@@ -31,11 +31,11 @@
   }
 
   .label--small {
-    $height: 16px;
+    $height: $grid*2;
     height: $height;
     line-height: $height + 1; /* 1 */
     font-size: 11px;
-    padding: 0 4px;
+    padding: 0 $grid/2;
   }
 
   .label--blue { background: $blue; }

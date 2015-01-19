@@ -4,7 +4,7 @@
   #SWITCHES
 
   label.switch
-    (input[text="checkbox"]|input[text="radio"])
+    input[text="checkbox"]|input[text="radio"]
     span.switch-label
 
 \*----------------------------------------------------------------------------*/
@@ -46,7 +46,8 @@ label.switch { /* 1 */
   cursor: pointer;
   font-size: 1.4em;
 
-  input[type="checkbox"], input[type="radio"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     @include hidden-element; /* 2 */
 
     &:checked ~ .switch-label { /* 3 */
