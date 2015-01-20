@@ -1,4 +1,13 @@
-<iframe src="http://ghbtns.com/github-btn.html?user=jusbrasil&repo=monalisa&type=watch&count=true"
-allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-<iframe src="http://ghbtns.com/github-btn.html?user=jusbrasil&repo=monalisa&type=fork&count=true"
-allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+{% assign algs_width = include.algs | times:6 %}
+{% assign height = 20 %}
+{% assign width = 75 | plus: algs_width %}
+{% if include.size == "large" %}
+  {% assign algs_width = include.algs | times:9 %}
+  {% assign height = 30 %}
+  {% assign width = 105 | plus: algs_width %}
+{% endif %}
+
+<iframe src="http://ghbtns.com/github-btn.html?user=jusbrasil&repo=monalisa&type=star&count=true&size={{include.size}}"
+allowtransparency="true" frameborder="0" scrolling="0" width="{{width}}" height="{{height}}"></iframe>
+<iframe src="http://ghbtns.com/github-btn.html?user=jusbrasil&repo=monalisa&type=fork&count=true&size={{include.size}}"
+allowtransparency="true" frameborder="0" scrolling="0" width="{{width | plus: 3}}" height="{{height}}"></iframe>
