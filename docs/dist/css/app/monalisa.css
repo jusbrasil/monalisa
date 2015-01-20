@@ -129,4 +129,54 @@ html, body {
   font-weight: 100;
 }
 
+.monalisaFooter {
+  padding: 64px 0 16px;
+  background: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
+}
+.monalisaFooter [class*=monalisaFooter-] {
+  font-weight: 100;
+}
+.monalisaFooter [class*=grid-col] {
+  padding-left: 0;
+  padding-right: 0;
+}
+.monalisaFooter [class*=grid-col]:nth-child(n+2) {
+  text-align: right;
+}
+
+.monalisaFooter-title [class*=grid-col] {
+  padding: 0;
+}
+
+.monalisaFooter-subtitle {
+  margin: 0 0 16px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.monalisaFooter-buttons {
+  padding-bottom: 64px;
+}
+
+.monalisaFooter-ghbtns {
+  text-align: right;
+}
+
+.monalisaFooter-copyright {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.monalisaFooter-link:first-child {
+  color: rgba(255, 255, 255, 0.54);
+}
+.monalisaFooter-link:first-child::before {
+  content: "";
+}
+
+.monalisaFooter-link::before {
+  content: "•";
+  margin: 0 4px 0 2px;
+}
+
 /*# sourceMappingURL=monalisa.css.map */

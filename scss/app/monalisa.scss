@@ -100,3 +100,46 @@ html, body {
     line-height: 2rem;
     font-weight: 100;
   }
+
+.monalisaFooter {
+  padding: 8*$grid 0 2*$grid;
+  background: $black87;
+  color: $white87;
+
+  [class*=monalisaFooter-] {
+    font-weight: 100;
+  }
+  [class*=grid-col] {
+    padding-left: 0;
+    padding-right: 0;
+    &:nth-child(n+2) {
+      text-align: right;
+    }
+  }
+}
+
+  .monalisaFooter-title [class*=grid-col] {
+    padding: 0;
+  }
+  .monalisaFooter-subtitle {
+    margin: 0 0 2*$grid;
+    line-height: 100%;
+    color: $white54;
+  }
+  .monalisaFooter-buttons {
+    padding-bottom: 8*$grid;
+  }
+  .monalisaFooter-ghbtns {
+    text-align: right;
+  }
+  .monalisaFooter-copyright {
+    color: $white54;
+  }
+  .monalisaFooter-link:first-child {
+    color: $white54;
+    &::before { content: ""; }
+  }
+  .monalisaFooter-link::before {
+    content: "•";
+    margin: 0 .5*$grid 0 .25*$grid;
+  }
