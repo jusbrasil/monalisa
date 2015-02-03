@@ -8,7 +8,7 @@
 /**
  * The grid system is based on rows and columns, like a table ;)
  *
- * The column name follows the pattern `grid-col(-md|-lg)-n`, where `md` and
+ * The column name follows the pattern `grid-col(-md|-lg|-lxg)-n`, where `md` and
  * `lg` are optional and indicate the column behavior for medium or large
  * screens, respectively. The `n` indicates the number of parts of the whole
  * that columns must complete. That is, in the grid system based on columns 12,
@@ -26,8 +26,8 @@ $grid-gutter: $grid;
  * This mixin builds the grid column classes according to the type and number of
  * columns.
  *
- * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` where
- *     `n` is a range from 1 through `$grid-columns`.
+ * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` or
+ *     `grid-col-xlg-n` where `n` is a range from 1 through `$grid-columns`.
  * 2 - Sets the width relative to the part of whole.
  */
 
@@ -88,4 +88,8 @@ $grid-gutter: $grid;
 
 @include respond-to(large) {
   @include grid-col-builder('lg');
+}
+
+@include respond-to(xlarge) {
+  @include grid-col-builder('xlg');
 }

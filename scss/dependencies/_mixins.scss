@@ -27,6 +27,9 @@ $break-large: 960px;
     @else if $media == large {
       @media only screen and (min-width: $break-medium) { @content; }
     }
+    @else if $media == xlarge {
+      @media only screen and (min-width: $break-large) { @content; }
+    }
   }
 }
 
