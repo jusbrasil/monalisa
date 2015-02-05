@@ -24,8 +24,8 @@
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
-    (i.fa)
+  .button (--medium|--small|--caps|--block)
+    (--blue|--green|--yellow|--orange|--red) (i.fa)
 
 \*----------------------------------------------------------------------------*/
 
@@ -85,6 +85,11 @@
   padding: 0 $grid;
   text-transform: uppercase;
   .fa { margin-right: $grid/2; }
+}
+
+.button--block {
+  text-align: center;
+  width: 100%;
 }
 
 
