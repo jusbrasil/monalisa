@@ -359,6 +359,46 @@
   background-color: #1a1a1a;
 }
 
+.colorPallet-color--bluegray50 {
+  background-color: #e4eaec;
+}
+
+.colorPallet-color--bluegray100 {
+  background-color: #d5dee2;
+}
+
+.colorPallet-color--bluegray200 {
+  background-color: #b7c6cd;
+}
+
+.colorPallet-color--bluegray300 {
+  background-color: #99aeb8;
+}
+
+.colorPallet-color--bluegray400 {
+  background-color: #7b96a3;
+}
+
+.colorPallet-color--bluegray500 {
+  background-color: #607d8b;
+}
+
+.colorPallet-color--bluegray600 {
+  background-color: #4b626d;
+}
+
+.colorPallet-color--bluegray700 {
+  background-color: #36474f;
+}
+
+.colorPallet-color--bluegray800 {
+  background-color: #212c31;
+}
+
+.colorPallet-color--bluegray900 {
+  background-color: #0d1012;
+}
+
 /*——————————————————*\
   #BUTTONS
 \*——————————————————*/

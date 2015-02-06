@@ -2845,7 +2845,8 @@ html {
   font-weight: light;
 }
 
-[disabled], label.switch input[type="checkbox"][disabled] ~ .switch-label, label.switch input[type="radio"][disabled] ~ .switch-label {
+[disabled], label.switch input[type="checkbox"][disabled] ~ .switch-label,
+label.switch input[type="radio"][disabled] ~ .switch-label {
   cursor: not-allowed;
   opacity: .54;
 }
@@ -3116,7 +3117,7 @@ html {
   /* 2 */
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 800px) {
   .grid-col-md-1 {
     /* 1 */
     width: 8.33333%;
@@ -3189,7 +3190,7 @@ html {
     /* 2 */
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   .grid-col-lg-1 {
     /* 1 */
     width: 8.33333%;
@@ -3307,7 +3308,9 @@ html {
 .button:active, .actionButton:active {
   background: #4d4d4d;
 }
-.button, .actionButton, .button[disabled], [disabled].actionButton, label.switch input[type="checkbox"][disabled] ~ .actionButton.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton.switch-label, label.switch input[type="checkbox"][disabled] ~ .button.switch-label, label.switch input[type="radio"][disabled] ~ .button.switch-label {
+.button, .actionButton, .button[disabled], [disabled].actionButton, label.switch input[type="checkbox"][disabled] ~ .actionButton.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton.switch-label, label.switch input[type="checkbox"][disabled] ~ .button.switch-label,
+label.switch input[type="radio"][disabled] ~ .button.switch-label {
   background: gray;
 }
 
@@ -3321,7 +3324,9 @@ html {
 .button--blue:active, .actionButton--blue:active {
   background: #005284;
 }
-.button--blue, .actionButton--blue, .button--blue[disabled], [disabled].actionButton--blue, label.switch input[type="checkbox"][disabled] ~ .actionButton--blue.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--blue.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--blue.switch-label, label.switch input[type="radio"][disabled] ~ .button--blue.switch-label {
+.button--blue, .actionButton--blue, .button--blue[disabled], [disabled].actionButton--blue, label.switch input[type="checkbox"][disabled] ~ .actionButton--blue.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton--blue.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--blue.switch-label,
+label.switch input[type="radio"][disabled] ~ .button--blue.switch-label {
   background: #0091ea;
 }
 
@@ -3334,7 +3339,9 @@ html {
 .button--green:active, .actionButton--green:active {
   background: #486827;
 }
-.button--green, .actionButton--green, .button--green[disabled], [disabled].actionButton--green, label.switch input[type="checkbox"][disabled] ~ .actionButton--green.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--green.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--green.switch-label, label.switch input[type="radio"][disabled] ~ .button--green.switch-label {
+.button--green, .actionButton--green, .button--green[disabled], [disabled].actionButton--green, label.switch input[type="checkbox"][disabled] ~ .actionButton--green.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton--green.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--green.switch-label,
+label.switch input[type="radio"][disabled] ~ .button--green.switch-label {
   background: #7cb342;
 }
 
@@ -3347,7 +3354,9 @@ html {
 .button--yellow:active, .actionButton--yellow:active {
   background: #996b00;
 }
-.button--yellow, .actionButton--yellow, .button--yellow[disabled], [disabled].actionButton--yellow, label.switch input[type="checkbox"][disabled] ~ .actionButton--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--yellow.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
+.button--yellow, .actionButton--yellow, .button--yellow[disabled], [disabled].actionButton--yellow, label.switch input[type="checkbox"][disabled] ~ .actionButton--yellow.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton--yellow.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--yellow.switch-label,
+label.switch input[type="radio"][disabled] ~ .button--yellow.switch-label {
   background: #ffb300;
 }
 
@@ -3360,7 +3369,9 @@ html {
 .button--orange:active, .actionButton--orange:active {
   background: #955300;
 }
-.button--orange, .actionButton--orange, .button--orange[disabled], [disabled].actionButton--orange, label.switch input[type="checkbox"][disabled] ~ .actionButton--orange.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--orange.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--orange.switch-label, label.switch input[type="radio"][disabled] ~ .button--orange.switch-label {
+.button--orange, .actionButton--orange, .button--orange[disabled], [disabled].actionButton--orange, label.switch input[type="checkbox"][disabled] ~ .actionButton--orange.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton--orange.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--orange.switch-label,
+label.switch input[type="radio"][disabled] ~ .button--orange.switch-label {
   background: #fb8c00;
 }
 
@@ -3373,7 +3384,9 @@ html {
 .button--red:active, .actionButton--red:active {
   background: #922300;
 }
-.button--red, .actionButton--red, .button--red[disabled], [disabled].actionButton--red, label.switch input[type="checkbox"][disabled] ~ .actionButton--red.switch-label, label.switch input[type="radio"][disabled] ~ .actionButton--red.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--red.switch-label, label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
+.button--red, .actionButton--red, .button--red[disabled], [disabled].actionButton--red, label.switch input[type="checkbox"][disabled] ~ .actionButton--red.switch-label,
+label.switch input[type="radio"][disabled] ~ .actionButton--red.switch-label, label.switch input[type="checkbox"][disabled] ~ .button--red.switch-label,
+label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   background: #f83c00;
 }
 
@@ -3457,7 +3470,8 @@ html {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #000;
   border-color: currentColor;
 }
@@ -3466,7 +3480,8 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #fff;
   border-color: currentColor;
 }
@@ -3494,7 +3509,8 @@ html {
 .flatButton:active {
   color: #4d4d4d;
 }
-.flatButton, .flatButton[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton.switch-label {
+.flatButton, .flatButton[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton.switch-label {
   color: gray;
 }
 
@@ -3507,7 +3523,8 @@ html {
 .flatButton--blue:active {
   color: #005284;
 }
-.flatButton--blue, .flatButton--blue[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--blue.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--blue.switch-label {
+.flatButton--blue, .flatButton--blue[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--blue.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton--blue.switch-label {
   color: #0091ea;
 }
 
@@ -3520,7 +3537,8 @@ html {
 .flatButton--green:active {
   color: #486827;
 }
-.flatButton--green, .flatButton--green[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--green.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--green.switch-label {
+.flatButton--green, .flatButton--green[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--green.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton--green.switch-label {
   color: #7cb342;
 }
 
@@ -3533,7 +3551,8 @@ html {
 .flatButton--yellow:active {
   color: #996b00;
 }
-.flatButton--yellow, .flatButton--yellow[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--yellow.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--yellow.switch-label {
+.flatButton--yellow, .flatButton--yellow[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--yellow.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton--yellow.switch-label {
   color: #ffb300;
 }
 
@@ -3546,7 +3565,8 @@ html {
 .flatButton--orange:active {
   color: #955300;
 }
-.flatButton--orange, .flatButton--orange[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--orange.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--orange.switch-label {
+.flatButton--orange, .flatButton--orange[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--orange.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton--orange.switch-label {
   color: #fb8c00;
 }
 
@@ -3559,7 +3579,8 @@ html {
 .flatButton--red:active {
   color: #922300;
 }
-.flatButton--red, .flatButton--red[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label, label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
+.flatButton--red, .flatButton--red[disabled], label.switch input[type="checkbox"][disabled] ~ .flatButton--red.switch-label,
+label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   color: #f83c00;
 }
 
@@ -3737,7 +3758,8 @@ input[type="text"]:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
-input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label, label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
+input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label,
+label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
   background: #f2f2f2;
 }
 
@@ -3875,7 +3897,7 @@ select {
   #SWITCHES
 
   label.switch
-    (input[text="checkbox"]|input[text="radio"])
+    input[text="checkbox"]|input[text="radio"]
     span.switch-label
 
 \*----------------------------------------------------------------------------*/
@@ -3914,7 +3936,8 @@ label.switch {
   cursor: pointer;
   font-size: 1.4em;
 }
-label.switch input[type="checkbox"], label.switch input[type="radio"] {
+label.switch input[type="checkbox"],
+label.switch input[type="radio"] {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -3925,15 +3948,18 @@ label.switch input[type="checkbox"], label.switch input[type="radio"] {
   /* 2 */
   /* 6 */
 }
-label.switch input[type="checkbox"]:checked ~ .switch-label, label.switch input[type="radio"]:checked ~ .switch-label {
+label.switch input[type="checkbox"]:checked ~ .switch-label,
+label.switch input[type="radio"]:checked ~ .switch-label {
   /* 3 */
   /* 4 */
   /* 5 */
 }
-label.switch input[type="checkbox"]:checked ~ .switch-label:before, label.switch input[type="radio"]:checked ~ .switch-label:before {
+label.switch input[type="checkbox"]:checked ~ .switch-label:before,
+label.switch input[type="radio"]:checked ~ .switch-label:before {
   opacity: 1;
 }
-label.switch input[type="checkbox"]:checked ~ .switch-label:after, label.switch input[type="radio"]:checked ~ .switch-label:after {
+label.switch input[type="checkbox"]:checked ~ .switch-label:after,
+label.switch input[type="radio"]:checked ~ .switch-label:after {
   background: #0091ea;
 }
 label.switch input[type="checkbox"] ~ .switch-label {

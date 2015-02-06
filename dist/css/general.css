@@ -3117,7 +3117,7 @@ html {
   /* 2 */
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 800px) {
   .grid-col-md-1 {
     /* 1 */
     width: 8.33333%;
@@ -3190,7 +3190,7 @@ html {
     /* 2 */
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   .grid-col-lg-1 {
     /* 1 */
     width: 8.33333%;

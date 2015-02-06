@@ -155,6 +155,17 @@
       "black700": $black700,
       "black800": $black800,
       "black900": $black900,
+
+      "bluegray50": $bluegray50,
+      "bluegray100": $bluegray100,
+      "bluegray200": $bluegray200,
+      "bluegray300": $bluegray300,
+      "bluegray400": $bluegray400,
+      "bluegray500": $bluegray500,
+      "bluegray600": $bluegray600,
+      "bluegray700": $bluegray700,
+      "bluegray800": $bluegray800,
+      "bluegray900": $bluegray900,
     );
 
     @each $name, $color in $color-map {
