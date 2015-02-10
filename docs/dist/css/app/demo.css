@@ -379,6 +379,13 @@
   background: rgba(0, 0, 0, 0.87);
 }
 
+.buttons-group--block {
+  padding: 3px;
+}
+.buttons-group--block button {
+  margin: initial;
+}
+
 /*——————————————————*\
   #LABELS
 \*——————————————————*/
