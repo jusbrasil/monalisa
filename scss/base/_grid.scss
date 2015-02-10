@@ -6,6 +6,24 @@
 \*----------------------------------------------------------------------------*/
 
 /**
+ * Override the breakpoints from include-media dependency
+ * See more: https://github.com/eduardoboucas/include-media
+ */
+
+$break-phone: 240px;
+$break-tablet: 480px;
+$break-desktop: 800px;
+$break-large-desktop: 960px;
+
+$breakpoints: (
+  'phone': $break-phone,
+  'tablet': $break-tablet,
+  'desktop': $break-desktop,
+  'large-desktop': $break-large-desktop
+);
+
+
+/**
  * The grid system is based on rows and columns, like a table ;)
  *
  * The column name follows the pattern `grid-col(-md|-lg|-xlg)-n`, where `md` and
@@ -17,7 +35,7 @@
  */
 
 
-$grid-max-width: $break-large;
+$grid-max-width: $break-large-desktop;
 $grid-columns: 12;
 $grid-gutter: $grid;
 
@@ -82,14 +100,14 @@ $grid-gutter: $grid;
 
 @include grid-col-builder;
 
-@include respond-to(medium) {
+@include media('>=tablet', '<desktop') {
   @include grid-col-builder('md');
 }
 
-@include respond-to(large) {
+@include media('>=desktop') {
   @include grid-col-builder('lg');
 }
 
-@include respond-to(xlarge) {
+@include media('>=large-desktop') {
   @include grid-col-builder('xlg');
 }
