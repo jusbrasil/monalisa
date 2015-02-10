@@ -28,11 +28,6 @@
  * behavior of the site.
  */
 /**
- * small: <-480
- * medium: 481<->768
- * large: 769->
- */
-/**
  * Solution to hidden elements readable by screen reader:
  * http://a11yproject.com/posts/how-to-hide-content/
  */
@@ -2996,9 +2991,13 @@ html {
 
 \*----------------------------------------------------------------------------*/
 /**
+ * Override the breakpoints from include-media dependency
+ * See more: https://github.com/eduardoboucas/include-media
+ */
+/**
  * The grid system is based on rows and columns, like a table ;)
  *
- * The column name follows the pattern `grid-col(-md|-lg)-n`, where `md` and
+ * The column name follows the pattern `grid-col(-md|-lg|-xlg)-n`, where `md` and
  * `lg` are optional and indicate the column behavior for medium or large
  * screens, respectively. The `n` indicates the number of parts of the whole
  * that columns must complete. That is, in the grid system based on columns 12,
@@ -3009,8 +3008,8 @@ html {
  * This mixin builds the grid column classes according to the type and number of
  * columns.
  *
- * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` where
- *     `n` is a range from 1 through `$grid-columns`.
+ * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` or
+ *     `grid-col-xlg-n` where `n` is a range from 1 through `$grid-columns`.
  * 2 - Sets the width relative to the part of whole.
  */
 /**
@@ -3117,7 +3116,7 @@ html {
   /* 2 */
 }
 
-@media only screen and (min-width: 481px) and (max-width: 800px) {
+@media (min-width: 480px) and (max-width: 799px) {
   .grid-col-md-1 {
     /* 1 */
     width: 8.33333%;
@@ -3190,7 +3189,7 @@ html {
     /* 2 */
   }
 }
-@media only screen and (min-width: 800px) {
+@media (min-width: 800px) {
   .grid-col-lg-1 {
     /* 1 */
     width: 8.33333%;
@@ -3258,6 +3257,79 @@ html {
   }
 
   .grid-col-lg-12 {
+    /* 1 */
+    width: 100%;
+    /* 2 */
+  }
+}
+@media (min-width: 960px) {
+  .grid-col-xlg-1 {
+    /* 1 */
+    width: 8.33333%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-2 {
+    /* 1 */
+    width: 16.66667%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-3 {
+    /* 1 */
+    width: 25%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-4 {
+    /* 1 */
+    width: 33.33333%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-5 {
+    /* 1 */
+    width: 41.66667%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-6 {
+    /* 1 */
+    width: 50%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-7 {
+    /* 1 */
+    width: 58.33333%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-8 {
+    /* 1 */
+    width: 66.66667%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-9 {
+    /* 1 */
+    width: 75%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-10 {
+    /* 1 */
+    width: 83.33333%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-11 {
+    /* 1 */
+    width: 91.66667%;
+    /* 2 */
+  }
+
+  .grid-col-xlg-12 {
     /* 1 */
     width: 100%;
     /* 2 */
@@ -3470,8 +3542,7 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
-label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton:hover:not([disabled]) {
   color: #000;
   border-color: currentColor;
 }
@@ -3480,8 +3551,7 @@ label.switch input[type="radio"][disabled] ~ .switch-label) {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
-label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton--light:hover:not([disabled]) {
   color: #fff;
   border-color: currentColor;
 }
