@@ -383,7 +383,7 @@
   padding: 3px;
 }
 .buttons-group--block button {
-  margin: initial;
+  margin: 0;
 }
 
 /*——————————————————*\
