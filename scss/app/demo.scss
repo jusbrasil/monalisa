@@ -192,7 +192,7 @@
     margin-bottom: 30px;
     overflow: hidden; /* 1 */
 
-    button {
+    .button {
       float: left;
       margin: 3px;
     }
@@ -200,6 +200,14 @@
 
   .buttons-group--dark {
     background: $black87;
+  }
+
+  .buttons-group--block {
+    padding: 3px;
+
+    .button {
+      margin: 0;
+    }
   }
 
 
