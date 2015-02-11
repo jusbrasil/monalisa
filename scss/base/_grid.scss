@@ -6,9 +6,27 @@
 \*----------------------------------------------------------------------------*/
 
 /**
+ * Override the breakpoints from include-media dependency
+ * See more: https://github.com/eduardoboucas/include-media
+ */
+
+$break-phone: 240px;
+$break-tablet: 480px;
+$break-desktop: 800px;
+$break-large-desktop: 960px;
+
+$breakpoints: (
+  'phone': $break-phone,
+  'tablet': $break-tablet,
+  'desktop': $break-desktop,
+  'large-desktop': $break-large-desktop
+);
+
+
+/**
  * The grid system is based on rows and columns, like a table ;)
  *
- * The column name follows the pattern `grid-col(-md|-lg)-n`, where `md` and
+ * The column name follows the pattern `grid-col(-md|-lg|-xlg)-n`, where `md` and
  * `lg` are optional and indicate the column behavior for medium or large
  * screens, respectively. The `n` indicates the number of parts of the whole
  * that columns must complete. That is, in the grid system based on columns 12,
@@ -17,7 +35,7 @@
  */
 
 
-$grid-max-width: $break-large;
+$grid-max-width: $break-large-desktop;
 $grid-columns: 12;
 $grid-gutter: $grid;
 
@@ -26,8 +44,8 @@ $grid-gutter: $grid;
  * This mixin builds the grid column classes according to the type and number of
  * columns.
  *
- * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` where
- *     `n` is a range from 1 through `$grid-columns`.
+ * 1 - Creates the classes `grid-col-n`, `grid-col-md-n`, `grid-col-lg-n` or
+ *     `grid-col-xlg-n` where `n` is a range from 1 through `$grid-columns`.
  * 2 - Sets the width relative to the part of whole.
  */
 
@@ -82,10 +100,14 @@ $grid-gutter: $grid;
 
 @include grid-col-builder;
 
-@include respond-to(medium) {
+@include media('>=tablet', '<desktop') {
   @include grid-col-builder('md');
 }
 
-@include respond-to(large) {
+@include media('>=desktop') {
   @include grid-col-builder('lg');
+}
+
+@include media('>=large-desktop') {
+  @include grid-col-builder('xlg');
 }

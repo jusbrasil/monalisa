@@ -5,29 +5,6 @@
  * behavior of the site.
  */
 
-
-$break-small: 480px;
-$break-medium: 800px;
-$break-large: 960px;
-
-/**
- * small: <-480
- * medium: 481<->768
- * large: 769->
- */
-
-@mixin respond-to($media) {
-  @if $media == small {
-    @media only screen and (max-width: $break-small) { @content; }
-  }
-  @else if $media == medium {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium) { @content; }
-  }
-  @else if $media == large {
-    @media only screen and (min-width: $break-medium) { @content; }
-  }
-}
-
 @mixin generic-horizontal-center {
   left: 50%;
   -webkit-transform: translateX(-50%);
