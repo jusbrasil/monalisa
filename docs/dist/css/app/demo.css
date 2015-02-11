@@ -370,7 +370,7 @@
   overflow: hidden;
   /* 1 */
 }
-.buttons-group button {
+.buttons-group .button {
   float: left;
   margin: 3px;
 }
@@ -382,7 +382,7 @@
 .buttons-group--block {
   padding: 3px;
 }
-.buttons-group--block button {
+.buttons-group--block .button {
   margin: 0;
 }
 

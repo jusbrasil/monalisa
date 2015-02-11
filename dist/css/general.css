@@ -3283,8 +3283,8 @@ html {
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps|--block)
-    (--blue|--green|--yellow|--orange|--red) (i.fa)
+  .button (--medium|--small|--caps|--block) (--blue|--green|--yellow|--orange|--red)
+    (i.fa)
 
 \*----------------------------------------------------------------------------*/
 /**
@@ -3298,6 +3298,7 @@ html {
   /* 2 */
   display: inline-block;
   /* 3 */
+  text-align: center;
   color: #fff;
   /* 1 */
   /* 4 */
@@ -3423,7 +3424,6 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 }
 
 .button--block {
-  text-align: center;
   width: 100%;
 }
 
