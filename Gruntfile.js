@@ -74,7 +74,7 @@ module.exports = function(grunt) {
           consolidateMediaQueries: true
         },
         files: {
-          'dist/css/general.min.css': 'dist/css/general.min.css'
+          'dist/css/general.min.css': 'dist/css/general.css'
         }
       }
     }
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-cssc');
 
   grunt.registerTask('default', ['cssmetrics', 'browserSync', 'watch']);
-  grunt.registerTask('build', ['sass', 'cssmetrics', 'copy:dist']);
+  grunt.registerTask('build', ['sass', 'cssc', 'cssmetrics', 'copy:dist']);
   grunt.registerTask('server', ['build', 'jekyll', 'watch']);
 
   grunt.registerTask('jekyll', function(){
