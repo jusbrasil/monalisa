@@ -24,6 +24,10 @@
  * Global variables of the project. Works like a config file.
  */
 /**
+ * Override the breakpoints from include-media dependency
+ * See more: https://github.com/eduardoboucas/include-media
+ */
+/**
  * This file gathers general rules. Works like a reset, but setting the default
  * behavior of the site.
  */
@@ -2990,10 +2994,6 @@ html {
   #GRID
 
 \*----------------------------------------------------------------------------*/
-/**
- * Override the breakpoints from include-media dependency
- * See more: https://github.com/eduardoboucas/include-media
- */
 /**
  * The grid system is based on rows and columns, like a table ;)
  *

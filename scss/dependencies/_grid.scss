@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/**
+ * Override the breakpoints from include-media dependency
+ * See more: https://github.com/eduardoboucas/include-media
+ */
+
+$break-phone: 240px;
+$break-tablet: 480px;
+$break-desktop: 800px;
+$break-large-desktop: 960px;
+
+$breakpoints: (
+  'phone': $break-phone,
+  'tablet': $break-tablet,
+  'desktop': $break-desktop,
+  'large-desktop': $break-large-desktop
+);
