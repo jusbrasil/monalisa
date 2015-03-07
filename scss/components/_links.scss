@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------------------------------------------*\
+  #LINK
+
+  .link (--blue|--green|--yellow|--orange|--red)
+
+\*----------------------------------------------------------------------------*/
+
+@mixin link-color($color, $hoverColor, $activeColor) {
+  color: $color;
+
+  &:hover { color: $hoverColor; }
+  &:active { color: $activeColor; }
+}
+
+.link {
+  @extend .link--blue;
+}
+
+/* Colors modifiers */
+.link--blue   { @include link-color($blue500,    $blue600,   $blue700); }
+.link--green  { @include link-color($green500,   $green600,  $green700); }
+.link--yellow { @include link-color($yellow500,  $yellow600, $yellow700); }
+.link--orange { @include link-color($orange500,  $orange600, $orange700); }
+.link--red    { @include link-color($red500,     $red600,    $red700); }

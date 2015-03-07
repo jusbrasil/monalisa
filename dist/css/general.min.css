@@ -645,6 +645,21 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .grid-col-xlg-11{width:91.66667%;}
 .grid-col-xlg-12{width:100%;}
 }
+.link--blue,.link{color:#0091ea;}
+.link--blue:hover,.link:hover{color:#0071b7;}
+.link--blue:active,.link:active{color:#005284;}
+.link--green{color:#7cb342;}
+.link--green:hover{color:#628e34;}
+.link--green:active{color:#486827;}
+.link--yellow{color:#ffb300;}
+.link--yellow:hover{color:#cc8f00;}
+.link--yellow:active{color:#996b00;}
+.link--orange{color:#fb8c00;}
+.link--orange:hover{color:#c87000;}
+.link--orange:active{color:#955300;}
+.link--red{color:#f83c00;}
+.link--red:hover{color:#c53000;}
+.link--red:active{color:#922300;}
 .button,.actionButton,.outlineButton{height:48px;line-height:48px;font-size:16px;padding:0 20px;}
 .button .fa,.actionButton .fa,.outlineButton .fa{float:left;margin-right:8px;}
 .button,.actionButton{display:inline-block;text-align:center;color:#fff;}
