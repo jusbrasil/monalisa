@@ -660,6 +660,15 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .link--red{color:#f83c00;}
 .link--red:hover{color:#c53000;}
 .link--red:active{color:#922300;}
+.link--white{color:rgba(255,255,255,0.87);}
+.link--white:hover{color:#fff;}
+.link--white:active{color:#fff;}
+.link--gray{color:gray;}
+.link--gray:hover{color:#666;}
+.link--gray:active{color:#4d4d4d;}
+.link--black{color:#333;}
+.link--black:hover{color:#1a1a1a;}
+.link--black:active{color:#1a1a1a;}
 .button,.actionButton,.outlineButton{height:48px;line-height:48px;font-size:16px;padding:0 20px;}
 .button .fa,.actionButton .fa,.outlineButton .fa{float:left;margin-right:8px;}
 .button,.actionButton{display:inline-block;text-align:center;color:#fff;}

@@ -4,7 +4,7 @@
 /*----------------------------------------------------------------------------*\
   #LINK
 
-  .link (--blue|--green|--yellow|--orange|--red)
+  .link (--blue|--green|--yellow|--orange|--red|--white|--gray|--black)
 
 \*----------------------------------------------------------------------------*/
 
@@ -25,3 +25,6 @@
 .link--yellow { @include link-color($yellow500,  $yellow600, $yellow700); }
 .link--orange { @include link-color($orange500,  $orange600, $orange700); }
 .link--red    { @include link-color($red500,     $red600,    $red700); }
+.link--white  { @include link-color($white87,    $white,     $white); }
+.link--gray   { @include link-color($black500,   $black600,  $black700); }
+.link--black  { @include link-color($black800,   $black900,  $black900); }

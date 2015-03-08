@@ -3341,7 +3341,7 @@ html {
 /*----------------------------------------------------------------------------*\
   #LINK
 
-  .link (--blue|--green|--yellow|--orange|--red)
+  .link (--blue|--green|--yellow|--orange|--red|--white|--gray|--black)
 
 \*----------------------------------------------------------------------------*/
 /* Colors modifiers */
@@ -3393,6 +3393,36 @@ html {
 }
 .link--red:active {
   color: #922300;
+}
+
+.link--white {
+  color: rgba(255, 255, 255, 0.87);
+}
+.link--white:hover {
+  color: #fff;
+}
+.link--white:active {
+  color: #fff;
+}
+
+.link--gray {
+  color: gray;
+}
+.link--gray:hover {
+  color: #666666;
+}
+.link--gray:active {
+  color: #4d4d4d;
+}
+
+.link--black {
+  color: #333333;
+}
+.link--black:hover {
+  color: #1a1a1a;
+}
+.link--black:active {
+  color: #1a1a1a;
 }
 
 /*——————————————————*\
