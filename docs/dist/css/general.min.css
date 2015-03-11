@@ -703,9 +703,9 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .actionButton--done:after{content:"!";}
 .actionButton--done:before{content:attr(label-done);}
 .outlineButton{border:1px solid rgba(0,0,0,0.87);color:rgba(0,0,0,0.87);}
-.outlineButton:hover:not([disabled]){color:#000;border-color:currentColor;}
+.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled]~.switch-label):not( label.switch input[type="radio"][disabled]~.switch-label){color:#000;border-color:currentColor;}
 .outlineButton--light{border:1px solid rgba(255,255,255,0.87);color:rgba(255,255,255,0.87);}
-.outlineButton--light:hover:not([disabled]){color:#fff;border-color:currentColor;}
+.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled]~.switch-label):not( label.switch input[type="radio"][disabled]~.switch-label){color:#fff;border-color:currentColor;}
 .flatButton{text-transform:uppercase;}
 .flatButton:hover{color:#666;}
 .flatButton:active{color:#4d4d4d;}

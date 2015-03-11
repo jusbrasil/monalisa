@@ -44,6 +44,15 @@
     width: 1em;
   }
 }
+@keyframes ellipsis {
+  0% {
+    width: 0;
+    margin-right: 1em;
+  }
+  100% {
+    width: 1em;
+  }
+}
 /*——————————————————*\
   #Font-awesome 4.2.0
 \*——————————————————*/
@@ -3638,7 +3647,8 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]) {
+.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #000;
   border-color: currentColor;
 }
@@ -3647,7 +3657,8 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]) {
+.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #fff;
   border-color: currentColor;
 }
