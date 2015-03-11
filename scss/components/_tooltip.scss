@@ -8,15 +8,15 @@
 \*----------------------------------------------------------------------------*/
 
 /**
- * 1 - The right padding is increased because the icon on the right.
- * 2 - Hides the select caret down when the validation icons appears.
- * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ * 1 - Force the Roboto font when the tooltip is inside a wrapper with
+ *     FontAwesome.
  */
 
 [tooltip] {
   z-index: $z-index-tooltip;
   position: relative;
   &:after {
+    font-family: 'Roboto', sans-serif; /* 1 */;
     background-color: $black87;
     border-radius: $border-radius;
     color: $white;
@@ -32,6 +32,7 @@
     @include horizontal-center
   }
   &:hover {
+    cursor: default;
     &:after {
       display: inline-block;
     }

@@ -4198,15 +4198,16 @@ label.switch input[type="radio"] ~ .switch-label:after {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - The right padding is increased because the icon on the right.
- * 2 - Hides the select caret down when the validation icons appears.
- * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ * 1 - Force the Roboto font when the tooltip is inside a wrapper with
+ *     FontAwesome.
  */
 [tooltip] {
   z-index: 1;
   position: relative;
 }
 [tooltip]:after {
+  font-family: 'Roboto', sans-serif;
+  /* 1 */
   background-color: rgba(0, 0, 0, 0.87);
   border-radius: 2px;
   color: #fff;
@@ -4224,6 +4225,9 @@ label.switch input[type="radio"] ~ .switch-label:after {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+[tooltip]:hover {
+  cursor: defaulf;
 }
 [tooltip]:hover:after {
   display: inline-block;
