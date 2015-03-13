@@ -714,6 +714,7 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .field--small input[type="text"]{height:32px;font-size:1.3rem;padding:0 8px;}
 .field--small select{height:32px;font-size:1.3rem;padding:0 24px 0 8px;}
 .field--small .fa,.field--small .field-validation{font-size:1.2rem;right:8px;}
+.field--block input[type="text"],.field--block select{width:100%;}
 .field--error:before,.field--success:before{display:none;}
 .field--error .fa,.field--success .fa{display:none;}
 .field--error input[type="text"]{border-color:rgba(248,60,0,0.54);box-shadow:inset 0 1px 3px -1px rgba(248,60,0,0.87);}
