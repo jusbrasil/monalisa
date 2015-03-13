@@ -55,6 +55,8 @@ $field-horizontalPadding--small:  $grid * 1;
 }
 
 .field--block {
+  display: block;
+
   input[type="text"],
   select {
     width: 100%;

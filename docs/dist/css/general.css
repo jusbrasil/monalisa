@@ -3757,6 +3757,9 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   right: 8px;
 }
 
+.field--block {
+  display: block;
+}
 .field--block input[type="text"],
 .field--block select {
   width: 100%;
