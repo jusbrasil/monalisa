@@ -11,13 +11,6 @@
 
 \*----------------------------------------------------------------------------*/
 
-@mixin link-color($color, $hoverColor, $activeColor) {
-  color: $color;
-
-  &:hover { color: $hoverColor; }
-  &:active { color: $activeColor; }
-}
-
 .link { /* 1 */
   @include link-color($blue500, $blue600, $blue700);
 }
