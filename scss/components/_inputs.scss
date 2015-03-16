@@ -3,7 +3,7 @@
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field (--small) (--error|--success) (.select)
+  .field (--small|--block) (--error|--success) (.select)
     (.#{$fa-css-prefix})
     (.field-validation)
     select|input[type="text"]
@@ -51,6 +51,15 @@ $field-horizontalPadding--small:  $grid * 1;
   .#{$fa-css-prefix}, .field-validation {
     font-size: 1.2rem;
     right: $field-horizontalPadding--small;
+  }
+}
+
+.field--block {
+  display: block;
+
+  input[type="text"],
+  select {
+    width: 100%;
   }
 }
 

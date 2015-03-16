@@ -3806,7 +3806,7 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 /*----------------------------------------------------------------------------*\
   #FIELD
 
-  .field (--small) (--error|--success) (.select)
+  .field (--small|--block) (--error|--success) (.select)
     (.fa)
     (.field-validation)
     select|input[type="text"]
@@ -3846,6 +3846,14 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--small .fa, .field--small .field-validation {
   font-size: 1.2rem;
   right: 8px;
+}
+
+.field--block {
+  display: block;
+}
+.field--block input[type="text"],
+.field--block select {
+  width: 100%;
 }
 
 .field--error, .field--success {
