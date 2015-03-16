@@ -5,13 +5,19 @@
  * behavior of the site.
  */
 
+@mixin link-color($color, $hoverColor, $activeColor) {
+  color: $color;
+
+  &:hover { color: $hoverColor; }
+  &:active { color: $activeColor; }
+}
+
 @mixin generic-horizontal-center {
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-
 
 @mixin vertical-center {
   position: absolute;
