@@ -3338,23 +3338,27 @@ html {
 /*——————————————————*\
   #Components
 \*——————————————————*/
+/*
+ * 1 - Blue as default color
+*/
 /*----------------------------------------------------------------------------*\
   #LINK
 
-  .link (--blue|--green|--yellow|--orange|--red|--white|--gray|--black)
+  .link (--green|--yellow|--orange|--red|--white|--gray|--black)
 
 \*----------------------------------------------------------------------------*/
-/* Colors modifiers */
-.link--blue, .link {
+.link {
+  /* 1 */
   color: #0091ea;
 }
-.link--blue:hover, .link:hover {
+.link:hover {
   color: #0071b7;
 }
-.link--blue:active, .link:active {
+.link:active {
   color: #005284;
 }
 
+/* Colors modifiers */
 .link--green {
   color: #7cb342;
 }

@@ -1,10 +1,13 @@
 @charset "UTF-8";
 
+/*
+ * 1 - Blue as default color
+*/
 
 /*----------------------------------------------------------------------------*\
   #LINK
 
-  .link (--blue|--green|--yellow|--orange|--red|--white|--gray|--black)
+  .link (--green|--yellow|--orange|--red|--white|--gray|--black)
 
 \*----------------------------------------------------------------------------*/
 
@@ -15,12 +18,11 @@
   &:active { color: $activeColor; }
 }
 
-.link {
-  @extend .link--blue;
+.link { /* 1 */
+  @include link-color($blue500, $blue600, $blue700);
 }
 
 /* Colors modifiers */
-.link--blue   { @include link-color($blue500,    $blue600,   $blue700); }
 .link--green  { @include link-color($green500,   $green600,  $green700); }
 .link--yellow { @include link-color($yellow500,  $yellow600, $yellow700); }
 .link--orange { @include link-color($orange500,  $orange600, $orange700); }

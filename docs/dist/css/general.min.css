@@ -645,9 +645,9 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .grid-col-xlg-11{width:91.66667%;}
 .grid-col-xlg-12{width:100%;}
 }
-.link--blue,.link{color:#0091ea;}
-.link--blue:hover,.link:hover{color:#0071b7;}
-.link--blue:active,.link:active{color:#005284;}
+.link{color:#0091ea;}
+.link:hover{color:#0071b7;}
+.link:active{color:#005284;}
 .link--green{color:#7cb342;}
 .link--green:hover{color:#628e34;}
 .link--green:active{color:#486827;}
