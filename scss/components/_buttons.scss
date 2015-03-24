@@ -12,7 +12,7 @@
   padding: 0 20px;
 
   .fa { margin-right: $grid; }
-  &.button-icon--right {
+  &.button--iconRight {
     .fa { margin: 0 0 0 $grid; }
   }
 }
@@ -24,7 +24,7 @@
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps|--block) (--blue|--green|--yellow|--orange|--red)
+  .button (--medium|--small|--caps|--block) (--iconRight) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -112,7 +112,7 @@
   @extend .button;
   &:before { content: attr(label); }
   .fa { float: left; }
-  &.button-icon--right {
+  &.button--iconRight {
     .fa { float: right; }
   }
 }

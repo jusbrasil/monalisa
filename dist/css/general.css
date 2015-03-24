@@ -3441,14 +3441,14 @@ html {
 .button .fa, .actionButton .fa, .outlineButton .fa {
   margin-right: 8px;
 }
-.button-icon--right.button .fa, .button-icon--right.actionButton .fa, .button-icon--right.outlineButton .fa {
+.button--iconRight.button .fa, .button--iconRight.actionButton .fa, .button--iconRight.outlineButton .fa {
   margin: 0 0 0 8px;
 }
 
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps|--block) (--blue|--green|--yellow|--orange|--red)
+  .button (--medium|--small|--caps|--block) (--iconRight) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -3608,7 +3608,7 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 .actionButton .fa {
   float: left;
 }
-.actionButton.button-icon--right .fa {
+.actionButton.button--iconRight .fa {
   float: right;
 }
 
