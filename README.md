@@ -1,4 +1,4 @@
-#JusBrasil's bootstrap
+#Monalisa: the JusBrasil Bootstrap
 
 ##How to run
 ```bash
