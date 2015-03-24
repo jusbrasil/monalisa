@@ -65,7 +65,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .field-validation, .select, .switch-label {
+.fa:before, .field-validation, .select, .switch-label:after, .switch-label:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
