@@ -4042,10 +4042,16 @@ label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - The right padding is increased because the caret down icon on the right.
+ * 1 - The right padding is a square, where the padding-right is the width, and
+ *     the width is equal to the height..
  * 2 - Defines the position and styles of the caret down icon.
  * 3 - Need to add the caret down icon.
  * 4 - Defines the caret down icon.
+ * 5 - The background of caret down box is the same color of select's background
+ *     to hide the default input arrow.
+ * 6 - Fix the border overflow of caret down box.
+ * 7 - Force the Roboto font because the select is inside a wrapper with
+ *     FontAwesome (.select).
  */
 select {
   cursor: pointer;
@@ -4054,9 +4060,13 @@ select {
   border: none;
   height: 48px;
   font-size: 1.6rem;
-  padding: 0 40px 0 16px;
+  font-family: 'Roboto', sans-serif;
+  /* 7 */
+  padding: 0 48px 0 16px;
   /* 1 */
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .select {
@@ -4068,14 +4078,28 @@ select {
   /* 2 */
   position: absolute;
   font-size: 1.8rem;
+}
+.select:before,
+.select .field-validation:before {
   line-height: 48px;
-  right: 16px;
+  width: 48px;
+  right: 0;
+  padding-right: 16px;
+  text-align: right;
+  cursor: pointer;
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+  /* 6 */
+}
+.select .field-validation {
+  right: 0;
 }
 .select.field--small:before {
   /* 2 */
   font-size: 1.2rem;
   line-height: 32px;
-  right: 8px;
+  width: 32px;
+  padding-right: 8px;
 }
 
 /*----------------------------------------------------------------------------*\
@@ -4227,7 +4251,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   transform: translateX(-50%);
 }
 [tooltip]:hover {
-  cursor: defaulf;
+  cursor: default;
 }
 [tooltip]:hover:after {
   display: inline-block;
