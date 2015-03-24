@@ -1,4 +1,4 @@
-#Monalisa: the JusBrasil Bootstrap
+![Monalisa Bootstrap](./dist/img/monalisa-cover.png)
 
 ##How to run
 ```bash
