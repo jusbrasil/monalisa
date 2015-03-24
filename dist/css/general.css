@@ -3604,7 +3604,7 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 /*----------------------------------------------------------------------------*\
   #ACTIONBUTTON
 
-  .actionButton (--loading|--done) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
+  .actionButton (--loading|--done) (--iconRight) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
