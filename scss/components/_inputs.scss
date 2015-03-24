@@ -260,15 +260,13 @@ input[type="text"] {
  * 2 - Defines the position and styles of the caret down icon.
  * 3 - Need to add the caret down icon.
  * 4 - Defines the caret down icon.
- * 5 - The background of caret down box is the same color of select's background
- *     to hide the default input arrow.
- * 6 - Fix the border overflow of caret down box.
- * 7 - Force the Roboto font because the select is inside a wrapper with
+ * 5 - Fix the border overflow of caret down box.
+ * 6 - Force the Roboto font because the select is inside a wrapper with
  *     FontAwesome (.select).
  */
 
 $select-color: $white;
-$select-color--disabled: $black50;
+// $select-color--disabled: $black50;
 
 select {
   cursor: pointer;
@@ -278,21 +276,23 @@ select {
   border: none;
   height: $field-height;
   font-size: 1.6rem;
-  font-family: 'Roboto', sans-serif; /* 7 */;
+  font-family: 'Roboto', sans-serif; /* 6 */;
   padding: 0 $paddingRight 0 $field-horizontalPadding; /* 1 */
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .select {
   @extend %font-awesome; /* 3 */
   @extend .#{$fa-css-prefix}--caretDown; /* 4 */
   @extend .#{$fa-css-prefix}--gray; /* 4 */
+
   &:before { /* 2 */
     position: absolute;
     font-size: 1.8rem;
   }
+
   &:before,
   .field-validation:before {
     line-height: $field-height;
@@ -302,17 +302,14 @@ select {
     text-align: right;
     cursor: pointer;
     pointer-events: none;
-    // background: $select-color; /* 5 */
-    border-radius: 0 $border-radius $border-radius 0; /* 6 */
+    border-radius: 0 $border-radius $border-radius 0; /* 5 */
   }
-  .field-validation {
-    right: 0;
-    .field--small & {
 
-    }
-  }
+  .field-validation { right: 0; }
+
   &.field--small {
-    &:before { /* 2 */
+    &:before,
+    .field-validation:before { /* 2 */
       font-size: 1.2rem;
       line-height: $field-height--small;
       width: $field-height--small;

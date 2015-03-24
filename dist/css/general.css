@@ -4047,10 +4047,8 @@ label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
  * 2 - Defines the position and styles of the caret down icon.
  * 3 - Need to add the caret down icon.
  * 4 - Defines the caret down icon.
- * 5 - The background of caret down box is the same color of select's background
- *     to hide the default input arrow.
- * 6 - Fix the border overflow of caret down box.
- * 7 - Force the Roboto font because the select is inside a wrapper with
+ * 5 - Fix the border overflow of caret down box.
+ * 6 - Force the Roboto font because the select is inside a wrapper with
  *     FontAwesome (.select).
  */
 select {
@@ -4061,7 +4059,7 @@ select {
   height: 48px;
   font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
-  /* 7 */
+  /* 6 */
   padding: 0 48px 0 16px;
   /* 1 */
   -webkit-appearance: none;
@@ -4089,12 +4087,13 @@ select {
   cursor: pointer;
   pointer-events: none;
   border-radius: 0 2px 2px 0;
-  /* 6 */
+  /* 5 */
 }
 .select .field-validation {
   right: 0;
 }
-.select.field--small:before {
+.select.field--small:before,
+.select.field--small .field-validation:before {
   /* 2 */
   font-size: 1.2rem;
   line-height: 32px;
