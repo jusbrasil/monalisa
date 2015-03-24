@@ -11,9 +11,9 @@
   font-size: 16px;
   padding: 0 20px;
 
-  .fa {
-    float: left;
-    margin-right: $grid;
+  .fa { margin-right: $grid; }
+  &.button-icon--right {
+    .fa { margin: 0 0 0 $grid; }
   }
 }
 
@@ -111,6 +111,9 @@
 .actionButton {
   @extend .button;
   &:before { content: attr(label); }
+  &.button-icon--right {
+    .fa { float: right; }
+  }
 }
 
 /* Colors modifiers */

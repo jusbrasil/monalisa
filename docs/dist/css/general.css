@@ -3439,8 +3439,10 @@ html {
   padding: 0 20px;
 }
 .button .fa, .actionButton .fa, .outlineButton .fa {
-  float: left;
   margin-right: 8px;
+}
+.button-icon--right.button .fa, .button-icon--right.actionButton .fa, .button-icon--right.outlineButton .fa {
+  margin: 0 0 0 8px;
 }
 
 /*----------------------------------------------------------------------------*\
@@ -3602,6 +3604,9 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
  */
 .actionButton:before {
   content: attr(label);
+}
+.actionButton.button-icon--right .fa {
+  float: right;
 }
 
 /* Colors modifiers */
