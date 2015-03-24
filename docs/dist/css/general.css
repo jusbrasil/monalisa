@@ -3605,6 +3605,9 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 .actionButton:before {
   content: attr(label);
 }
+.actionButton .fa {
+  float: left;
+}
 .actionButton.button-icon--right .fa {
   float: right;
 }

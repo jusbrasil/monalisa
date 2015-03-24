@@ -111,6 +111,7 @@
 .actionButton {
   @extend .button;
   &:before { content: attr(label); }
+  .fa { float: left; }
   &.button-icon--right {
     .fa { float: right; }
   }
