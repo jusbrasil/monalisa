@@ -38,7 +38,10 @@ $field-horizontalPadding--small:  $grid * 1;
   }
 
 .field--small {
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
     height: $field-height--small;
     font-size: 1.3rem;
     padding: 0 $field-horizontalPadding--small;
@@ -58,6 +61,9 @@ $field-horizontalPadding--small:  $grid * 1;
   display: block;
 
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
   select {
     width: 100%;
   }
@@ -75,7 +81,10 @@ $field-horizontalPadding--small:  $grid * 1;
     @extend .#{$fa-css-prefix}--exclamationCircle;
     @extend .#{$fa-css-prefix}--red;
   }
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
     border-color: $red54;
     @include box-inner-shadow($red87);
   }
@@ -90,7 +99,10 @@ $field-horizontalPadding--small:  $grid * 1;
     @extend .#{$fa-css-prefix}--checkCircle;
     @extend .#{$fa-css-prefix}--green;
   }
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
     border-color: $green54;
     @include box-inner-shadow($green87);
   }
@@ -139,7 +151,10 @@ $input-suggestions-item-image-size:         $grid * 4;
 $input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
   border-radius: $border-radius;
   display: inline-block;
   color: $black87;
