@@ -41,7 +41,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="text"],
   input[type="email"],
   input[type="password"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="date"] {
     height: $field-height--small;
     font-size: 1.3rem;
     padding: 0 $field-horizontalPadding--small;
@@ -64,6 +65,7 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="email"],
   input[type="password"],
   input[type="number"],
+  input[type="date"],
   select {
     width: 100%;
   }
@@ -84,7 +86,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="text"],
   input[type="email"],
   input[type="password"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="date"] {
     border-color: $red54;
     @include box-inner-shadow($red87);
   }
@@ -102,7 +105,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="text"],
   input[type="email"],
   input[type="password"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="date"] {
     border-color: $green54;
     @include box-inner-shadow($green87);
   }
@@ -154,7 +158,8 @@ $input-suggestions-item-image-marginRight:  $grid * 1;
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
   border-radius: $border-radius;
   display: inline-block;
   color: $black87;

@@ -3846,7 +3846,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--small input[type="text"],
 .field--small input[type="email"],
 .field--small input[type="password"],
-.field--small input[type="number"] {
+.field--small input[type="number"],
+.field--small input[type="date"] {
   height: 32px;
   font-size: 1.3rem;
   padding: 0 8px;
@@ -3869,6 +3870,7 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--block input[type="email"],
 .field--block input[type="password"],
 .field--block input[type="number"],
+.field--block input[type="date"],
 .field--block select {
   width: 100%;
 }
@@ -3887,7 +3889,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--error input[type="text"],
 .field--error input[type="email"],
 .field--error input[type="password"],
-.field--error input[type="number"] {
+.field--error input[type="number"],
+.field--error input[type="date"] {
   border-color: rgba(248, 60, 0, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(248, 60, 0, 0.87);
 }
@@ -3899,7 +3902,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--success input[type="text"],
 .field--success input[type="email"],
 .field--success input[type="password"],
-.field--success input[type="number"] {
+.field--success input[type="number"],
+.field--success input[type="date"] {
   border-color: rgba(124, 179, 66, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
 }
@@ -3939,7 +3943,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
   border-radius: 2px;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
@@ -3953,14 +3958,16 @@ input[type="number"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+input[type="date"]:focus {
   border-color: rgba(0, 145, 234, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(0, 145, 234, 0.87);
 }
 input[type="text"]:focus ~ .input-suggestions,
 input[type="email"]:focus ~ .input-suggestions,
 input[type="password"]:focus ~ .input-suggestions,
-input[type="number"]:focus ~ .input-suggestions {
+input[type="number"]:focus ~ .input-suggestions,
+input[type="date"]:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
@@ -3974,7 +3981,10 @@ label.switch input[type="checkbox"][disabled] ~ input[type="password"].switch-la
 label.switch input[type="radio"][disabled] ~ input[type="password"].switch-label,
 input[type="number"][disabled],
 label.switch input[type="checkbox"][disabled] ~ input[type="number"].switch-label,
-label.switch input[type="radio"][disabled] ~ input[type="number"].switch-label {
+label.switch input[type="radio"][disabled] ~ input[type="number"].switch-label,
+input[type="date"][disabled],
+label.switch input[type="checkbox"][disabled] ~ input[type="date"].switch-label,
+label.switch input[type="radio"][disabled] ~ input[type="date"].switch-label {
   background: #f2f2f2;
 }
 
