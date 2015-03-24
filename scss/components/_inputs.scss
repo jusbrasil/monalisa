@@ -255,39 +255,65 @@ input[type="text"] {
 \*----------------------------------------------------------------------------*/
 
 /**
- * 1 - The right padding is increased because the caret down icon on the right.
+ * 1 - The right padding is a square, where the padding-right is the width, and
+ *     the width is equal to the height..
  * 2 - Defines the position and styles of the caret down icon.
  * 3 - Need to add the caret down icon.
  * 4 - Defines the caret down icon.
+ * 5 - Fix the border overflow of caret down box.
+ * 6 - Force the Roboto font because the select is inside a wrapper with
+ *     FontAwesome (.select).
  */
+
+$select-color: $white;
+// $select-color--disabled: $black50;
 
 select {
   cursor: pointer;
-  $paddingRight: $field-horizontalPadding + $grid * 3; /* 1 */
+  $paddingRight: $field-height; /* 1 */
   @extend %sexyBox;
-  background: $white;
+  background: $select-color;
   border: none;
   height: $field-height;
   font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif; /* 6 */;
   padding: 0 $paddingRight 0 $field-horizontalPadding; /* 1 */
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .select {
   @extend %font-awesome; /* 3 */
   @extend .#{$fa-css-prefix}--caretDown; /* 4 */
   @extend .#{$fa-css-prefix}--gray; /* 4 */
+
   &:before { /* 2 */
     position: absolute;
     font-size: 1.8rem;
-    line-height: $field-height;
-    right: $field-horizontalPadding;
   }
+
+  &:before,
+  .field-validation:before {
+    line-height: $field-height;
+    width: $field-height;
+    right: 0;
+    padding-right: $grid*2;
+    text-align: right;
+    cursor: pointer;
+    pointer-events: none;
+    border-radius: 0 $border-radius $border-radius 0; /* 5 */
+  }
+
+  .field-validation { right: 0; }
+
   &.field--small {
-    &:before { /* 2 */
+    &:before,
+    .field-validation:before { /* 2 */
       font-size: 1.2rem;
       line-height: $field-height--small;
-      right: $field-horizontalPadding--small;
+      width: $field-height--small;
+      padding-right: $grid;
     }
   }
 }

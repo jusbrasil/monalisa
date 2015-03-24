@@ -71,12 +71,11 @@ label.switch { /* 1 */
 }
 
   .switch-label {
-    @extend %font-awesome;
-
     padding-left: $switch-size + $grid;
     line-height: $switch-size;
 
     &:after, &:before {
+      @extend %font-awesome;
       position: absolute;
       left: 0;
       width: $switch-size;

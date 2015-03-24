@@ -44,6 +44,15 @@
     width: 1em;
   }
 }
+@keyframes ellipsis {
+  0% {
+    width: 0;
+    margin-right: 1em;
+  }
+  100% {
+    width: 1em;
+  }
+}
 /*——————————————————*\
   #Font-awesome 4.2.0
 \*——————————————————*/
@@ -56,7 +65,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa:before, .field-validation, .select, .switch-label {
+.fa:before, .field-validation, .select, .switch-label:after, .switch-label:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -3646,7 +3655,8 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]) {
+.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #000;
   border-color: currentColor;
 }
@@ -3655,7 +3665,8 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]) {
+.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
+label.switch input[type="radio"][disabled] ~ .switch-label) {
   color: #fff;
   border-color: currentColor;
 }
@@ -4039,10 +4050,14 @@ label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - The right padding is increased because the caret down icon on the right.
+ * 1 - The right padding is a square, where the padding-right is the width, and
+ *     the width is equal to the height..
  * 2 - Defines the position and styles of the caret down icon.
  * 3 - Need to add the caret down icon.
  * 4 - Defines the caret down icon.
+ * 5 - Fix the border overflow of caret down box.
+ * 6 - Force the Roboto font because the select is inside a wrapper with
+ *     FontAwesome (.select).
  */
 select {
   cursor: pointer;
@@ -4051,9 +4066,13 @@ select {
   border: none;
   height: 48px;
   font-size: 1.6rem;
-  padding: 0 40px 0 16px;
+  font-family: 'Roboto', sans-serif;
+  /* 6 */
+  padding: 0 48px 0 16px;
   /* 1 */
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .select {
@@ -4065,14 +4084,29 @@ select {
   /* 2 */
   position: absolute;
   font-size: 1.8rem;
-  line-height: 48px;
-  right: 16px;
 }
-.select.field--small:before {
+.select:before,
+.select .field-validation:before {
+  line-height: 48px;
+  width: 48px;
+  right: 0;
+  padding-right: 16px;
+  text-align: right;
+  cursor: pointer;
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+  /* 5 */
+}
+.select .field-validation {
+  right: 0;
+}
+.select.field--small:before,
+.select.field--small .field-validation:before {
   /* 2 */
   font-size: 1.2rem;
   line-height: 32px;
-  right: 8px;
+  width: 32px;
+  padding-right: 8px;
 }
 
 /*----------------------------------------------------------------------------*\
@@ -4195,15 +4229,16 @@ label.switch input[type="radio"] ~ .switch-label:after {
 
 \*----------------------------------------------------------------------------*/
 /**
- * 1 - The right padding is increased because the icon on the right.
- * 2 - Hides the select caret down when the validation icons appears.
- * 2 - Hides the input icon (`.fa`) when the validation icons appears.
+ * 1 - Force the Roboto font when the tooltip is inside a wrapper with
+ *     FontAwesome.
  */
 [tooltip] {
   z-index: 1;
   position: relative;
 }
 [tooltip]:after {
+  font-family: 'Roboto', sans-serif;
+  /* 1 */
   background-color: rgba(0, 0, 0, 0.87);
   border-radius: 2px;
   color: #fff;
@@ -4221,6 +4256,9 @@ label.switch input[type="radio"] ~ .switch-label:after {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+[tooltip]:hover {
+  cursor: default;
 }
 [tooltip]:hover:after {
   display: inline-block;
