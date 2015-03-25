@@ -3448,14 +3448,16 @@ html {
   padding: 0 20px;
 }
 .button .fa, .actionButton .fa, .outlineButton .fa {
-  float: left;
   margin-right: 8px;
+}
+.button--iconRight.button .fa, .button--iconRight.actionButton .fa, .button--iconRight.outlineButton .fa {
+  margin: 0 0 0 8px;
 }
 
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps|--block) (--blue|--green|--yellow|--orange|--red)
+  .button (--medium|--small|--caps|--block) (--iconRight) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -3602,7 +3604,7 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 /*----------------------------------------------------------------------------*\
   #ACTIONBUTTON
 
-  .actionButton (--loading|--done) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
+  .actionButton (--loading|--done) (--iconRight) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -3611,6 +3613,12 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
  */
 .actionButton:before {
   content: attr(label);
+}
+.actionButton .fa {
+  float: left;
+}
+.actionButton.button--iconRight .fa {
+  float: right;
 }
 
 /* Colors modifiers */
