@@ -469,10 +469,18 @@
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
-.inputs input[type="text"], .inputs select {
+.inputs input[type="text"],
+.inputs input[type="password"],
+.inputs input[type="number"],
+.inputs input[type="date"],
+.inputs select {
   width: 400px;
 }
-.inputs .field--small input[type="text"], .inputs .field--small select {
+.inputs .field--small input[type="text"],
+.inputs .field--small input[type="password"],
+.inputs .field--small input[type="number"],
+.inputs .field--small input[type="date"],
+.inputs .field--small select {
   width: 250px;
 }
 

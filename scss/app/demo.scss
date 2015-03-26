@@ -281,11 +281,19 @@
 
 
 .inputs {
-  input[type="text"], select {
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  select {
     width: 400px;
   }
   .field--small {
-    input[type="text"], select {
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    select {
       width: 250px;
     }
   }
