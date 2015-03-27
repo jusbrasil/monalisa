@@ -11,7 +11,7 @@
 100%{-webkit-transform:rotate(359deg);transform:rotate(359deg);}
 }
 @font-face{font-family:'FontAwesome';src:url("../fonts/fontawesome-webfont.eot?v=4.2.0");src:url("../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal;}
-.fa:before,.field-validation,.select,.switch-label{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.fa:before,.field-validation,.select,.switch-label:after,.switch-label:before{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .fa--lg:before{font-size:1.33333em;line-height:.75em;vertical-align:-15%;}
 .fa--2x:before{font-size:2em;}
 .fa--3x:before{font-size:3em;}
@@ -709,9 +709,9 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .actionButton--done:after{content:"!";}
 .actionButton--done:before{content:attr(label-done);}
 .outlineButton{border:1px solid rgba(0,0,0,0.87);color:rgba(0,0,0,0.87);}
-.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled]~.switch-label):not( label.switch input[type="radio"][disabled]~.switch-label){color:#000;border-color:currentColor;}
+.outlineButton:hover:not([disabled]){color:#000;border-color:currentColor;}
 .outlineButton--light{border:1px solid rgba(255,255,255,0.87);color:rgba(255,255,255,0.87);}
-.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled]~.switch-label):not( label.switch input[type="radio"][disabled]~.switch-label){color:#fff;border-color:currentColor;}
+.outlineButton--light:hover:not([disabled]){color:#fff;border-color:currentColor;}
 .flatButton{text-transform:uppercase;}
 .flatButton:hover{color:#666;}
 .flatButton:active{color:#4d4d4d;}
@@ -743,19 +743,21 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .field .fa,.field .field-validation{font-size:18px;right:16px;text-align:right;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
 .field--small input[type="text"]{height:32px;font-size:1.3rem;padding:0 8px;}
 .field--small select{height:32px;font-size:1.3rem;padding:0 24px 0 8px;}
+.field--small textarea{height:80px;padding:8px;}
 .field--small .fa,.field--small .field-validation{font-size:1.2rem;right:8px;}
 .field--block{display:block;}
 .field--block input[type="text"],.field--block select{width:100%;}
 .field--error:before,.field--success:before{display:none;}
 .field--error .fa,.field--success .fa{display:none;}
-.field--error input[type="text"]{border-color:rgba(248,60,0,0.54);box-shadow:inset 0 1px 3px -1px rgba(248,60,0,0.87);}
+.field--error input[type="text"],.field--error textarea{border-color:rgba(248,60,0,0.54);box-shadow:inset 0 1px 3px -1px rgba(248,60,0,0.87);}
 .field--error select{border:1px solid rgba(248,60,0,0.54);box-shadow:0 1px 2px 0 rgba(248,60,0,0.24),0 2px 2px 0 rgba(248,60,0,0.12);}
-.field--success input[type="text"]{border-color:rgba(124,179,66,0.54);box-shadow:inset 0 1px 3px -1px rgba(124,179,66,0.87);}
+.field--success input[type="text"],.field--success textarea{border-color:rgba(124,179,66,0.54);box-shadow:inset 0 1px 3px -1px rgba(124,179,66,0.87);}
 .field--success select{border:1px solid rgba(124,179,66,0.54);box-shadow:0 1px 2px 0 rgba(124,179,66,0.24),0 2px 2px 0 rgba(124,179,66,0.12);}
-input[type="text"]{border-radius:2px;display:inline-block;color:rgba(0,0,0,0.87);background:#fff;border:1px solid rgba(0,0,0,0.12);box-shadow:inset 0 1px 3px -1px rgba(0,0,0,0.26);height:48px;font-size:1.6rem;padding:0 16px;}
-input[type="text"]:focus{border-color:rgba(0,145,234,0.54);box-shadow:inset 0 1px 3px -1px rgba(0,145,234,0.87);}
-input[type="text"]:focus~.input-suggestions{display:block;}
-input[type="text"][disabled],label.switch input[type="checkbox"][disabled]~input[type="text"].switch-label,label.switch input[type="radio"][disabled]~input[type="text"].switch-label{background:#f2f2f2;}
+input[type="text"],textarea{border-radius:2px;display:inline-block;color:rgba(0,0,0,0.87);background:#fff;border:1px solid rgba(0,0,0,0.12);box-shadow:inset 0 1px 3px -1px rgba(0,0,0,0.26);height:48px;font-size:1.6rem;padding:0 16px;}
+input[type="text"]:focus,textarea:focus{border-color:rgba(0,145,234,0.54);box-shadow:inset 0 1px 3px -1px rgba(0,145,234,0.87);}
+input[type="text"]:focus~.input-suggestions,textarea:focus~.input-suggestions{display:block;}
+input[type="text"][disabled],label.switch input[type="checkbox"][disabled]~input[type="text"].switch-label,label.switch input[type="radio"][disabled]~input[type="text"].switch-label,textarea[disabled],label.switch input[type="checkbox"][disabled]~textarea.switch-label,label.switch input[type="radio"][disabled]~textarea.switch-label{background:#f2f2f2;}
+textarea{height:96px;padding:16px;font-size:1.4rem;}
 .input-suggestions{display:none;background:#fff;border:1px solid rgba(0,0,0,0.12);border-radius:0 0 2px 2px;width:100%;max-height:216px;top:calc(100% - 2px);position:absolute;overflow-y:scroll;z-index:2;}
 .input-suggestions:hover{display:inline-block;}
 .field--small .input-suggestions{max-height:144px;}
@@ -774,8 +776,7 @@ select{cursor:pointer;background:#fff;border:0;height:48px;font-size:1.6rem;font
 .select:before{position:absolute;font-size:1.8rem;}
 .select:before,.select .field-validation:before{line-height:48px;width:48px;right:0;padding-right:16px;text-align:right;cursor:pointer;pointer-events:none;border-radius:0 2px 2px 0;}
 .select .field-validation{right:0;}
-.field--small .select .field-validation:before{padding-right:8px;}
-.select.field--small:before{font-size:1.2rem;line-height:32px;width:32px;padding-right:8px;}
+.select.field--small:before,.select.field--small .field-validation:before{font-size:1.2rem;line-height:32px;width:32px;padding-right:8px;}
 label.switch{position:relative;cursor:pointer;font-size:1.4em;}
 label.switch input[type="checkbox"],label.switch input[type="radio"]{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;padding:0;border:0;}
 label.switch input[type="checkbox"]:checked~.switch-label:before,label.switch input[type="radio"]:checked~.switch-label:before{opacity:1;}

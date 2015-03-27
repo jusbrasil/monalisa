@@ -3862,6 +3862,12 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   padding: 0 24px 0 8px;
   /* 1 */
 }
+.field--small textarea {
+  height: 80px;
+  padding: 8px;
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
 .field--small .fa, .field--small .field-validation {
   font-size: 1.2rem;
   right: 8px;
@@ -3886,7 +3892,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   /* 3 */
 }
 
-.field--error input[type="text"] {
+.field--error input[type="text"],
+.field--error textarea {
   border-color: rgba(248, 60, 0, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(248, 60, 0, 0.87);
 }
@@ -3895,7 +3902,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   box-shadow: 0 1px 2px 0 rgba(248, 60, 0, 0.24), 0 2px 2px 0 rgba(248, 60, 0, 0.12);
 }
 
-.field--success input[type="text"] {
+.field--success input[type="text"],
+.field--success textarea {
   border-color: rgba(124, 179, 66, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
 }
@@ -3932,7 +3940,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
  * 7 - The `input-suggestions-item-title` and
  *     `input-suggestions-item-description` has the half of image height.
  */
-input[type="text"] {
+input[type="text"],
+textarea {
   border-radius: 2px;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
@@ -3943,17 +3952,30 @@ input[type="text"] {
   font-size: 1.6rem;
   padding: 0 16px;
 }
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
   border-color: rgba(0, 145, 234, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(0, 145, 234, 0.87);
 }
-input[type="text"]:focus ~ .input-suggestions {
+input[type="text"]:focus ~ .input-suggestions,
+textarea:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
 input[type="text"][disabled], label.switch input[type="checkbox"][disabled] ~ input[type="text"].switch-label,
-label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label {
+label.switch input[type="radio"][disabled] ~ input[type="text"].switch-label,
+textarea[disabled],
+label.switch input[type="checkbox"][disabled] ~ textarea.switch-label,
+label.switch input[type="radio"][disabled] ~ textarea.switch-label {
   background: #f2f2f2;
+}
+
+textarea {
+  height: 112px;
+  padding: 16px;
+  width: 100%;
+  resize: none;
+  line-height: 1.5em;
 }
 
 .input-suggestions {
