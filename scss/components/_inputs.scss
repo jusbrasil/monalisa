@@ -22,6 +22,11 @@ $field-height--small: $grid * 4;
 $field-horizontalPadding:         $grid * 2;
 $field-horizontalPadding--small:  $grid * 1;
 
+$textarea-height:        $grid * 14;
+$textarea-height--small: $grid * 10;
+
+$textarea-padding: $grid * 1;
+
 .field {
   display: inline-block;
   position: relative;
@@ -47,6 +52,12 @@ $field-horizontalPadding--small:  $grid * 1;
     height: $field-height--small;
     font-size: 1.3rem;
     padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
+  }
+  textarea {
+    height: $textarea-height--small;
+    padding: $field-horizontalPadding--small;
+    font-size: 1.3em;
+    line-height: 1.2em;
   }
   .#{$fa-css-prefix}, .field-validation {
     font-size: 1.2rem;
@@ -75,7 +86,8 @@ $field-horizontalPadding--small:  $grid * 1;
     @extend .#{$fa-css-prefix}--exclamationCircle;
     @extend .#{$fa-css-prefix}--red;
   }
-  input[type="text"] {
+  input[type="text"],
+  textarea {
     border-color: $red54;
     @include box-inner-shadow($red87);
   }
@@ -90,7 +102,8 @@ $field-horizontalPadding--small:  $grid * 1;
     @extend .#{$fa-css-prefix}--checkCircle;
     @extend .#{$fa-css-prefix}--green;
   }
-  input[type="text"] {
+  input[type="text"],
+  textarea {
     border-color: $green54;
     @include box-inner-shadow($green87);
   }
@@ -139,7 +152,8 @@ $input-suggestions-item-image-size:         $grid * 4;
 $input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
 
-input[type="text"] {
+input[type="text"],
+textarea {
   border-radius: $border-radius;
   display: inline-block;
   color: $black87;
@@ -163,6 +177,13 @@ input[type="text"] {
   &[disabled] {
     background: $black50;
   }
+}
+textarea {
+  height: $textarea-height;
+  padding: $field-horizontalPadding;
+  width: 100%;
+  resize: none;
+  line-height: 1.5em;
 }
 
   .input-suggestions {
