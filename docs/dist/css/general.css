@@ -3863,7 +3863,7 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--small textarea {
   height: 80px;
   padding: 8px;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   line-height: 1.2em;
 }
 .field--small .fa, .field--small .field-validation {
