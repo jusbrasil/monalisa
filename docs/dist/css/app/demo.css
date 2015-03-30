@@ -48,6 +48,13 @@
 }
 
 /*——————————————————*\
+  #TYPOGRAPHY
+\*——————————————————*/
+.typography-section [class^="typography"] {
+  margin: 24px 0;
+}
+
+/*——————————————————*\
   #SPECIFICS
 \*——————————————————*/
 .demoPage {
