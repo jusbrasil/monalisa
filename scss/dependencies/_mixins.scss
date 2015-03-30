@@ -33,7 +33,7 @@
 }
 
 @function pt-to-rem($pt) {
-  @return ($pt * 0.133) * 1rem;
+  @return ($pt * 0.133 * 0.625) * 1rem;
 }
 
 @mixin box-inner-shadow($color) {
