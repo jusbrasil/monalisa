@@ -43,14 +43,16 @@ $textarea-padding: $grid * 1;
   }
 
 .field--small {
-  input[type="text"] {
+  input[type="text"],
+  select,
+  textarea {
     height: $field-height--small;
     font-size: 1.3rem;
+  }
+  input[type="text"] {
     padding: 0 $field-horizontalPadding--small;
   }
   select {
-    height: $field-height--small;
-    font-size: 1.3rem;
     padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
   }
   textarea {
@@ -68,7 +70,8 @@ $textarea-padding: $grid * 1;
   display: block;
 
   input[type="text"],
-  select {
+  select,
+  textarea {
     width: 100%;
   }
 }
@@ -180,7 +183,6 @@ textarea {
 textarea {
   height: $textarea-height;
   padding: $field-horizontalPadding;
-  width: 100%;
   resize: none;
   line-height: 1.5em;
 }

@@ -3849,20 +3849,22 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   transform: translateY(-50%);
 }
 
-.field--small input[type="text"] {
-  height: 32px;
-  font-size: 1.3rem;
-  padding: 0 8px;
-}
+.field--small input[type="text"],
 .field--small select {
   height: 32px;
   font-size: 1.3rem;
+}
+.field--small input[type="text"] {
+  padding: 0 8px;
+}
+.field--small select {
   padding: 0 24px 0 8px;
   /* 1 */
 }
 .field--small textarea {
   height: 80px;
   padding: 8px;
+  font-size: 1.3rem;
   line-height: 1.2em;
 }
 .field--small .fa, .field--small .field-validation {
@@ -3874,7 +3876,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   display: block;
 }
 .field--block input[type="text"],
-.field--block select {
+.field--block select,
+.field--block textarea {
   width: 100%;
 }
 
@@ -3970,7 +3973,6 @@ label.switch input[type="radio"][disabled] ~ textarea.switch-label {
 textarea {
   height: 112px;
   padding: 16px;
-  width: 100%;
   resize: none;
   line-height: 1.5em;
 }
