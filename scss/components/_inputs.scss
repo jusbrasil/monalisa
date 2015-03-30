@@ -22,6 +22,11 @@ $field-height--small: $grid * 4;
 $field-horizontalPadding:         $grid * 2;
 $field-horizontalPadding--small:  $grid * 1;
 
+$textarea-height:        $grid * 14;
+$textarea-height--small: $grid * 10;
+
+$textarea-padding: $grid * 1;
+
 .field {
   display: inline-block;
   position: relative;
@@ -42,15 +47,22 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="email"],
   input[type="password"],
   input[type="number"],
-  input[type="date"] {
+  input[type="date"],
+  select,
+  textarea {
     height: $field-height--small;
     font-size: 1.3rem;
+  }
+  input[type="text"] {
     padding: 0 $field-horizontalPadding--small;
   }
   select {
-    height: $field-height--small;
-    font-size: 1.3rem;
     padding: 0 ($field-horizontalPadding--small + $grid * 2) 0 $field-horizontalPadding--small; /* 1 */
+  }
+  textarea {
+    height: $textarea-height--small;
+    padding: $field-horizontalPadding--small;
+    line-height: 1.2em;
   }
   .#{$fa-css-prefix}, .field-validation {
     font-size: 1.2rem;
@@ -66,7 +78,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="password"],
   input[type="number"],
   input[type="date"],
-  select {
+  select,
+  textarea {
     width: 100%;
   }
 }
@@ -87,7 +100,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="email"],
   input[type="password"],
   input[type="number"],
-  input[type="date"] {
+  input[type="date"],
+  textarea {
     border-color: $red54;
     @include box-inner-shadow($red87);
   }
@@ -106,7 +120,8 @@ $field-horizontalPadding--small:  $grid * 1;
   input[type="email"],
   input[type="password"],
   input[type="number"],
-  input[type="date"] {
+  input[type="date"],
+  textarea {
     border-color: $green54;
     @include box-inner-shadow($green87);
   }
@@ -159,7 +174,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
-input[type="date"] {
+input[type="date"],
+textarea {
   border-radius: $border-radius;
   display: inline-block;
   color: $black87;
@@ -183,6 +199,12 @@ input[type="date"] {
   &[disabled] {
     background: $black50;
   }
+}
+textarea {
+  height: $textarea-height;
+  padding: $field-horizontalPadding;
+  resize: none;
+  line-height: 1.5em;
 }
 
   .input-suggestions {

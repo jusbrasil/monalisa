@@ -285,6 +285,7 @@
   input[type="password"],
   input[type="number"],
   input[type="date"],
+  textarea,
   select {
     width: 400px;
   }
@@ -293,7 +294,8 @@
     input[type="password"],
     input[type="number"],
     input[type="date"],
-    select {
+    select,
+    textarea {
       width: 250px;
     }
   }

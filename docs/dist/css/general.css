@@ -3853,16 +3853,23 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--small input[type="email"],
 .field--small input[type="password"],
 .field--small input[type="number"],
-.field--small input[type="date"] {
+.field--small input[type="date"],
+.field--small select,
+.field--small textarea {
   height: 32px;
   font-size: 1.3rem;
+}
+.field--small input[type="text"] {
   padding: 0 8px;
 }
 .field--small select {
-  height: 32px;
-  font-size: 1.3rem;
   padding: 0 24px 0 8px;
   /* 1 */
+}
+.field--small textarea {
+  height: 80px;
+  padding: 8px;
+  line-height: 1.2em;
 }
 .field--small .fa, .field--small .field-validation {
   font-size: 1.2rem;
@@ -3877,7 +3884,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--block input[type="password"],
 .field--block input[type="number"],
 .field--block input[type="date"],
-.field--block select {
+.field--block select,
+.field--block textarea {
   width: 100%;
 }
 
@@ -3896,7 +3904,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--error input[type="email"],
 .field--error input[type="password"],
 .field--error input[type="number"],
-.field--error input[type="date"] {
+.field--error input[type="date"],
+.field--error textarea {
   border-color: rgba(248, 60, 0, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(248, 60, 0, 0.87);
 }
@@ -3909,7 +3918,8 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 .field--success input[type="email"],
 .field--success input[type="password"],
 .field--success input[type="number"],
-.field--success input[type="date"] {
+.field--success input[type="date"],
+.field--success textarea {
   border-color: rgba(124, 179, 66, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(124, 179, 66, 0.87);
 }
@@ -3950,7 +3960,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
-input[type="date"] {
+input[type="date"],
+textarea {
   border-radius: 2px;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
@@ -3965,7 +3976,8 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
-input[type="date"]:focus {
+input[type="date"]:focus,
+textarea:focus {
   border-color: rgba(0, 145, 234, 0.54);
   box-shadow: inset 0 1px 3px -1px rgba(0, 145, 234, 0.87);
 }
@@ -3973,7 +3985,8 @@ input[type="text"]:focus ~ .input-suggestions,
 input[type="email"]:focus ~ .input-suggestions,
 input[type="password"]:focus ~ .input-suggestions,
 input[type="number"]:focus ~ .input-suggestions,
-input[type="date"]:focus ~ .input-suggestions {
+input[type="date"]:focus ~ .input-suggestions,
+textarea:focus ~ .input-suggestions {
   /* 5 */
   display: block;
 }
@@ -3990,8 +4003,18 @@ label.switch input[type="checkbox"][disabled] ~ input[type="number"].switch-labe
 label.switch input[type="radio"][disabled] ~ input[type="number"].switch-label,
 input[type="date"][disabled],
 label.switch input[type="checkbox"][disabled] ~ input[type="date"].switch-label,
-label.switch input[type="radio"][disabled] ~ input[type="date"].switch-label {
+label.switch input[type="radio"][disabled] ~ input[type="date"].switch-label,
+textarea[disabled],
+label.switch input[type="checkbox"][disabled] ~ textarea.switch-label,
+label.switch input[type="radio"][disabled] ~ textarea.switch-label {
   background: #f2f2f2;
+}
+
+textarea {
+  height: 112px;
+  padding: 16px;
+  resize: none;
+  line-height: 1.5em;
 }
 
 .input-suggestions {
