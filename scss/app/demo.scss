@@ -282,13 +282,20 @@
 
 .inputs {
   input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
   textarea,
   select {
     width: 400px;
   }
   .field--small {
     input[type="text"],
-    textarea, select {
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
       width: 250px;
     }
   }

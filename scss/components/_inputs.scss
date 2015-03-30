@@ -44,6 +44,10 @@ $textarea-padding: $grid * 1;
 
 .field--small {
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
   select,
   textarea {
     height: $field-height--small;
@@ -70,6 +74,10 @@ $textarea-padding: $grid * 1;
   display: block;
 
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
   select,
   textarea {
     width: 100%;
@@ -89,6 +97,10 @@ $textarea-padding: $grid * 1;
     @extend .#{$fa-css-prefix}--red;
   }
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
   textarea {
     border-color: $red54;
     @include box-inner-shadow($red87);
@@ -105,6 +117,10 @@ $textarea-padding: $grid * 1;
     @extend .#{$fa-css-prefix}--green;
   }
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
   textarea {
     border-color: $green54;
     @include box-inner-shadow($green87);
@@ -155,6 +171,10 @@ $input-suggestions-item-image-size--small:  $grid * 3;
 $input-suggestions-item-image-marginRight:  $grid * 1;
 
 input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
 textarea {
   border-radius: $border-radius;
   display: inline-block;

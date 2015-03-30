@@ -470,12 +470,19 @@
   #INPUTS
 \*——————————————————*/
 .inputs input[type="text"],
+.inputs input[type="password"],
+.inputs input[type="number"],
+.inputs input[type="date"],
 .inputs textarea,
 .inputs select {
   width: 400px;
 }
 .inputs .field--small input[type="text"],
-.inputs .field--small textarea, .inputs .field--small select {
+.inputs .field--small input[type="password"],
+.inputs .field--small input[type="number"],
+.inputs .field--small input[type="date"],
+.inputs .field--small select,
+.inputs .field--small textarea {
   width: 250px;
 }
 
