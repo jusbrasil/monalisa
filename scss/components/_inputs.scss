@@ -56,7 +56,6 @@ $textarea-padding: $grid * 1;
   textarea {
     height: $textarea-height--small;
     padding: $field-horizontalPadding--small;
-    font-size: 1.3rem;
     line-height: 1.2em;
   }
   .#{$fa-css-prefix}, .field-validation {
