@@ -11,9 +11,9 @@
   font-size: 16px;
   padding: 0 20px;
 
-  .fa {
-    float: left;
-    margin-right: $grid;
+  .fa { margin-right: $grid; }
+  &.button--iconRight {
+    .fa { margin: 0 0 0 $grid; }
   }
 }
 
@@ -24,7 +24,7 @@
 /*----------------------------------------------------------------------------*\
   #BUTTON
 
-  .button (--medium|--small|--caps|--block) (--blue|--green|--yellow|--orange|--red)
+  .button (--medium|--small|--caps|--block) (--iconRight) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -99,7 +99,7 @@
 /*----------------------------------------------------------------------------*\
   #ACTIONBUTTON
 
-  .actionButton (--loading|--done) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
+  .actionButton (--loading|--done) (--iconRight) (--medium|--small|--caps) (--blue|--green|--yellow|--orange|--red)
     (i.fa)
 
 \*----------------------------------------------------------------------------*/
@@ -111,6 +111,10 @@
 .actionButton {
   @extend .button;
   &:before { content: attr(label); }
+  .fa { float: left; }
+  &.button--iconRight {
+    .fa { float: right; }
+  }
 }
 
 /* Colors modifiers */
