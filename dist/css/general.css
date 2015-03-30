@@ -3655,8 +3655,7 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border: 1px solid rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
 }
-.outlineButton:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
-label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton:hover:not([disabled]) {
   color: #000;
   border-color: currentColor;
 }
@@ -3665,8 +3664,7 @@ label.switch input[type="radio"][disabled] ~ .switch-label) {
   border: 1px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.87);
 }
-.outlineButton--light:hover:not([disabled]):not(label.switch input[type="checkbox"][disabled] ~ .switch-label):not(
-label.switch input[type="radio"][disabled] ~ .switch-label) {
+.outlineButton--light:hover:not([disabled]) {
   color: #fff;
   border-color: currentColor;
 }
