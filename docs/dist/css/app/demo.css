@@ -476,10 +476,13 @@
 /*——————————————————*\
   #INPUTS
 \*——————————————————*/
-.inputs input[type="text"], .inputs select {
+.inputs input[type="text"],
+.inputs textarea,
+.inputs select {
   width: 400px;
 }
-.inputs .field--small input[type="text"], .inputs .field--small select {
+.inputs .field--small input[type="text"],
+.inputs .field--small textarea, .inputs .field--small select {
   width: 250px;
 }
 

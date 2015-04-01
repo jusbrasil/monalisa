@@ -294,11 +294,14 @@
 
 
 .inputs {
-  input[type="text"], select {
+  input[type="text"],
+  textarea,
+  select {
     width: 400px;
   }
   .field--small {
-    input[type="text"], select {
+    input[type="text"],
+    textarea, select {
       width: 250px;
     }
   }
