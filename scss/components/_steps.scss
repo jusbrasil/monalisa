@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/*——————————————————*\
+  #STEPS WRAPPER
+\*——————————————————*/
+
+.steps {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+  #STEP
+
+  .step (--current)
+
+\*----------------------------------------------------------------------------*/
+
+/**
+* 1 - Define margin between steps;
+* 2.1 - Vertical margin is half of a step -1px that's the line height;
+* 2.2 - The horizontal margin is half of the difference between the step wrapper and
+        the step content;
+* 3 - Get all next siblings from `.step--current`;
+*/
+
+$stepWidth: $grid*6;
+$beforeWidth: $grid*3;
+
+@include steps($stepWidth, 3);
+@include steps($stepWidth, 4);
+@include steps($stepWidth, 5);
+
+.step {
+  width: $stepWidth;
+  height: $stepWidth;
+  float: left;
+  &:before {
+    content: attr(data-step);
+    width: $beforeWidth;
+    height: $beforeWidth;
+    position: absolute;
+    margin: calc((#{$stepWidth} - #{$beforeWidth}) / 2); /* 1 */
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    color: $white;
+    text-align: center;
+    background: $green;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    display: block;
+    margin: calc(#{$stepWidth/2 - 1}) 0 0 calc(#{$stepWidth} - ((#{$stepWidth} - #{$beforeWidth}) / 2)); /* 2.1 and 2.2 */
+    background: $green;
+  }
+}
+
+.step--current {
+  $activeStepWidth: $grid*4;
+  &:before {
+  width: $activeStepWidth;
+  height: $activeStepWidth;
+  margin: calc((#{$stepWidth} - #{$activeStepWidth}) / 2); /* 1 */
+  z-index: 1;
+  font-size: 1.8rem;
+  line-height: 1.8em;
+  background: $blue; }
+  &:after { background: $black12; }
+}
+
+.step--current ~ .step { /* 3 */
+  &:before { background: $bluegray200; }
+  &:after { background: $black12; }
+}
+
