@@ -35,6 +35,19 @@
 
 
 /*——————————————————*\
+  #TYPOGRAPHY
+\*——————————————————*/
+.typography-section {
+  [class^="typography"] {
+    margin: $grid*3 0;
+  }
+}
+
+
+
+
+
+/*——————————————————*\
   #SPECIFICS
 \*——————————————————*/
 

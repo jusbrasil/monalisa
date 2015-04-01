@@ -33,7 +33,9 @@
 }
 
 @function pt-to-rem($pt) {
-  @return ($pt * 0.133) * 1rem;
+  $pxToRem: 0.625;
+  $pxToPt: 0.133;
+  @return ($pt * $pxToPt * $pxToRem) * 1rem;
 }
 
 @mixin box-inner-shadow($color) {
