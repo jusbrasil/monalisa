@@ -4134,6 +4134,7 @@ select {
   /* 6 */
   padding: 0 48px 0 16px;
   /* 1 */
+  color: rgba(0, 0, 0, 0.87);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
