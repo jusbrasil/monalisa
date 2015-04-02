@@ -4621,12 +4621,6 @@ label.switch input[type="radio"] ~ .switch-label:after {
   margin-left: calc(((100% - 144px) / 2));
   /* 2 */
 }
-.steps--count3 .step:first-child {
-  margin-left: 0;
-}
-.steps--count3 .step:last-child:after {
-  width: 0;
-}
 .steps--count3 .step:after {
   width: calc(((100% - 144px) / 2) + (24px));
   /* 3 */
@@ -4639,12 +4633,6 @@ label.switch input[type="radio"] ~ .switch-label:after {
   margin-left: calc(((100% - 192px) / 3));
   /* 2 */
 }
-.steps--count4 .step:first-child {
-  margin-left: 0;
-}
-.steps--count4 .step:last-child:after {
-  width: 0;
-}
 .steps--count4 .step:after {
   width: calc(((100% - 192px) / 3) + (24px));
   /* 3 */
@@ -4656,12 +4644,6 @@ label.switch input[type="radio"] ~ .switch-label:after {
 .steps--count5 .step {
   margin-left: calc(((100% - 240px) / 4));
   /* 2 */
-}
-.steps--count5 .step:first-child {
-  margin-left: 0;
-}
-.steps--count5 .step:last-child:after {
-  width: 0;
 }
 .steps--count5 .step:after {
   width: calc(((100% - 240px) / 4) + (24px));
@@ -4695,6 +4677,12 @@ label.switch input[type="radio"] ~ .switch-label:after {
   margin: calc(23px) 0 0 calc(48px - ((48px - 24px) / 2));
   /* 2.1 and 2.2 */
   background: #7cb342;
+}
+.step:first-child {
+  margin-left: 0;
+}
+.step:last-child:after {
+  width: 0;
 }
 
 .step--current:before {

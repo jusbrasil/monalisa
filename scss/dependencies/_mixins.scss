@@ -85,15 +85,13 @@
 * 3 - Define line after each step, except to the last child.
 */
 
-@mixin steps($stepWidth, $count) {
+@mixin steps($stepSize, $count) {
   $linesCount: $count - 1;
   .#{'steps--count' + $count} { /* 1 */
     .step {
-      margin-left: calc(((100% - #{$stepWidth * $count}) / #{$linesCount})); /* 2 */
-      &:first-child { margin-left: 0; }
-      &:last-child:after { width: 0; }
+      margin-left: calc(((100% - #{$stepSize * $count}) / #{$linesCount})); /* 2 */
       &:after {
-        width: calc(((100% - #{$stepWidth * $count}) / #{$linesCount}) + (#{$grid * 3})); /* 3 */
+        width: calc(((100% - #{$stepSize * $count}) / #{$linesCount}) + (#{$grid * 3})); /* 3 */
       }
     }
   }

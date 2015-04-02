@@ -29,23 +29,23 @@
 * 3 - Get all next siblings from `.step--current`;
 */
 
-$stepWidth: $grid*6;
-$beforeWidth: $grid*3;
+$stepSize: $grid*6;
+$beforeSize: $grid*3;
 
-@include steps($stepWidth, 3);
-@include steps($stepWidth, 4);
-@include steps($stepWidth, 5);
+@include steps($stepSize, 3);
+@include steps($stepSize, 4);
+@include steps($stepSize, 5);
 
 .step {
-  width: $stepWidth;
-  height: $stepWidth;
+  width: $stepSize;
+  height: $stepSize;
   float: left;
   &:before {
     content: attr(data-step);
-    width: $beforeWidth;
-    height: $beforeWidth;
+    width: $beforeSize;
+    height: $beforeSize;
     position: absolute;
-    margin: calc((#{$stepWidth} - #{$beforeWidth}) / 2); /* 1 */
+    margin: calc((#{$stepSize} - #{$beforeSize}) / 2); /* 1 */
     border-radius: 50%;
     font-size: 1.5rem;
     line-height: 1.5em;
@@ -58,17 +58,19 @@ $beforeWidth: $grid*3;
     position: absolute;
     height: 2px;
     display: block;
-    margin: calc(#{$stepWidth/2 - 1}) 0 0 calc(#{$stepWidth} - ((#{$stepWidth} - #{$beforeWidth}) / 2)); /* 2.1 and 2.2 */
+    margin: calc(#{$stepSize/2 - 1}) 0 0 calc(#{$stepSize} - ((#{$stepSize} - #{$beforeSize}) / 2)); /* 2.1 and 2.2 */
     background: $green;
   }
+  &:first-child { margin-left: 0; }
+  &:last-child:after { width: 0; }
 }
 
 .step--current {
-  $activeStepWidth: $grid*4;
+  $activeStepSize: $grid*4;
   &:before {
-  width: $activeStepWidth;
-  height: $activeStepWidth;
-  margin: calc((#{$stepWidth} - #{$activeStepWidth}) / 2); /* 1 */
+  width: $activeStepSize;
+  height: $activeStepSize;
+  margin: calc((#{$stepSize} - #{$activeStepSize}) / 2); /* 1 */
   z-index: 1;
   font-size: 1.8rem;
   line-height: 1.8em;
