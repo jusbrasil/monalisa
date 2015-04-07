@@ -35,6 +35,12 @@
  * Solution to hidden elements readable by screen reader:
  * http://a11yproject.com/posts/how-to-hide-content/
  */
+/**
+* 1 - Define class name, eg `steps--count3`;
+* 2 - Except first child, all steps must be margin-left relative to wrapper and
+      quantity of node steps;
+* 3 - Define line after each step, except to the last child.
+*/
 @-webkit-keyframes ellipsis {
   0% {
     width: 0;
@@ -2989,7 +2995,7 @@ html {
 .typography-caption {
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 2.394rem;
+  line-height: 1.49625rem;
 }
 
 /**
@@ -4589,6 +4595,123 @@ label.switch input[type="radio"] ~ .switch-label:after {
 }
 .dialog--show .dialog-content {
   opacity: 1;
+}
+
+/*——————————————————*\
+  #STEPS WRAPPER
+\*——————————————————*/
+.steps {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+/*----------------------------------------------------------------------------*\
+  #STEP
+
+  .step (--current)
+
+\*----------------------------------------------------------------------------*/
+/**
+* 1 - Define margin between steps;
+* 2.1 - Vertical margin is half of a step -1px that's the line height;
+* 2.2 - The horizontal margin is half of the difference between the step wrapper and
+        the step content;
+* 3 - Get all next siblings from `.step--current`;
+*/
+.steps--count3 {
+  /* 1 */
+}
+.steps--count3 .step {
+  margin-left: calc(((100% - 144px) / 2));
+  /* 2 */
+}
+.steps--count3 .step:after {
+  width: calc(((100% - 144px) / 2) + (24px));
+  /* 3 */
+}
+
+.steps--count4 {
+  /* 1 */
+}
+.steps--count4 .step {
+  margin-left: calc(((100% - 192px) / 3));
+  /* 2 */
+}
+.steps--count4 .step:after {
+  width: calc(((100% - 192px) / 3) + (24px));
+  /* 3 */
+}
+
+.steps--count5 {
+  /* 1 */
+}
+.steps--count5 .step {
+  margin-left: calc(((100% - 240px) / 4));
+  /* 2 */
+}
+.steps--count5 .step:after {
+  width: calc(((100% - 240px) / 4) + (24px));
+  /* 3 */
+}
+
+.step {
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+.step:before {
+  content: attr(data-step);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  margin: calc((48px - 24px) / 2);
+  /* 1 */
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  background: #7cb342;
+}
+.step:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  display: block;
+  margin: calc(23px) 0 0 calc(48px - ((48px - 24px) / 2));
+  /* 2.1 and 2.2 */
+  background: #7cb342;
+}
+.step:first-child {
+  margin-left: 0;
+}
+.step:last-child:after {
+  width: 0;
+}
+
+.step--current:before {
+  width: 32px;
+  height: 32px;
+  margin: calc((48px - 32px) / 2);
+  /* 1 */
+  z-index: 1;
+  font-size: 1.8rem;
+  line-height: 1.8em;
+  background: #0091ea;
+}
+.step--current:after {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.step--current ~ .step {
+  /* 3 */
+}
+.step--current ~ .step:before {
+  background: #b7c6cd;
+}
+.step--current ~ .step:after {
+  background: rgba(0, 0, 0, 0.12);
 }
 
 /*# sourceMappingURL=general.css.map */

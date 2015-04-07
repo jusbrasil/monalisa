@@ -80,3 +80,21 @@
   @keyframes #{$name} { @content; }
 }
 
+/**
+* 1 - Define class name, eg `steps--count3`;
+* 2 - Except first child, all steps must be margin-left relative to wrapper and
+      quantity of node steps;
+* 3 - Define line after each step, except to the last child.
+*/
+
+@mixin steps($stepSize, $count) {
+  $linesCount: $count - 1;
+  .#{'steps--count' + $count} { /* 1 */
+    .step {
+      margin-left: calc(((100% - #{$stepSize * $count}) / #{$linesCount})); /* 2 */
+      &:after {
+        width: calc(((100% - #{$stepSize * $count}) / #{$linesCount}) + (#{$grid * 3})); /* 3 */
+      }
+    }
+  }
+}
