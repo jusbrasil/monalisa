@@ -71,49 +71,53 @@ html {
   font-size: 62.5%; /* 2 */
 }
 
+.typography--light {
+  font-weight: 200;
+}
+
 %typography-display1 {
-  font-size: 11.2rem;
-  font-weight: 300;
+  font-size: 5.6rem;
+  line-height: pt-to-rem(66);
 }
 
 %typography-display2 {
-  font-size: 5.6rem;
-  font-weight: 400;
-}
-
-%typography-display3 {
   font-size: 4.5rem;
-  font-weight: 400;
   line-height: pt-to-rem(48);
 }
 
-%typography-display4 {
+%typography-display3 {
   font-size: 3.4rem;
-  font-weight: 400;
   line-height: pt-to-rem(40);
 }
 
 %typography-headline {
   font-size: 2.4rem;
-  font-weight: 400;
   line-height: pt-to-rem(32);
 }
 
 %typography-title {
   font-size: 2.0rem;
-  font-weight: 400;
+  line-height: pt-to-rem(32);
 }
 
-%typography-subhead {
-  font-size: 1.6rem;
-  font-weight: 400;
+%typography-head {
+  font-size: 1.8rem;
   line-height: pt-to-rem(28);
 }
 
+%typography-subtitle {
+  font-size: 1.6rem;
+  line-height: pt-to-rem(28);
+}
+
+  %typography-subhead {
+    @extend %typography-subtitle;
+    font-size: 1.5rem;
+  }
+
 %typography-body {
   font-size: 1.4rem;
-  font-weight: 400;
-  line-height: pt-to-rem(22);
+  line-height: pt-to-rem(24);
 }
 
   %typography-body-bold {
@@ -129,6 +133,7 @@ html {
 %typography-caption {
   font-size: 1.2rem;
   font-weight: 400;
+  line-height: pt-to-rem(18);
 }
 
 .typography-display1 {
@@ -143,16 +148,20 @@ html {
   @extend %typography-display3;
 }
 
-.typography-display4 {
-  @extend %typography-display4;
-}
-
 .typography-headline {
   @extend %typography-headline;
 }
 
 .typography-title {
   @extend %typography-title;
+}
+
+.typography-head {
+  @extend %typography-head;
+}
+
+.typography-subtitle {
+  @extend %typography-subtitle;
 }
 
 .typography-subhead {
