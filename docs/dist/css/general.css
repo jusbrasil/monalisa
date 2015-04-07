@@ -2989,7 +2989,7 @@ html {
 .typography-caption {
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 2.394rem;
+  line-height: 1.49625rem;
 }
 
 /**
@@ -4217,6 +4217,8 @@ label.switch {
   position: relative;
   cursor: pointer;
   font-size: 1.4em;
+  display: inline-block;
+  margin: 8px 0;
 }
 label.switch input[type="checkbox"],
 label.switch input[type="radio"] {
@@ -4263,8 +4265,9 @@ label.switch input[type="radio"] ~ .switch-label:after {
 }
 
 .switch-label {
-  padding-left: 24px;
-  line-height: 16px;
+  padding-right: 24px;
+  display: table-cell;
+  vertical-align: top;
 }
 .switch-label:after, .switch-label:before {
   position: absolute;
@@ -4286,6 +4289,12 @@ label.switch input[type="radio"] ~ .switch-label:after {
   opacity: 0;
   text-align: center;
   z-index: 2;
+}
+
+.switch-label-text {
+  width: calc(100% - 24px);
+  display: table-cell;
+  line-height: 16px;
 }
 
 /*----------------------------------------------------------------------------*\
