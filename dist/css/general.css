@@ -4695,12 +4695,13 @@ label.switch input[type="radio"] ~ .switch-label:after {
   height: 32px;
   margin: calc((48px - 32px) / 2);
   /* 1 */
-  z-index: 1;
+  z-index: 0;
   font-size: 1.8rem;
   line-height: 1.8em;
   background: #0091ea;
 }
 .step--current:after {
+  z-index: -1;
   background: rgba(0, 0, 0, 0.12);
 }
 

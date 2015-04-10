@@ -71,11 +71,14 @@ $beforeSize: $grid*3;
   width: $activeStepSize;
   height: $activeStepSize;
   margin: calc((#{$stepSize} - #{$activeStepSize}) / 2); /* 1 */
-  z-index: 1;
+  z-index: 0;
   font-size: 1.8rem;
   line-height: 1.8em;
   background: $blue; }
-  &:after { background: $black12; }
+  &:after {
+    z-index: -1;
+    background: $black12;
+  }
 }
 
 .step--current ~ .step { /* 3 */
