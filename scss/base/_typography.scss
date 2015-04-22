@@ -183,3 +183,13 @@ html {
 .typography-caption {
   @extend %typography-caption;
 }
+
+/*
+ * Truncate text with '...'
+ * https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+ */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
