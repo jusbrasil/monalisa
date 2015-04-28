@@ -2998,6 +2998,16 @@ html {
   line-height: 1.49625rem;
 }
 
+/*
+ * Truncate text with '...'
+ * https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+ */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /**
  *
  */
