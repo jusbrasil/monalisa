@@ -818,7 +818,7 @@ label.switch input[type="radio"]~.switch-label:after{border-radius:50%;}
 .modal-box-close:before{content:"×";}
 .modal-box-close~.modal-box-content{padding-right:64px;}
 .modal-box-content{padding:16px;font-size:1.4rem;line-height:20px;overflow-y:scroll;height:100%;}
-@media (max-width: 479px){.modal:target .modal-box{top:0;}
+@media (max-width: 240px){.modal:target .modal-box{top:0;}
 .modal-box{width:100%;max-height:100%;max-width:100%;}
 }
 .dialog{background:#fff;position:absolute;overflow:hidden;z-index:3;height:0;width:0;opacity:0;transform-origin:top left;transition:all 0.3s linear;}
