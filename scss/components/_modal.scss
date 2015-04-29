@@ -114,8 +114,7 @@ $modal-box-footer-height:   $grid*6;
   #PHONE
 \*****************************/
 
-@media (max-width: $break-tablet) {
-
+@include media('<tablet') { 
   .modal {
     &:target {
       .modal-box {
