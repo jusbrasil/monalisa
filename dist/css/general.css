@@ -4572,6 +4572,20 @@ label.switch input[type="radio"] ~ .switch-label:after {
   height: 100%;
 }
 
+/*****************************\
+  #PHONE
+\*****************************/
+@media (max-width: 480px) {
+  .modal:target .modal-box {
+    top: 0;
+  }
+
+  .modal-box {
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
 /*----------------------------------------------------------------------------*\
   #DIALOG
 
