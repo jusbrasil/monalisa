@@ -4575,7 +4575,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
 /*****************************\
   #PHONE
 \*****************************/
-@media (max-width: 240px) {
+@media (max-width: 479px) {
   .modal:target .modal-box {
     top: 0;
   }
