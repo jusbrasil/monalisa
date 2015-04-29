@@ -5,14 +5,16 @@
  * See more: https://github.com/eduardoboucas/include-media
  */
 
-$break-phone: 240px;
-$break-tablet: 480px;
+$break-phone: 320px;
+$break-tablet: 640px;
 $break-desktop: 800px;
-$break-large-desktop: 960px;
+$break-large-desktop: 1440px;
+
+$break-range: 160px;
 
 $breakpoints: (
-  'phone': $break-phone,
-  'tablet': $break-tablet,
-  'desktop': $break-desktop,
-  'large-desktop': $break-large-desktop
+  'phone': $break-phone + $break-range,
+  'tablet': $break-tablet + $break-range,
+  'desktop': $break-desktop + $break-range,
+  'large-desktop': $break-large-desktop + $break-range
 );

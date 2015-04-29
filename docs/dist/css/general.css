@@ -3047,7 +3047,7 @@ html {
  */
 .grid-container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3145,7 +3145,7 @@ html {
   /* 2 */
 }
 
-@media (min-width: 480px) and (max-width: 799px) {
+@media (min-width: 800px) and (max-width: 959px) {
   .grid-col-md-1 {
     /* 1 */
     width: 8.33333%;
@@ -3218,7 +3218,7 @@ html {
     /* 2 */
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 960px) {
   .grid-col-lg-1 {
     /* 1 */
     width: 8.33333%;
@@ -3291,7 +3291,7 @@ html {
     /* 2 */
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1600px) {
   .grid-col-xlg-1 {
     /* 1 */
     width: 8.33333%;
@@ -4575,7 +4575,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
 /*****************************\
   #PHONE
 \*****************************/
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .modal:target .modal-box {
     top: 0;
   }

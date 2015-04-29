@@ -597,7 +597,7 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .button,.actionButton,select,.alert,.modal-box,.dialog,.outlineButton,.label{border-radius:2px;}
 .button,.actionButton,select,.alert,.modal-box,.dialog{box-shadow:0 1px 2px 0 rgba(0,0,0,0.24),0 2px 2px 0 rgba(0,0,0,0.12);}
-.grid-container{width:100%;max-width:960px;margin-left:auto;margin-right:auto;}
+.grid-container{width:100%;max-width:1440px;margin-left:auto;margin-right:auto;}
 .grid-row:after,.grid-row:before{content:"";display:table;clear:both;}
 [class*='grid-col']{float:left;min-height:1px;padding:8px;}
 .grid-col-1{width:8.33333%;}
@@ -612,7 +612,7 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .grid-col-10{width:83.33333%;}
 .grid-col-11{width:91.66667%;}
 .grid-col-12{width:100%;}
-@media (min-width: 480px) and (max-width: 799px){.grid-col-md-1{width:8.33333%;}
+@media (min-width: 800px) and (max-width: 959px){.grid-col-md-1{width:8.33333%;}
 .grid-col-md-2{width:16.66667%;}
 .grid-col-md-3{width:25%;}
 .grid-col-md-4{width:33.33333%;}
@@ -625,7 +625,7 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .grid-col-md-11{width:91.66667%;}
 .grid-col-md-12{width:100%;}
 }
-@media (min-width: 800px){.grid-col-lg-1{width:8.33333%;}
+@media (min-width: 960px){.grid-col-lg-1{width:8.33333%;}
 .grid-col-lg-2{width:16.66667%;}
 .grid-col-lg-3{width:25%;}
 .grid-col-lg-4{width:33.33333%;}
@@ -638,7 +638,7 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .grid-col-lg-11{width:91.66667%;}
 .grid-col-lg-12{width:100%;}
 }
-@media (min-width: 960px){.grid-col-xlg-1{width:8.33333%;}
+@media (min-width: 1600px){.grid-col-xlg-1{width:8.33333%;}
 .grid-col-xlg-2{width:16.66667%;}
 .grid-col-xlg-3{width:25%;}
 .grid-col-xlg-4{width:33.33333%;}
@@ -818,7 +818,7 @@ label.switch input[type="radio"]~.switch-label:after{border-radius:50%;}
 .modal-box-close:before{content:"×";}
 .modal-box-close~.modal-box-content{padding-right:64px;}
 .modal-box-content{padding:16px;font-size:1.4rem;line-height:20px;overflow-y:scroll;height:100%;}
-@media (max-width: 479px){.modal:target .modal-box{top:0;}
+@media (max-width: 480px){.modal:target .modal-box{top:0;}
 .modal-box{width:100%;max-height:100%;max-width:100%;}
 }
 .dialog{background:#fff;position:absolute;overflow:hidden;z-index:3;height:0;width:0;opacity:0;transform-origin:top left;transition:all 0.3s linear;}
