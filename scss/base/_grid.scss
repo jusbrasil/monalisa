@@ -17,9 +17,9 @@
  */
 
 
-$grid-max-width: $break-large-desktop;
-$grid-columns: 12;
 $grid-gutter: $grid;
+$grid-columns: 12;
+$grid-max-width: ($break-desktop + $break-range);
 
 
 /**
