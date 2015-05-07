@@ -24,7 +24,7 @@
  *      is to hide the modal off the page.
  * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
  * 7  - Trick to center horizontally.
- * 8  - The first button should be left-aligned.
+ * 8  - All buttons should be right-aligned.
  * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
  * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
  */
@@ -75,10 +75,7 @@ $modal-box-footer-height:   $grid*6;
       position: absolute;
       bottom: 0;
       width: 100%;
-      button, a {
-        float: right;
-        &:first-child { float: left; } /* 8 */
-      }
+      text-align: right; /* 8 */
       & ~ .modal-box-content { /* 9 */
         height: calc(100% - #{$modal-box-footer-height});
       }
