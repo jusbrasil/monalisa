@@ -4482,7 +4482,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   display: none;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
-  top: -1000px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -4511,6 +4511,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  top: -1000px;
   height: 100%;
   /* 6 */
   max-width: 400px;
