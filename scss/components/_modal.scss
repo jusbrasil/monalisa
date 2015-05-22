@@ -41,7 +41,7 @@ $modal-box-footer-height:   $grid*6;
     display: none;
     background: rgba(0,0,0,.6);
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: -1000px; left: 0; right: 0; bottom: 0;
     z-index: $z-index-modal-overlay;
   }
   &:target { /* 2 */
