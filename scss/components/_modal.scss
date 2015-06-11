@@ -13,7 +13,7 @@
 
 /**
  * This modal is a CSS only implementation, using URL #anchor and selected by
- * :target selector. The modal is activated by clicking in some link with your
+ * :target selector or using --open modifier. The modal is activated by clicking in some link with your
  * anchor, and closed clicking in any other anchor (like #close).
  *
  * 1  - Modal overlay.
@@ -44,7 +44,7 @@ $modal-box-footer-height:   $grid*6;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: $z-index-modal-overlay;
   }
-  &:target { /* 2 */
+  &--open, &:target { /* 2 */
     &:before { display: block; }
     .modal-box {
       @include transform(translate(-50%, 0)); /* 3 */
@@ -114,7 +114,7 @@ $modal-box-footer-height:   $grid*6;
 
 @include media('<=phone') {
   .modal {
-    &:target {
+    &--open, &:target {
       .modal-box {
         top: 0;
        }
