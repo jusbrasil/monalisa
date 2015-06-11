@@ -3814,7 +3814,7 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 
 .label--small {
   height: 16px;
-  line-height: 17px;
+  line-height: 15px;
   /* 1 */
   font-size: 11px;
   padding: 0 4px;
@@ -3838,6 +3838,27 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 
 .label--red {
   background: #f83c00;
+}
+
+.label--outline {
+  background: none;
+  color: #808080;
+  border: 1px solid currentColor;
+}
+.label--outline.label--blue {
+  color: #0091ea;
+}
+.label--outline.label--green {
+  color: #7cb342;
+}
+.label--outline.label--yellow {
+  color: #ffb300;
+}
+.label--outline.label--orange {
+  color: #fb8c00;
+}
+.label--outline.label--red {
+  color: #f83c00;
 }
 
 /*----------------------------------------------------------------------------*\
