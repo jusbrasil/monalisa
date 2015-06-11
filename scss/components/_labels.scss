@@ -33,7 +33,7 @@
   .label--small {
     $height: $grid*2;
     height: $height;
-    line-height: $height + 1; /* 1 */
+    line-height: $height - 1; /* 1 */
     font-size: 11px;
     padding: 0 $grid/2;
   }
@@ -43,3 +43,16 @@
   .label--yellow { background: $yellow; }
   .label--orange { background: $orange; }
   .label--red { background: $red; }
+
+  .label--outline {
+    background: none;
+    color: $gray;
+    border: 1px solid currentColor;
+
+    &.label--blue { color: $blue; }
+    &.label--green { color: $green; }
+    &.label--yellow { color: $yellow; }
+    &.label--orange { color: $orange; }
+    &.label--red { color: $red; }
+  }
+
