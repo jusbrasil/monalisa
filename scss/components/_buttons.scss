@@ -180,6 +180,13 @@
   @include outline-button($white87, $white);
 }
 
+.outlineButton--blue   { @include outline-button($blue, $blue600); }
+.outlineButton--green  { @include outline-button($green, $green600); }
+.outlineButton--yellow { @include outline-button($yellow, $yellow600); }
+.outlineButton--orange { @include outline-button($orange, $orange600); }
+.outlineButton--red    { @include outline-button($red, $red600); }
+
+
 
 
 
