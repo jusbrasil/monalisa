@@ -44,15 +44,14 @@
   .label--orange { background: $orange; }
   .label--red { background: $red; }
 
-  .label--outline {
+  .outlineLabel {
+    @extend .label;
     background: none;
     color: $gray;
     border: 1px solid currentColor;
-
-    &.label--blue { color: $blue; }
-    &.label--green { color: $green; }
-    &.label--yellow { color: $yellow; }
-    &.label--orange { color: $orange; }
-    &.label--red { color: $red; }
   }
-
+    .outlineLabel--blue   { color: $blue; }
+    .outlineLabel--green  { color: $green; }
+    .outlineLabel--yellow { color: $yellow; }
+    .outlineLabel--orange { color: $orange; }
+    .outlineLabel--red    { color: $red; }

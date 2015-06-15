@@ -3011,7 +3011,7 @@ html {
 /**
  *
  */
-.button, .actionButton, select, .alert, .modal-box, .dialog, .outlineButton, .label {
+.button, .actionButton, select, .alert, .modal-box, .dialog, .outlineButton, .label, .outlineLabel {
   border-radius: 2px;
 }
 
@@ -3838,7 +3838,7 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
 /**
  * 1 - Adjusts the vertical center.
  */
-.label {
+.label, .outlineLabel {
   display: inline-block;
   color: #fff;
   height: 24px;
@@ -3885,24 +3885,29 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   background: #f83c00;
 }
 
-.label--outline {
+.outlineLabel {
   background: none;
   color: #808080;
   border: 1px solid currentColor;
 }
-.label--outline.label--blue {
+
+.outlineLabel--blue {
   color: #0091ea;
 }
-.label--outline.label--green {
+
+.outlineLabel--green {
   color: #7cb342;
 }
-.label--outline.label--yellow {
+
+.outlineLabel--yellow {
   color: #ffb300;
 }
-.label--outline.label--orange {
+
+.outlineLabel--orange {
   color: #fb8c00;
 }
-.label--outline.label--red {
+
+.outlineLabel--red {
   color: #f83c00;
 }
 
