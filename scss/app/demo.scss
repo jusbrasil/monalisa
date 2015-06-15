@@ -241,7 +241,8 @@
     margin-bottom: 30px;
     overflow: hidden; /* 1 */
 
-    .label {
+    .label,
+    .outlineLabel {
       float: left;
       margin: 3px;
     }

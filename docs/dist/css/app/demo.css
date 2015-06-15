@@ -445,7 +445,8 @@
   overflow: hidden;
   /* 1 */
 }
-.labels-group .label {
+.labels-group .label,
+.labels-group .outlineLabel {
   float: left;
   margin: 3px;
 }
