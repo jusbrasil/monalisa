@@ -3689,6 +3689,51 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
   border-color: currentColor;
 }
 
+.outlineButton--blue {
+  border: 1px solid #0091ea;
+  color: #0091ea;
+}
+.outlineButton--blue:hover:not([disabled]) {
+  color: #0071b7;
+  border-color: currentColor;
+}
+
+.outlineButton--green {
+  border: 1px solid #7cb342;
+  color: #7cb342;
+}
+.outlineButton--green:hover:not([disabled]) {
+  color: #628e34;
+  border-color: currentColor;
+}
+
+.outlineButton--yellow {
+  border: 1px solid #ffb300;
+  color: #ffb300;
+}
+.outlineButton--yellow:hover:not([disabled]) {
+  color: #cc8f00;
+  border-color: currentColor;
+}
+
+.outlineButton--orange {
+  border: 1px solid #fb8c00;
+  color: #fb8c00;
+}
+.outlineButton--orange:hover:not([disabled]) {
+  color: #c87000;
+  border-color: currentColor;
+}
+
+.outlineButton--red {
+  border: 1px solid #f83c00;
+  color: #f83c00;
+}
+.outlineButton--red:hover:not([disabled]) {
+  color: #c53000;
+  border-color: currentColor;
+}
+
 /*----------------------------------------------------------------------------*\
   #FLATBUTTON
 
