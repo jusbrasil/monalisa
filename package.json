@@ -1,6 +1,6 @@
 {
   "name": "monalisa",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "title": "Monalisa: the JusBrasil bootstrap",
   "homepage": "https://github.com/jusbrasil/monalisa",
   "devDependencies": {
