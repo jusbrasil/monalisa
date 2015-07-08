@@ -23,8 +23,8 @@ def commit(version):
     subprocess.call(('git add %s' % untrackedFiles.stdout.read().replace('\n', ' ')).split())
     subprocess.call(['git', 'commit', '-am', '"chore release: new release %s"' % version], stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     subprocess.call(('git tag %s' % version).split())
-    # print "Publishing new commit to master"
-    # subprocess.call('git push origin master'.split(), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+    print "Publishing new commit to master"
+    subprocess.call('git push origin master'.split(), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     print "Publishing new tag"
     subprocess.call(('git push origin %s' % version).split(), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     print "Release %s created!" % version
