@@ -115,7 +115,7 @@ $modal-box-footer-height:   $grid*6;
   .modal {
     &--open, &:target {
       .modal-box {
-        top: 20%; /* 4 */
+        top: calc((100% - #{$modal-box-max-height})/2); /* 4 */
        }
     }
   }

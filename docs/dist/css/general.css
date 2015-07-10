@@ -4643,7 +4643,7 @@ label.switch input[type="radio"] ~ .switch-label:after {
 \*****************************/
 @media (min-width: 801px) {
   .modal--open .modal-box, .modal:target .modal-box {
-    top: 20%;
+    top: calc((100% - 608px)/2);
     /* 4 */
   }
 
