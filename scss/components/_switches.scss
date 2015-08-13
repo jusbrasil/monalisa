@@ -39,7 +39,7 @@
  * 12 - The market of fake component
  */
 
-$switch-size: $grid * 2;
+$switch-size: 1.22em; 
 
 label.switch { /* 1 */
   position: relative;
@@ -64,20 +64,32 @@ label.switch { /* 1 */
   }
 
   input[type="radio"] ~ .switch-label {
-    @extend .#{$fa-css-prefix}--circle; /* 9 */
-    &:before { font-size: 50%; }
-    &:after { border-radius: 50%; } /* 10 */
+    &:after, &:before {
+      border-radius: 50%; /* 10 */
+    }
+
+    &:before {
+      content: "";
+      background-color: currentColor;
+      width: $switch-size*0.5;
+      height: $switch-size*0.5;
+      top: $switch-size*0.25;
+      left: $switch-size*0.25;
+    }
   }
 }
 
   .switch-label {
-    padding-left: $switch-size + $grid;
+    padding-left: $switch-size*1.5;
     line-height: $switch-size;
+    position: relative;
+    display: inline-block;
 
     &:after, &:before {
       @extend %font-awesome;
       position: absolute;
       left: 0;
+      top: 0;
       width: $switch-size;
       height: $switch-size;
       line-height: $switch-size;
