@@ -33,7 +33,7 @@
   .label--small {
     $height: $grid*2;
     height: $height;
-    line-height: $height + 1; /* 1 */
+    line-height: $height - 1; /* 1 */
     font-size: 11px;
     padding: 0 $grid/2;
   }
@@ -43,3 +43,15 @@
   .label--yellow { background: $yellow; }
   .label--orange { background: $orange; }
   .label--red { background: $red; }
+
+  .outlineLabel {
+    @extend .label;
+    background: none;
+    color: $gray;
+    border: 1px solid currentColor;
+  }
+    .outlineLabel--blue   { color: $blue; }
+    .outlineLabel--green  { color: $green; }
+    .outlineLabel--yellow { color: $yellow; }
+    .outlineLabel--orange { color: $orange; }
+    .outlineLabel--red    { color: $red; }

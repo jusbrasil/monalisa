@@ -13,7 +13,7 @@
 
 /**
  * This modal is a CSS only implementation, using URL #anchor and selected by
- * :target selector. The modal is activated by clicking in some link with your
+ * :target selector or using --open modifier. The modal is activated by clicking in some link with your
  * anchor, and closed clicking in any other anchor (like #close).
  *
  * 1  - Modal overlay.
@@ -24,15 +24,15 @@
  *      is to hide the modal off the page.
  * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
  * 7  - Trick to center horizontally.
- * 8  - The first button should be left-aligned.
+ * 8  - All buttons should be right-aligned.
  * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
  * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
  */
 
 $modal-box-content-padding: $grid*2;
 $modal-box-close-size:      $grid*6;
-$modal-box-min-width:       $grid*50;
-$modal-box-min-height:      $grid*38;
+$modal-box-max-width:       $grid*67;
+$modal-box-max-height:      $grid*76;
 $modal-box-footer-height:   $grid*6;
 
 .modal {
@@ -44,11 +44,11 @@ $modal-box-footer-height:   $grid*6;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: $z-index-modal-overlay;
   }
-  &:target { /* 2 */
+  &--open, &:target { /* 2 */
     &:before { display: block; }
     .modal-box {
       @include transform(translate(-50%, 0)); /* 3 */
-      top: 20%; /* 4 */
+      top: 0; /* 4 */
     }
   }
 }
@@ -56,10 +56,10 @@ $modal-box-footer-height:   $grid*6;
   .modal-box {
     @extend %sexyBox;
     @include transform(translate(-50%, -100%)); /* 5 */
-    @include transition-transform(0.3s ease-out);
+    @include transition-transform(0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28));
+    top: -1000px;
+    width: 100%;
     height: 100%; /* 6 */
-    max-width: $modal-box-min-width;
-    max-height: $modal-box-min-height;
     background: $white;
     overflow: hidden;
     position: fixed;
@@ -75,10 +75,7 @@ $modal-box-footer-height:   $grid*6;
       position: absolute;
       bottom: 0;
       width: 100%;
-      button, a {
-        float: right;
-        &:first-child { float: left; } /* 8 */
-      }
+      text-align: right; /* 8 */
       & ~ .modal-box-content { /* 9 */
         height: calc(100% - #{$modal-box-footer-height});
       }
@@ -108,3 +105,23 @@ $modal-box-footer-height:   $grid*6;
       overflow-y: scroll;
       height: 100%;
     }
+
+
+/*****************************\
+  #DESKTOP
+\*****************************/
+
+@include media('>tablet') {
+  .modal {
+    &--open, &:target {
+      .modal-box {
+        top: calc((100% - #{$modal-box-max-height})/2); /* 4 */
+       }
+    }
+  }
+
+    .modal-box {
+      max-width: $modal-box-max-width;
+      max-height: $modal-box-max-height;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "monalisa",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jusbrasil/monalisa",
+  "authors": [
+    "JusBrasil <dev@jusbrasil.com.br>"
+  ],
+  "description": "JusBrasil Bootstrap",
+  "keywords": [
+    "monalisa",
+    "bootstrap",
+    "jusbrasil",
+    "material",
+    "design"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
