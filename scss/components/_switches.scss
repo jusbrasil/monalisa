@@ -45,6 +45,8 @@ label.switch { /* 1 */
   position: relative;
   cursor: pointer;
   font-size: 1.4em;
+  display: inline-block;
+  margin: $grid 0;
 
   input[type="checkbox"],
   input[type="radio"] {
@@ -71,8 +73,9 @@ label.switch { /* 1 */
 }
 
   .switch-label {
-    padding-left: $switch-size + $grid;
-    line-height: $switch-size;
+    padding-right: $switch-size + $grid;
+    display: table-cell;
+    vertical-align: top;
 
     &:after, &:before {
       @extend %font-awesome;
@@ -97,3 +100,7 @@ label.switch { /* 1 */
       z-index: 2;
     }
   }
+    .switch-label-text {
+      width: calc(100% - #{$switch-size + $grid});
+      display: table-cell;
+    }
