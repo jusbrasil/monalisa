@@ -83,6 +83,7 @@ label.switch { /* 1 */
     padding-left: $switch-size*1.5;
     line-height: $switch-size;
     position: relative;
+    display: inline-block;
 
     &:after, &:before {
       @extend %font-awesome;

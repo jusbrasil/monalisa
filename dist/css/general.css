@@ -4355,6 +4355,7 @@ label.switch input[type="radio"] ~ .switch-label:before {
   padding-left: 1.83em;
   line-height: 1.22em;
   position: relative;
+  display: inline-block;
 }
 .switch-label:after, .switch-label:before {
   position: absolute;
