@@ -804,7 +804,7 @@ label.switch input[type="checkbox"]:checked~.switch-label:after,label.switch inp
 label.switch input[type="checkbox"]~.switch-label:after{border-radius:2px;}
 label.switch input[type="radio"]~.switch-label:after,label.switch input[type="radio"]~.switch-label:before{border-radius:50%;}
 label.switch input[type="radio"]~.switch-label:before{content:"";background-color:currentColor;width:.61em;height:.61em;top:.305em;left:.305em;}
-.switch-label{padding-left:1.83em;line-height:1.22em;position:relative;}
+.switch-label{padding-left:1.83em;line-height:1.22em;position:relative;display:inline-block;}
 .switch-label:after,.switch-label:before{position:absolute;left:0;top:0;width:1.22em;height:1.22em;line-height:1.22em;}
 .switch-label:after{content:'';background:#fff;border:1px solid rgba(128,128,128,0.26);z-index:1;}
 .switch-label:before{color:#fff;opacity:0;text-align:center;z-index:2;}
