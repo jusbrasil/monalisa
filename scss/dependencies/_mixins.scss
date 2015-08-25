@@ -62,6 +62,12 @@
   border: 0;
 }
 
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+      -ms-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
 @mixin transform($transform) {
   -webkit-transform: $transform;
       -ms-transform: $transform;
@@ -74,9 +80,16 @@
           transition:         transform $transition;
 }
 
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+     -moz-animation: $animation;
+          animation: $animation;
+}
+
 
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
   @keyframes #{$name} { @content; }
 }
 

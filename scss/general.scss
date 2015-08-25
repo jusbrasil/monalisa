@@ -65,13 +65,14 @@
   #Components
 \*——————————————————*/
 
-@import "scss/components/links";
+@import "scss/components/alerts";
 @import "scss/components/buttons";
-@import "scss/components/labels";
+@import "scss/components/dialog";
 @import "scss/components/inputs";
+@import "scss/components/labels";
+@import "scss/components/links";
+@import "scss/components/modal";
+@import "scss/components/spinner";
+@import "scss/components/steps";
 @import "scss/components/switches";
 @import "scss/components/tooltip";
-@import "scss/components/alerts";
-@import "scss/components/modal";
-@import "scss/components/dialog";
-@import "scss/components/steps";

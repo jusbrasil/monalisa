@@ -9,3 +9,16 @@
     width: 1em;
   }
 }
+
+@include keyframes(spinner-circle) {
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+
+@include keyframes(spin) {
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+

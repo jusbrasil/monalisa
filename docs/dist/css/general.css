@@ -50,6 +50,15 @@
     width: 1em;
   }
 }
+@-moz-keyframes ellipsis {
+  0% {
+    width: 0;
+    margin-right: 1em;
+  }
+  100% {
+    width: 1em;
+  }
+}
 @keyframes ellipsis {
   0% {
     width: 0;
@@ -57,6 +66,42 @@
   }
   100% {
     width: 1em;
+  }
+}
+@-webkit-keyframes spinner-circle {
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+@-moz-keyframes spinner-circle {
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+@keyframes spinner-circle {
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 /*——————————————————*\
@@ -573,7 +618,7 @@
   content: "";
 }
 
-.fa--checkCircle:before, .field--success .field-validation:before, .alert--success i.fa:before {
+.fa--checkCircle:before, .alert--success i.fa:before, .field--success .field-validation:before {
   content: "";
 }
 
@@ -642,7 +687,7 @@
   content: "";
 }
 
-.fa--exclamationCircle:before, .field--error .field-validation:before, .alert--error i.fa:before {
+.fa--exclamationCircle:before, .alert--error i.fa:before, .field--error .field-validation:before {
   content: "";
 }
 
@@ -3011,11 +3056,11 @@ html {
 /**
  *
  */
-.button, .actionButton, select, .alert, .modal-box, .dialog, .outlineButton, .label, .outlineLabel {
+.alert, .button, .actionButton, .dialog, select, .modal-box, .outlineButton, .label, .outlineLabel {
   border-radius: 2px;
 }
 
-.button, .actionButton, select, .alert, .modal-box, .dialog {
+.alert, .button, .actionButton, .dialog, select, .modal-box {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -3367,95 +3412,107 @@ html {
 /*——————————————————*\
   #Components
 \*——————————————————*/
-/*
- * 1 - Blue as default color
-*/
 /*----------------------------------------------------------------------------*\
-  #LINK
+  #ALERT
 
-  .link (--green|--yellow|--orange|--red|--white|--gray|--black)
+  .alert (--on) (--error|--warning|--success)
+    (.fa)
+    .alert-message
+    .alert-close
 
 \*----------------------------------------------------------------------------*/
-.link {
+/**
+ * 1 - Centers horizontally and hides vertically with 110% (10% is to hide the
+ *     shadow element).
+ * 2 - Just the bottom corners are rounded.
+ * 3 - Default background color.
+ * 4 - Clear float trick.
+ * 5 - CSS rule to `.alert-message` when there `.fa` icon.
+ * 6 - Using the `i` element in selector to increase the weight of `.alert .fa`
+ *     rule, because the @extend changes the order of selector.
+ */
+.alert {
+  -webkit-transform: translate(-50%, -110%);
+  -ms-transform: translate(-50%, -110%);
+  transform: translate(-50%, -110%);
   /* 1 */
-  color: #0091ea;
-}
-.link:hover {
-  color: #0071b7;
-}
-.link:active {
-  color: #005284;
-}
-
-/* Colors modifiers */
-.link--green {
-  color: #7cb342;
-}
-.link--green:hover {
-  color: #628e34;
-}
-.link--green:active {
-  color: #486827;
-}
-
-.link--yellow {
-  color: #ffb300;
-}
-.link--yellow:hover {
-  color: #cc8f00;
-}
-.link--yellow:active {
-  color: #996b00;
-}
-
-.link--orange {
-  color: #fb8c00;
-}
-.link--orange:hover {
-  color: #c87000;
-}
-.link--orange:active {
-  color: #955300;
-}
-
-.link--red {
-  color: #f83c00;
-}
-.link--red:hover {
-  color: #c53000;
-}
-.link--red:active {
-  color: #922300;
-}
-
-.link--white {
+  -webkit-transition: -webkit-transform 0.6s ease-out;
+  -moz-transition: -moz-transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
+  border-radius: 0 0 2px 2px;
+  /* 2 */
+  display: table;
   color: rgba(255, 255, 255, 0.87);
+  background: #0091ea;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 50%;
 }
-.link--white:hover {
-  color: #fff;
+.alert .fa {
+  float: left;
+  height: 48px;
+  width: 32px;
+  line-height: 48px;
+  padding-left: 16px;
+  font-size: 1.6rem;
 }
-.link--white:active {
-  color: #fff;
+.alert .fa + .alert-message {
+  /* 5 */
+  padding-left: 8px;
+  width: calc(100% - 80px);
 }
 
-.link--gray {
-  color: gray;
-}
-.link--gray:hover {
-  color: #666666;
-}
-.link--gray:active {
-  color: #4d4d4d;
+.alert--on {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
-.link--black {
-  color: #333333;
+.alert--error {
+  background: #f83c00;
 }
-.link--black:hover {
-  color: #1a1a1a;
+.alert--error i.fa {
+  /* 6 */
 }
-.link--black:active {
-  color: #1a1a1a;
+
+.alert--warning {
+  background: #ffb300;
+}
+.alert--warning i.fa {
+  /* 6 */
+}
+
+.alert--success {
+  background: #7cb342;
+}
+.alert--success i.fa {
+  /* 6 */
+}
+
+.alert-message {
+  padding: 16px 8px 16px 16px;
+  font-size: 1.4rem;
+  float: left;
+  width: calc(100% - 48px);
+  line-height: 16px;
+}
+
+.alert-close {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.54);
+  float: left;
+  cursor: pointer;
+}
+.alert-close:before {
+  content: "×";
 }
 
 /*——————————————————*\
@@ -3832,83 +3889,39 @@ label.switch input[type="radio"][disabled] ~ .flatButton--red.switch-label {
   color: #f83c00;
 }
 
-/*——————————————————*\
-  #BUTTON
-\*——————————————————*/
+/*----------------------------------------------------------------------------*\
+  #DIALOG
+
+  .dialog
+    .dialog-content
+
+\*----------------------------------------------------------------------------*/
 /**
- * 1 - Adjusts the vertical center.
+ *
  */
-.label, .outlineLabel {
-  display: inline-block;
-  color: #fff;
-  height: 24px;
-  line-height: 25px;
-  /* 1 */
-  font-size: 15px;
-  padding: 0 8px;
-  background: #808080;
+.dialog {
+  background: #fff;
+  position: absolute;
+  overflow: hidden;
+  z-index: 3;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transform-origin: top left;
+  transition: all 0.3s linear;
+}
+.dialog:target {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
 }
 
-.label--medium {
-  height: 20px;
-  line-height: 21px;
-  /* 1 */
-  font-size: 13px;
-  padding: 0 6px;
+.dialog-content {
+  opacity: 0;
+  transition: opacity 0.3s linear 0.3s;
 }
-
-.label--small {
-  height: 16px;
-  line-height: 15px;
-  /* 1 */
-  font-size: 11px;
-  padding: 0 4px;
-}
-
-.label--blue {
-  background: #0091ea;
-}
-
-.label--green {
-  background: #7cb342;
-}
-
-.label--yellow {
-  background: #ffb300;
-}
-
-.label--orange {
-  background: #fb8c00;
-}
-
-.label--red {
-  background: #f83c00;
-}
-
-.outlineLabel {
-  background: none;
-  color: #808080;
-  border: 1px solid currentColor;
-}
-
-.outlineLabel--blue {
-  color: #0091ea;
-}
-
-.outlineLabel--green {
-  color: #7cb342;
-}
-
-.outlineLabel--yellow {
-  color: #ffb300;
-}
-
-.outlineLabel--orange {
-  color: #fb8c00;
-}
-
-.outlineLabel--red {
-  color: #f83c00;
+.dialog--show .dialog-content {
+  opacity: 1;
 }
 
 /*----------------------------------------------------------------------------*\
@@ -4262,6 +4275,466 @@ select {
   padding-right: 8px;
 }
 
+/*——————————————————*\
+  #BUTTON
+\*——————————————————*/
+/**
+ * 1 - Adjusts the vertical center.
+ */
+.label, .outlineLabel {
+  display: inline-block;
+  color: #fff;
+  height: 24px;
+  line-height: 25px;
+  /* 1 */
+  font-size: 15px;
+  padding: 0 8px;
+  background: #808080;
+}
+
+.label--medium {
+  height: 20px;
+  line-height: 21px;
+  /* 1 */
+  font-size: 13px;
+  padding: 0 6px;
+}
+
+.label--small {
+  height: 16px;
+  line-height: 15px;
+  /* 1 */
+  font-size: 11px;
+  padding: 0 4px;
+}
+
+.label--blue {
+  background: #0091ea;
+}
+
+.label--green {
+  background: #7cb342;
+}
+
+.label--yellow {
+  background: #ffb300;
+}
+
+.label--orange {
+  background: #fb8c00;
+}
+
+.label--red {
+  background: #f83c00;
+}
+
+.outlineLabel {
+  background: none;
+  color: #808080;
+  border: 1px solid currentColor;
+}
+
+.outlineLabel--blue {
+  color: #0091ea;
+}
+
+.outlineLabel--green {
+  color: #7cb342;
+}
+
+.outlineLabel--yellow {
+  color: #ffb300;
+}
+
+.outlineLabel--orange {
+  color: #fb8c00;
+}
+
+.outlineLabel--red {
+  color: #f83c00;
+}
+
+/*
+ * 1 - Blue as default color
+*/
+/*----------------------------------------------------------------------------*\
+  #LINK
+
+  .link (--green|--yellow|--orange|--red|--white|--gray|--black)
+
+\*----------------------------------------------------------------------------*/
+.link {
+  /* 1 */
+  color: #0091ea;
+}
+.link:hover {
+  color: #0071b7;
+}
+.link:active {
+  color: #005284;
+}
+
+/* Colors modifiers */
+.link--green {
+  color: #7cb342;
+}
+.link--green:hover {
+  color: #628e34;
+}
+.link--green:active {
+  color: #486827;
+}
+
+.link--yellow {
+  color: #ffb300;
+}
+.link--yellow:hover {
+  color: #cc8f00;
+}
+.link--yellow:active {
+  color: #996b00;
+}
+
+.link--orange {
+  color: #fb8c00;
+}
+.link--orange:hover {
+  color: #c87000;
+}
+.link--orange:active {
+  color: #955300;
+}
+
+.link--red {
+  color: #f83c00;
+}
+.link--red:hover {
+  color: #c53000;
+}
+.link--red:active {
+  color: #922300;
+}
+
+.link--white {
+  color: rgba(255, 255, 255, 0.87);
+}
+.link--white:hover {
+  color: #fff;
+}
+.link--white:active {
+  color: #fff;
+}
+
+.link--gray {
+  color: gray;
+}
+.link--gray:hover {
+  color: #666666;
+}
+.link--gray:active {
+  color: #4d4d4d;
+}
+
+.link--black {
+  color: #333333;
+}
+.link--black:hover {
+  color: #1a1a1a;
+}
+.link--black:active {
+  color: #1a1a1a;
+}
+
+/*----------------------------------------------------------------------------*\
+  #MODAL
+
+  .modal
+    .modal-box
+      (.modal-box-footer)
+      (.modal-box-close)
+      .modal-box-content
+
+\*----------------------------------------------------------------------------*/
+/**
+ * This modal is a CSS only implementation, using URL #anchor and selected by
+ * :target selector or using --open modifier. The modal is activated by clicking in some link with your
+ * anchor, and closed clicking in any other anchor (like #close).
+ *
+ * 1  - Modal overlay.
+ * 2  - CSS rule to show the modal (when the id of `.modal` is an anchor).
+ * 3  - Remove the Y translate, originally -100%.
+ * 4  - New position, originally -100%.
+ * 5  - The X (-50%) is to center horizontally (together 6 tip) and the Y (-100%)
+ *      is to hide the modal off the page.
+ * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
+ * 7  - Trick to center horizontally.
+ * 8  - All buttons should be right-aligned.
+ * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
+ * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
+ */
+.modal:before {
+  /* 1 */
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.modal--open, .modal:target {
+  /* 2 */
+}
+.modal--open:before, .modal:target:before {
+  display: block;
+}
+.modal--open .modal-box, .modal:target .modal-box {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  /* 3 */
+  top: 0;
+  /* 4 */
+}
+
+.modal-box {
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  /* 5 */
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  top: -1000px;
+  width: 100%;
+  height: 100%;
+  /* 6 */
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  /* 7 */
+  z-index: 5;
+}
+
+.modal-box-footer {
+  padding: 4px;
+  height: 48px;
+  background: #fff;
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  /* 8 */
+}
+.modal-box-footer ~ .modal-box-content {
+  /* 9 */
+  height: calc(100% - 48px);
+}
+
+.modal-box-close {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 2.2rem;
+  color: rgba(0, 0, 0, 0.54);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal-box-close:before {
+  content: "×";
+}
+.modal-box-close ~ .modal-box-content {
+  /* 10 */
+  padding-right: 64px;
+}
+
+.modal-box-content {
+  padding: 16px;
+  font-size: 1.4rem;
+  line-height: 20px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/*****************************\
+  #DESKTOP
+\*****************************/
+@media (min-width: 801px) {
+  .modal--open .modal-box, .modal:target .modal-box {
+    top: calc((100% - 608px)/2);
+    /* 4 */
+  }
+
+  .modal-box {
+    max-width: 536px;
+    max-height: 608px;
+  }
+}
+/*----------------------------------------------------------------------------*\
+  #SPINNER
+
+  .spinner
+    svg.spinner-inner
+      circle.spinner-inner-circle
+
+\*----------------------------------------------------------------------------*/
+/**
+ */
+.spinner {
+  height: 48px;
+  width: 48px;
+  padding: 8px;
+  border-radius: 32px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.54);
+  -ms-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.54);
+}
+
+svg.spinner-inner {
+  width: 32px;
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+circle.spinner-inner-circle {
+  stroke: #7cb342;
+  fill: transparent;
+  -webkit-animation: spinner-circle 3s linear infinite;
+  -moz-animation: spinner-circle 3s linear infinite;
+  animation: spinner-circle 3s linear infinite;
+  stroke-width: 24px;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+}
+
+/*——————————————————*\
+  #STEPS WRAPPER
+\*——————————————————*/
+.steps {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+/*----------------------------------------------------------------------------*\
+  #STEP
+
+  .step (--current)
+
+\*----------------------------------------------------------------------------*/
+/**
+* 1 - Define margin between steps;
+* 2.1 - Vertical margin is half of a step -1px that's the line height;
+* 2.2 - The horizontal margin is half of the difference between the step wrapper and
+        the step content;
+* 3 - Get all next siblings from `.step--current`;
+*/
+.steps--count3 {
+  /* 1 */
+}
+.steps--count3 .step {
+  margin-left: calc(((100% - 144px) / 2));
+  /* 2 */
+}
+.steps--count3 .step:after {
+  width: calc(((100% - 144px) / 2) + (24px));
+  /* 3 */
+}
+
+.steps--count4 {
+  /* 1 */
+}
+.steps--count4 .step {
+  margin-left: calc(((100% - 192px) / 3));
+  /* 2 */
+}
+.steps--count4 .step:after {
+  width: calc(((100% - 192px) / 3) + (24px));
+  /* 3 */
+}
+
+.steps--count5 {
+  /* 1 */
+}
+.steps--count5 .step {
+  margin-left: calc(((100% - 240px) / 4));
+  /* 2 */
+}
+.steps--count5 .step:after {
+  width: calc(((100% - 240px) / 4) + (24px));
+  /* 3 */
+}
+
+.step {
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+.step:before {
+  content: attr(data-step);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  margin: calc((48px - 24px) / 2);
+  /* 1 */
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  background: #7cb342;
+}
+.step:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  display: block;
+  margin: calc(23px) 0 0 calc(48px - ((48px - 24px) / 2));
+  /* 2.1 and 2.2 */
+  background: #7cb342;
+}
+.step:first-child {
+  margin-left: 0;
+}
+.step:last-child:after {
+  width: 0;
+}
+
+.step--current:before {
+  width: 32px;
+  height: 32px;
+  margin: calc((48px - 32px) / 2);
+  /* 1 */
+  z-index: 0;
+  font-size: 1.8rem;
+  line-height: 1.8em;
+  background: #0091ea;
+}
+.step--current:after {
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.step--current ~ .step {
+  /* 3 */
+}
+.step--current ~ .step:before {
+  background: #b7c6cd;
+}
+.step--current ~ .step:after {
+  background: rgba(0, 0, 0, 0.12);
+}
+
 /*----------------------------------------------------------------------------*\
   #SWITCHES
 
@@ -4420,394 +4893,6 @@ label.switch input[type="radio"] ~ .switch-label:before {
 }
 [tooltip]:hover:after {
   display: inline-block;
-}
-
-/*----------------------------------------------------------------------------*\
-  #ALERT
-
-  .alert (--on) (--error|--warning|--success)
-    (.fa)
-    .alert-message
-    .alert-close
-
-\*----------------------------------------------------------------------------*/
-/**
- * 1 - Centers horizontally and hides vertically with 110% (10% is to hide the
- *     shadow element).
- * 2 - Just the bottom corners are rounded.
- * 3 - Default background color.
- * 4 - Clear float trick.
- * 5 - CSS rule to `.alert-message` when there `.fa` icon.
- * 6 - Using the `i` element in selector to increase the weight of `.alert .fa`
- *     rule, because the @extend changes the order of selector.
- */
-.alert {
-  -webkit-transform: translate(-50%, -110%);
-  -ms-transform: translate(-50%, -110%);
-  transform: translate(-50%, -110%);
-  /* 1 */
-  -webkit-transition: -webkit-transform 0.6s ease-out;
-  -moz-transition: -moz-transform 0.6s ease-out;
-  transition: transform 0.6s ease-out;
-  border-radius: 0 0 2px 2px;
-  /* 2 */
-  display: table;
-  color: rgba(255, 255, 255, 0.87);
-  background: #0091ea;
-  /* 3 */
-  overflow: hidden;
-  /* 4 */
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 50%;
-}
-.alert .fa {
-  float: left;
-  height: 48px;
-  width: 32px;
-  line-height: 48px;
-  padding-left: 16px;
-  font-size: 1.6rem;
-}
-.alert .fa + .alert-message {
-  /* 5 */
-  padding-left: 8px;
-  width: calc(100% - 80px);
-}
-
-.alert--on {
-  -webkit-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-}
-
-.alert--error {
-  background: #f83c00;
-}
-.alert--error i.fa {
-  /* 6 */
-}
-
-.alert--warning {
-  background: #ffb300;
-}
-.alert--warning i.fa {
-  /* 6 */
-}
-
-.alert--success {
-  background: #7cb342;
-}
-.alert--success i.fa {
-  /* 6 */
-}
-
-.alert-message {
-  padding: 16px 8px 16px 16px;
-  font-size: 1.4rem;
-  float: left;
-  width: calc(100% - 48px);
-  line-height: 16px;
-}
-
-.alert-close {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-  text-align: center;
-  font-size: 2.2rem;
-  color: rgba(255, 255, 255, 0.54);
-  float: left;
-  cursor: pointer;
-}
-.alert-close:before {
-  content: "×";
-}
-
-/*----------------------------------------------------------------------------*\
-  #MODAL
-
-  .modal
-    .modal-box
-      (.modal-box-footer)
-      (.modal-box-close)
-      .modal-box-content
-
-\*----------------------------------------------------------------------------*/
-/**
- * This modal is a CSS only implementation, using URL #anchor and selected by
- * :target selector or using --open modifier. The modal is activated by clicking in some link with your
- * anchor, and closed clicking in any other anchor (like #close).
- *
- * 1  - Modal overlay.
- * 2  - CSS rule to show the modal (when the id of `.modal` is an anchor).
- * 3  - Remove the Y translate, originally -100%.
- * 4  - New position, originally -100%.
- * 5  - The X (-50%) is to center horizontally (together 6 tip) and the Y (-100%)
- *      is to hide the modal off the page.
- * 6  - Necessary to allow Y scroll of the `.modal-box-content`.
- * 7  - Trick to center horizontally.
- * 8  - All buttons should be right-aligned.
- * 9  - CSS rule to `.modal-box-content` when there `.modal-box-footer`.
- * 10 - CSS rule to `.modal-box-content` when there `.modal-box-close`.
- */
-.modal:before {
-  /* 1 */
-  content: "";
-  display: none;
-  background: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-}
-.modal--open, .modal:target {
-  /* 2 */
-}
-.modal--open:before, .modal:target:before {
-  display: block;
-}
-.modal--open .modal-box, .modal:target .modal-box {
-  -webkit-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  /* 3 */
-  top: 0;
-  /* 4 */
-}
-
-.modal-box {
-  -webkit-transform: translate(-50%, -100%);
-  -ms-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%);
-  /* 5 */
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  -moz-transition: -moz-transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  top: -1000px;
-  width: 100%;
-  height: 100%;
-  /* 6 */
-  background: #fff;
-  overflow: hidden;
-  position: fixed;
-  left: 50%;
-  /* 7 */
-  z-index: 5;
-}
-
-.modal-box-footer {
-  padding: 4px;
-  height: 48px;
-  background: #fff;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: right;
-  /* 8 */
-}
-.modal-box-footer ~ .modal-box-content {
-  /* 9 */
-  height: calc(100% - 48px);
-}
-
-.modal-box-close {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-  text-align: center;
-  font-size: 2.2rem;
-  color: rgba(0, 0, 0, 0.54);
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.modal-box-close:before {
-  content: "×";
-}
-.modal-box-close ~ .modal-box-content {
-  /* 10 */
-  padding-right: 64px;
-}
-
-.modal-box-content {
-  padding: 16px;
-  font-size: 1.4rem;
-  line-height: 20px;
-  overflow-y: scroll;
-  height: 100%;
-}
-
-/*****************************\
-  #DESKTOP
-\*****************************/
-@media (min-width: 801px) {
-  .modal--open .modal-box, .modal:target .modal-box {
-    top: calc((100% - 608px)/2);
-    /* 4 */
-  }
-
-  .modal-box {
-    max-width: 536px;
-    max-height: 608px;
-  }
-}
-/*----------------------------------------------------------------------------*\
-  #DIALOG
-
-  .dialog
-    .dialog-content
-
-\*----------------------------------------------------------------------------*/
-/**
- *
- */
-.dialog {
-  background: #fff;
-  position: absolute;
-  overflow: hidden;
-  z-index: 3;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  transform-origin: top left;
-  transition: all 0.3s linear;
-}
-.dialog:target {
-  opacity: 1;
-  width: 300px;
-  height: 300px;
-}
-
-.dialog-content {
-  opacity: 0;
-  transition: opacity 0.3s linear 0.3s;
-}
-.dialog--show .dialog-content {
-  opacity: 1;
-}
-
-/*——————————————————*\
-  #STEPS WRAPPER
-\*——————————————————*/
-.steps {
-  width: 100%;
-  display: inline-block;
-  position: relative;
-}
-
-/*----------------------------------------------------------------------------*\
-  #STEP
-
-  .step (--current)
-
-\*----------------------------------------------------------------------------*/
-/**
-* 1 - Define margin between steps;
-* 2.1 - Vertical margin is half of a step -1px that's the line height;
-* 2.2 - The horizontal margin is half of the difference between the step wrapper and
-        the step content;
-* 3 - Get all next siblings from `.step--current`;
-*/
-.steps--count3 {
-  /* 1 */
-}
-.steps--count3 .step {
-  margin-left: calc(((100% - 144px) / 2));
-  /* 2 */
-}
-.steps--count3 .step:after {
-  width: calc(((100% - 144px) / 2) + (24px));
-  /* 3 */
-}
-
-.steps--count4 {
-  /* 1 */
-}
-.steps--count4 .step {
-  margin-left: calc(((100% - 192px) / 3));
-  /* 2 */
-}
-.steps--count4 .step:after {
-  width: calc(((100% - 192px) / 3) + (24px));
-  /* 3 */
-}
-
-.steps--count5 {
-  /* 1 */
-}
-.steps--count5 .step {
-  margin-left: calc(((100% - 240px) / 4));
-  /* 2 */
-}
-.steps--count5 .step:after {
-  width: calc(((100% - 240px) / 4) + (24px));
-  /* 3 */
-}
-
-.step {
-  width: 48px;
-  height: 48px;
-  float: left;
-}
-.step:before {
-  content: attr(data-step);
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  margin: calc((48px - 24px) / 2);
-  /* 1 */
-  border-radius: 50%;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-  color: #fff;
-  text-align: center;
-  background: #7cb342;
-}
-.step:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  display: block;
-  margin: calc(23px) 0 0 calc(48px - ((48px - 24px) / 2));
-  /* 2.1 and 2.2 */
-  background: #7cb342;
-}
-.step:first-child {
-  margin-left: 0;
-}
-.step:last-child:after {
-  width: 0;
-}
-
-.step--current:before {
-  width: 32px;
-  height: 32px;
-  margin: calc((48px - 32px) / 2);
-  /* 1 */
-  z-index: 0;
-  font-size: 1.8rem;
-  line-height: 1.8em;
-  background: #0091ea;
-}
-.step--current:after {
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.12);
-}
-
-.step--current ~ .step {
-  /* 3 */
-}
-.step--current ~ .step:before {
-  background: #b7c6cd;
-}
-.step--current ~ .step:after {
-  background: rgba(0, 0, 0, 0.12);
 }
 
 /*# sourceMappingURL=general.css.map */
