@@ -4597,6 +4597,15 @@ select {
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.54);
 }
 
+label.spinner-label {
+  position: absolute;
+  margin: 16px 48px;
+  color: #808080;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
 svg.spinner-inner {
   width: 32px;
   -webkit-animation: spin 3s linear infinite;
