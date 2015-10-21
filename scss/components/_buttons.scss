@@ -70,6 +70,9 @@
   font-size: 14px;
   padding: 0 $grid*2;
   .fa { margin-right: 6px; }
+  &.button--iconRight {
+    .fa { margin: 0 0 0 6px; }
+  }
 }
 
 .button--small  {
@@ -79,6 +82,9 @@
   font-size: 12px;
   padding: 0 $grid+$grid/2;
   .fa { margin-right: $grid/2; }
+  &.button--iconRight {
+    .fa { margin: 0 0 0 $grid/2; }
+  }
 }
 
 .button--caps   {
@@ -89,10 +95,17 @@
   padding: 0 $grid;
   text-transform: uppercase;
   .fa { margin-right: $grid/2; }
+  &.button--iconRight {
+    .fa { margin: 0 0 0 $grid/2; }
+  }
 }
 
 .button--block {
   width: 100%;
+}
+
+.button--iconRight {
+  float: right;
 }
 
 
