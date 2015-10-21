@@ -3653,6 +3653,9 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 .button--medium .fa, .actionButton--medium .fa, .flatButton .fa {
   margin-right: 6px;
 }
+.button--medium.button--iconRight .fa, .button--iconRight.actionButton--medium .fa, .button--iconRight.flatButton .fa {
+  margin: 0 0 0 6px;
+}
 
 .button--small, .actionButton--small {
   height: 32px;
@@ -3662,6 +3665,9 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 }
 .button--small .fa, .actionButton--small .fa {
   margin-right: 4px;
+}
+.button--small.button--iconRight .fa, .button--iconRight.actionButton--small .fa {
+  margin: 0 0 0 4px;
 }
 
 .button--caps, .actionButton--caps {
@@ -3674,9 +3680,16 @@ label.switch input[type="radio"][disabled] ~ .button--red.switch-label {
 .button--caps .fa, .actionButton--caps .fa {
   margin-right: 4px;
 }
+.button--caps.button--iconRight .fa, .button--iconRight.actionButton--caps .fa {
+  margin: 0 0 0 4px;
+}
 
 .button--block {
   width: 100%;
+}
+
+.button--iconRight {
+  float: right;
 }
 
 /*----------------------------------------------------------------------------*\

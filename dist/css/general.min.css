@@ -700,11 +700,15 @@ html{font-family:Roboto,sans-serif;font-weight:400;font-size:62.5%;}
 .button--red,.actionButton--red,.button--red[disabled],[disabled].actionButton--red,label.switch input[type="checkbox"][disabled]~.actionButton--red.switch-label,label.switch input[type="radio"][disabled]~.actionButton--red.switch-label,label.switch input[type="checkbox"][disabled]~.button--red.switch-label,label.switch input[type="radio"][disabled]~.button--red.switch-label{background:#f83c00;}
 .button--medium,.actionButton--medium,.flatButton{height:40px;line-height:40px;font-size:14px;padding:0 16px;}
 .button--medium .fa,.actionButton--medium .fa,.flatButton .fa{margin-right:6px;}
+.button--medium.button--iconRight .fa,.button--iconRight.actionButton--medium .fa,.button--iconRight.flatButton .fa{margin:0 0 0 6px;}
 .button--small,.actionButton--small{height:32px;line-height:32px;font-size:12px;padding:0 12px;}
 .button--small .fa,.actionButton--small .fa{margin-right:4px;}
+.button--small.button--iconRight .fa,.button--iconRight.actionButton--small .fa{margin:0 0 0 4px;}
 .button--caps,.actionButton--caps{height:24px;line-height:24px;font-size:10px;padding:0 8px;text-transform:uppercase;}
 .button--caps .fa,.actionButton--caps .fa{margin-right:4px;}
+.button--caps.button--iconRight .fa,.button--iconRight.actionButton--caps .fa{margin:0 0 0 4px;}
 .button--block{width:100%;}
+.button--iconRight{float:right;}
 .actionButton:before{content:attr(label);}
 .actionButton .fa{float:left;}
 .actionButton.button--iconRight .fa{float:right;}
