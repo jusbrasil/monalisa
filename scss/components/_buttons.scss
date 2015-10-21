@@ -13,7 +13,10 @@
 
   .fa { margin-right: $grid; }
   &.button--iconRight {
-    .fa { margin: 0 0 0 $grid; }
+    .fa {
+      margin: 0 0 0 $grid;
+      float: right;
+    }
   }
 }
 
