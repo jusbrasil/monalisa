@@ -3529,6 +3529,7 @@ html {
 }
 .button--iconRight.button .fa, .button--iconRight.actionButton .fa, .button--iconRight.outlineButton .fa {
   margin: 0 0 0 8px;
+  float: right;
 }
 
 /*----------------------------------------------------------------------------*\
