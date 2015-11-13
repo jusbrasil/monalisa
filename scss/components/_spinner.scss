@@ -20,6 +20,13 @@
   @include box-shadow(0px 1px 4px 0px $black54);
 }
 
+  label.spinner-label {
+    position: absolute;
+    margin: $grid*2 $grid*6;
+    color: $gray;
+    @include transform(translate(0, -50%));
+  }
+
   svg.spinner-inner {
     width: $grid*4;
     @include animation(spin 3s linear infinite);
